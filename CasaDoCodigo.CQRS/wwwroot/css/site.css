@@ -1,0 +1,239 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.left.carousel-control,
+.right.carousel-control {
+    background-image: none;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.navbar-brand {
+    background: url('../images/logo.png');
+    width: 215px;
+    height: 55px;
+}
+
+.navbar-inverse {
+    background-color: #f8965d;
+    border-color: white;
+}
+
+.row-center {
+    display: flex;
+    align-items: center;
+}
+
+.img-produto-catalogo {
+    width: 100%;
+}
+
+.img-produto-carrinho {
+    height: 120px;
+    filter: drop-shadow(2px 2px 2px #ccc);
+}
+
+.linha-produto {
+    margin: 20px;
+}
+
+.produto-nome {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.produto-footer {
+    max-height: 140px;
+}
+
+.produto-nome {
+}
+
+/* Notification */
+
+.container-notification {
+    padding-top: 12px;
+}
+
+/* Notifications */
+
+.notification {
+    display: inline-block;
+    position: relative;
+    padding: 0.08em;
+    background: #f8965d;
+    font-size: 1.2em;
+}
+
+.notification::before,
+.notification::after {
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.notification::before {
+    display: block;
+    content: "\f0f3";
+    font-family: "FontAwesome";
+    transform-origin: top center;
+}
+
+.notification::after {
+    font-family: Arial;
+    font-size: 0.7em;
+    font-weight: 700;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 4px 6px;
+    line-height: 100%;
+    border-radius: 60px;
+    background: #3498db;
+    opacity: 0;
+    content: attr(data-count);
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    transition: transform, opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.notification.notify::before {
+    -webkit-animation: ring 1.5s ease;
+    animation: ring 1.5s ease;
+}
+
+.notification.show-count::after {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+@-webkit-keyframes ring {
+    0% {
+        -webkit-transform: rotate(35deg);
+    }
+
+    12.5% {
+        -webkit-transform: rotate(-30deg);
+    }
+
+    25% {
+        -webkit-transform: rotate(25deg);
+    }
+
+    37.5% {
+        -webkit-transform: rotate(-20deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(15deg);
+    }
+
+    62.5% {
+        -webkit-transform: rotate(-10deg);
+    }
+
+    75% {
+        -webkit-transform: rotate(5deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+@keyframes ring {
+    0% {
+        -webkit-transform: rotate(35deg);
+        transform: rotate(35deg);
+    }
+
+    12.5% {
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+    }
+
+    25% {
+        -webkit-transform: rotate(25deg);
+        transform: rotate(25deg);
+    }
+
+    37.5% {
+        -webkit-transform: rotate(-20deg);
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(15deg);
+        transform: rotate(15deg);
+    }
+
+    62.5% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+.notification-message.unread::after {
+    content: "\f0e0";
+    font-family: "FontAwesome";
+    font-weight: 400;
+    font-size: 1.5em;
+    vertical-align: central;
+}
+
+.notification-message.read::after {
+    content: "\f2b6";
+    font-family: "FontAwesome";
+    font-weight: 400;
+    font-size: 1.5em;
+    vertical-align: central;
+}
