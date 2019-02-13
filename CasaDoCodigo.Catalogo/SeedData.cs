@@ -69,43 +69,42 @@ namespace Catalogo.API
             var produtoDbSet = context.Set<Produto>();
             var categoriaDbSet = context.Set<Categoria>();
 
-            var livros = await GetLivros();
+            var products = await GetProducts();
 
-            foreach (var livro in livros)
+            foreach (var product in products)
             {
                 var categoriaDB =
                 categoriaDbSet
-                    .Where(c => c.Nome == livro.Categoria)
+                    .Where(c => c.Nome == product.category)
                     .SingleOrDefault();
 
                 if (categoriaDB == null)
                 {
-                    categoriaDB = new Categoria(livro.Categoria);
+                    categoriaDB = new Categoria(product.category);
                     await categoriaDbSet.AddAsync(categoriaDB);
                     await context.SaveChangesAsync();
                 }
 
-                if (!produtoDbSet.Where(p => p.Codigo == livro.Codigo).Any())
+                string code = product.number.ToString("000");
+                if (!produtoDbSet.Where(p => p.Codigo == code).Any())
                 {
-                    await produtoDbSet.AddAsync(new Produto(livro.Codigo, livro.Nome, livro.Preco, categoriaDB));
+                    await produtoDbSet.AddAsync(new Produto(code, product.name, 52.90m, categoriaDB));
                 }
             }
             await context.SaveChangesAsync();
         }
 
-        static async Task<List<Livro>> GetLivros()
+        static async Task<List<ProductData>> GetProducts()
         {
-            var json = await File.ReadAllTextAsync("livros.json");
-            return JsonConvert.DeserializeObject<List<Livro>>(json);
+            var json = await File.ReadAllTextAsync("products.json");
+            return JsonConvert.DeserializeObject<List<ProductData>>(json);
         }
     }
 
-    public class Livro
+    public class ProductData
     {
-        public string Codigo { get; set; }
-        public string Nome { get; set; }
-        public string Categoria { get; set; }
-        public string Subcategoria { get; set; }
-        public decimal Preco { get; set; }
+        public int number { get; set; }
+        public string name { get; set; }
+        public string category { get; set; }
     }
 }

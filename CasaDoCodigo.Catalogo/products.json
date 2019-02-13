@@ -1,0 +1,142 @@
+[
+  {
+    "number": 1,
+    "name": "skimmed",
+    "category": "milk"
+  },
+  {
+    "number": 2,
+    "name": "strawberry frozen yogurt",
+    "category": "yogurt"
+  },
+  {
+    "number": 3,
+    "name": "rice milk",
+    "category": "milk"
+  },
+  {
+    "number": 4,
+    "name": "almond milk",
+    "category": "milk"
+  },
+  {
+    "number": 5,
+    "name": "artisan bread",
+    "category": "bread"
+  },
+  {
+    "number": 6,
+    "name": "assorted breads",
+    "category": "bread"
+  },
+  {
+    "number": 7,
+    "name": "banana",
+    "category": "fruit"
+  },
+  {
+    "number": 8,
+    "name": "blue grapes",
+    "category": "fruit"
+  },
+  {
+    "number": 9,
+    "name": "Chocolate",
+    "category": "chocolate"
+  },
+  {
+    "number": 10,
+    "name": "chocolate chip muffin",
+    "category": "chocolate"
+  },
+  {
+    "number": 11,
+    "name": "chocolates",
+    "category": "chocolate"
+  },
+  {
+    "number": 12,
+    "name": "coffee beans",
+    "category": "coffee"
+  },
+  {
+    "number": 13,
+    "name": "green-grapes",
+    "category": "fruit"
+  },
+  {
+    "number": 14,
+    "name": "lemons",
+    "category": "fruit"
+  },
+  {
+    "number": 15,
+    "name": "melon",
+    "category": "fruit"
+  },
+  {
+    "number": 16,
+    "name": "mexican sweet breads",
+    "category": "bread"
+  },
+  {
+    "number": 17,
+    "name": "oranges",
+    "category": "fruit"
+  },
+  {
+    "number": 18,
+    "name": "peaches",
+    "category": "fruit"
+  },
+  {
+    "number": 19,
+    "name": "peanuts",
+    "category": "nuts"
+  },
+  {
+    "number": 20,
+    "name": "red flame grapes",
+    "category": "fruit"
+  },
+  {
+    "number": 21,
+    "name": "rice flour",
+    "category": "flour"
+  },
+  {
+    "number": 22,
+    "name": "soy milk",
+    "category": "milk"
+  },
+  {
+    "number": 23,
+    "name": "strawberries",
+    "category": "fruit"
+  },
+  {
+    "number": 24,
+    "name": "toranja",
+    "category": "fruit"
+  },
+  {
+    "number": 25,
+    "name": "turkish strained yogurt",
+    "category": "yogurt"
+  },
+  {
+    "number": 26,
+    "name": "walnuts",
+    "category": "nuts"
+  },
+  {
+    "number": 27,
+    "name": "watermelon",
+    "category": "fruit"
+  },
+  {
+    "number": 28,
+    "name": "wheat flour",
+    "category": "flour"
+  }
+]
