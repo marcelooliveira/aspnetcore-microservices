@@ -22,3 +22,15 @@
 2019-02-16 17:27:39.330 -02:00 [WRN] Failed to determine the https port for redirect.
 2019-02-16 17:27:50.344 -02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-16 17:28:01.063 -02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-16 17:32:11.049 -02:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-16 17:32:20.810 -02:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'CadastroEvent'
+2019-02-16 17:32:21.442 -02:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-16 17:32:21.476 -02:00 [INF] Starting bus 1
+2019-02-16 17:32:21.485 -02:00 [INF] Setting number of workers to 1
+2019-02-16 17:32:21.499 -02:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-16 17:32:21.509 -02:00 [INF] Started
+2019-02-16 17:32:21.529 -02:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-16 17:32:21.637 -02:00 [INF] Successfully initialized consumer for CadastroEvent
+2019-02-16 17:32:22.316 -02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-16 17:32:22.325 -02:00 [WRN] Failed to determine the https port for redirect.
+2019-02-16 17:32:32.935 -02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
