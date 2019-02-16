@@ -1,5 +1,5 @@
-﻿using Catalogo.API.Data;
-using Catalogo.API.Queries;
+﻿using Catalog.API.Data;
+using Catalog.API.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +16,7 @@ using HealthChecks.UI.Client;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
-namespace Catalogo.API
+namespace Catalog.API
 {
     public class Startup
     {
@@ -45,7 +45,7 @@ namespace Catalogo.API
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "Casa do Código - Catálogo",
+                    Title = "Casa do Código - Catalog",
                     Description = "API do catálogo de produtos",
                     TermsOfService = "Nenhum",
                     Contact = new Contact
@@ -97,7 +97,7 @@ namespace Catalogo.API
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Casa do Código - Catálogo");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Casa do Código - Catalog");
             });
 
             SQLitePCL.Batteries_V2.Init();

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Catalogo.API.Model
+namespace Catalog.API.Model
 {
     [DataContract]
     public abstract class BaseModel

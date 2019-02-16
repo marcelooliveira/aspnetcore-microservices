@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Catalogo.API.Model
+namespace Catalog.API.Model
 {
     public class RedisProdutoRepository
     {

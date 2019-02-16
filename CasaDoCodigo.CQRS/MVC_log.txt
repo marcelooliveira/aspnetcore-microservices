@@ -2,8 +2,8 @@
 System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
    at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-03 11:37:47.549 -02:00 [ERR] {"StatusCode":500,"ReasonPhrase":"Internal Server Error"}
 System.Net.Http.HttpRequestException: {"StatusCode":500,"ReasonPhrase":"Internal Server Error"}
    at CasaDoCodigo.Services.BaseHttpService.PutOrPostAsync[T](String uri, Object content, HttpVerbMethod httpVerbMethod) in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 77
@@ -30,11 +30,11 @@ System.Net.Http.HttpRequestException: Nenhuma conexão pôde ser feita porque a 
    at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-03 11:56:50.029 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -59,11 +59,11 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 System.Net.Http.HttpRequestException: Response status code does not indicate success: 502 (Bad Gateway).
    at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-03 12:00:38.911 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -182,11 +182,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:02:05.445 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -235,11 +235,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:02:07.268 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -288,11 +288,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:02:59.952 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -341,11 +341,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:04.463 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -394,11 +394,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:13.165 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -447,11 +447,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:14.267 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -500,11 +500,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:15.190 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -553,11 +553,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:16.289 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -606,11 +606,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:17.276 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -659,11 +659,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:18.064 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -712,11 +712,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:18.657 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -765,11 +765,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:22.518 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -818,11 +818,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:23.428 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -871,11 +871,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:24.027 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -924,11 +924,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:24.723 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -977,11 +977,11 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogoService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogoService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogoController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogoController.cs:line 34
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
 2019-02-05 01:03:25.353 -02:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalogo_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalogo\Index.cshtml:line 30
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)

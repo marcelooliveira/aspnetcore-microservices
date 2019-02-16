@@ -1,5 +1,5 @@
-﻿using Catalogo.API.Data;
-using Catalogo.API.Model;
+﻿using Catalog.API.Data;
+using Catalog.API.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
@@ -9,7 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Catalogo.API
+namespace Catalog.API
 {
     internal class SeedData
     {

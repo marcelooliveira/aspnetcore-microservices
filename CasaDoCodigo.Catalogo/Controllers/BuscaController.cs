@@ -1,10 +1,10 @@
-﻿using Catalogo.API.Queries;
+﻿using Catalog.API.Queries;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Catalogo.API.Controllers
+namespace Catalog.API.Controllers
 {
     [Route("api/[controller]")]
     public class BuscaController : ControllerBase

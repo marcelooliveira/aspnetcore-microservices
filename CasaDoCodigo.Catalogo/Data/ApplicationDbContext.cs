@@ -1,7 +1,7 @@
-﻿using Catalogo.API.Model;
+﻿using Catalog.API.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace Catalogo.API.Data
+namespace Catalog.API.Data
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,5 +1,5 @@
-using Catalogo.API.Controllers;
-using Catalogo.API.Queries;
+using Catalog.API.Controllers;
+using Catalog.API.Queries;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Catalogo.UnitTests
+namespace Catalog.UnitTests
 {
     public class ProdutoControllerTest
     {
@@ -31,11 +31,11 @@ namespace Catalogo.UnitTests
 
             //assert
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult.Result);
-            List<Produto> catalogo = Assert.IsType<List<Produto>>(okObjectResult.Value);
-            Assert.Collection(catalogo,
-                item => Assert.Equal(produtos[0].Codigo, catalogo[0].Codigo),
-                item => Assert.Equal(produtos[1].Codigo, catalogo[1].Codigo),
-                item => Assert.Equal(produtos[2].Codigo, catalogo[2].Codigo)
+            List<Produto> catalog = Assert.IsType<List<Produto>>(okObjectResult.Value);
+            Assert.Collection(catalog,
+                item => Assert.Equal(produtos[0].Codigo, catalog[0].Codigo),
+                item => Assert.Equal(produtos[1].Codigo, catalog[1].Codigo),
+                item => Assert.Equal(produtos[2].Codigo, catalog[2].Codigo)
             );
         }
 
@@ -56,8 +56,8 @@ namespace Catalogo.UnitTests
 
             //assert
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult.Result);
-            List<Produto> catalogo = Assert.IsType<List<Produto>>(okObjectResult.Value);
-            Assert.Empty(catalogo);
+            List<Produto> catalog = Assert.IsType<List<Produto>>(okObjectResult.Value);
+            Assert.Empty(catalog);
             produtoQueriesMock.Verify();
         }
 

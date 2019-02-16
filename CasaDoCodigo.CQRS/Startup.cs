@@ -57,7 +57,7 @@ namespace CasaDoCodigo
             services.AddSingleton(typeof(HttpClient), httpClient);
             services.AddHttpContextAccessor();
             services.AddTransient<IPedidoService, PedidoService>();
-            services.AddTransient<ICatalogoService, CatalogoService>();
+            services.AddTransient<ICatalogService, CatalogService>();
             services.AddTransient<IBasketService, BasketService>();
             services.AddTransient<ISessionHelper, SessionHelper>();
             services.AddTransient<IIdentityParser<ApplicationUser>, IdentityParser>();
@@ -173,7 +173,7 @@ namespace CasaDoCodigo
                    .AddPolicyHandler(GetRetryPolicy())
                    .AddPolicyHandler(GetCircuitBreakerPolicy());
 
-            services.AddHttpClient<ICatalogoService, CatalogoService>()
+            services.AddHttpClient<ICatalogService, CatalogService>()
                    .AddPolicyHandler(GetRetryPolicy())
                    .AddPolicyHandler(GetCircuitBreakerPolicy());
 
@@ -212,7 +212,7 @@ namespace CasaDoCodigo
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Catalogo}/{action=Index}/{codigo?}");
+                    template: "{controller=Catalog}/{action=Index}/{codigo?}");
             });
 
             app.UseSignalR(routes =>

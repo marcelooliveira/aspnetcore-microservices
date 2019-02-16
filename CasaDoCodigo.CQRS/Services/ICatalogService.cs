@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Services
 {
-    public interface ICatalogoService : IService
+    public interface ICatalogService : IService
     {
         Task<IList<Produto>> GetProdutos();
         Task<IList<Produto>> BuscaProdutos(string pesquisa);

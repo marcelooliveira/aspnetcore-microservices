@@ -23,20 +23,20 @@ namespace CasaDoCodigo.Controllers
     public class BasketController : BaseController
     {
         private readonly IIdentityParser<ApplicationUser> appUserParser;
-        private readonly ICatalogoService catalogoService;
+        private readonly ICatalogService catalogService;
         private readonly IBasketService basketService;
 
         public BasketController(
             IHttpContextAccessor contextAccessor,
             IIdentityParser<ApplicationUser> appUserParser,
             ILogger<BasketController> logger,
-            ICatalogoService catalogoService,
+            ICatalogService catalogService,
             IBasketService basketService,
             IUserRedisRepository repository)
             : base(logger, repository)
         {
             this.appUserParser = appUserParser;
-            this.catalogoService = catalogoService;
+            this.catalogService = catalogService;
             this.basketService = basketService;
         }
 
@@ -51,7 +51,7 @@ namespace CasaDoCodigo.Controllers
                 BasketCliente basket;
                 if (!string.IsNullOrWhiteSpace(codigo))
                 {
-                    var produto = await catalogoService.GetProduto(codigo);
+                    var produto = await catalogService.GetProduto(codigo);
                     if (produto == null)
                     {
                         return RedirectToAction("ProdutoNaoEncontrado", "Basket", codigo);
@@ -69,7 +69,7 @@ namespace CasaDoCodigo.Controllers
             catch (BrokenCircuitException e)
             {
                 logger.LogError(e, e.Message);
-                HandleBrokenCircuitException(catalogoService);
+                HandleBrokenCircuitException(catalogService);
             }
             catch (Exception e)
             {

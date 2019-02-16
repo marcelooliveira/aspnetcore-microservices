@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CasaDoCodigo.Catalogo\Catalogo.API.csproj" />
+    <ProjectReference Include="..\CasaDoCodigo.Catalogo\Catalog.API.csproj" />
   </ItemGroup>
 
 </Project>

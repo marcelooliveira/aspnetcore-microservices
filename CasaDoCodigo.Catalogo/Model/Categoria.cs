@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Catalogo.API.Model
+namespace Catalog.API.Model
 {
     public class Categoria : BaseModel
     {

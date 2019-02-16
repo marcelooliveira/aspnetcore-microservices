@@ -14,16 +14,16 @@ using Xunit;
 
 namespace MVC.Test
 {
-    public class CatalogoControllerTest : BaseControllerTest
+    public class CatalogControllerTest : BaseControllerTest
     {
-        private readonly Mock<ICatalogoService> catalogoServiceMock;
-        private readonly Mock<ILogger<CatalogoController>> loggerMock;
+        private readonly Mock<ICatalogService> catalogServiceMock;
+        private readonly Mock<ILogger<CatalogController>> loggerMock;
         private readonly Mock<IUserRedisRepository> userRedisRepositoryMock;
 
-        public CatalogoControllerTest() : base()
+        public CatalogControllerTest() : base()
         {
-            catalogoServiceMock = new Mock<ICatalogoService>();
-            loggerMock = new Mock<ILogger<CatalogoController>>();
+            catalogServiceMock = new Mock<ICatalogService>();
+            loggerMock = new Mock<ILogger<CatalogController>>();
             userRedisRepositoryMock = new Mock<IUserRedisRepository>(); ;
     }
 
@@ -32,16 +32,16 @@ namespace MVC.Test
         {
             //arrange
             IList<Produto> fakeProdutos = GetFakeProdutos();
-            catalogoServiceMock
+            catalogServiceMock
                 .Setup(s => s.GetProdutos())
                 .ReturnsAsync(fakeProdutos)
                .Verifiable();
 
-            var catalogoController = 
-                new CatalogoController(catalogoServiceMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
+            var catalogController = 
+                new CatalogController(catalogServiceMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
 
             //act
-            var resultado = await catalogoController.Index();
+            var resultado = await catalogController.Index();
 
             //assert
             var viewResult = Assert.IsType<ViewResult>(resultado);
@@ -52,47 +52,47 @@ namespace MVC.Test
                                item => Assert.Equal(fakeProdutos[1].Codigo, item.Codigo),
                                item => Assert.Equal(fakeProdutos[2].Codigo, item.Codigo)
                 );
-            catalogoServiceMock.Verify();
+            catalogServiceMock.Verify();
         }
 
         [Fact]
         public async Task Index_BrokenCircuitException()
         {
             //arrange
-            catalogoServiceMock
+            catalogServiceMock
                 .Setup(s => s.GetProdutos())
                 .ThrowsAsync(new BrokenCircuitException());
 
             //act
-            var catalogoController =
-                new CatalogoController(catalogoServiceMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
+            var catalogController =
+                new CatalogController(catalogServiceMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
 
-            var result = await catalogoController.Index();
+            var result = await catalogController.Index();
             var model = result as IList<Produto>;
 
             //assert
             Assert.Null(model);
-            Assert.True(!string.IsNullOrWhiteSpace(catalogoController.ViewBag.MsgServicoIndisponivel));
+            Assert.True(!string.IsNullOrWhiteSpace(catalogController.ViewBag.MsgServicoIndisponivel));
         }
 
         [Fact]
         public async Task Index_Exception()
         {
             //arrange
-            catalogoServiceMock
+            catalogServiceMock
                 .Setup(s => s.GetProdutos())
                 .ThrowsAsync(new Exception());
 
             //act
-            var catalogoController =
-                new CatalogoController(catalogoServiceMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
+            var catalogController =
+                new CatalogController(catalogServiceMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
 
-            var result = await catalogoController.Index();
+            var result = await catalogController.Index();
             var model = result as IList<Produto>;
 
             //assert
             Assert.Null(model);
-            Assert.True(!string.IsNullOrWhiteSpace(catalogoController.ViewBag.MsgServicoIndisponivel));
+            Assert.True(!string.IsNullOrWhiteSpace(catalogController.ViewBag.MsgServicoIndisponivel));
         }
     }
 }

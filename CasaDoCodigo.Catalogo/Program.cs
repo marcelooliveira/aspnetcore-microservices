@@ -9,13 +9,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace Catalogo.API
+namespace Catalog.API
 {
     public class Program
     {
         public static async Task Main(string[] args)
         {
-            Console.Title = "Catalogo.API";
+            Console.Title = "Catalog.API";
 
             IWebHost host = BuildWebHost(args);
             await SeedData.EnsureSeedData(host.Services);

@@ -12,17 +12,17 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Controllers
 {
-    public class CatalogoController : BaseController
+    public class CatalogController : BaseController
     {
-        private readonly ICatalogoService catalogoService;
+        private readonly ICatalogService catalogService;
 
-        public CatalogoController
-            (ICatalogoService catalogoService,
-            ILogger<CatalogoController> logger,
+        public CatalogController
+            (ICatalogService catalogService,
+            ILogger<CatalogController> logger,
             IUserRedisRepository repository)
             : base(logger, repository)
         {
-            this.catalogoService = catalogoService;
+            this.catalogService = catalogService;
         }
 
         public async Task<IActionResult> Index()
@@ -31,14 +31,14 @@ namespace CasaDoCodigo.Controllers
 
             try
             {
-                var produtos = await catalogoService.GetProdutos();
+                var produtos = await catalogService.GetProdutos();
                 var resultado = new BuscaProdutosViewModel(produtos, "");
                 return base.View(resultado);
             }
             catch (BrokenCircuitException e)
             {
                 logger.LogError(e, e.Message);
-                HandleBrokenCircuitException(catalogoService);
+                HandleBrokenCircuitException(catalogService);
             }
             catch (Exception e)
             {
@@ -55,14 +55,14 @@ namespace CasaDoCodigo.Controllers
 
             try
             {
-                var produtos = await catalogoService.BuscaProdutos(pesquisa);
+                var produtos = await catalogService.BuscaProdutos(pesquisa);
                 var resultado = new BuscaProdutosViewModel(produtos, pesquisa);
                 return View("Index", resultado);
             }
             catch (BrokenCircuitException e)
             {
                 logger.LogError(e, e.Message);
-                HandleBrokenCircuitException(catalogoService);
+                HandleBrokenCircuitException(catalogService);
             }
             catch (Exception e)
             {

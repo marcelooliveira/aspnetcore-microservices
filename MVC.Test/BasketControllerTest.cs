@@ -22,14 +22,14 @@ namespace MVC.Test
     public class BasketControllerTest : BaseControllerTest
     {
         private readonly Mock<ILogger<BasketController>> loggerMock;
-        private readonly Mock<ICatalogoService> catalogoServiceMock;
+        private readonly Mock<ICatalogService> catalogServiceMock;
         private readonly Mock<IBasketService> basketServiceMock;
         private readonly Mock<IUserRedisRepository> userRedisRepositoryMock;
 
         public BasketControllerTest() : base()
         {
             loggerMock = new Mock<ILogger<BasketController>>();
-            catalogoServiceMock = new Mock<ICatalogoService>();
+            catalogServiceMock = new Mock<ICatalogService>();
             basketServiceMock = new Mock<IBasketService>();
             userRedisRepositoryMock = new Mock<IUserRedisRepository>();
         }
@@ -42,7 +42,7 @@ namespace MVC.Test
             var clienteId = "cliente_id";
             var produtos = GetFakeProdutos();
             var testProduct = produtos[0];
-            catalogoServiceMock
+            catalogServiceMock
                 .Setup(c => c.GetProduto(testProduct.Codigo))
                 .ReturnsAsync(testProduct)
                 .Verifiable();
@@ -67,7 +67,7 @@ namespace MVC.Test
             var viewResult = Assert.IsType<ViewResult>(result);
             var model = Assert.IsAssignableFrom<BasketCliente>(viewResult.Model);
             Assert.Equal(model.Itens[0].ProdutoNome, produtos[0].Nome);
-            catalogoServiceMock.Verify();
+            catalogServiceMock.Verify();
         }
 
         [Fact]
@@ -109,7 +109,7 @@ namespace MVC.Test
             var clienteId = "cliente_id";
             var produtos = GetFakeProdutos();
             var testProduct = produtos[0];
-            catalogoServiceMock
+            catalogServiceMock
                 .Setup(c => c.GetProduto(It.IsAny<string>()))
                 .ThrowsAsync(new BrokenCircuitException())
                 .Verifiable();
@@ -135,7 +135,7 @@ namespace MVC.Test
             var viewResult = Assert.IsType<ViewResult>(result);
             loggerMock.Verify(l => l.Log(LogLevel.Error, It.IsAny<EventId>(), It.IsAny<FormattedLogValues>(), It.IsAny<Exception>(), It.IsAny<Func<object, Exception, string>>()), Times.Once);
             Assert.True(!string.IsNullOrWhiteSpace(controller.ViewBag.MsgServicoIndisponivel as string));
-            catalogoServiceMock.Verify();
+            catalogServiceMock.Verify();
         }
 
         [Fact]
@@ -145,7 +145,7 @@ namespace MVC.Test
             var clienteId = "cliente_id";
             var produtos = GetFakeProdutos();
             var testProduct = produtos[0];
-            catalogoServiceMock
+            catalogServiceMock
                 .Setup(c => c.GetProduto(testProduct.Codigo))
                 .ReturnsAsync((Produto)null)
                 .Verifiable();
@@ -161,7 +161,7 @@ namespace MVC.Test
             Assert.Equal("ProdutoNaoEncontrado", redirectToActionResult.ActionName);
             Assert.Equal("Basket", redirectToActionResult.ControllerName);
             Assert.Equal(redirectToActionResult.Fragment, testProduct.Codigo);
-            catalogoServiceMock.Verify();
+            catalogServiceMock.Verify();
         }
         #endregion
 
@@ -186,7 +186,7 @@ namespace MVC.Test
             //assert
             var okObjectResult = Assert.IsType<OkObjectResult>(result);
             Assert.IsType<UpdateQuantidadeOutput>(okObjectResult.Value);
-            catalogoServiceMock.Verify();
+            catalogServiceMock.Verify();
 
         }
 
@@ -211,7 +211,7 @@ namespace MVC.Test
             //assert
             var badRequestObjectResult = Assert.IsType<BadRequestObjectResult>(result);
             Assert.IsType<SerializableError>(badRequestObjectResult.Value);
-            catalogoServiceMock.Verify();
+            catalogServiceMock.Verify();
 
         }
 
@@ -235,7 +235,7 @@ namespace MVC.Test
             //assert
             var notFoundObjectResult = Assert.IsType<NotFoundObjectResult>(result);
             Assert.Equal(updateQuantidadeInput, notFoundObjectResult.Value);
-            catalogoServiceMock.Verify();
+            catalogServiceMock.Verify();
 
         }
         #endregion
@@ -287,7 +287,7 @@ namespace MVC.Test
             ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);
             loggerMock.Verify(l => l.Log(LogLevel.Error, It.IsAny<EventId>(), It.IsAny<FormattedLogValues>(), It.IsAny<Exception>(), It.IsAny<Func<object, Exception, string>>()), Times.Once);
             Assert.True(!string.IsNullOrWhiteSpace(controller.ViewBag.MsgServicoIndisponivel as string));
-            catalogoServiceMock.Verify();
+            catalogServiceMock.Verify();
 
         }
 
@@ -308,7 +308,7 @@ namespace MVC.Test
             ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);
             loggerMock.Verify(l => l.Log(LogLevel.Error, It.IsAny<EventId>(), It.IsAny<FormattedLogValues>(), It.IsAny<Exception>(), It.IsAny<Func<object, Exception, string>>()), Times.Once);
             Assert.True(!string.IsNullOrWhiteSpace(controller.ViewBag.MsgServicoIndisponivel as string));
-            catalogoServiceMock.Verify();
+            catalogServiceMock.Verify();
 
         }
         #endregion
@@ -358,7 +358,7 @@ namespace MVC.Test
 
         private BasketController GetBasketController()
         {
-            return new BasketController(contextAccessorMock.Object, appUserParserMock.Object, loggerMock.Object, catalogoServiceMock.Object, basketServiceMock.Object, userRedisRepositoryMock.Object);
+            return new BasketController(contextAccessorMock.Object, appUserParserMock.Object, loggerMock.Object, catalogServiceMock.Object, basketServiceMock.Object, userRedisRepositoryMock.Object);
         }
     }
 }

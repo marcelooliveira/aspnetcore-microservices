@@ -1,4 +1,4 @@
-﻿namespace Catalogo.API.Queries
+﻿namespace Catalog.API.Queries
 {
     public class Produto
     {

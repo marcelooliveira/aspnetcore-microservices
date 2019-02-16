@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Services
 {
-    public class CatalogoService : BaseHttpService, ICatalogoService
+    public class CatalogService : BaseHttpService, ICatalogService
     {
         class ApiUris
         {
@@ -21,17 +21,17 @@ namespace CasaDoCodigo.Services
             public static string BuscaProdutos => "api/busca";
         }
 
-        private readonly ILogger<CatalogoService> _logger;
+        private readonly ILogger<CatalogService> _logger;
 
-        public CatalogoService(
+        public CatalogService(
             IConfiguration configuration
             , HttpClient httpClient
             , ISessionHelper sessionHelper
-            , ILogger<CatalogoService> logger)
+            , ILogger<CatalogService> logger)
             : base(configuration, httpClient, sessionHelper)
         {
             _logger = logger;
-            _baseUri = _configuration["CatalogoUrl"];
+            _baseUri = _configuration["CatalogUrl"];
         }
 
         public async Task<IList<Models.Produto>> GetProdutos()
@@ -52,6 +52,6 @@ namespace CasaDoCodigo.Services
             return await GetAsync<Produto>(ApiUris.GetProduto, codigo);
         }
 
-        public override string Scope => "Catalogo.API";
+        public override string Scope => "Catalog.API";
     }
 }

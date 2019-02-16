@@ -7,7 +7,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Catalogo.API.Queries
+namespace Catalog.API.Queries
 {
     public class ProdutoQueries : IProdutoQueries
     {
