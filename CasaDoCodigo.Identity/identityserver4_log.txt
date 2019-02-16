@@ -35997,3 +35997,44 @@ System.InvalidOperationException: Unable to resolve service for type 'Microsoft.
 2019-02-12 23:47:44.283 -02:00 [DBG] Using Identity.External as default scheme for sign-out
 2019-02-12 23:47:44.283 -02:00 [DBG] Using Identity.Application as default scheme for challenge
 2019-02-12 23:47:44.283 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-16 00:17:30.472 -02:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'CadastroEvent'
+2019-02-16 00:21:31.690 -02:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'CadastroEvent'
+2019-02-16 00:22:41.820 -02:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'CadastroEvent'
+2019-02-16 00:22:43.434 -02:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-16 00:22:43.508 -02:00 [INF] Setting number of workers to 1
+2019-02-16 00:22:43.608 -02:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-16 00:22:43.742 -02:00 [INF] Bus Rebus 1 started
+2019-02-16 00:22:43.772 -02:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-16 00:22:43.875 -02:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-16 00:22:43.902 -02:00 [INF] Successfully initialized consumer for CadastroEvent
+2019-02-16 00:22:43.946 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-16 00:22:43.946 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-16 00:22:43.946 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-16 00:22:43.946 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-16 00:22:43.946 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-16 00:54:29.403 -02:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'CadastroEvent'
+2019-02-16 00:54:30.784 -02:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-16 00:54:30.832 -02:00 [INF] Setting number of workers to 1
+2019-02-16 00:54:30.859 -02:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-16 00:54:30.920 -02:00 [INF] Bus Rebus 1 started
+2019-02-16 00:54:30.952 -02:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-16 00:54:31.166 -02:00 [INF] Successfully initialized consumer for CadastroEvent
+2019-02-16 00:54:31.245 -02:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-16 00:54:31.277 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-16 00:54:31.277 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-16 00:54:31.278 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-16 00:54:31.278 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-16 00:54:31.278 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-16 00:57:52.223 -02:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'CadastroEvent'
+2019-02-16 00:57:54.326 -02:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-16 00:57:54.485 -02:00 [INF] Setting number of workers to 1
+2019-02-16 00:57:54.546 -02:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-16 00:57:54.900 -02:00 [INF] Bus Rebus 1 started
+2019-02-16 00:57:54.994 -02:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-16 00:57:55.173 -02:00 [INF] Successfully initialized consumer for CadastroEvent
+2019-02-16 00:57:55.442 -02:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-16 00:57:55.476 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-16 00:57:55.476 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-16 00:57:55.476 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-16 00:57:55.476 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-16 00:57:55.476 -02:00 [DBG] Using Identity.Application as default scheme for forbid

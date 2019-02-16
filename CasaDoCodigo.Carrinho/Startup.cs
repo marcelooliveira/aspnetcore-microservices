@@ -126,7 +126,8 @@ namespace Carrinho.API
                 .AddRedis(
                     Configuration["RedisConnectionString"],
                     name: "redis-check",
-                    tags: new string[] { "redis" });
+                    tags: new string[] { "redis" })
+                .AddRabbitMQ(Configuration["RabbitMQConnectionString"]);
 
             var containerBuilder = new ContainerBuilder();
             containerBuilder.Populate(services);
