@@ -36881,3 +36881,36 @@ System.InvalidOperationException: Unable to resolve service for type 'Microsoft.
 2019-02-16 15:14:58.535 -02:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"3c60b28f-3fa7-473b-9679-8ba5287a70bb","CreationDate":"2019-02-16T17:14:58.4750299Z"}
 2019-02-16 15:14:58.535 -02:00 [INF] ----------------------------------
 2019-02-16 15:14:59.906 -02:00 [DBG] Dispatching CasaDoCodigo.Mensagens.IntegrationEvents.Events.CadastroEvent, CasaDoCodigo.Mensagens e2e7811e-1248-41a3-8e0c-e21cbbb22d9e to 1 handlers took 1389 ms
+2019-02-16 16:15:26.286 -02:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'CadastroEvent'
+2019-02-16 16:15:27.669 -02:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-16 16:15:27.804 -02:00 [INF] Setting number of workers to 1
+2019-02-16 16:15:27.827 -02:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-16 16:15:27.929 -02:00 [INF] Bus Rebus 1 started
+2019-02-16 16:15:28.009 -02:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-16 16:15:28.110 -02:00 [INF] Successfully initialized consumer for CadastroEvent
+2019-02-16 16:15:35.747 -02:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'CadastroEvent'
+2019-02-16 16:15:36.399 -02:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-16 16:15:36.423 -02:00 [INF] Setting number of workers to 1
+2019-02-16 16:15:36.425 -02:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-16 16:15:36.469 -02:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-16 16:15:36.483 -02:00 [INF] Bus Rebus 1 started
+2019-02-16 16:15:36.710 -02:00 [INF] Successfully initialized consumer for CadastroEvent
+2019-02-16 16:15:36.777 -02:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-16 16:15:36.795 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-16 16:15:36.795 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-16 16:15:36.795 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-16 16:15:36.795 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-16 16:15:36.796 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-16 16:16:06.647 -02:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'CadastroEvent'
+2019-02-16 16:16:07.940 -02:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-16 16:16:08.146 -02:00 [INF] Setting number of workers to 1
+2019-02-16 16:16:08.188 -02:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-16 16:16:08.311 -02:00 [INF] Bus Rebus 1 started
+2019-02-16 16:16:08.334 -02:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-16 16:16:08.524 -02:00 [INF] Successfully initialized consumer for CadastroEvent
+2019-02-16 16:16:08.570 -02:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-16 16:16:08.601 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-16 16:16:08.601 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-16 16:16:08.601 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-16 16:16:08.601 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-16 16:16:08.601 -02:00 [DBG] Using Identity.Application as default scheme for forbid
