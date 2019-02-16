@@ -85,7 +85,7 @@ namespace CasaDoCodigo.Ordering
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "Casa do Código - Ordering API",
+                    Title = "The Grocery Store - Ordering API",
                     Description = "Uma API contendo funcionalidades da aplicação de e-Commerce:" +
                     "Criação de pedidos.",
                     TermsOfService = "Nenhum",
@@ -170,7 +170,7 @@ namespace CasaDoCodigo.Ordering
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Casa do Código - Ordering v1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "The Grocery Store - Ordering v1");
             });
 
             app.UseAuthentication();

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Basket.API.Controllers
 {
     /// <summary>
-    /// Fornece funcionalidades do basket de compras da Casa do Código
+    /// Fornece funcionalidades do basket de compras da The Grocery Store
     /// </summary>
     [Route("api/[controller]")]
     [Authorize]

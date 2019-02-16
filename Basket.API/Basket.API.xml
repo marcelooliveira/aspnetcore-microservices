@@ -6,7 +6,7 @@
     <members>
         <member name="T:Basket.API.Controllers.BasketController">
             <summary>
-            Fornece funcionalidades do basket de compras da Casa do Código
+            Fornece funcionalidades do basket de compras da The Grocery Store
             </summary>
         </member>
         <member name="M:Basket.API.Controllers.BasketController.Get(System.String)">

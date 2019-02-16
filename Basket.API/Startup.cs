@@ -68,7 +68,7 @@ namespace Basket.API
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "Casa do Código - Basket",
+                    Title = "The Grocery Store - Basket",
                     Description = "Uma API contendo funcionalidades da basket de e-Commerce.",
                     TermsOfService = "Nenhum",
                     Contact = new Contact
@@ -164,7 +164,7 @@ namespace Basket.API
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Casa do Código - Basket v1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "The Grocery Store - Basket v1");
             });
 
             app.UseAuthentication();

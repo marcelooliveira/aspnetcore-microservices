@@ -45,7 +45,7 @@ namespace Catalog.API
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "Casa do Código - Catalog",
+                    Title = "The Grocery Store - Catalog",
                     Description = "API do catálogo de produtos",
                     TermsOfService = "Nenhum",
                     Contact = new Contact
@@ -97,7 +97,7 @@ namespace Catalog.API
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Casa do Código - Catalog");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "The Grocery Store - Catalog");
             });
 
             SQLitePCL.Batteries_V2.Init();
