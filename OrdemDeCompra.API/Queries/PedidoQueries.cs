@@ -1,8 +1,8 @@
-﻿using CasaDoCodigo.OrdemDeCompra.Models;
+﻿using CasaDoCodigo.Ordering.Models;
 using System;
 using System.Collections.Generic;
 
-namespace OrdemDeCompra.API.Queries
+namespace Ordering.API.Queries
 {
     public class PedidoQueries : IPedidoQueries
     {

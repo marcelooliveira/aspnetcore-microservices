@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace OrdemDeCompra.API.Migrations
+namespace Ordering.API.Migrations
 {
     public partial class Inicial : Migration
     {

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CasaDoCodigo.OrdemDeCompra.Models
+namespace CasaDoCodigo.Ordering.Models
 {
     public class Pedido : BaseModel
     {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
 using MVC.Model.Redis;
-using OrdemDeCompra.API.Models;
+using Ordering.API.Models;
 using System.Collections.Generic;
 using System.Security.Principal;
 using System.Threading.Tasks;

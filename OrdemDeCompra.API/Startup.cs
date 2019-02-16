@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using CasaDoCodigo.Mensagens.EventHandling;
 using CasaDoCodigo.Mensagens.Events;
-using CasaDoCodigo.OrdemDeCompra.Commands;
-using CasaDoCodigo.OrdemDeCompra.Repositories;
+using CasaDoCodigo.Ordering.Commands;
+using CasaDoCodigo.Ordering.Repositories;
 using HealthChecks.UI.Client;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
@@ -19,7 +19,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
-using OrdemDeCompra.API.SignalR;
+using Ordering.API.SignalR;
 using Rebus.Config;
 using Rebus.ServiceProvider;
 using Swashbuckle.AspNetCore.Swagger;
@@ -33,7 +33,7 @@ using System.Reflection;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.OrdemDeCompra
+namespace CasaDoCodigo.Ordering
 {
     public class Startup
     {
@@ -60,8 +60,8 @@ namespace CasaDoCodigo.OrdemDeCompra
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy())
                 .AddSqlServer(Configuration["ConnectionString"],
-                    name: "Ordem de Compra DB Check",
-                    tags: new string[] { "OrdemDeCompraDB" })
+                    name: "Ordering DB Check",
+                    tags: new string[] { "OrderingDB" })
                 .AddRabbitMQ(Configuration["RabbitMQConnectionString"]);
 
             services.AddAutoMapper();
@@ -70,7 +70,7 @@ namespace CasaDoCodigo.OrdemDeCompra
                 .AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.ApiName = "OrdemDeCompra.API";
+                    options.ApiName = "Ordering.API";
                     options.ApiSecret = "secret";
                     options.Authority = Configuration["IdentityUrl"];
                     //options.BackchannelHttpHandler = new HttpClientHandler() { Proxy = new WebProxy(Configuration["System:Proxy"]) };
@@ -85,7 +85,7 @@ namespace CasaDoCodigo.OrdemDeCompra
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "Casa do Código - Ordem de Compra API",
+                    Title = "Casa do Código - Ordering API",
                     Description = "Uma API contendo funcionalidades da aplicação de e-Commerce:" +
                     "Criação de pedidos.",
                     TermsOfService = "Nenhum",
@@ -170,7 +170,7 @@ namespace CasaDoCodigo.OrdemDeCompra
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Casa do Código - Ordem de Compra v1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Casa do Código - Ordering v1");
             });
 
             app.UseAuthentication();

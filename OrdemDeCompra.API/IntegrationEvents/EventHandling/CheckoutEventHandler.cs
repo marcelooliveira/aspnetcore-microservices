@@ -1,6 +1,6 @@
 ﻿using CasaDoCodigo.Mensagens.Events;
 using CasaDoCodigo.Mensagens.IntegrationEvents;
-using CasaDoCodigo.OrdemDeCompra.Commands;
+using CasaDoCodigo.Ordering.Commands;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Rebus.Handlers;

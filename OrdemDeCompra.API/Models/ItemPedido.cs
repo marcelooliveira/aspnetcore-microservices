@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
-namespace CasaDoCodigo.OrdemDeCompra.Models
+namespace CasaDoCodigo.Ordering.Models
 {
     [DataContract]
     public class ItemPedido : BaseModel

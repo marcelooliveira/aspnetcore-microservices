@@ -26,7 +26,7 @@ namespace Identity.API
             {
                 new ApiResource("Basket.API", "Basket da CasaDoCodigo"),
                 new ApiResource("CasaDoCodigo.API", "API CasaDoCodigo"),
-                new ApiResource("OrdemDeCompra.API", "Ordem de Compra da CasaDoCodigo")
+                new ApiResource("Ordering.API", "Ordering da CasaDoCodigo")
             };
         }
 
@@ -57,7 +57,7 @@ namespace Identity.API
                         IdentityServerConstants.StandardScopes.Profile,
                         "Basket.API",
                         "CasaDoCodigo.API",
-                        "OrdemDeCompra.API"
+                        "Ordering.API"
                     },
                     AllowOfflineAccess = true
                 }

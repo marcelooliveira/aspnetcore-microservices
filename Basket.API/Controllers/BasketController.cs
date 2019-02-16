@@ -185,7 +185,7 @@ namespace Basket.API.Controllers
                     , itens);
 
             // Assim que fazemos a finalização, envia um evento de integração para
-            // API OrdemDeCompra converter o basket em pedido e continuar com
+            // API Ordering converter o basket em pedido e continuar com
             // processo de criação de pedido
             await _bus.Publish(checkoutEvent);
 

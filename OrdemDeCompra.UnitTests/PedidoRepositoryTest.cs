@@ -1,6 +1,6 @@
-using CasaDoCodigo.OrdemDeCompra;
-using CasaDoCodigo.OrdemDeCompra.Models;
-using CasaDoCodigo.OrdemDeCompra.Repositories;
+using CasaDoCodigo.Ordering;
+using CasaDoCodigo.Ordering.Models;
+using CasaDoCodigo.Ordering.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using System;
@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace OrdemDeCompra.UnitTests
+namespace Ordering.UnitTests
 {
     public class PedidoRepositoryTest
     {

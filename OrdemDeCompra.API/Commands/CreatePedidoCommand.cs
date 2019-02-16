@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.OrdemDeCompra.Commands
+namespace CasaDoCodigo.Ordering.Commands
 {
     public class CreatePedidoCommand
         : IRequest<bool>

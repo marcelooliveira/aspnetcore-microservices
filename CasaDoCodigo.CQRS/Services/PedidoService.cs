@@ -24,7 +24,7 @@ namespace CasaDoCodigo.Services
             this.configuration = configuration;
             this.httpClient = httpClient;
             this.sessionHelper = sessionHelper;
-            _baseUri = _configuration["OrdemDeCompraUrl"];
+            _baseUri = _configuration["OrderingUrl"];
         }
 
         class Uris
@@ -37,6 +37,6 @@ namespace CasaDoCodigo.Services
             return await GetAuthenticatedAsync<List<PedidoDTO>>(Uris.GetPedidos, clienteId);
         }
 
-        public override string Scope => "OrdemDeCompra.API";
+        public override string Scope => "Ordering.API";
     }
 }

@@ -5,25 +5,25 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.Configuration;
-using CasaDoCodigo.OrdemDeCompra.Models;
-using CasaDoCodigo.OrdemDeCompra.Models.DTOs;
-using CasaDoCodigo.OrdemDeCompra.Repositories;
+using CasaDoCodigo.Ordering.Models;
+using CasaDoCodigo.Ordering.Models.DTOs;
+using CasaDoCodigo.Ordering.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using OrdemDeCompra.API.Models;
+using Ordering.API.Models;
 
-namespace CasaDoCodigo.OrdemDeCompra.Controllers
+namespace CasaDoCodigo.Ordering.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrdemDeCompraController : ControllerBase
+    public class OrderingController : ControllerBase
     {
         private readonly IPedidoRepository pedidoRepository;
         private readonly IMapper mapper;
 
         public object JwtClaimTypes { get; private set; }
 
-        public OrdemDeCompraController(IPedidoRepository pedidoRepository, IMapper mapper)
+        public OrderingController(IPedidoRepository pedidoRepository, IMapper mapper)
         {
             this.pedidoRepository = pedidoRepository;
             this.mapper = mapper;

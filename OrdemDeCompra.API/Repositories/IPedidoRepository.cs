@@ -1,9 +1,9 @@
-﻿using CasaDoCodigo.OrdemDeCompra.Models;
-using CasaDoCodigo.OrdemDeCompra.Models.DTOs;
+﻿using CasaDoCodigo.Ordering.Models;
+using CasaDoCodigo.Ordering.Models.DTOs;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.OrdemDeCompra.Repositories
+namespace CasaDoCodigo.Ordering.Repositories
 {
     public interface IPedidoRepository
     {

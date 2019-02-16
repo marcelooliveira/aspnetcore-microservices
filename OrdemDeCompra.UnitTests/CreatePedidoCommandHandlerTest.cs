@@ -1,7 +1,7 @@
 ﻿using CasaDoCodigo.Mensagens.Commands;
-using CasaDoCodigo.OrdemDeCompra.Commands;
-using CasaDoCodigo.OrdemDeCompra.Models;
-using CasaDoCodigo.OrdemDeCompra.Repositories;
+using CasaDoCodigo.Ordering.Commands;
+using CasaDoCodigo.Ordering.Models;
+using CasaDoCodigo.Ordering.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -13,7 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace OrdemDeCompra.UnitTests
+namespace Ordering.UnitTests
 {
     public class CreatePedidoCommandHandlerTest
     {

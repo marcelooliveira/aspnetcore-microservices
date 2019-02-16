@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CasaDoCodigo.CQRS\MVC.csproj" />
-    <ProjectReference Include="..\OrdemDeCompra.API\OrdemDeCompra.API.csproj" />
+    <ProjectReference Include="..\OrdemDeCompra.API\Ordering.API.csproj" />
   </ItemGroup>
 
 </Project>

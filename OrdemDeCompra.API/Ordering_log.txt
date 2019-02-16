@@ -1,0 +1,24 @@
+2019-02-16 17:25:13.675 -02:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-16 17:25:24.924 -02:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'CadastroEvent'
+2019-02-16 17:25:25.668 -02:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-16 17:25:25.771 -02:00 [INF] Starting bus 1
+2019-02-16 17:25:25.787 -02:00 [INF] Setting number of workers to 1
+2019-02-16 17:25:25.800 -02:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-16 17:25:25.845 -02:00 [INF] Started
+2019-02-16 17:25:25.861 -02:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-16 17:25:25.993 -02:00 [INF] Successfully initialized consumer for CadastroEvent
+2019-02-16 17:25:27.440 -02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-16 17:25:27.445 -02:00 [WRN] Failed to determine the https port for redirect.
+2019-02-16 17:27:29.040 -02:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-16 17:27:33.739 -02:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'CadastroEvent'
+2019-02-16 17:27:34.598 -02:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-16 17:27:35.069 -02:00 [INF] Starting bus 1
+2019-02-16 17:27:35.150 -02:00 [INF] Setting number of workers to 1
+2019-02-16 17:27:35.192 -02:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-16 17:27:35.287 -02:00 [INF] Started
+2019-02-16 17:27:35.352 -02:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-16 17:27:35.617 -02:00 [INF] Successfully initialized consumer for CadastroEvent
+2019-02-16 17:27:39.317 -02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-16 17:27:39.330 -02:00 [WRN] Failed to determine the https port for redirect.
+2019-02-16 17:27:50.344 -02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-16 17:28:01.063 -02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.

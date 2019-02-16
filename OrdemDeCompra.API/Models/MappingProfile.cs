@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using CasaDoCodigo.OrdemDeCompra.Models;
-using CasaDoCodigo.OrdemDeCompra.Models.DTOs;
+using CasaDoCodigo.Ordering.Models;
+using CasaDoCodigo.Ordering.Models.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OrdemDeCompra.API.Models
+namespace Ordering.API.Models
 {
     public class MappingProfile : Profile
     {

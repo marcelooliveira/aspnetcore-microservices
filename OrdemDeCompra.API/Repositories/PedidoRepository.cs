@@ -1,5 +1,5 @@
-﻿using CasaDoCodigo.OrdemDeCompra;
-using CasaDoCodigo.OrdemDeCompra.Models;
+﻿using CasaDoCodigo.Ordering;
+using CasaDoCodigo.Ordering.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.OrdemDeCompra.Repositories
+namespace CasaDoCodigo.Ordering.Repositories
 {
     public class PedidoRepository : BaseRepository<Pedido>, IPedidoRepository
     {

@@ -1,8 +1,8 @@
-﻿using CasaDoCodigo.OrdemDeCompra.Models;
+﻿using CasaDoCodigo.Ordering.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace CasaDoCodigo.OrdemDeCompra
+namespace CasaDoCodigo.Ordering
 {
     public class ApplicationContext : DbContext
     {

@@ -1,9 +1,9 @@
-﻿using CasaDoCodigo.OrdemDeCompra.Models;
+﻿using CasaDoCodigo.Ordering.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OrdemDeCompra.API.Queries
+namespace Ordering.API.Queries
 {
     public interface IPedidoQueries
     {

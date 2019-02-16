@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OrdemDeCompra.API\OrdemDeCompra.API.csproj" />
+    <ProjectReference Include="..\OrdemDeCompra.API\Ordering.API.csproj" />
   </ItemGroup>
 
 </Project>

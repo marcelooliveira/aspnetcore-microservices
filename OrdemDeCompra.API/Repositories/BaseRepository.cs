@@ -1,8 +1,8 @@
-﻿using CasaDoCodigo.OrdemDeCompra;
-using CasaDoCodigo.OrdemDeCompra.Models;
+﻿using CasaDoCodigo.Ordering;
+using CasaDoCodigo.Ordering.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CasaDoCodigo.OrdemDeCompra.Repositories
+namespace CasaDoCodigo.Ordering.Repositories
 {
     public abstract class BaseRepository<T> where T : BaseModel
     {

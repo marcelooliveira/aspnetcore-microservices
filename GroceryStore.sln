@@ -25,17 +25,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "testes", "testes", "{86602D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "testes", "testes", "{4AF230EC-1E24-4C55-89C7-74FD6A4578A4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrdemDeCompra", "OrdemDeCompra", "{74169CBC-F92A-4E85-B58C-8CF743AF87B8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{74169CBC-F92A-4E85-B58C-8CF743AF87B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "testes", "testes", "{23569E3B-B36E-4746-9E47-4887EA8AF116}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrdemDeCompra.API", "OrdemDeCompra.API\OrdemDeCompra.API.csproj", "{EA09CDC8-0E95-433B-832E-6A1BEF3EAB23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.API", "OrdemDeCompra.API\Ordering.API.csproj", "{EA09CDC8-0E95-433B-832E-6A1BEF3EAB23}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC.Test", "MVC.Test\MVC.Test.csproj", "{5EB9497A-2EE0-4135-AA25-71AD4D475841}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.UnitTests", "Catalogo.UnitTests\Catalog.UnitTests.csproj", "{4DC044A2-089B-43E2-AB9A-3EB90427F0EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrdemDeCompra.UnitTests", "OrdemDeCompra.UnitTests\OrdemDeCompra.UnitTests.csproj", "{14900792-6AFA-48F1-849A-2586CC8956D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.UnitTests", "OrdemDeCompra.UnitTests\Ordering.UnitTests.csproj", "{14900792-6AFA-48F1-849A-2586CC8956D1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebStatus", "WebStatus", "{E02DED12-324D-4B26-A5A7-37A121D0E7C4}"
 EndProject

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using System.Security.Claims;
 
-namespace OrdemDeCompra.API.SignalR
+namespace Ordering.API.SignalR
 {
     public class CustomUserIdProvider : IUserIdProvider
     {

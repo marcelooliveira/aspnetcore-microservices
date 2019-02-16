@@ -160,7 +160,7 @@ namespace CasaDoCodigo
                     };
 
                     options.Scope.Add("Basket.API");
-                    options.Scope.Add("OrdemDeCompra.API");
+                    options.Scope.Add("Ordering.API");
                     options.Scope.Add("CasaDoCodigo.API");
                     options.Scope.Add("offline_access");
                 });

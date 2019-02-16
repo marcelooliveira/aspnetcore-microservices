@@ -1,7 +1,7 @@
 ﻿using CasaDoCodigo.Mensagens.Commands;
 using CasaDoCodigo.Mensagens.IntegrationEvents.Events;
-using CasaDoCodigo.OrdemDeCompra.Models;
-using CasaDoCodigo.OrdemDeCompra.Repositories;
+using CasaDoCodigo.Ordering.Models;
+using CasaDoCodigo.Ordering.Repositories;
 using MediatR;
 using Microsoft.AspNet.SignalR.Client.Hubs;
 using Microsoft.AspNetCore.Http.Connections;
@@ -17,7 +17,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.OrdemDeCompra.Commands
+namespace CasaDoCodigo.Ordering.Commands
 {
     public class CreatePedidoCommandHandler
         : IRequestHandler<IdentifiedCommand<CreatePedidoCommand, bool>, bool>
