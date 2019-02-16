@@ -75,7 +75,7 @@
                                         <div class="produto-nome">@produto.Nome</div>
                                         <div><h4><strong>R$ @produto.Preco.ToString("0.00")</strong></h4></div>
                                         <div class="text-center">
-                                            <a asp-controller="carrinho"
+                                            <a asp-controller="basket"
                                                asp-action="index"
                                                asp-route-codigo="@produto.Codigo"
                                                class="btn btn-success">Adicionar</a>

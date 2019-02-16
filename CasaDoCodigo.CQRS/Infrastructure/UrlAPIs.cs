@@ -7,9 +7,9 @@ namespace CasaDoCodigo.Infrastructure
 {
     public static class UrlAPIs
     {
-        public static class Carrinho
+        public static class Basket
         {
-            public static string UpdateItemCarrinho(string baseUri) => $"{baseUri}/carrinho/itens";
+            public static string UpdateItemBasket(string baseUri) => $"{baseUri}/basket/itens";
         }
     }
 }

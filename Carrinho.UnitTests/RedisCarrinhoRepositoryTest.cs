@@ -1,4 +1,4 @@
-﻿using Carrinho.API.Model;
+﻿using Basket.API.Model;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Newtonsoft.Json;
@@ -11,22 +11,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Carrinho.API.Tests
+namespace Basket.API.Tests
 {
-    public class RedisCarrinhoRepositoryTest
+    public class RedisBasketRepositoryTest
     {
-        private readonly Mock<ILogger<RedisCarrinhoRepository>> loggerMock;
+        private readonly Mock<ILogger<RedisBasketRepository>> loggerMock;
         private readonly Mock<IConnectionMultiplexer> redisMock;
 
-        public RedisCarrinhoRepositoryTest()
+        public RedisBasketRepositoryTest()
         {
-            loggerMock = new Mock<ILogger<RedisCarrinhoRepository>>();
+            loggerMock = new Mock<ILogger<RedisBasketRepository>>();
             redisMock = new Mock<IConnectionMultiplexer>();
         }
 
-        #region GetCarrinhoAsync
+        #region GetBasketAsync
         [Fact]
-        public async Task GetCarrinhoAsync_success()
+        public async Task GetBasketAsync_success()
         {
             //arrange
             var json = @"{
@@ -51,14 +51,14 @@ namespace Carrinho.API.Tests
                 .Verifiable();
 
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
-            var carrinhoCliente = await repository.GetCarrinhoAsync(clienteId);
+            var basketCliente = await repository.GetBasketAsync(clienteId);
 
             //assert
-            Assert.Equal(clienteId, carrinhoCliente.ClienteId);
-            Assert.Collection(carrinhoCliente.Itens,
+            Assert.Equal(clienteId, basketCliente.ClienteId);
+            Assert.Collection(basketCliente.Itens,
                 item =>
                 {
                     Assert.Equal("001", item.ProdutoId);
@@ -70,20 +70,20 @@ namespace Carrinho.API.Tests
         }
 
         [Fact]
-        public async Task GetCarrinhoAsync_invalid_clienteId()
+        public async Task GetBasketAsync_invalid_clienteId()
         {
             //arrange
             string clienteId = "";
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act - assert
             await Assert.ThrowsAsync<ArgumentException>(
-                () => repository.GetCarrinhoAsync(clienteId));
+                () => repository.GetBasketAsync(clienteId));
         }
 
         [Fact]
-        public async Task GetCarrinhoAsync_clienteId_NotFound()
+        public async Task GetBasketAsync_clienteId_NotFound()
         {
             //arrange
             var json = @"{
@@ -114,26 +114,26 @@ namespace Carrinho.API.Tests
                 .Returns(databaseMock.Object)
                 .Verifiable();
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
-            var carrinhoCliente = await repository.GetCarrinhoAsync(clienteId);
+            var basketCliente = await repository.GetBasketAsync(clienteId);
 
             //assert
-            Assert.Equal(clienteId, carrinhoCliente.ClienteId);
-            Assert.Empty(carrinhoCliente.Itens);
+            Assert.Equal(clienteId, basketCliente.ClienteId);
+            Assert.Empty(basketCliente.Itens);
             databaseMock.Verify();
             redisMock.Verify();
         }
         #endregion
 
-        #region AddCarrinhoAsync
+        #region AddBasketAsync
         [Fact]
-        public async Task AddCarrinhoAsync_success()
+        public async Task AddBasketAsync_success()
         {
             //arrange
-            var json1 = JsonConvert.SerializeObject(new CarrinhoCliente("123") { Itens = new List<ItemCarrinho> { new ItemCarrinho("001", "001", "produto 001", 12.34m, 1) }});
-            var json2 = JsonConvert.SerializeObject(new CarrinhoCliente("123") { Itens = new List<ItemCarrinho> { new ItemCarrinho("001", "001", "produto 001", 12.34m, 1), new ItemCarrinho("002", "002", "produto 002", 12.34m, 2) } });
+            var json1 = JsonConvert.SerializeObject(new BasketCliente("123") { Itens = new List<ItemBasket> { new ItemBasket("001", "001", "produto 001", 12.34m, 1) }});
+            var json2 = JsonConvert.SerializeObject(new BasketCliente("123") { Itens = new List<ItemBasket> { new ItemBasket("001", "001", "produto 001", 12.34m, 1), new ItemBasket("002", "002", "produto 002", 12.34m, 2) } });
 
             string clienteId = "123";
             var databaseMock = new Mock<IDatabase>();
@@ -158,16 +158,16 @@ namespace Carrinho.API.Tests
                 .Verifiable();
 
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
-            ItemCarrinho item = new ItemCarrinho("002", "002", "produto 002", 12.34m, 2);
+            ItemBasket item = new ItemBasket("002", "002", "produto 002", 12.34m, 2);
 
             //act
-            var carrinhoCliente = await repository.AddCarrinhoAsync(clienteId, item);
+            var basketCliente = await repository.AddBasketAsync(clienteId, item);
 
             //assert
-            Assert.Equal(clienteId, carrinhoCliente.ClienteId);
-            Assert.Collection(carrinhoCliente.Itens,
+            Assert.Equal(clienteId, basketCliente.ClienteId);
+            Assert.Collection(basketCliente.Itens,
                 i =>
                 {
                     Assert.Equal("001", i.ProdutoId);
@@ -183,56 +183,56 @@ namespace Carrinho.API.Tests
         }
 
         [Fact]
-        public async Task AddCarrinhoAsync_invalid_item()
+        public async Task AddBasketAsync_invalid_item()
         {
             //arrange
             string clienteId = "123";
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentNullException>(
-                () => repository.AddCarrinhoAsync(clienteId, null));
+                () => repository.AddBasketAsync(clienteId, null));
         }
 
         [Fact]
-        public async Task AddCarrinhoAsync_invalid_item2()
+        public async Task AddBasketAsync_invalid_item2()
         {
             //arrange
             string clienteId = "123";
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentException>(
-                () => repository.AddCarrinhoAsync(clienteId, new ItemCarrinho() { ProdutoId = "" }));
+                () => repository.AddBasketAsync(clienteId, new ItemBasket() { ProdutoId = "" }));
         }
 
 
         [Fact]
-        public async Task AddCarrinhoAsync_negative_qty()
+        public async Task AddBasketAsync_negative_qty()
         {
             //arrange
             string clienteId = "123";
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentOutOfRangeException>(
-                () => repository.AddCarrinhoAsync(clienteId, new ItemCarrinho() { ProdutoId = "001", Quantidade = -1 }));
+                () => repository.AddBasketAsync(clienteId, new ItemBasket() { ProdutoId = "001", Quantidade = -1 }));
         }
         #endregion
 
-        #region UpdateCarrinhoAsync
+        #region UpdateBasketAsync
         [Fact]
-        public async Task UpdateCarrinhoAsync_success()
+        public async Task UpdateBasketAsync_success()
         {
             //arrange
-            var json1 = JsonConvert.SerializeObject(new CarrinhoCliente("123") { Itens = new List<ItemCarrinho> { new ItemCarrinho("001", "001", "produto 001", 12.34m, 1) } });
-            var json2 = JsonConvert.SerializeObject(new CarrinhoCliente("123") { Itens = new List<ItemCarrinho> { new ItemCarrinho("001", "001", "produto 001", 12.34m, 2) } });
+            var json1 = JsonConvert.SerializeObject(new BasketCliente("123") { Itens = new List<ItemBasket> { new ItemBasket("001", "001", "produto 001", 12.34m, 1) } });
+            var json2 = JsonConvert.SerializeObject(new BasketCliente("123") { Itens = new List<ItemBasket> { new ItemBasket("001", "001", "produto 001", 12.34m, 2) } });
 
             string clienteId = "123";
             var databaseMock = new Mock<IDatabase>();
@@ -258,16 +258,16 @@ namespace Carrinho.API.Tests
                .Verifiable();
 
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             var item = new UpdateQuantidadeInput("001", 2);
 
             //act
-            var output = await repository.UpdateCarrinhoAsync(clienteId, item);
+            var output = await repository.UpdateBasketAsync(clienteId, item);
 
             //assert
-            Assert.Equal(clienteId, output.CarrinhoCliente.ClienteId);
-            Assert.Collection(output.CarrinhoCliente.Itens,
+            Assert.Equal(clienteId, output.BasketCliente.ClienteId);
+            Assert.Collection(output.BasketCliente.Itens,
                 i =>
                 {
                     Assert.Equal("001", i.ProdutoId);
@@ -279,52 +279,52 @@ namespace Carrinho.API.Tests
         }
 
         [Fact]
-        public async Task UpdateCarrinhoAsync_invalid_item()
+        public async Task UpdateBasketAsync_invalid_item()
         {
             //arrange
             string clienteId = "123";
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentNullException>(
-                () => repository.UpdateCarrinhoAsync(clienteId, null));
+                () => repository.UpdateBasketAsync(clienteId, null));
         }
 
         [Fact]
-        public async Task UpdateCarrinhoAsync_invalid_item2()
+        public async Task UpdateBasketAsync_invalid_item2()
         {
             //arrange
             string clienteId = "123";
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentException>(
-                () => repository.UpdateCarrinhoAsync(clienteId, new UpdateQuantidadeInput() { ProdutoId = "" }));
+                () => repository.UpdateBasketAsync(clienteId, new UpdateQuantidadeInput() { ProdutoId = "" }));
         }
 
 
         [Fact]
-        public async Task UpdateCarrinhoAsync_negative_qty()
+        public async Task UpdateBasketAsync_negative_qty()
         {
             //arrange
             string clienteId = "123";
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentOutOfRangeException>(
-                () => repository.UpdateCarrinhoAsync(clienteId, new UpdateQuantidadeInput () { ProdutoId = "001", Quantidade = -1 }));
+                () => repository.UpdateBasketAsync(clienteId, new UpdateQuantidadeInput () { ProdutoId = "001", Quantidade = -1 }));
         }
         #endregion
 
-        #region DeleteCarrinhoAsync
+        #region DeleteBasketAsync
         [Fact]
-        public async Task DeleteCarrinhoAsync_success()
+        public async Task DeleteBasketAsync_success()
         {
             //arrange
             string clienteId = "123";
@@ -338,10 +338,10 @@ namespace Carrinho.API.Tests
                 .Returns(databaseMock.Object)
                 .Verifiable();
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
-            bool result = await repository.DeleteCarrinhoAsync(clienteId);
+            bool result = await repository.DeleteBasketAsync(clienteId);
 
             //assert
             Assert.True(result);
@@ -350,7 +350,7 @@ namespace Carrinho.API.Tests
         }
 
         [Fact]
-        public async Task DeleteCarrinhoAsync_failure()
+        public async Task DeleteBasketAsync_failure()
         {
             //arrange
             string clienteId = "123";
@@ -365,10 +365,10 @@ namespace Carrinho.API.Tests
                .Verifiable();
 
             var repository
-                = new RedisCarrinhoRepository(loggerMock.Object, redisMock.Object);
+                = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
-            bool result = await repository.DeleteCarrinhoAsync(clienteId);
+            bool result = await repository.DeleteBasketAsync(clienteId);
 
             //assert
             Assert.False(result);

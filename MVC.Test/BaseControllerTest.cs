@@ -27,12 +27,12 @@ namespace MVC.Test
             this.contextMock = new Mock<HttpContext>();
         }
 
-        protected ItemCarrinho GetFakeItemCarrinho()
+        protected ItemBasket GetFakeItemBasket()
         {
             var produtos = GetFakeProdutos();
             var testProduct = produtos[0];
-            var itemCarrinho = new ItemCarrinho(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 7, testProduct.UrlImagem);
-            return itemCarrinho;
+            var itemBasket = new ItemBasket(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 7, testProduct.UrlImagem);
+            return itemBasket;
         }
 
         protected IList<Produto> GetFakeProdutos()
