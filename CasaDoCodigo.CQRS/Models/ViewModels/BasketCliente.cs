@@ -6,47 +6,47 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Models.ViewModels
 {
-    public class BasketCliente
+    public class CustomerBasket
     {
-        public BasketCliente()
+        public CustomerBasket()
         {
 
         }
 
-        public BasketCliente(string clienteId, List<ItemBasket> itens)
+        public CustomerBasket(string customerId, List<BasketItem> items)
         {
-            ClienteId = clienteId;
-            Itens = itens;
+            CustomerId = customerId;
+            Items = items;
         }
 
-        public string ClienteId { get; set; }
-        public List<ItemBasket> Itens { get; set; } = new List<ItemBasket>();
-        public decimal Total => Itens.Sum(i => i.Quantidade * i.PrecoUnitario);
+        public string CustomerId { get; set; }
+        public List<BasketItem> Items { get; set; } = new List<BasketItem>();
+        public decimal Total => Items.Sum(i => i.Quantity * i.UnitPrice);
     }
 
-    public class ItemBasket
+    public class BasketItem
     {
-        public ItemBasket()
+        public BasketItem()
         {
 
         }
 
-        public ItemBasket(string id, string produtoId, string produtoNome, decimal precoUnitario, int quantidade, string urlImagem)
+        public BasketItem(string id, string productId, string productName, decimal unitPrice, int quantity, string imageURL)
         {   
             Id = id;
-            ProdutoId = produtoId;
-            ProdutoNome = produtoNome;
-            PrecoUnitario = precoUnitario;
-            Quantidade = quantidade;
-            UrlImagem = urlImagem;
+            ProductId = productId;
+            ProductName = productName;
+            UnitPrice = unitPrice;
+            Quantity = quantity;
+            ImageURL = imageURL;
         }
 
         public string Id { get; set; }
-        public string ProdutoId { get; set; }
-        public string ProdutoNome { get; set; }
-        public int Quantidade { get; set; }
-        public decimal PrecoUnitario { get; set; }
-        public decimal Subtotal => Quantidade * PrecoUnitario;
-        public string UrlImagem { get; set; }
+        public string ProductId { get; set; }
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public decimal UnitPrice { get; set; }
+        public decimal Subtotal => Quantity * UnitPrice;
+        public string ImageURL { get; set; }
     }
 }

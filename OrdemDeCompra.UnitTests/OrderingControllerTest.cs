@@ -33,21 +33,21 @@ namespace Ordering.UnitTests
 
         [Theory]
         [InlineData("", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "fone", "", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "")]
-        public async Task Post_Invalid_Pedido(string clienteId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
+        [InlineData("customerId", "", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "")]
+        public async Task Post_Invalid_Pedido(string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
         {
             //arrange
-            List<ItemPedido> itens = new List<ItemPedido> {
+            List<ItemPedido> items = new List<ItemPedido> {
                 new ItemPedido("001", "produto 001", 1, 12.34m)
             };
-            Pedido pedido = new Pedido(itens, clienteId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
+            Pedido pedido = new Pedido(items, customerId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
             var controller = new OrderingController(pedidoRepositoryMock.Object, mapper);
             controller.ModelState.AddModelError("cliente", "Required");
             //act
@@ -61,7 +61,7 @@ namespace Ordering.UnitTests
         public async Task Post_Invalid_Pedido_No_Items()
         {
             //arrange
-            Pedido pedido = new Pedido(new List<ItemPedido>(), "clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            Pedido pedido = new Pedido(new List<ItemPedido>(), "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             var controller = new OrderingController(pedidoRepositoryMock.Object, mapper);
             controller.ModelState.AddModelError("cliente", "Required");
             //act
@@ -75,7 +75,7 @@ namespace Ordering.UnitTests
         public async Task Post_Invalid_Pedido_Items_Null()
         {
             //arrange
-            Pedido pedido = new Pedido(null, "clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            Pedido pedido = new Pedido(null, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             var controller = new OrderingController(pedidoRepositoryMock.Object, mapper);
             controller.ModelState.AddModelError("cliente", "Required");
             //act
@@ -89,10 +89,10 @@ namespace Ordering.UnitTests
         public async Task Post_Invalid_Pedido_Success()
         {
             //arrange
-            List<ItemPedido> itens = new List<ItemPedido> {
+            List<ItemPedido> items = new List<ItemPedido> {
                 new ItemPedido("001", "produto 001", 1, 12.34m)
             };
-            Pedido pedido = new Pedido(itens, "clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            Pedido pedido = new Pedido(items, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             pedido.Id = 123;
             pedidoRepositoryMock
                 .Setup(r => r.CreateOrUpdate(It.IsAny<Pedido>()))
@@ -110,15 +110,15 @@ namespace Ordering.UnitTests
         [Theory]
         [InlineData("")]
         [InlineData(" ")]
-        public async Task Get_Invalid_ClienteId(string clienteId)
+        public async Task Get_Invalid_CustomerId(string customerId)
         {
             //arrange
             var controller = new OrderingController(pedidoRepositoryMock.Object, mapper);
-            SetControllerUser(clienteId, controller);
+            SetControllerUser(customerId, controller);
 
             //act
             //assert
-            await Assert.ThrowsAsync<ArgumentNullException>(async () => await controller.Get(clienteId));
+            await Assert.ThrowsAsync<ArgumentNullException>(async () => await controller.Get(customerId));
 
         }
 
@@ -147,10 +147,10 @@ namespace Ordering.UnitTests
         public async Task Get_Ok()
         {
             //arrange
-            List<ItemPedido> itens = new List<ItemPedido> {
+            List<ItemPedido> items = new List<ItemPedido> {
                 new ItemPedido("001", "produto 001", 1, 12.34m)
             };
-            Pedido pedido = new Pedido(itens, "clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            Pedido pedido = new Pedido(items, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             pedido.Id = 123;
 
             pedidoRepositoryMock
@@ -170,17 +170,17 @@ namespace Ordering.UnitTests
             Assert.Collection(pedidos,
                 (p) => Assert.Equal("123", p.Id));
 
-            Assert.Collection(pedidos[0].Itens,
+            Assert.Collection(pedidos[0].Items,
                 (i) => Assert.Equal("001", i.ProdutoCodigo));
 
             pedidoRepositoryMock.Verify();
         }
 
-        protected static void SetControllerUser(string clienteId, ControllerBase controller)
+        protected static void SetControllerUser(string customerId, ControllerBase controller)
         {
             var user = new ClaimsPrincipal(
                 new ClaimsIdentity(
-                    new Claim[] { new Claim("sub", clienteId) }
+                    new Claim[] { new Claim("sub", customerId) }
                 ));
 
             controller.ControllerContext = new ControllerContext

@@ -30,8 +30,8 @@ namespace Basket.API.Tests
         {
             //arrange
             var json = @"{
-                  ""ClienteId"": ""123"",
-                  ""Itens"": [{
+                  ""CustomerId"": ""123"",
+                  ""Items"": [{
                   ""Id"": ""001"",
                   ""ProdutoId"": ""001"",
                   ""ProdutoNome"": ""Produto 001"",
@@ -39,7 +39,7 @@ namespace Basket.API.Tests
                   ""PrecoUnitario"": 12.34}]
                 }";
 
-            string clienteId = "123";
+            string customerId = "123";
             var databaseMock = new Mock<IDatabase>();
             databaseMock
                 .Setup(d => d.StringGetAsync(It.IsAny<RedisKey>(), It.IsAny<CommandFlags>()))
@@ -54,15 +54,15 @@ namespace Basket.API.Tests
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
-            var basketCliente = await repository.GetBasketAsync(clienteId);
+            var customerBasket = await repository.GetBasketAsync(customerId);
 
             //assert
-            Assert.Equal(clienteId, basketCliente.ClienteId);
-            Assert.Collection(basketCliente.Itens,
+            Assert.Equal(customerId, customerBasket.CustomerId);
+            Assert.Collection(customerBasket.Items,
                 item =>
                 {
-                    Assert.Equal("001", item.ProdutoId);
-                    Assert.Equal(7, item.Quantidade);
+                    Assert.Equal("001", item.ProductId);
+                    Assert.Equal(7, item.Quantity);
                 });
 
             databaseMock.Verify();
@@ -70,28 +70,28 @@ namespace Basket.API.Tests
         }
 
         [Fact]
-        public async Task GetBasketAsync_invalid_clienteId()
+        public async Task GetBasketAsync_invalid_customerId()
         {
             //arrange
-            string clienteId = "";
+            string customerId = "";
             var repository
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act - assert
             await Assert.ThrowsAsync<ArgumentException>(
-                () => repository.GetBasketAsync(clienteId));
+                () => repository.GetBasketAsync(customerId));
         }
 
         [Fact]
-        public async Task GetBasketAsync_clienteId_NotFound()
+        public async Task GetBasketAsync_customerId_NotFound()
         {
             //arrange
             var json = @"{
-                  ""ClienteId"": ""123"",
-                  ""Itens"": []
+                  ""CustomerId"": ""123"",
+                  ""Items"": []
                 }";
 
-            string clienteId = "123";
+            string customerId = "123";
             var databaseMock = new Mock<IDatabase>();
             databaseMock
                 .Setup(d => d.StringSetAsync(
@@ -117,11 +117,11 @@ namespace Basket.API.Tests
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
-            var basketCliente = await repository.GetBasketAsync(clienteId);
+            var customerBasket = await repository.GetBasketAsync(customerId);
 
             //assert
-            Assert.Equal(clienteId, basketCliente.ClienteId);
-            Assert.Empty(basketCliente.Itens);
+            Assert.Equal(customerId, customerBasket.CustomerId);
+            Assert.Empty(customerBasket.Items);
             databaseMock.Verify();
             redisMock.Verify();
         }
@@ -132,10 +132,10 @@ namespace Basket.API.Tests
         public async Task AddBasketAsync_success()
         {
             //arrange
-            var json1 = JsonConvert.SerializeObject(new BasketCliente("123") { Itens = new List<ItemBasket> { new ItemBasket("001", "001", "produto 001", 12.34m, 1) }});
-            var json2 = JsonConvert.SerializeObject(new BasketCliente("123") { Itens = new List<ItemBasket> { new ItemBasket("001", "001", "produto 001", 12.34m, 1), new ItemBasket("002", "002", "produto 002", 12.34m, 2) } });
+            var json1 = JsonConvert.SerializeObject(new CustomerBasket("123") { Items = new List<BasketItem> { new BasketItem("001", "001", "produto 001", 12.34m, 1) }});
+            var json2 = JsonConvert.SerializeObject(new CustomerBasket("123") { Items = new List<BasketItem> { new BasketItem("001", "001", "produto 001", 12.34m, 1), new BasketItem("002", "002", "produto 002", 12.34m, 2) } });
 
-            string clienteId = "123";
+            string customerId = "123";
             var databaseMock = new Mock<IDatabase>();
             databaseMock
                 .Setup(d => d.StringSetAsync(
@@ -160,23 +160,23 @@ namespace Basket.API.Tests
             var repository
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
-            ItemBasket item = new ItemBasket("002", "002", "produto 002", 12.34m, 2);
+            BasketItem item = new BasketItem("002", "002", "produto 002", 12.34m, 2);
 
             //act
-            var basketCliente = await repository.AddBasketAsync(clienteId, item);
+            var customerBasket = await repository.AddBasketAsync(customerId, item);
 
             //assert
-            Assert.Equal(clienteId, basketCliente.ClienteId);
-            Assert.Collection(basketCliente.Itens,
+            Assert.Equal(customerId, customerBasket.CustomerId);
+            Assert.Collection(customerBasket.Items,
                 i =>
                 {
-                    Assert.Equal("001", i.ProdutoId);
-                    Assert.Equal(1, i.Quantidade);
+                    Assert.Equal("001", i.ProductId);
+                    Assert.Equal(1, i.Quantity);
                 },
                 i =>
                 {
-                    Assert.Equal("002", i.ProdutoId);
-                    Assert.Equal(2, i.Quantidade);
+                    Assert.Equal("002", i.ProductId);
+                    Assert.Equal(2, i.Quantity);
                 });
             databaseMock.Verify();
             redisMock.Verify();
@@ -186,28 +186,28 @@ namespace Basket.API.Tests
         public async Task AddBasketAsync_invalid_item()
         {
             //arrange
-            string clienteId = "123";
+            string customerId = "123";
             var repository
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentNullException>(
-                () => repository.AddBasketAsync(clienteId, null));
+                () => repository.AddBasketAsync(customerId, null));
         }
 
         [Fact]
         public async Task AddBasketAsync_invalid_item2()
         {
             //arrange
-            string clienteId = "123";
+            string customerId = "123";
             var repository
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentException>(
-                () => repository.AddBasketAsync(clienteId, new ItemBasket() { ProdutoId = "" }));
+                () => repository.AddBasketAsync(customerId, new BasketItem() { ProductId = "" }));
         }
 
 
@@ -215,14 +215,14 @@ namespace Basket.API.Tests
         public async Task AddBasketAsync_negative_qty()
         {
             //arrange
-            string clienteId = "123";
+            string customerId = "123";
             var repository
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentOutOfRangeException>(
-                () => repository.AddBasketAsync(clienteId, new ItemBasket() { ProdutoId = "001", Quantidade = -1 }));
+                () => repository.AddBasketAsync(customerId, new BasketItem() { ProductId = "001", Quantity = -1 }));
         }
         #endregion
 
@@ -231,10 +231,10 @@ namespace Basket.API.Tests
         public async Task UpdateBasketAsync_success()
         {
             //arrange
-            var json1 = JsonConvert.SerializeObject(new BasketCliente("123") { Itens = new List<ItemBasket> { new ItemBasket("001", "001", "produto 001", 12.34m, 1) } });
-            var json2 = JsonConvert.SerializeObject(new BasketCliente("123") { Itens = new List<ItemBasket> { new ItemBasket("001", "001", "produto 001", 12.34m, 2) } });
+            var json1 = JsonConvert.SerializeObject(new CustomerBasket("123") { Items = new List<BasketItem> { new BasketItem("001", "001", "produto 001", 12.34m, 1) } });
+            var json2 = JsonConvert.SerializeObject(new CustomerBasket("123") { Items = new List<BasketItem> { new BasketItem("001", "001", "produto 001", 12.34m, 2) } });
 
-            string clienteId = "123";
+            string customerId = "123";
             var databaseMock = new Mock<IDatabase>();
             databaseMock
                 .Setup(d => d.StringSetAsync(
@@ -260,18 +260,18 @@ namespace Basket.API.Tests
             var repository
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
-            var item = new UpdateQuantidadeInput("001", 2);
+            var item = new UpdateQuantityOutput("001", 2);
 
             //act
-            var output = await repository.UpdateBasketAsync(clienteId, item);
+            var output = await repository.UpdateBasketAsync(customerId, item);
 
             //assert
-            Assert.Equal(clienteId, output.BasketCliente.ClienteId);
-            Assert.Collection(output.BasketCliente.Itens,
+            Assert.Equal(customerId, output.CustomerBasket.CustomerId);
+            Assert.Collection(output.CustomerBasket.Items,
                 i =>
                 {
-                    Assert.Equal("001", i.ProdutoId);
-                    Assert.Equal(2, i.Quantidade);
+                    Assert.Equal("001", i.ProductId);
+                    Assert.Equal(2, i.Quantity);
                 });
 
             databaseMock.Verify();
@@ -282,28 +282,28 @@ namespace Basket.API.Tests
         public async Task UpdateBasketAsync_invalid_item()
         {
             //arrange
-            string clienteId = "123";
+            string customerId = "123";
             var repository
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentNullException>(
-                () => repository.UpdateBasketAsync(clienteId, null));
+                () => repository.UpdateBasketAsync(customerId, null));
         }
 
         [Fact]
         public async Task UpdateBasketAsync_invalid_item2()
         {
             //arrange
-            string clienteId = "123";
+            string customerId = "123";
             var repository
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentException>(
-                () => repository.UpdateBasketAsync(clienteId, new UpdateQuantidadeInput() { ProdutoId = "" }));
+                () => repository.UpdateBasketAsync(customerId, new UpdateQuantityOutput() { ProdutoId = "" }));
         }
 
 
@@ -311,14 +311,14 @@ namespace Basket.API.Tests
         public async Task UpdateBasketAsync_negative_qty()
         {
             //arrange
-            string clienteId = "123";
+            string customerId = "123";
             var repository
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentOutOfRangeException>(
-                () => repository.UpdateBasketAsync(clienteId, new UpdateQuantidadeInput () { ProdutoId = "001", Quantidade = -1 }));
+                () => repository.UpdateBasketAsync(customerId, new UpdateQuantityOutput () { ProdutoId = "001", Quantidade = -1 }));
         }
         #endregion
 
@@ -327,7 +327,7 @@ namespace Basket.API.Tests
         public async Task DeleteBasketAsync_success()
         {
             //arrange
-            string clienteId = "123";
+            string customerId = "123";
             var databaseMock = new Mock<IDatabase>();
             databaseMock
                 .Setup(d => d.KeyDeleteAsync(It.IsAny<RedisKey>(), It.IsAny<CommandFlags>()))
@@ -341,7 +341,7 @@ namespace Basket.API.Tests
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
-            bool result = await repository.DeleteBasketAsync(clienteId);
+            bool result = await repository.DeleteBasketAsync(customerId);
 
             //assert
             Assert.True(result);
@@ -353,7 +353,7 @@ namespace Basket.API.Tests
         public async Task DeleteBasketAsync_failure()
         {
             //arrange
-            string clienteId = "123";
+            string customerId = "123";
             var databaseMock = new Mock<IDatabase>();
             databaseMock
                 .Setup(d => d.KeyDeleteAsync(It.IsAny<RedisKey>(), It.IsAny<CommandFlags>()))
@@ -368,7 +368,7 @@ namespace Basket.API.Tests
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
             //act
-            bool result = await repository.DeleteBasketAsync(clienteId);
+            bool result = await repository.DeleteBasketAsync(customerId);
 
             //assert
             Assert.False(result);

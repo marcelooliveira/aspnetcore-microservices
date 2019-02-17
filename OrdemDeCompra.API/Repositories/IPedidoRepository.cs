@@ -8,6 +8,6 @@ namespace CasaDoCodigo.Ordering.Repositories
     public interface IPedidoRepository
     {
         Task<Pedido> CreateOrUpdate(Pedido pedido);
-        Task<IList<Pedido>> GetPedidos(string clienteId);
+        Task<IList<Pedido>> GetPedidos(string customerId);
     }
 }

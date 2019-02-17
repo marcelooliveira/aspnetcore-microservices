@@ -16,7 +16,7 @@ namespace CasaDoCodigo.Mensagens.Events
             , string endereco, string complemento, string bairro
             , string municipio, string uf, string cep
             , Guid requestId
-            , IList<CheckoutEventItem> itens)
+            , IList<CheckoutEventItem> items)
         {
             UserId = userId;
             UserName = userName;
@@ -29,8 +29,8 @@ namespace CasaDoCodigo.Mensagens.Events
             UF = uf;
             Cep = cep;
             RequestId = requestId;
-            Itens = 
-                itens
+            Items = 
+                items
                     .Select(i => 
                         new CheckoutEventItem(
                             i.Id, 
@@ -52,7 +52,7 @@ namespace CasaDoCodigo.Mensagens.Events
         public string UF { get; set; }
         public string Cep { get; set; }
         public Guid RequestId { get; set; }
-        public List<CheckoutEventItem> Itens { get; } = new List<CheckoutEventItem>();
+        public List<CheckoutEventItem> Items { get; } = new List<CheckoutEventItem>();
     }
 
     public class CheckoutEventItem
@@ -77,7 +77,7 @@ namespace CasaDoCodigo.Mensagens.Events
         public int Quantidade { get; set; }
         public decimal PrecoUnitario { get; set; }
         public decimal Subtotal { get; set; }
-        public string UrlImagem { get; set; }
+        public string ImageURL { get; set; }
     }
 
 }

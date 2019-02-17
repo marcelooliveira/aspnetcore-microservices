@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace Identity.API.IntegrationEvents.EventHandling
 {
-    public class CadastroEventHandler : BaseEventHandler<CadastroEvent, CadastroCommand>, IHandleMessages<CadastroEvent>
+    public class CadastroEventHandler : BaseEventHandler<RegistryEvent, CadastroCommand>, IHandleMessages<RegistryEvent>
     {
         public CadastroEventHandler(IMediator mediator, ILogger<CadastroEventHandler> logger)
             : base(mediator, logger)
         {
         }
 
-        protected override CadastroCommand GetCommand(CadastroEvent message)
+        protected override CadastroCommand GetCommand(RegistryEvent message)
         {
             return new CadastroCommand(message.UsuarioId, message.Nome, message.Email, message.Telefone, message.Endereco, message.Complemento, message.Bairro, message.Municipio, message.UF, message.CEP);
         }

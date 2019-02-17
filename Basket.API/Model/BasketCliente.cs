@@ -4,26 +4,26 @@ using System.Linq;
 
 namespace Basket.API.Model
 {
-    public class BasketCliente
+    public class CustomerBasket
     {
-        public BasketCliente()
+        public CustomerBasket()
         {
         }
 
-        public BasketCliente(string clienteId)
+        public CustomerBasket(string customerId)
         {
-            ClienteId = clienteId;
-            Itens = new List<ItemBasket>();
+            CustomerId = customerId;
+            Items = new List<BasketItem>();
         }
 
-        public BasketCliente(BasketCliente basketCliente)
+        public CustomerBasket(CustomerBasket customerBasket)
         {
-            this.ClienteId = basketCliente.ClienteId;
-            this.Itens = basketCliente.Itens;
+            this.CustomerId = customerBasket.CustomerId;
+            this.Items = customerBasket.Items;
         }
 
-        public string ClienteId { get; set; }
-        public List<ItemBasket> Itens { get; set; }
-        public decimal Total => Itens.Sum(i => i.Quantidade * i.PrecoUnitario);
+        public string CustomerId { get; set; }
+        public List<BasketItem> Items { get; set; }
+        public decimal Total => Items.Sum(i => i.Quantity * i.UnitPrice);
     }
 }

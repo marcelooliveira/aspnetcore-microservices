@@ -48,7 +48,7 @@ namespace CasaDoCodigo.Controllers
             {
                 string idUsuario = GetUserId();
 
-                BasketCliente basket;
+                CustomerBasket basket;
                 if (!string.IsNullOrWhiteSpace(codigo))
                 {
                     var produto = await catalogService.GetProduto(codigo);
@@ -57,7 +57,7 @@ namespace CasaDoCodigo.Controllers
                         return RedirectToAction("ProdutoNaoEncontrado", "Basket", codigo);
                     }
 
-                    ItemBasket itemBasket = new ItemBasket(produto.Codigo, produto.Codigo, produto.Nome, produto.Preco, 1, produto.UrlImagem);
+                    BasketItem itemBasket = new BasketItem(produto.Codigo, produto.Codigo, produto.Nome, produto.Preco, 1, produto.ImageURL);
                     basket = await basketService.AddItem(idUsuario, itemBasket);
                 }
                 else
@@ -109,13 +109,13 @@ namespace CasaDoCodigo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> UpdateQuantidade([FromBody]UpdateQuantidadeInput input)
+        public async Task<IActionResult> UpdateQuantidade([FromBody]UpdateQuantityInput input)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            UpdateQuantidadeOutput value = await basketService.UpdateItem(GetUserId(), input);
+            UpdateQuantityOutput value = await basketService.UpdateItem(GetUserId(), input);
             if (value == null)
             {
                 return NotFound(input);
@@ -132,7 +132,7 @@ namespace CasaDoCodigo.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var viewModel = new CadastroViewModel(cadastro);
+                    var viewModel = new RegistryViewModel(cadastro);
                     await basketService.Checkout(GetUserId(), viewModel);
                     return RedirectToAction("Checkout");
                 }

@@ -9,7 +9,7 @@ namespace CasaDoCodigo.Infrastructure
     {
         public static class Basket
         {
-            public static string UpdateItemBasket(string baseUri) => $"{baseUri}/basket/itens";
+            public static string UpdateItemBasket(string baseUri) => $"{baseUri}/basket/items";
         }
     }
 }

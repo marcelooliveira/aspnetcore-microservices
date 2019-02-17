@@ -26,21 +26,21 @@ namespace CasaDoCodigo.Controllers
             this.pedidoService = pedidoService;
         }
 
-        [HttpGet("{clienteId}")]
-        public async Task<ActionResult> Historico(string clienteId)
+        [HttpGet("{customerId}")]
+        public async Task<ActionResult> Historico(string customerId)
         {
             await CheckUserNotificationCount();
 
-            List<PedidoDTO> model = await pedidoService.GetAsync(clienteId);
+            List<PedidoDTO> model = await pedidoService.GetAsync(customerId);
             return base.View(model);
         }
 
         [Route("Notificacoes")]
         public async Task<ActionResult> Notificacoes()
         {
-            string clienteId = GetUserId();
-            List<Models.UserNotification> notifications = await userRedisRepository.GetUserNotificationsAsync(clienteId);
-            await userRedisRepository.MarkAllAsReadAsync(clienteId);
+            string customerId = GetUserId();
+            List<Models.UserNotification> notifications = await userRedisRepository.GetUserNotificationsAsync(customerId);
+            await userRedisRepository.MarkAllAsReadAsync(customerId);
             return View(notifications);
         }
     }

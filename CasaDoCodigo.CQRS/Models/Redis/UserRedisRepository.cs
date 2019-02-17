@@ -29,17 +29,17 @@ namespace MVC.Model.Redis
             return _redis.GetServer(endpoints.First());
         }
 
-        public async Task<List<UserNotification>> GetUserNotificationsAsync(string clienteId)
+        public async Task<List<UserNotification>> GetUserNotificationsAsync(string customerId)
         {
-            if (string.IsNullOrWhiteSpace(clienteId))
+            if (string.IsNullOrWhiteSpace(customerId))
                 throw new ArgumentException();
 
             List<UserNotification> userNotifications;
-            var data = await _database.StringGetAsync(clienteId);
+            var data = await _database.StringGetAsync(customerId);
             if (data.IsNullOrEmpty)
             {
                 userNotifications = new List<UserNotification>();
-                await UpdateUserNotificationAsync(clienteId, userNotifications);
+                await UpdateUserNotificationAsync(customerId, userNotifications);
                 return userNotifications;
             }
 
@@ -48,33 +48,33 @@ namespace MVC.Model.Redis
             return userNotifications;
         }
 
-        public async Task<List<UserNotification>> GetUnreadUserNotificationsAsync(string clienteId)
+        public async Task<List<UserNotification>> GetUnreadUserNotificationsAsync(string customerId)
         {
-            var notifications = await GetUserNotificationsAsync(clienteId);
+            var notifications = await GetUserNotificationsAsync(customerId);
             return notifications.Where(n => !n.DateVisualized.HasValue).ToList();
         }
 
-        public async Task AddUserNotificationAsync(string clienteId, UserNotification userNotification)
+        public async Task AddUserNotificationAsync(string customerId, UserNotification userNotification)
         {
-            var userNotifications = await GetUserNotificationsAsync(clienteId);
+            var userNotifications = await GetUserNotificationsAsync(customerId);
             userNotifications.Add(userNotification);
-            await UpdateUserNotificationAsync(clienteId, userNotifications);
+            await UpdateUserNotificationAsync(customerId, userNotifications);
         }
 
-        public async Task MarkAllAsReadAsync(string clienteId)
+        public async Task MarkAllAsReadAsync(string customerId)
         {
-            var notifications = await GetUserNotificationsAsync(clienteId);
+            var notifications = await GetUserNotificationsAsync(customerId);
             foreach (var notification in notifications.Where(n => !n.DateVisualized.HasValue))
             {
                 notification.DateVisualized = DateTime.Now;
             }
-            await UpdateUserNotificationAsync(clienteId, notifications);
+            await UpdateUserNotificationAsync(customerId, notifications);
         }
 
-        private async Task UpdateUserNotificationAsync(string clienteId, List<UserNotification> userNotifications)
+        private async Task UpdateUserNotificationAsync(string customerId, List<UserNotification> userNotifications)
         {
             var json = JsonConvert.SerializeObject(userNotifications);
-            await _database.StringSetAsync(clienteId, json);
+            await _database.StringSetAsync(customerId, json);
         }
     }
 }

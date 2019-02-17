@@ -27,11 +27,11 @@ namespace MVC.Test
             this.contextMock = new Mock<HttpContext>();
         }
 
-        protected ItemBasket GetFakeItemBasket()
+        protected BasketItem GetFakeItemBasket()
         {
             var produtos = GetFakeProdutos();
             var testProduct = produtos[0];
-            var itemBasket = new ItemBasket(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 7, testProduct.UrlImagem);
+            var itemBasket = new BasketItem(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 7, testProduct.ImageURL);
             return itemBasket;
         }
 
@@ -47,11 +47,11 @@ namespace MVC.Test
             };
         }
 
-        protected static void SetControllerUser(string clienteId, BaseController controller)
+        protected static void SetControllerUser(string customerId, BaseController controller)
         {
             var user = new ClaimsPrincipal(
                 new ClaimsIdentity(
-                    new Claim[] { new Claim("sub", clienteId) }
+                    new Claim[] { new Claim("sub", customerId) }
                 ));
 
             controller.ControllerContext = new ControllerContext

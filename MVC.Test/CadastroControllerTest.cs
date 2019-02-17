@@ -57,9 +57,9 @@ namespace MVC.Test
 
             //assert
             var viewResult = Assert.IsType<ViewResult>(result);
-            var model = Assert.IsAssignableFrom<CadastroViewModel>(viewResult.ViewData.Model);
-            Assert.Equal<CadastroViewModel>(model,
-                new CadastroViewModel
+            var model = Assert.IsAssignableFrom<RegistryViewModel>(viewResult.ViewData.Model);
+            Assert.Equal<RegistryViewModel>(model,
+                new RegistryViewModel
                 {
                     Bairro = "bbb",
                     CEP = "ccc",

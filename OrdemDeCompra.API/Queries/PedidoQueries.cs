@@ -6,7 +6,7 @@ namespace Ordering.API.Queries
 {
     public class PedidoQueries : IPedidoQueries
     {
-        public IList<Pedido> GetPedidos(string clienteId)
+        public IList<Pedido> GetPedidos(string customerId)
         {
             throw new NotImplementedException();
         }

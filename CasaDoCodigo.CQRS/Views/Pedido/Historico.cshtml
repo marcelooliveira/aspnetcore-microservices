@@ -50,12 +50,12 @@
             </div>
             <div class="panel-body">
 
-                @foreach (var item in pedido.Itens)
+                @foreach (var item in pedido.Items)
                 {
 
                     <div class="row row-center linha-produto" item-id="@item.ProdutoCodigo">
                         <div class="col-md-3">
-                            @*<img class="img-produto-basket" src="@(item.UrlImagem)" />*@
+                            @*<img class="img-produto-basket" src="@(item.ImageURL)" />*@
                         </div>
                         <input type="hidden" name="produtoId" value="@(item.ProdutoCodigo)" />
                         <div class="col-md-3">@(item.ProdutoNome)</div>
@@ -81,9 +81,9 @@
             <div class="panel-footer">
                 <div class="row">
                     <div class="col-md-10">
-                        <span numero-itens>
-                            Total: @(pedido.Itens.Count())
-                            itens
+                        <span numero-items>
+                            Total: @(pedido.Items.Count())
+                            items
                         </span>
                     </div>
                     <div class="col-md-2">

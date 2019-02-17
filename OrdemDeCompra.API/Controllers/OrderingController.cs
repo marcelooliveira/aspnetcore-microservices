@@ -43,19 +43,19 @@ namespace CasaDoCodigo.Ordering.Controllers
         }
 
         [Authorize]
-        [HttpGet("{clienteId}")]
-        public async Task<ActionResult> Get(string clienteId)
+        [HttpGet("{customerId}")]
+        public async Task<ActionResult> Get(string customerId)
         {
-            if (string.IsNullOrWhiteSpace(clienteId))
+            if (string.IsNullOrWhiteSpace(customerId))
             {
                 throw new ArgumentNullException();
             }
 
-            IList<Pedido> pedidos = await pedidoRepository.GetPedidos(clienteId);
+            IList<Pedido> pedidos = await pedidoRepository.GetPedidos(customerId);
 
             if (pedidos == null)
             {
-                return NotFound(clienteId);
+                return NotFound(customerId);
             }
 
             List<PedidoDTO> dto = mapper.Map<List<PedidoDTO>>(pedidos);

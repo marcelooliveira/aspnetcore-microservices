@@ -7,6 +7,6 @@ namespace Ordering.API.Queries
 {
     public interface IPedidoQueries
     {
-        IList<Pedido> GetPedidos(string clienteId);
+        IList<Pedido> GetPedidos(string customerId);
     }
 }

@@ -70,17 +70,17 @@ namespace CasaDoCodigo.Ordering.Commands
             if (guid == Guid.Empty)
                 throw new ArgumentException("Guid cannot be empty");
 
-            var itens = cmd.Itens.Select(
+            var items = cmd.Items.Select(
                     i => new ItemPedido(i.ProdutoCodigo, i.ProdutoNome, i.ProdutoQuantidade, i.ProdutoPrecoUnitario)
                 ).ToList();
 
-            if (itens.Count == 0)
+            if (items.Count == 0)
             {
                 throw new NoItemsException();
             }
 
 
-            foreach (var item in itens)
+            foreach (var item in items)
             {
                 if (
                     string.IsNullOrWhiteSpace(item.ProdutoCodigo)
@@ -94,7 +94,7 @@ namespace CasaDoCodigo.Ordering.Commands
             }
 
 
-            if (string.IsNullOrWhiteSpace(cmd.ClienteId)
+            if (string.IsNullOrWhiteSpace(cmd.CustomerId)
                  || string.IsNullOrWhiteSpace(cmd.ClienteNome)
                  || string.IsNullOrWhiteSpace(cmd.ClienteEmail)
                  || string.IsNullOrWhiteSpace(cmd.ClienteTelefone)
@@ -107,7 +107,7 @@ namespace CasaDoCodigo.Ordering.Commands
                 )
                 throw new InvalidUserDataException();
 
-            var pedido = new Pedido(itens, cmd.ClienteId,
+            var pedido = new Pedido(items, cmd.CustomerId,
                 cmd.ClienteNome, cmd.ClienteEmail, cmd.ClienteTelefone, 
                 cmd.ClienteEndereco, cmd.ClienteComplemento, cmd.ClienteBairro, 
                 cmd.ClienteMunicipio, cmd.ClienteUF, cmd.ClienteCEP);
@@ -123,7 +123,7 @@ namespace CasaDoCodigo.Ordering.Commands
                 string userNotificationHubUrl = $"{_configuration["SignalRServerUrl"]}usernotificationhub";
 
                 await this._connection.InvokeAsync("SendUserNotification",
-                    $"{novoPedido.ClienteId}", notificationText);
+                    $"{novoPedido.CustomerId}", notificationText);
 
                 return true;
             }

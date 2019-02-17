@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Basket.API.Controllers
 {
     /// <summary>
-    /// Fornece funcionalidades do basket de compras da The Grocery Store
+    /// Provide basket functionalities for The Grocery Store
     /// </summary>
     [Route("api/[controller]")]
     [Authorize]
@@ -37,12 +37,12 @@ namespace Basket.API.Controllers
 
         //GET /id
         /// <summary>
-        /// Obtém o basket de compras
+        /// Get the current user basket
         /// </summary>
-        /// <param name="id">Id do cliente do basket</param>
-        /// <returns>O basket de compras</returns>
+        /// <param name="id">Current customer Id</param>
+        /// <returns>Shopping basket</returns>
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(BasketCliente), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(CustomerBasket), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Get(string id)
         {
@@ -54,22 +54,22 @@ namespace Basket.API.Controllers
             var basket = await _repository.GetBasketAsync(id);
             if (basket == null)
             {
-                return Ok(new BasketCliente(id));
+                return Ok(new CustomerBasket(id));
             }
             return Ok(basket);
         }
 
         //POST /value
         /// <summary>
-        /// Salva o basket de compras do cliente
+        /// Saves the customer's shopping basket
         /// </summary>
-        /// <param name="input">Dados do basket de compras</param>
+        /// <param name="input">shopping basket data</param>
         /// <returns></returns>
         [HttpPost]
-        [ProducesResponseType(typeof(BasketCliente), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(CustomerBasket), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> Post([FromBody] BasketCliente input)
+        public async Task<IActionResult> Post([FromBody] CustomerBasket input)
         {
             if (!ModelState.IsValid)
             {
@@ -88,15 +88,15 @@ namespace Basket.API.Controllers
         }
 
         /// <summary>
-        /// Adiciona um item no basket de compras do cliente
+        /// Add an item to the customer's shopping basket
         /// </summary>
-        /// <param name="clienteId">Id do cliente</param>
-        /// <param name="input">Novo item a inserir no basket de compras</param>
+        /// <param name="customerId">Customer Id</param>
+        /// <param name="input">New item to be added to customer's shopping basket</param>
         /// <returns></returns>
         [HttpPost]
-        [Route("[action]/{clienteId}")]
-        [ProducesResponseType(typeof(ItemBasket), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<BasketCliente>> AddItem(string clienteId, [FromBody] ItemBasket input)
+        [Route("[action]/{customerId}")]
+        [ProducesResponseType(typeof(BasketItem), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<CustomerBasket>> AddItem(string customerId, [FromBody] BasketItem input)
         {
             if (!ModelState.IsValid)
             {
@@ -105,25 +105,25 @@ namespace Basket.API.Controllers
 
             try
             {
-                var basket = await _repository.AddBasketAsync(clienteId, input);
+                var basket = await _repository.AddBasketAsync(customerId, input);
                 return Ok(basket);
             }
             catch (KeyNotFoundException)
             {
-                return NotFound(clienteId);
+                return NotFound(customerId);
             }
         }
 
         /// <summary>
-        /// Atualiza a quantidade do item do basket de compras
+        /// Updates shopping basket item quantity
         /// </summary>
-        /// <param name="clienteId">Id do cliente</param>
-        /// <param name="input">Item do basket de compras cuja quantidade será atualizada</param>
+        /// <param name="customerId">CustomerId</param>
+        /// <param name="input">Shopping basket item to be updated</param>
         /// <returns></returns>
         [HttpPut]
-        [Route("[action]/{clienteId}")]
-        [ProducesResponseType(typeof(ItemBasket), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<UpdateQuantidadeOutput>> UpdateItem(string clienteId, [FromBody] UpdateQuantidadeInput input)
+        [Route("[action]/{customerId}")]
+        [ProducesResponseType(typeof(BasketItem), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<UpdateQuantityOutput>> UpdateItem(string customerId, [FromBody] UpdateQuantityInput input)
         {
             if (!ModelState.IsValid)
             {
@@ -132,18 +132,18 @@ namespace Basket.API.Controllers
 
             try
             {
-                var basket = await _repository.UpdateBasketAsync(clienteId, input);
+                var basket = await _repository.UpdateBasketAsync(customerId, input);
                 return Ok(basket);
             }
             catch (KeyNotFoundException)
             {
-                return NotFound(clienteId);
+                return NotFound(customerId);
             }
 
         }
 
         /// <summary>
-        /// Remove um item do basket de compras
+        /// Removes the shopping basket item
         /// </summary>
         /// <param name="id"></param>
         [HttpDelete("{id}")]
@@ -152,52 +152,52 @@ namespace Basket.API.Controllers
             _repository.DeleteBasketAsync(id);
         }
 
-        [Route("[action]/{clienteId}")]
+        [Route("[action]/{customerId}")]
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Accepted)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<bool>> Checkout(string clienteId, [FromBody] CadastroViewModel input)
+        public async Task<ActionResult<bool>> Checkout(string customerId, [FromBody] RegistryViewModel input)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            BasketCliente basket;
+            CustomerBasket basket;
             try
             {
-                basket = await _repository.GetBasketAsync(clienteId);
+                basket = await _repository.GetBasketAsync(customerId);
             }
             catch (KeyNotFoundException)
             {
                 return NotFound();
             }
 
-            var itens = basket.Itens.Select(i =>
-                    new CheckoutEventItem(i.Id, i.ProdutoId, i.ProdutoNome, i.PrecoUnitario, i.Quantidade)).ToList();
+            var items = basket.Items.Select(i =>
+                    new CheckoutEventItem(i.Id, i.ProductId, i.ProductName, i.UnitPrice, i.Quantity)).ToList();
 
             var checkoutEvent
                 = new CheckoutEvent
-                 (clienteId, input.Nome, input.Email, input.Telefone
-                    , input.Endereco, input.Complemento, input.Bairro
-                    , input.Municipio, input.UF, input.CEP
+                 (customerId, input.Name, input.Email, input.Phone
+                    , input.Address, input.AdditionalAddress, input.District
+                    , input.City, input.State, input.ZipCode
                     , Guid.NewGuid()
-                    , itens);
+                    , items);
 
-            // Assim que fazemos a finalização, envia um evento de integração para
-            // API Ordering converter o basket em pedido e continuar com
-            // processo de criação de pedido
+            //Once we complete it, it sends an integration event to API Ordering 
+            //to convert the basket to order and continue with the order 
+            //creation process
             await _bus.Publish(checkoutEvent);
 
-            var cadastroEvent
-                = new CadastroEvent
-                 (clienteId, input.Nome, input.Email, input.Telefone
-                    , input.Endereco, input.Complemento, input.Bairro
-                    , input.Municipio, input.UF, input.CEP);
+            var registryEvent
+                = new RegistryEvent
+                 (customerId, input.Name, input.Email, input.Phone
+                    , input.Address, input.AdditionalAddress, input.District
+                    , input.City, input.State, input.ZipCode);
 
-            await _bus.Publish(cadastroEvent);
+            await _bus.Publish(registryEvent);
 
-            await _repository.DeleteBasketAsync(clienteId);
+            await _repository.DeleteBasketAsync(customerId);
 
             return Accepted(true);
         }

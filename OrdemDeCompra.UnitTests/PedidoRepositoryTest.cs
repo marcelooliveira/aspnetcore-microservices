@@ -56,7 +56,7 @@ namespace Ordering.UnitTests
                     new ItemPedido("001", "produto 001", 1, 12.34m),
                     new ItemPedido(codigo, nome, qtde, preco)
                 },
-                "clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+                "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
 
             var repo = new PedidoRepository(contextoMock.Object);
 
@@ -66,15 +66,15 @@ namespace Ordering.UnitTests
 
         [Theory]
         [InlineData("", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "fone", "", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "", "municipio", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "", "uf", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "", "12345-678")]
-        [InlineData("clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "")]
-        public async Task CreateOrUpdate_Invalid_Client_Data(string clienteId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
+        [InlineData("customerId", "", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "", "uf", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "", "12345-678")]
+        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "")]
+        public async Task CreateOrUpdate_Invalid_Client_Data(string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
         {
             //arrange
             var pedido = new Pedido(
@@ -82,7 +82,7 @@ namespace Ordering.UnitTests
                     new ItemPedido("001", "produto 001", 1, 12.34m),
                     new ItemPedido("002", "produto 002", 2, 23.45m)
                 },
-                clienteId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
+                customerId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
 
             var repo = new PedidoRepository(contextoMock.Object);
 
@@ -99,7 +99,7 @@ namespace Ordering.UnitTests
                     new ItemPedido("001", "produto 001", 1, 12.34m),
                     new ItemPedido("002", "produto 002", 2, 23.45m)
                 },
-                "clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+                "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
 
             var options = new DbContextOptionsBuilder<ApplicationContext>().UseInMemoryDatabase(databaseName: "database_name").Options;
 
@@ -113,8 +113,8 @@ namespace Ordering.UnitTests
                 Pedido result = await repo.CreateOrUpdate(pedido);
 
                 //assert
-                Assert.Equal(2, result.Itens.Count);
-                Assert.Collection(result.Itens,
+                Assert.Equal(2, result.Items.Count);
+                Assert.Collection(result.Items,
                     item => Assert.Equal("001", item.ProdutoCodigo),
                     item => Assert.Equal("002", item.ProdutoCodigo)
                 );
@@ -126,14 +126,14 @@ namespace Ordering.UnitTests
         [InlineData(null)]
         [InlineData("")]
         [InlineData(" ")]
-        public async Task GetPedidos_Invalid_Client(string clienteId)
+        public async Task GetPedidos_Invalid_Client(string customerId)
         {
             //arrange
             var repository = new PedidoRepository(contextoMock.Object);
 
             //act
             //assert
-            await Assert.ThrowsAsync<ArgumentNullException>(() => repository.GetPedidos(clienteId));
+            await Assert.ThrowsAsync<ArgumentNullException>(() => repository.GetPedidos(customerId));
         }
 
         //public class FakeContext : DbContext

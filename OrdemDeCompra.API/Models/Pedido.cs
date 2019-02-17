@@ -11,10 +11,10 @@ namespace CasaDoCodigo.Ordering.Models
 
         }
 
-        public Pedido(List<ItemPedido> itens, string clienteId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
+        public Pedido(List<ItemPedido> items, string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
         {
-            Itens = itens;
-            ClienteId = clienteId;
+            Items = items;
+            CustomerId = customerId;
             ClienteNome = clienteNome;
             ClienteEmail = clienteEmail;
             ClienteTelefone = clienteTelefone;
@@ -26,11 +26,11 @@ namespace CasaDoCodigo.Ordering.Models
             ClienteCEP = clienteCEP;
         }
 
-        public List<ItemPedido> Itens { get; private set; } = new List<ItemPedido>();
+        public List<ItemPedido> Items { get; private set; } = new List<ItemPedido>();
         [MinLength(5, ErrorMessage = "Nome deve ter no mínimo 5 caracteres")]
         [MaxLength(50, ErrorMessage = "Nome deve ter no máximo 50 caracteres")]
-        [Required(ErrorMessage = "ClienteId é obrigatório")]
-        public string ClienteId { get; set; } = "";
+        [Required(ErrorMessage = "CustomerId é obrigatório")]
+        public string CustomerId { get; set; } = "";
         [Required(ErrorMessage = "Nome é obrigatório")]
         public string ClienteNome { get; set; } = "";
         [Required(ErrorMessage = "Email é obrigatório")]

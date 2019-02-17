@@ -11,9 +11,9 @@ namespace CasaDoCodigo.Models.ViewModels
 
         }
 
-        public PedidoDTO(List<ItemPedidoDTO> itens, string id, string nome, string email, string telefone, string endereco, string complemento, string bairro, string municipio, string uF, string cEP)
+        public PedidoDTO(List<ItemPedidoDTO> items, string id, string nome, string email, string telefone, string endereco, string complemento, string bairro, string municipio, string uF, string cEP)
         {
-            Itens = itens;
+            Items = items;
             Id = id;
             Nome = nome;
             Email = email;
@@ -26,7 +26,7 @@ namespace CasaDoCodigo.Models.ViewModels
             CEP = cEP;
         }
 
-        public List<ItemPedidoDTO> Itens { get; set; } = new List<ItemPedidoDTO>();
+        public List<ItemPedidoDTO> Items { get; set; } = new List<ItemPedidoDTO>();
         public string Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
@@ -38,6 +38,6 @@ namespace CasaDoCodigo.Models.ViewModels
         public string UF { get; set; }
         public string CEP { get; set; }
         public DateTime DateCreated { get; set; }
-        public decimal Total => Itens.Sum(i => i.Subtotal);
+        public decimal Total => Items.Sum(i => i.Subtotal);
     }
 }

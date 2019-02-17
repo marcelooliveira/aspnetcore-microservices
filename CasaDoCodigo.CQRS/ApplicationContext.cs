@@ -21,7 +21,7 @@ namespace CasaDoCodigo
             modelBuilder.Entity<Produto>().HasKey(t => t.Id);
 
             modelBuilder.Entity<Pedido>().HasKey(t => t.Id);
-            modelBuilder.Entity<Pedido>().HasMany(t => t.Itens).WithOne(t => t.Pedido);
+            modelBuilder.Entity<Pedido>().HasMany(t => t.Items).WithOne(t => t.Pedido);
             modelBuilder.Entity<Pedido>().HasOne(t => t.Cadastro).WithOne(t => t.Pedido).IsRequired();
 
             modelBuilder.Entity<ItemPedido>().HasKey(t => t.Id);

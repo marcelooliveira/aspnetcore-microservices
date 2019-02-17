@@ -65,7 +65,7 @@ namespace Ordering.API.Migrations
                     b.Property<string>("ClienteEndereco")
                         .IsRequired();
 
-                    b.Property<string>("ClienteId")
+                    b.Property<string>("CustomerId")
                         .IsRequired()
                         .HasMaxLength(50);
 
@@ -91,7 +91,7 @@ namespace Ordering.API.Migrations
             modelBuilder.Entity("CasaDoCodigo.Ordering.Models.ItemPedido", b =>
                 {
                     b.HasOne("CasaDoCodigo.Ordering.Models.Pedido", "Pedido")
-                        .WithMany("Itens")
+                        .WithMany("Items")
                         .HasForeignKey("PedidoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

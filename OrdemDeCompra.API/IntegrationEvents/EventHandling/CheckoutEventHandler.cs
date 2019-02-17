@@ -17,11 +17,11 @@ namespace CasaDoCodigo.Mensagens.EventHandling
 
         protected override CreatePedidoCommand GetCommand(CheckoutEvent message)
         {
-            var itens = message.Itens.Select(
+            var items = message.Items.Select(
                     i => new CreatePedidoCommandItem(i.ProdutoId, i.ProdutoNome, i.Quantidade, i.PrecoUnitario)
                 ).ToList();
 
-            var command = new CreatePedidoCommand(itens, message.UserId, message.UserName, message.Email, message.Fone, message.Endereco, message.Complemento, message.Bairro, message.Municipio, message.UF, message.Cep);
+            var command = new CreatePedidoCommand(items, message.UserId, message.UserName, message.Email, message.Fone, message.Endereco, message.Complemento, message.Bairro, message.Municipio, message.UF, message.Cep);
             return command;
         }
     }

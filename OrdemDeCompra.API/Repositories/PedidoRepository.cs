@@ -20,10 +20,10 @@ namespace CasaDoCodigo.Ordering.Repositories
             if (pedido == null)
                 throw new ArgumentNullException();
 
-            if (pedido.Itens.Count == 0)
+            if (pedido.Items.Count == 0)
                 throw new NoItemsException();
 
-            foreach (var item in pedido.Itens)
+            foreach (var item in pedido.Items)
             {
                 if (
                     string.IsNullOrWhiteSpace(item.ProdutoCodigo)
@@ -36,7 +36,7 @@ namespace CasaDoCodigo.Ordering.Repositories
                 }
             }
 
-            if (string.IsNullOrWhiteSpace(pedido.ClienteId)
+            if (string.IsNullOrWhiteSpace(pedido.CustomerId)
                  || string.IsNullOrWhiteSpace(pedido.ClienteNome)
                  || string.IsNullOrWhiteSpace(pedido.ClienteEmail)
                  || string.IsNullOrWhiteSpace(pedido.ClienteTelefone)
@@ -62,16 +62,16 @@ namespace CasaDoCodigo.Ordering.Repositories
             return entityEntry.Entity;
         }
 
-        public async Task<IList<Pedido>> GetPedidos(string clienteId)
+        public async Task<IList<Pedido>> GetPedidos(string customerId)
         {
-            if (string.IsNullOrWhiteSpace(clienteId))
+            if (string.IsNullOrWhiteSpace(customerId))
             {
                 throw new ArgumentNullException();
             }
             return await 
                 dbSet
-                .Include(p => p.Itens)
-                .Where(p => p.ClienteId == clienteId)
+                .Include(p => p.Items)
+                .Where(p => p.CustomerId == customerId)
                 .ToListAsync();
         }
     }

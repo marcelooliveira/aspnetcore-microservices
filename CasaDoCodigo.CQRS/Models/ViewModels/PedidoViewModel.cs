@@ -25,7 +25,7 @@ namespace CasaDoCodigo.Models
         public int Id { get; set; }
     }
 
-    public class CadastroViewModel : IEquatable<CadastroViewModel>
+    public class RegistryViewModel : IEquatable<RegistryViewModel>
     {
         public int Id { get; set; }
         public int PedidoId { get; set; }
@@ -50,12 +50,12 @@ namespace CasaDoCodigo.Models
         [Required(ErrorMessage = "CEP é obrigatório")]
         public string CEP { get; set; } = "";
 
-        public CadastroViewModel()
+        public RegistryViewModel()
         {
 
         }
 
-        public CadastroViewModel(Cadastro cadastro)
+        public RegistryViewModel(Cadastro cadastro)
         {
             this.Id = cadastro.Id;
             this.Bairro = cadastro.Bairro;
@@ -69,7 +69,7 @@ namespace CasaDoCodigo.Models
             this.UF = cadastro.UF;
         }
 
-        public bool Equals(CadastroViewModel other)
+        public bool Equals(RegistryViewModel other)
         {
             if (other == null)
             {
@@ -92,9 +92,9 @@ namespace CasaDoCodigo.Models
 
     public class PedidoViewModel
     {
-        public List<Item> Itens { get; set; }
+        public List<Item> Items { get; set; }
         public int CadastroId { get; set; }
-        public CadastroViewModel Cadastro { get; set; }
+        public RegistryViewModel Cadastro { get; set; }
         public int Id { get; set; }
     }
 }

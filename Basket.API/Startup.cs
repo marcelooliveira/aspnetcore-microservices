@@ -58,7 +58,6 @@ namespace Basket.API
                     options.ApiName = "Basket.API";
                     options.ApiSecret = "secret";
                     options.Authority = Configuration["IdentityUrl"];
-                    //options.BackchannelHttpHandler = new HttpClientHandler() { Proxy = new WebProxy(Configuration["System:Proxy"]) };
                     options.RequireHttpsMetadata = false;
                 });
 
@@ -69,8 +68,8 @@ namespace Basket.API
                 {
                     Version = "v1",
                     Title = "The Grocery Store - Basket",
-                    Description = "Uma API contendo funcionalidades da basket de e-Commerce.",
-                    TermsOfService = "Nenhum",
+                    Description = "An API providing e-commerce basket functionalities.",
+                    TermsOfService = "None",
                     Contact = new Contact
                     {
                         Name = "Marcelo Oliveira",
@@ -79,7 +78,7 @@ namespace Basket.API
                     },
                     License = new License
                     {
-                        Name = "Licença XPTO 4567",
+                        Name = "Licence XPTO 4567",
                         Url = "https://example.com/license"
                     }
                 });
@@ -112,7 +111,6 @@ namespace Basket.API
             {
                 var settings = sp.GetRequiredService<IOptions<BasketConfig>>().Value;
                 var configuration = ConfigurationOptions.Parse(Configuration["RedisConnectionString"], true);
-                //var configuration = ConfigurationOptions.Parse("ecommerce.data:6379", true);
 
                 configuration.ResolveDns = true;
 

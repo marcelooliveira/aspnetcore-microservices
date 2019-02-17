@@ -3,7 +3,7 @@
 @using System.Security.Claims;
 @{
     string name = null;
-    string clienteId = null;
+    string customerId = null;
     int userNotificationCount = 0;
     List<UserNotification> userNotifications = new List<UserNotification>();
     if (!true.Equals(ViewData["signed-out"]))
@@ -14,7 +14,7 @@
             name = @User.FindFirst("email")?.Value;
         }
 
-        clienteId = @User.FindFirst("sub")?.Value;
+        customerId = @User.FindFirst("sub")?.Value;
 
         if (ViewBag.UserNotifications != null)
         {
@@ -67,7 +67,7 @@
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a asp-action="Historico" asp-controller="Pedido" asp-route-clienteId="@clienteId">Meus Pedidos</a></li>
+                                    <li><a asp-action="Historico" asp-controller="Pedido" asp-route-customerId="@customerId">Meus Pedidos</a></li>
                                     <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
                                 </ul>
                             </li>

@@ -39,7 +39,7 @@ namespace MVC.Test
         public async Task Index_Success()
         {
             //arrange
-            var clienteId = "cliente_id";
+            var customerId = "cliente_id";
             var produtos = GetFakeProdutos();
             var testProduct = produtos[0];
             catalogServiceMock
@@ -47,26 +47,26 @@ namespace MVC.Test
                 .ReturnsAsync(testProduct)
                 .Verifiable();
 
-            var itemBasket = new ItemBasket(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 1, testProduct.UrlImagem);
+            var itemBasket = new BasketItem(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 1, testProduct.ImageURL);
             basketServiceMock
-                .Setup(c => c.AddItem(clienteId, It.IsAny<ItemBasket>()))
+                .Setup(c => c.AddItem(customerId, It.IsAny<BasketItem>()))
                 .ReturnsAsync(
-                new BasketCliente(clienteId,
-                    new List<ItemBasket>
+                new CustomerBasket(customerId,
+                    new List<BasketItem>
                     {
                         itemBasket
                     }))
                 .Verifiable();
             var controller = GetBasketController();
-            SetControllerUser(clienteId, controller);
+            SetControllerUser(customerId, controller);
 
             //act
             var result = await controller.Index(testProduct.Codigo);
 
             //assert
             var viewResult = Assert.IsType<ViewResult>(result);
-            var model = Assert.IsAssignableFrom<BasketCliente>(viewResult.Model);
-            Assert.Equal(model.Itens[0].ProdutoNome, produtos[0].Nome);
+            var model = Assert.IsAssignableFrom<CustomerBasket>(viewResult.Model);
+            Assert.Equal(model.Items[0].ProductName, produtos[0].Nome);
             catalogServiceMock.Verify();
         }
 
@@ -74,31 +74,31 @@ namespace MVC.Test
         public async Task Index_Without_Product_Success()
         {
             //arrange
-            var clienteId = "cliente_id";
+            var customerId = "cliente_id";
             var produtos = GetFakeProdutos();
             var testProduct = produtos[0];
 
-            var itemBasket = new ItemBasket(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 1, testProduct.UrlImagem);
+            var itemBasket = new BasketItem(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 1, testProduct.ImageURL);
             basketServiceMock
-                .Setup(c => c.GetBasket(clienteId))
+                .Setup(c => c.GetBasket(customerId))
                 .ReturnsAsync(
-                new BasketCliente(clienteId,
-                    new List<ItemBasket>
+                new CustomerBasket(customerId,
+                    new List<BasketItem>
                     {
                         itemBasket
                     }))
                 .Verifiable();
 
             var controller = GetBasketController();
-            SetControllerUser(clienteId, controller);
+            SetControllerUser(customerId, controller);
 
             //act
             var result = await controller.Index();
 
             //assert
             var viewResult = Assert.IsType<ViewResult>(result);
-            var model = Assert.IsAssignableFrom<BasketCliente>(viewResult.Model);
-            Assert.Equal(model.Itens[0].ProdutoNome, produtos[0].Nome);
+            var model = Assert.IsAssignableFrom<CustomerBasket>(viewResult.Model);
+            Assert.Equal(model.Items[0].ProductName, produtos[0].Nome);
             basketServiceMock.Verify();
         }
 
@@ -106,7 +106,7 @@ namespace MVC.Test
         public async Task Index_BrokenCircuitException()
         {
             //arrange
-            var clienteId = "cliente_id";
+            var customerId = "cliente_id";
             var produtos = GetFakeProdutos();
             var testProduct = produtos[0];
             catalogServiceMock
@@ -114,19 +114,19 @@ namespace MVC.Test
                 .ThrowsAsync(new BrokenCircuitException())
                 .Verifiable();
 
-            var itemBasket = new ItemBasket(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 1, testProduct.UrlImagem);
+            var itemBasket = new BasketItem(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 1, testProduct.ImageURL);
             basketServiceMock
-                .Setup(c => c.AddItem(clienteId, It.IsAny<ItemBasket>()))
+                .Setup(c => c.AddItem(customerId, It.IsAny<BasketItem>()))
                 .ReturnsAsync(
-                new BasketCliente(clienteId,
-                    new List<ItemBasket>
+                new CustomerBasket(customerId,
+                    new List<BasketItem>
                     {
                         itemBasket
                     }))
                 .Verifiable();
 
             var controller = GetBasketController();
-            SetControllerUser(clienteId, controller);
+            SetControllerUser(customerId, controller);
 
             //act
             var result = await controller.Index(testProduct.Codigo);
@@ -142,7 +142,7 @@ namespace MVC.Test
         public async Task Index_ProductNotFound()
         {
             //arrange
-            var clienteId = "cliente_id";
+            var customerId = "cliente_id";
             var produtos = GetFakeProdutos();
             var testProduct = produtos[0];
             catalogServiceMock
@@ -151,7 +151,7 @@ namespace MVC.Test
                 .Verifiable();
 
             var controller = GetBasketController();
-            SetControllerUser(clienteId, controller);
+            SetControllerUser(customerId, controller);
 
             //act
             var result = await controller.Index(testProduct.Codigo);
@@ -170,14 +170,14 @@ namespace MVC.Test
         public async Task UpdateQuantidade_Success()
         {
             //arrange
-            var clienteId = "cliente_id";
+            var customerId = "cliente_id";
             var controller = GetBasketController();
-            SetControllerUser(clienteId, controller);
+            SetControllerUser(customerId, controller);
             var itemBasket = GetFakeItemBasket();
-            UpdateQuantidadeInput updateQuantidadeInput = new UpdateQuantidadeInput("001", 7);
+            UpdateQuantityInput updateQuantidadeInput = new UpdateQuantityInput("001", 7);
             basketServiceMock
-                .Setup(c => c.UpdateItem(clienteId, It.IsAny<UpdateQuantidadeInput>()))
-                .ReturnsAsync(new UpdateQuantidadeOutput(itemBasket, new BasketCliente()))
+                .Setup(c => c.UpdateItem(customerId, It.IsAny<UpdateQuantityInput>()))
+                .ReturnsAsync(new UpdateQuantityOutput(itemBasket, new CustomerBasket()))
                 .Verifiable();
 
             //act
@@ -185,7 +185,7 @@ namespace MVC.Test
 
             //assert
             var okObjectResult = Assert.IsType<OkObjectResult>(result);
-            Assert.IsType<UpdateQuantidadeOutput>(okObjectResult.Value);
+            Assert.IsType<UpdateQuantityOutput>(okObjectResult.Value);
             catalogServiceMock.Verify();
 
         }
@@ -194,15 +194,15 @@ namespace MVC.Test
         public async Task UpdateQuantidade_Invalid_ProdutoId()
         {
             //arrange
-            var clienteId = "cliente_id";
-            UpdateQuantidadeInput updateQuantidadeInput = new UpdateQuantidadeInput(null, 7);
+            var customerId = "cliente_id";
+            UpdateQuantityInput updateQuantidadeInput = new UpdateQuantityInput(null, 7);
             basketServiceMock
-                .Setup(c => c.UpdateItem(clienteId, It.IsAny<UpdateQuantidadeInput>()))
-                .ReturnsAsync(new UpdateQuantidadeOutput(new ItemBasket(), new BasketCliente()))
+                .Setup(c => c.UpdateItem(customerId, It.IsAny<UpdateQuantityInput>()))
+                .ReturnsAsync(new UpdateQuantityOutput(new BasketItem(), new CustomerBasket()))
                 .Verifiable();
 
             var controller = GetBasketController();
-            SetControllerUser(clienteId, controller);
+            SetControllerUser(customerId, controller);
             controller.ModelState.AddModelError("ProdutoId", "Required");
 
             //act
@@ -219,15 +219,15 @@ namespace MVC.Test
         public async Task UpdateQuantidade_ProdutoId_NotFound()
         {
             //arrange
-            var clienteId = "cliente_id";
-            UpdateQuantidadeInput updateQuantidadeInput = new UpdateQuantidadeInput("001", 7);
+            var customerId = "cliente_id";
+            UpdateQuantityInput updateQuantidadeInput = new UpdateQuantityInput("001", 7);
             basketServiceMock
-                .Setup(c => c.UpdateItem(clienteId, It.IsAny<UpdateQuantidadeInput>()))
-                .ReturnsAsync((UpdateQuantidadeOutput)null)
+                .Setup(c => c.UpdateItem(customerId, It.IsAny<UpdateQuantityInput>()))
+                .ReturnsAsync((UpdateQuantityOutput)null)
                 .Verifiable();
 
             var controller = GetBasketController();
-            SetControllerUser(clienteId, controller);
+            SetControllerUser(customerId, controller);
 
             //act
             var result = await controller.UpdateQuantidade(updateQuantidadeInput);
@@ -275,7 +275,7 @@ namespace MVC.Test
         {
             //arrange
             basketServiceMock
-                .Setup(c => c.Checkout(It.IsAny<string>(), It.IsAny<CadastroViewModel>()))
+                .Setup(c => c.Checkout(It.IsAny<string>(), It.IsAny<RegistryViewModel>()))
                 .ThrowsAsync(new Exception())
                 .Verifiable();
             var controller = GetBasketController();
@@ -296,7 +296,7 @@ namespace MVC.Test
         {
             //arrange
             basketServiceMock
-                .Setup(c => c.Checkout(It.IsAny<string>(), It.IsAny<CadastroViewModel>()))
+                .Setup(c => c.Checkout(It.IsAny<string>(), It.IsAny<RegistryViewModel>()))
                 .ThrowsAsync(new BrokenCircuitException())
                 .Verifiable();
             var controller = GetBasketController();

@@ -1,33 +1,33 @@
 ﻿class Basket {
-    clickIncremento(button) {
+    clickIncrement(button) {
         let data = this.getData(button);
-        data.Quantidade++;
-        this.postQuantidade(data);
+        data.Quantity++;
+        this.postQuantity(data);
     }
 
-    clickDecremento(button) {
+    clickDecrement(button) {
         let data = this.getData(button);
-        data.Quantidade--;
-        this.postQuantidade(data);
+        data.Quantity--;
+        this.postQuantity(data);
     }
 
-    updateQuantidade(input) {
+    updateQuantity(input) {
         let data = this.getData(input);
-        this.postQuantidade(data);
+        this.postQuantity(data);
     }
 
-    getData(elemento) {
-        var linhaDoItem = $(elemento).parents('[item-id]');
-        var itemId = $(linhaDoItem).attr('item-id');
-        var novaQuantidade = $(linhaDoItem).find('input.quantidade').val();
+    getData(element) {
+        var itemLine = $(element).parents('[item-id]');
+        var itemId = $(itemLine).attr('item-id');
+        var newQuantity = $(itemLine).find('input.quantity').val();
 
         return {
-            ProdutoId: itemId,
-            Quantidade: novaQuantidade
+            ProductId: itemId,
+            Quantity: newQuantity
         };
     }
 
-    postQuantidade(data) {
+    postQuantity(data) {
 
         let token = $('[name=__RequestVerificationToken]').val();
 
@@ -35,22 +35,22 @@
         headers['RequestVerificationToken'] = token;
 
         $.ajax({
-            url: '/basket/updatequantidade',
+            url: '/basket/updatequantity',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(data),
             headers: headers
         }).done(function (response) {
-            let itemPedido = response.ItemPedido;
-            let linhaDoItem = $('[item-id=' + itemPedido.Id + ']');
-            linhaDoItem.find('input').val(itemPedido.Quantidade);
-            linhaDoItem.find('[subtotal]').html((itemPedido.Subtotal).duasCasas());
-            let basketCliente = response.BasketCliente;
-            $('[numero-itens]').html('Total: ' + basketCliente.Itens.length + ' itens');
-            $('[total]').html((basketCliente.Total).duasCasas());
+            let orderItem = response.OrderItem;
+            let itemLine = $('[item-id=' + orderItem.Id + ']');
+            itemLine.find('input').val(orderItem.Quantity);
+            itemLine.find('[subtotal]').html((v.Subtotal).duasCasas());
+            let customerBasket = response.CustomerBasket;
+            $('[item-qty]').html('Total: ' + customerBasket.Items.length + ' items');
+            $('[total]').html((customerBasket.Total).twoDigits());
 
-            if (itemPedido.Quantidade === 0) {
-                linhaDoItem.remove();
+            if (orderItem.Quantity === 0) {
+                itemLine.remove();
             }
         });
     }
@@ -58,6 +58,6 @@
 
 var basket = new Basket();
 
-Number.prototype.duasCasas = function () {
+Number.prototype.twoDigits = function () {
     return this.toFixed(2).replace('.', ',');
 };

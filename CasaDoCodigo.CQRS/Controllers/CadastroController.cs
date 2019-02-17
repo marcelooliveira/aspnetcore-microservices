@@ -34,8 +34,8 @@ namespace CasaDoCodigo.Controllers
             try
             {
                 var usuario = appUserParser.Parse(HttpContext.User);
-                CadastroViewModel cadastro
-                    = new CadastroViewModel()
+                RegistryViewModel cadastro
+                    = new RegistryViewModel()
                     {
                         Bairro = usuario.Bairro,
                         CEP = usuario.CEP,

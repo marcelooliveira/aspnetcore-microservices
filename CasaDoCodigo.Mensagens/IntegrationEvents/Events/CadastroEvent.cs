@@ -5,14 +5,14 @@ using System.Text;
 
 namespace CasaDoCodigo.Mensagens.IntegrationEvents.Events
 {
-    public class CadastroEvent : IntegrationEvent
+    public class RegistryEvent : IntegrationEvent
     {
-        public CadastroEvent()
+        public RegistryEvent()
         {
 
         }
 
-        public CadastroEvent(string usuarioId, string nome, string email, string telefone, string endereco, string complemento, string bairro, string municipio, string uF, string cEP)
+        public RegistryEvent(string usuarioId, string nome, string email, string telefone, string endereco, string complemento, string bairro, string municipio, string uF, string cEP)
         {
             UsuarioId = usuarioId;
             Nome = nome;

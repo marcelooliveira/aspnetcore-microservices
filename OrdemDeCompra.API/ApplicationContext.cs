@@ -20,7 +20,7 @@ namespace CasaDoCodigo.Ordering
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Pedido>().HasKey(t => t.Id);
-            modelBuilder.Entity<Pedido>().HasMany(t => t.Itens).WithOne(t => t.Pedido);
+            modelBuilder.Entity<Pedido>().HasMany(t => t.Items).WithOne(t => t.Pedido);
 
             modelBuilder.Entity<ItemPedido>().HasKey(t => t.Id);
             modelBuilder.Entity<ItemPedido>().HasOne(t => t.Pedido);

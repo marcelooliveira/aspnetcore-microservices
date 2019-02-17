@@ -114,7 +114,7 @@ namespace Identity.API
                 .Logging(l => l.Use(new MSLoggerFactoryAdapter(_loggerFactory)))
                 .Transport(t => t.UseRabbitMq(Configuration["RabbitMQConnectionString"], Configuration["RabbitMQInputQueueName"])))
                 .AddTransient<DbContext, ApplicationDbContext>()
-                .AutoRegisterHandlersFromAssemblyOf<CadastroEvent>();
+                .AutoRegisterHandlersFromAssemblyOf<RegistryEvent>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -123,7 +123,7 @@ namespace Identity.API
             app.UseRebus(
                 async (bus) =>
                 {
-                    await bus.Subscribe<CadastroEvent>();
+                    await bus.Subscribe<RegistryEvent>();
                 });
 
             if (env.IsDevelopment())

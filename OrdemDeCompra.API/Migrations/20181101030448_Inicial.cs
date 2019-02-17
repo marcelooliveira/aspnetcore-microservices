@@ -13,7 +13,7 @@ namespace Ordering.API.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ClienteId = table.Column<string>(maxLength: 50, nullable: false),
+                    CustomerId = table.Column<string>(maxLength: 50, nullable: false),
                     ClienteNome = table.Column<string>(nullable: false),
                     ClienteEmail = table.Column<string>(nullable: false),
                     ClienteTelefone = table.Column<string>(nullable: false),

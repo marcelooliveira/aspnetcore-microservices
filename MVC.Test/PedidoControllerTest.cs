@@ -41,11 +41,11 @@ namespace MVC.Test
                 .Returns(new ApplicationUser())
                 .Verifiable();
 
-            string clienteId = "123";
-            List<ItemPedidoDTO> itens = new List<ItemPedidoDTO> {
+            string customerId = "123";
+            List<ItemPedidoDTO> items = new List<ItemPedidoDTO> {
                 new ItemPedidoDTO("001", "produto 001", 1, 12.34m)
             };
-            PedidoDTO pedido = new PedidoDTO(itens, "clienteId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            PedidoDTO pedido = new PedidoDTO(items, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             pedidoServiceMock
                 .Setup(c => c.GetAsync(It.IsAny<string>()))
                 .ReturnsAsync( new List<PedidoDTO> { pedido })
@@ -55,15 +55,15 @@ namespace MVC.Test
                 , pedidoServiceMock.Object
                 , loggerMock.Object
                 , userRedisRepositoryMock.Object);
-            SetControllerUser(clienteId, controller);
+            SetControllerUser(customerId, controller);
 
             //act
-            ActionResult actionResult = await controller.Historico(clienteId);
+            ActionResult actionResult = await controller.Historico(customerId);
 
             //assert
             ViewResult viewResult = Assert.IsAssignableFrom<ViewResult>(actionResult);
             List<PedidoDTO>  pedidos = Assert.IsType<List<PedidoDTO>>(viewResult.Model);
-            Assert.Collection(pedidos[0].Itens,
+            Assert.Collection(pedidos[0].Items,
                 i => Assert.Equal("001", i.ProdutoCodigo));
             pedidoServiceMock.Verify();
         }

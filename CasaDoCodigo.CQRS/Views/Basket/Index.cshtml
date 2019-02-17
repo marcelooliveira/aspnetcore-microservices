@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Basket";
 }
-@model BasketCliente;
+@model CustomerBasket;
 
 <h3>Meu Basket</h3>
 
@@ -16,10 +16,10 @@
                 Item
             </div>
             <div class="col-md-2 text-center">
-                Preço Unitário
+                Unit Price
             </div>
             <div class="col-md-2 text-center">
-                Quantidade
+                Quantity
             </div>
             <div class="col-md-2">
                 <span class="pull-right">
@@ -30,30 +30,30 @@
     </div>
     <div class="panel-body">
 
-        @foreach (var item in Model.Itens)
+        @foreach (var item in Model.Items)
         {
 
-            <div class="row row-center linha-produto" item-id="@item.Id">
+            <div class="row row-center product-line" item-id="@item.Id">
                 <div class="col-md-3">
-                    <img class="img-produto-basket" src="@(item.UrlImagem)" />
+                    <img class="img-produto-basket" src="@(item.ImageURL)" />
                 </div>
-                <input type="hidden" name="produtoId" value="@(item.ProdutoId)" />
-                <div class="col-md-3">@(item.ProdutoNome)</div>
-                <div class="col-md-2 text-center">R$ @(item.PrecoUnitario.ToString("0.00"))</div>
+                <input type="hidden" name="produtoId" value="@(item.ProductId)" />
+                <div class="col-md-3">@(item.ProductName)</div>
+                <div class="col-md-2 text-center">R$ @(item.UnitPrice.ToString("0.00"))</div>
                 <div class="col-md-2 text-center">
                     <div class="input-group">
                         <span class="input-group-btn">
                             <button class="btn btn-default"
-                                    onclick="basket.clickDecremento(this)">
+                                    onclick="basket.clickDecrement(this)">
                                 <span class="glyphicon-minus"></span>
                             </button>
                         </span>
-                        <input type="text" value="@(item.Quantidade)"
-                               class="form-control text-center quantidade"
-                               onblur="basket.updateQuantidade(this)" />
+                        <input type="text" value="@(item.Quantity)"
+                               class="form-control text-center quantity"
+                               onblur="basket.updateQuantity(this)" />
                         <span class="input-group-btn">
                             <button class="btn btn-default"
-                                    onclick="basket.clickIncremento(this)">
+                                    onclick="basket.clickIncrement(this)">
                                 <span class="glyphicon-plus"></span>
                             </button>
                         </span>
@@ -62,7 +62,7 @@
                 <div class="col-md-2">
                     <div class="pull-right">
                         R$ <span class="pull-right" subtotal>
-                            @((item.Quantidade * item.PrecoUnitario).ToString("0.00"))
+                            @((item.Quantity * item.UnitPrice).ToString("0.00"))
                         </span>
                     </div>
                 </div>
@@ -74,9 +74,9 @@
     <div class="panel-footer">
         <div class="row">
             <div class="col-md-10">
-                <span numero-itens>
-                    Total: @(Model.Itens.Count())
-                    itens
+                <span numero-items>
+                    Total: @(Model.Items.Count())
+                    items
                 </span>
             </div>
             <div class="col-md-2">

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Models
 {
-    public class UpdateQuantidadeOutput
+    public class UpdateQuantityOutput
     {
-        public UpdateQuantidadeOutput(ItemBasket itemPedido, BasketCliente basketCliente)
+        public UpdateQuantityOutput(BasketItem basketItem, CustomerBasket customerBasket)
         {
-            ItemPedido = itemPedido;
-            BasketCliente = basketCliente;
+            BasketItem = basketItem;
+            CustomerBasket = customerBasket;
         }
 
-        public ItemBasket ItemPedido { get; }
-        public BasketCliente BasketCliente { get; }
+        public BasketItem BasketItem { get; }
+        public CustomerBasket CustomerBasket { get; }
     }
 }

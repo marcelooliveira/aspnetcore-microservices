@@ -27,78 +27,78 @@ namespace Basket.API.Model
             return await _database.KeyDeleteAsync(id);
         }
 
-        public async Task<BasketCliente> GetBasketAsync(string clienteId)
+        public async Task<CustomerBasket> GetBasketAsync(string customerId)
         {
-            if (string.IsNullOrWhiteSpace(clienteId))
+            if (string.IsNullOrWhiteSpace(customerId))
                 throw new ArgumentException();
 
-            var data = await _database.StringGetAsync(clienteId);
+            var data = await _database.StringGetAsync(customerId);
             if (data.IsNullOrEmpty)
             {
-                return await UpdateBasketAsync(new BasketCliente(clienteId));
+                return await UpdateBasketAsync(new CustomerBasket(customerId));
             }
-            return JsonConvert.DeserializeObject<BasketCliente>(data);
+            return JsonConvert.DeserializeObject<CustomerBasket>(data);
         }
 
-        public IEnumerable<string> GetUsuarios()
+        public IEnumerable<string> GetUsers()
         {
             var server = GetServer();
             return server.Keys()?.Select(k => k.ToString());
         }
 
-        public async Task<BasketCliente> UpdateBasketAsync(BasketCliente basket)
+        public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket basket)
         {
-            var criado = await _database.StringSetAsync(basket.ClienteId, JsonConvert.SerializeObject(basket));
+            var criado = await _database.StringSetAsync(basket.CustomerId, JsonConvert.SerializeObject(basket));
             if (!criado)
             {
-                _logger.LogError("Erro ao atualizar o basket.");
+                _logger.LogError("Error while updating customer basket.");
                 return null;
             }
-            _logger.LogInformation("Basket atualizado.");
-            return await GetBasketAsync(basket.ClienteId);
+            _logger.LogInformation("Basket updated.");
+            return await GetBasketAsync(basket.CustomerId);
         }
 
-        public async Task<BasketCliente> AddBasketAsync(string clienteId, ItemBasket item)
+        public async Task<CustomerBasket> AddBasketAsync(string customerId, BasketItem item)
         {
             if (item == null)
                 throw new ArgumentNullException();
 
-            if (string.IsNullOrWhiteSpace(item.ProdutoId))
+            if (string.IsNullOrWhiteSpace(item.ProductId))
                 throw new ArgumentException();
 
-            if (item.Quantidade <= 0)
+            if (item.Quantity <= 0)
                 throw new ArgumentOutOfRangeException();
 
-            var basket = await GetBasketAsync(clienteId);
-            ItemBasket itemDB = basket.Itens.Where(i => i.ProdutoId == item.ProdutoId).SingleOrDefault();
+            var basket = await GetBasketAsync(customerId);
+            BasketItem itemDB = basket.Items.Where(i => i.ProductId == item.ProductId).SingleOrDefault();
             if (itemDB == null)
             {
-                itemDB = new ItemBasket(item.Id, item.ProdutoId, item.ProdutoNome, item.PrecoUnitario, item.Quantidade);
-                basket.Itens.Add(item);
+                itemDB = new BasketItem(item.Id, item.ProductId, item.ProductName, item.UnitPrice, item.Quantity);
+                basket.Items.Add(item);
             }
             return await UpdateBasketAsync(basket);
         }
 
-        public async Task<UpdateQuantidadeOutput> UpdateBasketAsync(string clienteId, UpdateQuantidadeInput item)
+        public async Task<UpdateQuantityOutput> UpdateBasketAsync(string customerId, UpdateQuantityInput item)
         {
             if (item == null)
                 throw new ArgumentNullException();
 
-            if (string.IsNullOrWhiteSpace(item.ProdutoId))
+            if (string.IsNullOrWhiteSpace(item.ProductId))
                 throw new ArgumentException();
 
-            if (item.Quantidade < 0)
+            if (item.Quantity < 0)
                 throw new ArgumentOutOfRangeException();
 
-            var basket = await GetBasketAsync(clienteId);
-            ItemBasket itemDB = basket.Itens.Where(i => i.ProdutoId == item.ProdutoId).SingleOrDefault();
-            itemDB.Quantidade = item.Quantidade;
-            if (item.Quantidade == 0)
+            var basket = await GetBasketAsync(customerId);
+            BasketItem itemDB = basket.Items.Where(i => i.ProductId == item.ProductId).SingleOrDefault();
+            itemDB.Quantity = item.Quantity;
+            if (item.Quantity == 0)
             {
-                basket.Itens.Remove(itemDB);
+                basket.Items.Remove(itemDB);
             }
-            BasketCliente basketCliente = await UpdateBasketAsync(basket);
-            return new UpdateQuantidadeOutput(itemDB, basketCliente);
+            CustomerBasket customerBasket = await UpdateBasketAsync(basket);
+            return new UpdateQuantityOutput(itemDB, customerBasket);
         }
 
         private IServer GetServer()
