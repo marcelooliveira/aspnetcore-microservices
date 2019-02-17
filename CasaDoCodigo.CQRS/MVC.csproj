@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="..\..\..\_Recursos\produtos\livros.txt" Link="wwwroot\images\produtos\livros.txt" />
+    <Content Include="..\..\..\_Recursos\produtos\livros.txt" Link="wwwroot\images\catalog\livros.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -69,7 +69,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\produtos\" />
+    <Folder Include="wwwroot\images\catalog\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -158,7 +158,7 @@ namespace MVC.Test
 
             //assert
             var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
-            Assert.Equal("ProdutoNaoEncontrado", redirectToActionResult.ActionName);
+            Assert.Equal("ProductNotFound", redirectToActionResult.ActionName);
             Assert.Equal("Basket", redirectToActionResult.ControllerName);
             Assert.Equal(redirectToActionResult.Fragment, testProduct.Codigo);
             catalogServiceMock.Verify();
@@ -181,7 +181,7 @@ namespace MVC.Test
                 .Verifiable();
 
             //act
-            var result = await controller.UpdateQuantidade(updateQuantidadeInput);
+            var result = await controller.UpdateQuantity(updateQuantidadeInput);
 
             //assert
             var okObjectResult = Assert.IsType<OkObjectResult>(result);
@@ -206,7 +206,7 @@ namespace MVC.Test
             controller.ModelState.AddModelError("ProdutoId", "Required");
 
             //act
-            var result = await controller.UpdateQuantidade(updateQuantidadeInput);
+            var result = await controller.UpdateQuantity(updateQuantidadeInput);
 
             //assert
             var badRequestObjectResult = Assert.IsType<BadRequestObjectResult>(result);
@@ -230,7 +230,7 @@ namespace MVC.Test
             SetControllerUser(customerId, controller);
 
             //act
-            var result = await controller.UpdateQuantidade(updateQuantidadeInput);
+            var result = await controller.UpdateQuantity(updateQuantidadeInput);
 
             //assert
             var notFoundObjectResult = Assert.IsType<NotFoundObjectResult>(result);

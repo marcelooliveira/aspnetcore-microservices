@@ -54,7 +54,7 @@ namespace CasaDoCodigo.Controllers
                     var produto = await catalogService.GetProduto(codigo);
                     if (produto == null)
                     {
-                        return RedirectToAction("ProdutoNaoEncontrado", "Basket", codigo);
+                        return RedirectToAction("ProductNotFound", "Basket", codigo);
                     }
 
                     BasketItem itemBasket = new BasketItem(produto.Codigo, produto.Codigo, produto.Nome, produto.Preco, 1, produto.ImageURL);
@@ -79,7 +79,7 @@ namespace CasaDoCodigo.Controllers
             return View();
         }
 
-        public IActionResult ProdutoNaoEncontrado(string codigo)
+        public IActionResult ProductNotFound(string codigo)
         {
             return View(codigo);
         }
@@ -109,7 +109,7 @@ namespace CasaDoCodigo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> UpdateQuantidade([FromBody]UpdateQuantityInput input)
+        public async Task<IActionResult> UpdateQuantity([FromBody]UpdateQuantityInput input)
         {
             if (!ModelState.IsValid)
             {

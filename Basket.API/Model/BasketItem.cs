@@ -29,7 +29,7 @@ namespace Basket.API.Model
         [Required]
         public decimal UnitPrice { get; set; }
         public decimal Subtotal => Quantity * UnitPrice;
-        public string ImageURL { get { return $"/images/products/large_{ProductId}.jpg"; } }
+        public string ImageURL { get { return $"/images/catalog/large_{ProductId}.jpg"; } }
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             var results = new List<ValidationResult>();
