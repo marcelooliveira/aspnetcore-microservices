@@ -261,3 +261,188 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at CasaDoCodigo.Ordering.Repositories.PedidoRepository.CreateOrUpdate(Pedido pedido) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\PedidoRepository.cs:line 56
    at CasaDoCodigo.Ordering.Commands.CreatePedidoCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreatePedidoCommandHandler.cs:line 118
 2019-02-18 00:52:04.441 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:52:15.883 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:52:27.259 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:52:37.820 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:52:48.363 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:52:58.770 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:53:09.235 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:53:19.756 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:53:30.326 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:53:40.806 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:53:51.268 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:54:01.788 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:54:12.288 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:54:23.092 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:54:33.716 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:54:44.218 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:54:54.687 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:55:05.133 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:55:15.671 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:55:26.135 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:55:36.548 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:55:47.012 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:55:57.496 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:56:07.893 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:56:18.322 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:56:28.723 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:56:39.111 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:56:49.612 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:57:00.171 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:57:10.726 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:57:21.354 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:57:31.874 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:57:42.370 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:57:53.520 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:58:04.102 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:58:14.538 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:58:25.031 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:58:36.534 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:58:47.022 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:58:57.640 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:59:08.201 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:59:18.686 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:59:29.939 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:59:40.567 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 00:59:51.021 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:00:01.642 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:00:13.831 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:00:24.401 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:00:34.908 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:00:45.650 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:00:56.206 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:01:06.741 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:01:17.241 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:01:27.687 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:01:38.225 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:01:48.736 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:01:59.312 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:02:09.848 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:02:20.351 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:02:30.857 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:02:41.365 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:02:51.838 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:03:02.358 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:03:12.813 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:03:23.260 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:03:33.774 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:03:44.375 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:03:55.084 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:04:05.862 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:04:16.612 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:04:27.143 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:04:37.819 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:04:48.611 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:04:59.610 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:05:10.599 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:05:21.576 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:05:32.645 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:05:43.518 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:05:54.562 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:06:05.549 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:06:16.478 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:06:27.173 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:06:37.933 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:06:48.614 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:06:59.569 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:07:10.324 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:07:21.152 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:08:10.590 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-18 01:08:21.340 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-18 01:08:22.253 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-18 01:08:22.311 -03:00 [INF] Starting bus 1
+2019-02-18 01:08:22.323 -03:00 [INF] Setting number of workers to 1
+2019-02-18 01:08:22.368 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-18 01:08:22.401 -03:00 [INF] Started
+2019-02-18 01:08:22.440 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-18 01:08:22.506 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-18 01:08:23.905 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:08:23.915 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-18 01:08:34.925 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:08:45.768 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:08:56.474 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-18 01:09:01.929 -03:00 [WRN] Unhandled exception [1,"de48419f-fdba-4abd-ae1b-9c51bba80b65"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID de48419f-fdba-4abd-ae1b-9c51bba80b65 and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
+2019-02-18 01:09:02.218 -03:00 [INF] Message received:
+2019-02-18 01:09:02.218 -03:00 [INF] ----------------------------------
+2019-02-18 01:09:02.239 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","PedidoId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"ff2d8215-4578-4948-8f85-7a14f66ffa54","Items":[{"Id":"006","ProdutoId":"006","ProdutoNome":"assorted breads","Quantidade":1,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"0f6036be-df46-45e7-8689-cdc66749382f","CreationDate":"2019-02-18T04:09:02.1614521Z"}
+2019-02-18 01:09:02.239 -03:00 [INF] ----------------------------------
+2019-02-18 01:09:02.497 -03:00 [INF] new CreatePedidoCommandHandler created.
+2019-02-18 01:09:03.913 -03:00 [ERR] Failed executing DbCommand (47ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 50), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Pedido] ([ClienteBairro], [ClienteCEP], [ClienteComplemento], [ClienteEmail], [ClienteEndereco], [ClienteMunicipio], [ClienteNome], [ClienteTelefone], [ClienteUF], [CustomerId], [DateCreated])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [Id]
+FROM [Pedido]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CustomerId'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:befcf553-25b7-4bbd-bf5b-30fe440d576f
+Error Number:207,State:1,Class:16
+2019-02-18 01:09:03.956 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens c80e0096-1a5e-4cf5-b0f6-00b4d021f217 to 1 handlers took 1756.4756 ms
+2019-02-18 01:09:03.991 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerId'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerId'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2019-02-18 01:09:04.464 -03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerId'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at CasaDoCodigo.Ordering.Repositories.PedidoRepository.CreateOrUpdate(Pedido pedido) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\PedidoRepository.cs:line 56
+   at CasaDoCodigo.Ordering.Commands.CreatePedidoCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreatePedidoCommandHandler.cs:line 118
+2019-02-18 01:09:06.987 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
