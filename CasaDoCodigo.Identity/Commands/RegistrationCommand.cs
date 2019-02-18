@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Identity.API.Commands
 {
-    public class CadastroCommand : IRequest<bool>
+    public class RegistrationCommand : IRequest<bool>
     {
-        public CadastroCommand()
+        public RegistrationCommand()
         {
 
         }
 
-        public CadastroCommand(string usuarioId, string nome, string email, string telefone, string endereco, string complemento, string bairro, string municipio, string uF, string cEP)
+        public RegistrationCommand(string usuarioId, string nome, string email, string telefone, string endereco, string complemento, string bairro, string municipio, string uF, string cEP)
         {
             UsuarioId = usuarioId;
             Nome = nome;

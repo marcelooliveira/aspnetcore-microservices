@@ -196,7 +196,7 @@ namespace Basket.API.Tests
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
                 _serviceBusMock.Object);
-            CasaDoCodigo.Models.RegistryViewModel input = new CasaDoCodigo.Models.RegistryViewModel();
+            CasaDoCodigo.Models.RegistrationViewModel input = new CasaDoCodigo.Models.RegistrationViewModel();
             basketController.ModelState.AddModelError("Email", "Required");
 
             //Act
@@ -218,7 +218,7 @@ namespace Basket.API.Tests
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
                 _serviceBusMock.Object);
-            CasaDoCodigo.Models.RegistryViewModel input = new CasaDoCodigo.Models.RegistryViewModel();
+            CasaDoCodigo.Models.RegistrationViewModel input = new CasaDoCodigo.Models.RegistrationViewModel();
 
             //Act
             ActionResult<bool> actionResult = await basketController.Checkout(fakeCustomerId, input);
@@ -255,7 +255,7 @@ namespace Basket.API.Tests
             };
 
             //Act
-            ActionResult<bool> actionResult = await basketController.Checkout(fakeCustomerId, new CasaDoCodigo.Models.RegistryViewModel());
+            ActionResult<bool> actionResult = await basketController.Checkout(fakeCustomerId, new CasaDoCodigo.Models.RegistrationViewModel());
 
             //assert
             _serviceBusMock.Verify(mock => mock.Publish(It.IsAny<CheckoutEvent>(), null), Times.Once);

@@ -126,17 +126,17 @@ namespace CasaDoCodigo.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Checkout(Cadastro cadastro)
+        public async Task<IActionResult> Checkout(Registration registration)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var viewModel = new RegistryViewModel(cadastro);
+                    var viewModel = new RegistrationViewModel(registration);
                     await basketService.Checkout(GetUserId(), viewModel);
                     return RedirectToAction("Checkout");
                 }
-                return RedirectToAction("Index", "Cadastro");
+                return RedirectToAction("Index", "Registration");
             }
             catch (BrokenCircuitException e)
             {
@@ -160,7 +160,7 @@ namespace CasaDoCodigo.Controllers
                 string idUsuario = GetUserId();
 
                 var usuario = appUserParser.Parse(HttpContext.User);
-                return View(new PedidoConfirmado(usuario.Email));
+                return View(new OrderConfirmed(usuario.Email));
             }
             catch (Exception e)
             {

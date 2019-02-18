@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Basket.API.Model
 {
-    public class RegistryViewModel
+    public class RegistrationViewModel
     {
         public int Id { get; set; }
         public int OrderId { get; set; }
@@ -22,7 +22,7 @@ namespace Basket.API.Model
         public string State { get; set; } = "";
         public string ZipCode { get; set; } = "";
 
-        public RegistryViewModel()
+        public RegistrationViewModel()
         {
 
         }

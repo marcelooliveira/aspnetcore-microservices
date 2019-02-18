@@ -6,20 +6,20 @@ namespace CasaDoCodigo.Models.ViewModels
     public class ApplicationUser : IdentityUser
     {
         [Required]
-        public string Nome { get; set; }
+        public string Name { get; set; }
         [Required]
-        public string Telefone { get; set; }
+        public string Phone { get; set; }
         [Required]
-        public string Endereco { get; set; }
+        public string Address { get; set; }
         [Required]
-        public string Complemento { get; set; }
+        public string AdditionalAddress { get; set; }
         [Required]
-        public string Bairro { get; set; }
+        public string District { get; set; }
         [Required]
-        public string Municipio { get; set; }
+        public string City { get; set; }
         [Required]
-        public string UF { get; set; }
+        public string State { get; set; }
         [Required]
-        public string CEP { get; set; }
+        public string ZipCode { get; set; }
     }
 }

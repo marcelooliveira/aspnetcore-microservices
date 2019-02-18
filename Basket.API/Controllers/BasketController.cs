@@ -156,7 +156,7 @@ namespace Basket.API.Controllers
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Accepted)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<bool>> Checkout(string customerId, [FromBody] RegistryViewModel input)
+        public async Task<ActionResult<bool>> Checkout(string customerId, [FromBody] RegistrationViewModel input)
         {
             if (!ModelState.IsValid)
             {

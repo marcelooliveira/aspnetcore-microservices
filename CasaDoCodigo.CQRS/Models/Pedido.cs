@@ -10,16 +10,16 @@ namespace CasaDoCodigo.Models
     {
         public Pedido()
         {
-            Cadastro = new Cadastro();
+            Registration = new Registration();
         }
 
-        public Pedido(Cadastro cadastro)
+        public Pedido(Registration registration)
         {
-            Cadastro = cadastro;
+            Registration = registration;
         }
 
         public List<ItemPedido> Items { get; private set; } = new List<ItemPedido>();
         [Required]
-        public virtual Cadastro Cadastro { get; private set; }
+        public virtual Registration Registration { get; private set; }
     }
 }

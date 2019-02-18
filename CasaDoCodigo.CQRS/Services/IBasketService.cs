@@ -15,6 +15,6 @@ namespace CasaDoCodigo.Services
         Task<UpdateQuantityOutput> UpdateItem(string customerId, UpdateQuantityInput input);
         Task<CustomerBasket> DefinirQuantidades(ApplicationUser applicationUser, Dictionary<string, int> quantidades);
         Task AtualizarBasket(CustomerBasket customerBasket);
-        Task<bool> Checkout(string customerId, RegistryViewModel viewModel);
+        Task<bool> Checkout(string customerId, RegistrationViewModel viewModel);
     }
 }

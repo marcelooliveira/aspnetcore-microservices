@@ -248,21 +248,21 @@ namespace MVC.Test
             var basket = GetBasketController();
 
             //act
-            IActionResult actionResult = await basket.Checkout(new Cadastro());
+            IActionResult actionResult = await basket.Checkout(new Registration());
 
             //assert
             ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);
         }
 
         [Fact]
-        public async Task Checkout_Invalid_Cadastro()
+        public async Task Checkout_Invalid_Registration()
         {
             //arrange
             var basket = GetBasketController();
             basket.ModelState.AddModelError("Email", "Required");
 
             //act
-            IActionResult actionResult = await basket.Checkout(new Cadastro());
+            IActionResult actionResult = await basket.Checkout(new Registration());
 
             //assert
             RedirectToActionResult redirectToActionResult = Assert.IsType<RedirectToActionResult>(actionResult);
@@ -275,13 +275,13 @@ namespace MVC.Test
         {
             //arrange
             basketServiceMock
-                .Setup(c => c.Checkout(It.IsAny<string>(), It.IsAny<RegistryViewModel>()))
+                .Setup(c => c.Checkout(It.IsAny<string>(), It.IsAny<RegistrationViewModel>()))
                 .ThrowsAsync(new Exception())
                 .Verifiable();
             var controller = GetBasketController();
 
             //act
-            IActionResult actionResult = await controller.Checkout(new Cadastro());
+            IActionResult actionResult = await controller.Checkout(new Registration());
 
             //assert
             ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);
@@ -296,13 +296,13 @@ namespace MVC.Test
         {
             //arrange
             basketServiceMock
-                .Setup(c => c.Checkout(It.IsAny<string>(), It.IsAny<RegistryViewModel>()))
+                .Setup(c => c.Checkout(It.IsAny<string>(), It.IsAny<RegistrationViewModel>()))
                 .ThrowsAsync(new BrokenCircuitException())
                 .Verifiable();
             var controller = GetBasketController();
 
             //act
-            IActionResult actionResult = await controller.Checkout(new Cadastro());
+            IActionResult actionResult = await controller.Checkout(new Registration());
 
             //assert
             ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);

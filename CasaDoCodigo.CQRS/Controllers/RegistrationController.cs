@@ -13,13 +13,13 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Controllers
 {
-    public class CadastroController : BaseController
+    public class RegistrationController : BaseController
     {
         private readonly IIdentityParser<ApplicationUser> appUserParser;
 
-        public CadastroController(
+        public RegistrationController(
             IIdentityParser<ApplicationUser> appUserParser,
-            ILogger<CadastroController> logger,
+            ILogger<RegistrationController> logger,
             IUserRedisRepository repository)
             : base(logger, repository)
         {
@@ -34,21 +34,21 @@ namespace CasaDoCodigo.Controllers
             try
             {
                 var usuario = appUserParser.Parse(HttpContext.User);
-                RegistryViewModel cadastro
-                    = new RegistryViewModel()
+                RegistrationViewModel registration
+                    = new RegistrationViewModel()
                     {
-                        Bairro = usuario.Bairro,
-                        CEP = usuario.CEP,
-                        Complemento = usuario.Complemento,
+                        District = usuario.District,
+                        ZipCode = usuario.ZipCode,
+                        AdditionalAddress = usuario.AdditionalAddress,
                         Email = usuario.Email,
-                        Endereco = usuario.Endereco,
-                        Municipio = usuario.Municipio,
-                        Nome = usuario.Nome,
-                        Telefone = usuario.Telefone,
-                        UF = usuario.UF
+                        Address = usuario.Address,
+                        City = usuario.City,
+                        Name = usuario.Name,
+                        Phone = usuario.Phone,
+                        State = usuario.State
                     };
 
-                return View(cadastro);
+                return View(registration);
             }
             catch (Exception e)
             {

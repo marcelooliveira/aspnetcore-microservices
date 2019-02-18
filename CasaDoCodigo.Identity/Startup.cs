@@ -93,13 +93,13 @@ namespace Identity.API
             }
 
             services.AddScoped<IMediator, NoMediator>();
-            services.AddScoped<IRequest<bool>, CadastroCommand>();
+            services.AddScoped<IRequest<bool>, RegistrationCommand>();
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy())
                 .AddSqlite(Configuration.GetConnectionString("DefaultConnection"))
                 .AddRabbitMQ(Configuration["RabbitMQConnectionString"]);
 
-            services.AddMediatR(typeof(CadastroCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(RegistrationCommand).GetTypeInfo().Assembly);
 
             RegisterRebus(services);
         }
@@ -107,7 +107,7 @@ namespace Identity.API
         private void RegisterRebus(IServiceCollection services)
         {
             // Register handlers 
-            services.AutoRegisterHandlersFromAssemblyOf<CadastroEventHandler>();
+            services.AutoRegisterHandlersFromAssemblyOf<RegistrationEventHandler>();
 
             // Configure and register Rebus
             services.AddRebus(configure => configure

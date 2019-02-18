@@ -12,21 +12,21 @@ using System.Threading.Tasks;
 
 namespace Identity.API.Commands
 {
-    public class CadastroCommandHandler
-        : IRequestHandler<IdentifiedCommand<CadastroCommand, bool>, bool>
+    public class RegistrationCommandHandler
+        : IRequestHandler<IdentifiedCommand<RegistrationCommand, bool>, bool>
     {
         private readonly IMediator _mediator;
-        private readonly ILogger<CadastroCommandHandler> _logger;
+        private readonly ILogger<RegistrationCommandHandler> _logger;
         private readonly IClaimsManager _claimsManager;
 
-        public CadastroCommandHandler(IMediator mediator, ILogger<CadastroCommandHandler> logger, IClaimsManager claimsManager)
+        public RegistrationCommandHandler(IMediator mediator, ILogger<RegistrationCommandHandler> logger, IClaimsManager claimsManager)
         {
             this._mediator = mediator;
             this._logger = logger;
             this._claimsManager = claimsManager;
         }
 
-        public async Task<bool> Handle(IdentifiedCommand<CadastroCommand, bool> request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(IdentifiedCommand<RegistrationCommand, bool> request, CancellationToken cancellationToken)
         {
             if (request == null)
                 throw new ArgumentNullException();

@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Models.ViewModels
 {
-    public class PedidoConfirmado
+    public class OrderConfirmed
     {
-        public PedidoConfirmado()
+        public OrderConfirmed()
         {
 
         }
 
-        public PedidoConfirmado(string email)
+        public OrderConfirmed(string email)
         {
             Email = email;
         }

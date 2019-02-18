@@ -12,16 +12,16 @@ using Xunit;
 
 namespace Identity.UnitTests
 {
-    public class CadastroCommandHandlerTest
+    public class RegistrationCommandHandlerTest
     {
         private readonly Mock<IMediator> mediatorMock;
-        private readonly Mock<ILogger<CadastroCommandHandler>> loggerMock;
+        private readonly Mock<ILogger<RegistrationCommandHandler>> loggerMock;
         private readonly Mock<IClaimsManager> claimsManagerMock;
 
-        public CadastroCommandHandlerTest()
+        public RegistrationCommandHandlerTest()
         {
             this.mediatorMock = new Mock<IMediator>();
-            this.loggerMock = new Mock<ILogger<CadastroCommandHandler>>();
+            this.loggerMock = new Mock<ILogger<RegistrationCommandHandler>>();
             this.claimsManagerMock = new Mock<IClaimsManager>();
         }
 
@@ -29,9 +29,9 @@ namespace Identity.UnitTests
         public async Task Handle_request_is_null()
         {
             //arrange
-            var handler = new CadastroCommandHandler(mediatorMock.Object, loggerMock.Object, claimsManagerMock.Object);
+            var handler = new RegistrationCommandHandler(mediatorMock.Object, loggerMock.Object, claimsManagerMock.Object);
 
-            IdentifiedCommand<CadastroCommand, bool> request = null;
+            IdentifiedCommand<RegistrationCommand, bool> request = null;
             CancellationToken token = default(System.Threading.CancellationToken);
             //act
             //assert
@@ -42,9 +42,9 @@ namespace Identity.UnitTests
         public async Task Handle_command_is_null()
         {
             //arrange
-            var handler = new CadastroCommandHandler(mediatorMock.Object, loggerMock.Object, claimsManagerMock.Object);
+            var handler = new RegistrationCommandHandler(mediatorMock.Object, loggerMock.Object, claimsManagerMock.Object);
 
-            IdentifiedCommand<CadastroCommand, bool> request = new IdentifiedCommand<CadastroCommand, bool>(null, Guid.NewGuid());
+            IdentifiedCommand<RegistrationCommand, bool> request = new IdentifiedCommand<RegistrationCommand, bool>(null, Guid.NewGuid());
             CancellationToken token = default(System.Threading.CancellationToken);
             //act
             //assert
@@ -55,9 +55,9 @@ namespace Identity.UnitTests
         public async Task Handle_guid_is_empty()
         {
             //arrange
-            var handler = new CadastroCommandHandler(mediatorMock.Object, loggerMock.Object, claimsManagerMock.Object);
+            var handler = new RegistrationCommandHandler(mediatorMock.Object, loggerMock.Object, claimsManagerMock.Object);
 
-            IdentifiedCommand<CadastroCommand, bool> request = new IdentifiedCommand<CadastroCommand, bool>(new CadastroCommand(), Guid.Empty);
+            IdentifiedCommand<RegistrationCommand, bool> request = new IdentifiedCommand<RegistrationCommand, bool>(new RegistrationCommand(), Guid.Empty);
             CancellationToken token = default(System.Threading.CancellationToken);
             //act
             //assert
@@ -77,10 +77,10 @@ namespace Identity.UnitTests
         public async Task Handle_invalid_user_data(string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
         {
             //arrange
-            var handler = new CadastroCommandHandler(mediatorMock.Object, loggerMock.Object, claimsManagerMock.Object);
+            var handler = new RegistrationCommandHandler(mediatorMock.Object, loggerMock.Object, claimsManagerMock.Object);
 
-            CadastroCommand command = new CadastroCommand(customerId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
-            IdentifiedCommand<CadastroCommand, bool> request = new IdentifiedCommand<CadastroCommand, bool>(command, Guid.NewGuid());
+            RegistrationCommand command = new RegistrationCommand(customerId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
+            IdentifiedCommand<RegistrationCommand, bool> request = new IdentifiedCommand<RegistrationCommand, bool>(command, Guid.NewGuid());
             CancellationToken token = default(System.Threading.CancellationToken);
             //act
             //assert
@@ -96,10 +96,10 @@ namespace Identity.UnitTests
                 .Returns(Task.CompletedTask)
                .Verifiable();
 
-            var handler = new CadastroCommandHandler(mediatorMock.Object, loggerMock.Object, claimsManagerMock.Object);
-            CadastroCommand command = new CadastroCommand("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            var handler = new RegistrationCommandHandler(mediatorMock.Object, loggerMock.Object, claimsManagerMock.Object);
+            RegistrationCommand command = new RegistrationCommand("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
 
-            IdentifiedCommand<CadastroCommand, bool> request = new IdentifiedCommand<CadastroCommand, bool>(command, Guid.NewGuid());
+            IdentifiedCommand<RegistrationCommand, bool> request = new IdentifiedCommand<RegistrationCommand, bool>(command, Guid.NewGuid());
             CancellationToken token = default(CancellationToken);
             
             //act

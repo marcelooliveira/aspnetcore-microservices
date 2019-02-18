@@ -17,14 +17,14 @@ using Xunit;
 
 namespace MVC.Test
 {
-    public class CadastroControllerTest : BaseControllerTest
+    public class RegistrationControllerTest : BaseControllerTest
     {
-        private readonly Mock<ILogger<CadastroController>> loggerMock;
+        private readonly Mock<ILogger<RegistrationController>> loggerMock;
         private readonly Mock<IUserRedisRepository> userRedisRepositoryMock;
 
-        public CadastroControllerTest() : base()
+        public RegistrationControllerTest() : base()
         {
-            loggerMock = new Mock<ILogger<CadastroController>>();
+            loggerMock = new Mock<ILogger<RegistrationController>>();
             userRedisRepositoryMock = new Mock<IUserRedisRepository>();
         }
 
@@ -37,39 +37,39 @@ namespace MVC.Test
                 .Setup(aup => aup.Parse(It.IsAny<ClaimsPrincipal>()))
                 .Returns(new ApplicationUser
                 {
-                    Bairro = "bbb",
-                    CEP = "ccc",
-                    Complemento = "ccc",
+                    District = "bbb",
+                    ZipCode = "ccc",
+                    AdditionalAddress = "ccc",
                     Email = "eee",
-                    Endereco = "eee",
-                    Municipio = "mmm",
-                    Nome = "nnn",
-                    Telefone = "ttt",
-                    UF = "uuu"
+                    Address = "eee",
+                    City = "mmm",
+                    Name = "nnn",
+                    Phone = "ttt",
+                    State = "uuu"
                 })
                .Verifiable();
 
             //act
-            var cadastroController = 
-                new CadastroController(appUserParserMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
-            cadastroController.ControllerContext.HttpContext = contextMock.Object;
-            var result = await cadastroController.Index();
+            var registrationController = 
+                new RegistrationController(appUserParserMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
+            registrationController.ControllerContext.HttpContext = contextMock.Object;
+            var result = await registrationController.Index();
 
             //assert
             var viewResult = Assert.IsType<ViewResult>(result);
-            var model = Assert.IsAssignableFrom<RegistryViewModel>(viewResult.ViewData.Model);
-            Assert.Equal<RegistryViewModel>(model,
-                new RegistryViewModel
+            var model = Assert.IsAssignableFrom<RegistrationViewModel>(viewResult.ViewData.Model);
+            Assert.Equal<RegistrationViewModel>(model,
+                new RegistrationViewModel
                 {
-                    Bairro = "bbb",
-                    CEP = "ccc",
-                    Complemento = "ccc",
+                    District = "bbb",
+                    ZipCode = "ccc",
+                    AdditionalAddress = "ccc",
                     Email = "eee",
                     Endereco = "eee",
-                    Municipio = "mmm",
+                    City = "mmm",
                     Nome = "nnn",
                     Telefone = "ttt",
-                    UF = "uuu"
+                    State = "uuu"
                 });
             appUserParserMock.Verify();
         }
@@ -84,7 +84,7 @@ namespace MVC.Test
                .Verifiable();
 
             var controller =
-                new CadastroController(appUserParserMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
+                new RegistrationController(appUserParserMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
 
             SetControllerUser("001", controller);
 
