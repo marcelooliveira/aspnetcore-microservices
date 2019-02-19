@@ -11,31 +11,31 @@ namespace Catalog.UnitTests
 {
     public class ProdutoControllerTest
     {
-        private readonly Mock<ILogger<ProdutoController>> loggerMock;
-        private readonly Mock<IProdutoQueries> produtoQueriesMock;
+        private readonly Mock<ILogger<ProductController>> loggerMock;
+        private readonly Mock<IProductQueries> produtoQueriesMock;
 
         public ProdutoControllerTest()
         {
-            this.loggerMock = new Mock<ILogger<ProdutoController>>();
-            this.produtoQueriesMock = new Mock<IProdutoQueries>();
+            this.loggerMock = new Mock<ILogger<ProductController>>();
+            this.produtoQueriesMock = new Mock<IProductQueries>();
         }
 
         public async Task GetProdutos_success()
         {
             //arrange
-            var produtos = new List<Produto>();
-            var controller = new ProdutoController(loggerMock.Object, produtoQueriesMock.Object);
+            var produtos = new List<Product>();
+            var controller = new ProductController(loggerMock.Object, produtoQueriesMock.Object);
 
             //act
-            var actionResult = await controller.GetProdutos();
+            var actionResult = await controller.GetProducts();
 
             //assert
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult.Result);
-            List<Produto> catalog = Assert.IsType<List<Produto>>(okObjectResult.Value);
+            List<Product> catalog = Assert.IsType<List<Product>>(okObjectResult.Value);
             Assert.Collection(catalog,
-                item => Assert.Equal(produtos[0].Codigo, catalog[0].Codigo),
-                item => Assert.Equal(produtos[1].Codigo, catalog[1].Codigo),
-                item => Assert.Equal(produtos[2].Codigo, catalog[2].Codigo)
+                item => Assert.Equal(produtos[0].Code, catalog[0].Code),
+                item => Assert.Equal(produtos[1].Code, catalog[1].Code),
+                item => Assert.Equal(produtos[2].Code, catalog[2].Code)
             );
         }
 
@@ -43,20 +43,20 @@ namespace Catalog.UnitTests
         public async Task GetProdutos_empty_catalog()
         {
             //arrange
-            IList<Produto> produtos = new List<Produto>();
+            IList<Product> produtos = new List<Product>();
             produtoQueriesMock
-                .Setup(q => q.GetProdutosAsync(It.IsAny<string>()))
+                .Setup(q => q.GetProductsAsync(It.IsAny<string>()))
                 .ReturnsAsync(produtos)
                .Verifiable();
 
-            var controller = new ProdutoController(loggerMock.Object, produtoQueriesMock.Object);
+            var controller = new ProductController(loggerMock.Object, produtoQueriesMock.Object);
 
             //act
-            var actionResult = await controller.GetProdutos();
+            var actionResult = await controller.GetProducts();
 
             //assert
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult.Result);
-            List<Produto> catalog = Assert.IsType<List<Produto>>(okObjectResult.Value);
+            List<Product> catalog = Assert.IsType<List<Product>>(okObjectResult.Value);
             Assert.Empty(catalog);
             produtoQueriesMock.Verify();
         }
@@ -66,21 +66,21 @@ namespace Catalog.UnitTests
         {
             //arrange
             const string produtoCodigo = "001";
-            IList<Produto> produtos = GetFakeProdutos();
+            IList<Product> produtos = GetFakeProdutos();
             produtoQueriesMock
-                .Setup(q => q.GetProdutoAsync(produtoCodigo))
+                .Setup(q => q.GetProductAsync(produtoCodigo))
                 .ReturnsAsync(produtos[0])
                .Verifiable();
 
-            var controller = new ProdutoController(loggerMock.Object, produtoQueriesMock.Object);
+            var controller = new ProductController(loggerMock.Object, produtoQueriesMock.Object);
 
             //act
-            var actionResult = await controller.GetProdutos(produtoCodigo);
+            var actionResult = await controller.GetProducts(produtoCodigo);
 
             //assert
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult.Result);
-            Produto produto = Assert.IsType<Produto>(okObjectResult.Value);
-            Assert.Equal(produtos[0].Codigo, produto.Codigo);
+            Product produto = Assert.IsType<Product>(okObjectResult.Value);
+            Assert.Equal(produtos[0].Code, produto.Code);
             produtoQueriesMock.Verify();
         }
 
@@ -91,27 +91,27 @@ namespace Catalog.UnitTests
             const string produtoCodigo = "001";
             var produtos = GetFakeProdutos();
             produtoQueriesMock
-                .Setup(q => q.GetProdutoAsync(produtoCodigo))
-                .ReturnsAsync((Produto)null)
+                .Setup(q => q.GetProductAsync(produtoCodigo))
+                .ReturnsAsync((Product)null)
                .Verifiable();
 
-            var controller = new ProdutoController(loggerMock.Object, produtoQueriesMock.Object);
+            var controller = new ProductController(loggerMock.Object, produtoQueriesMock.Object);
             
             //act
-            var actionResult = await controller.GetProdutos(produtoCodigo);
+            var actionResult = await controller.GetProducts(produtoCodigo);
 
             //assert
             Assert.IsType<NotFoundResult>(actionResult.Result);
             produtoQueriesMock.Verify();
         }
 
-        protected IList<Produto> GetFakeProdutos()
+        protected IList<Product> GetFakeProdutos()
         {
-            return new List<Produto>
+            return new List<Product>
             {
-                new Produto("001", "produto 001", 12.34m),
-                new Produto("002", "produto 002", 23.45m),
-                new Produto("003", "produto 003", 34.56m)
+                new Product("001", "produto 001", 12.34m),
+                new Product("002", "produto 002", 23.45m),
+                new Product("003", "produto 003", 34.56m)
             };
         }
     }

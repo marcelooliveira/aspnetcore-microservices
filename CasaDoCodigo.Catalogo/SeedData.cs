@@ -21,39 +21,39 @@ namespace Catalog.API
 
                 await CreateTables(context);
 
-                await SaveLivros(context);
+                await SaveProducts(context);
             }
         }
 
         private static async Task CreateTables(ApplicationDbContext context)
         {
-            await CreateTableCategoria(context);
-            await CreateTableProduto(context);
+            await CreateTableCategory(context);
+            await CreateTableProduct(context);
         }
 
-        private static async Task CreateTableCategoria(ApplicationDbContext context)
+        private static async Task CreateTableCategory(ApplicationDbContext context)
         {
             var sql
                 = @"CREATE TABLE IF NOT EXISTS 
-                        'Categoria' (
+                        'Category' (
                             'Id'        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            'Nome'      TEXT NOT NULL
+                            'Name'      TEXT NOT NULL
                         );";
 
             await ExecuteSqlCommandAsync(context, sql);
         }
 
-        private static async Task CreateTableProduto(ApplicationDbContext context)
+        private static async Task CreateTableProduct(ApplicationDbContext context)
         {
             var sql
                 = @"CREATE TABLE IF NOT EXISTS 
-                        'Produto' (
+                        'Product' (
                             'Id'        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	                        'Codigo'	TEXT NOT NULL,
-                            'Nome'      TEXT NOT NULL,
-	                        'Preco'     NUMERIC NOT NULL,
-                            'CategoriaId' INTEGER NOT NULL,
-                                FOREIGN KEY(CategoriaId) REFERENCES Categoria(Id)
+	                        'Code' 	    TEXT NOT NULL,
+                            'Name'      TEXT NOT NULL,
+	                        'Price'     NUMERIC NOT NULL,
+                            'CategoryId' INTEGER NOT NULL,
+                                FOREIGN KEY(CategoryId) REFERENCES Category(Id)
                         );";
 
             await ExecuteSqlCommandAsync(context, sql);
@@ -64,31 +64,31 @@ namespace Catalog.API
             await context.Database.ExecuteSqlCommandAsync(createTableSql);
         }
 
-        private static async Task SaveLivros(ApplicationDbContext context)
+        private static async Task SaveProducts(ApplicationDbContext context)
         {
-            var produtoDbSet = context.Set<Produto>();
-            var categoriaDbSet = context.Set<Categoria>();
+            var productDbSet = context.Set<Product>();
+            var categoryDbSet = context.Set<Category>();
 
             var products = await GetProducts();
 
             foreach (var product in products)
             {
-                var categoriaDB =
-                categoriaDbSet
-                    .Where(c => c.Nome == product.category)
+                var categoryDB =
+                categoryDbSet
+                    .Where(c => c.Name == product.category)
                     .SingleOrDefault();
 
-                if (categoriaDB == null)
+                if (categoryDB == null)
                 {
-                    categoriaDB = new Categoria(product.category);
-                    await categoriaDbSet.AddAsync(categoriaDB);
+                    categoryDB = new Category(product.category);
+                    await categoryDbSet.AddAsync(categoryDB);
                     await context.SaveChangesAsync();
                 }
 
                 string code = product.number.ToString("000");
-                if (!produtoDbSet.Where(p => p.Codigo == code).Any())
+                if (!productDbSet.Where(p => p.Code == code).Any())
                 {
-                    await produtoDbSet.AddAsync(new Produto(code, product.name, 52.90m, categoriaDB));
+                    await productDbSet.AddAsync(new Product(code, product.name, 52.90m, categoryDB));
                 }
             }
             await context.SaveChangesAsync();

@@ -51,8 +51,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.UnitTests", "Ident
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.API", "CasaDoCodigo.Identity\Identity.API.csproj", "{71951613-8498-4B0B-B974-31155DAE0836}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API.Tests", "Carrinho.UnitTests\Basket.API.Tests.csproj", "{9E56E5CC-8F93-4882-AE3C-A67AF7B7A036}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,10 +101,6 @@ Global
 		{71951613-8498-4B0B-B974-31155DAE0836}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71951613-8498-4B0B-B974-31155DAE0836}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71951613-8498-4B0B-B974-31155DAE0836}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E56E5CC-8F93-4882-AE3C-A67AF7B7A036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E56E5CC-8F93-4882-AE3C-A67AF7B7A036}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E56E5CC-8F93-4882-AE3C-A67AF7B7A036}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E56E5CC-8F93-4882-AE3C-A67AF7B7A036}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,7 +128,6 @@ Global
 		{6121E0B6-C97B-4D9C-B51B-02E7422F754D} = {84C0784B-EC5D-4127-998E-62F7E6C8B274}
 		{05E1EA73-71D7-4CA3-BAE4-DA62EECEAFC1} = {6121E0B6-C97B-4D9C-B51B-02E7422F754D}
 		{71951613-8498-4B0B-B974-31155DAE0836} = {84C0784B-EC5D-4127-998E-62F7E6C8B274}
-		{9E56E5CC-8F93-4882-AE3C-A67AF7B7A036} = {CAFC5BC9-13A2-4D76-A7E2-8D056A006422}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {03DBD554-4917-4E9A-B783-78151722175A}

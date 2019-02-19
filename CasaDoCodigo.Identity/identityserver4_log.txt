@@ -1105,3 +1105,87 @@
 2019-02-18 01:09:02.181 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"bc897331-e407-4b49-8666-272a27b11fdc","CreationDate":"2019-02-18T04:09:02.1354344Z"}
 2019-02-18 01:09:02.181 -03:00 [INF] ----------------------------------
 2019-02-18 01:09:03.251 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens de48419f-fdba-4abd-ae1b-9c51bba80b65 to 1 handlers took 1095 ms
+2019-02-18 22:02:43.536 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-18 22:02:44.307 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-18 22:02:44.361 -03:00 [INF] Setting number of workers to 1
+2019-02-18 22:02:44.370 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-18 22:02:44.393 -03:00 [INF] Bus Rebus 1 started
+2019-02-18 22:02:44.400 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-18 22:02:44.512 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-18 22:02:44.543 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-18 22:02:44.570 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-18 22:02:44.570 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-18 22:02:44.570 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-18 22:02:44.571 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-18 22:02:44.571 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-18 22:04:17.162 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-18 22:04:17.494 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-18 22:04:17.542 -03:00 [INF] Setting number of workers to 1
+2019-02-18 22:04:17.545 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-18 22:04:17.549 -03:00 [INF] Bus Rebus 1 started
+2019-02-18 22:04:17.551 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-18 22:04:17.601 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-18 22:04:17.623 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-18 22:04:17.647 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-18 22:04:17.648 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-18 22:04:17.648 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-18 22:04:17.648 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-18 22:04:17.648 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-18 22:08:01.442 -03:00 [INF] Setting number of workers to 0
+2019-02-18 22:08:01.446 -03:00 [DBG] Removing worker Rebus 1 worker 1
+2019-02-18 22:08:01.864 -03:00 [DBG] Worker Rebus 1 worker 1 stopped
+2019-02-18 22:08:01.870 -03:00 [INF] Stopping periodic task CleanupTrackedErrors
+2019-02-18 22:08:01.875 -03:00 [INF] Disposing RabbitMQ connection
+2019-02-18 22:08:01.879 -03:00 [INF] Bus Rebus 1 stopped
+2019-02-18 22:10:22.428 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-18 22:10:23.763 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-18 22:10:23.831 -03:00 [INF] Setting number of workers to 1
+2019-02-18 22:10:23.834 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-18 22:10:23.861 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-18 22:10:23.891 -03:00 [INF] Bus Rebus 1 started
+2019-02-18 22:10:23.982 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-18 22:10:24.015 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-18 22:10:24.068 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-18 22:10:24.069 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-18 22:10:24.069 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-18 22:10:24.069 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-18 22:10:24.069 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-18 22:20:32.016 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-18 22:20:32.876 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-18 22:20:32.926 -03:00 [INF] Setting number of workers to 1
+2019-02-18 22:20:32.930 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-18 22:20:32.969 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-18 22:20:32.988 -03:00 [INF] Bus Rebus 1 started
+2019-02-18 22:20:33.076 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-18 22:20:33.092 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-18 22:20:33.138 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-18 22:20:33.138 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-18 22:20:33.138 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-18 22:20:33.139 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-18 22:20:33.139 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-18 22:34:44.583 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-18 22:34:45.276 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-18 22:34:45.349 -03:00 [INF] Setting number of workers to 1
+2019-02-18 22:34:45.351 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-18 22:34:45.428 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-18 22:34:45.476 -03:00 [INF] Bus Rebus 1 started
+2019-02-18 22:34:45.593 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-18 22:34:45.663 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-18 22:34:45.682 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-18 22:34:45.682 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-18 22:34:45.682 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-18 22:34:45.682 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-18 22:34:45.682 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-18 23:44:41.478 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-18 23:44:43.225 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-18 23:44:43.423 -03:00 [INF] Setting number of workers to 1
+2019-02-18 23:44:43.454 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-18 23:44:43.525 -03:00 [INF] Bus Rebus 1 started
+2019-02-18 23:44:43.636 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-18 23:44:43.809 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-18 23:44:43.955 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-18 23:44:44.097 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-18 23:44:44.097 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-18 23:44:44.097 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-18 23:44:44.097 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-18 23:44:44.098 -03:00 [DBG] Using Identity.Application as default scheme for forbid

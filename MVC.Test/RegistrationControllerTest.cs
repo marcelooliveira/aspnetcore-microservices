@@ -65,10 +65,10 @@ namespace MVC.Test
                     ZipCode = "ccc",
                     AdditionalAddress = "ccc",
                     Email = "eee",
-                    Endereco = "eee",
+                    Address = "eee",
                     City = "mmm",
-                    Nome = "nnn",
-                    Telefone = "ttt",
+                    Name = "nnn",
+                    Phone = "ttt",
                     State = "uuu"
                 });
             appUserParserMock.Verify();

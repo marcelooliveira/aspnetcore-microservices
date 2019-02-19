@@ -1,24 +1,24 @@
 ﻿namespace Catalog.API.Queries
 {
-    public class Produto
+    public class Product
     {
-        public Produto()
+        public Product()
         {
 
         }
 
-        public Produto(string codigo, string nome, decimal preco)
+        public Product(string code, string name, decimal price)
         {
-            Codigo = codigo;
-            Nome = nome;
-            Preco = preco;
+            Code = code;
+            Name = name;
+            Price = price;
         }
 
         public int Id { get; set; }
-        public string Codigo { get; set; }
-        public string Nome { get; set; }
-        public decimal Preco { get; set; }
-        public int CategoriaId { get; set; }
-        public string CategoriaNome { get; set; }
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
     }
 }

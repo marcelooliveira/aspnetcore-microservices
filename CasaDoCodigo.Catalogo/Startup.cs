@@ -29,7 +29,7 @@ namespace Catalog.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IProdutoQueries, ProdutoQueries>();
+            services.AddTransient<IProductQueries, ProdutoQueries>();
 
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy());
@@ -46,8 +46,8 @@ namespace Catalog.API
                 {
                     Version = "v1",
                     Title = "The Grocery Store - Catalog",
-                    Description = "API do catálogo de produtos",
-                    TermsOfService = "Nenhum",
+                    Description = "Product Catalog API",
+                    TermsOfService = "None",
                     Contact = new Contact
                     {
                         Name = "Marcelo Oliveira",

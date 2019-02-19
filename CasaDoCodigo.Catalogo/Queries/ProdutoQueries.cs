@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Catalog.API.Queries
 {
-    public class ProdutoQueries : IProdutoQueries
+    public class ProdutoQueries : IProductQueries
     {
         private readonly IConfiguration configuration;
 
@@ -18,7 +18,7 @@ namespace Catalog.API.Queries
             this.configuration = configuration;
         }
 
-        public async Task<IEnumerable<Produto>> GetProdutosAsync(string pesquisa = null)
+        public async Task<IEnumerable<Product>> GetProductsAsync(string search = null)
         {
             string connectionString = configuration.GetConnectionString("DefaultConnection");
             using (var connection = new SQLiteConnection(connectionString))
@@ -26,29 +26,29 @@ namespace Catalog.API.Queries
                 connection.Open();
 
                 var sql =
-                    "select p.Id, p.Codigo, p.Nome, p.Preco," +
-                    "   c.Id as CategoriaId, c.Nome as CategoriaNome" +
-                    " from produto as p " +
-                    " inner join categoria as c " +
-                    "   on c.Id = p.CategoriaId";
-                if (string.IsNullOrWhiteSpace(pesquisa))
+                    "select p.Id, p.Code, p.Name, p.Price," +
+                    "   c.Id as CategoryId, c.Name as CategoryName" +
+                    " from product as p " +
+                    " inner join category as c " +
+                    "   on c.Id = p.CategoryId";
+                if (string.IsNullOrWhiteSpace(search))
                 {
-                    return await connection.QueryAsync<Produto>(sql);
+                    return await connection.QueryAsync<Product>(sql);
                 }
-                sql += " where p.nome like @pesquisa or c.nome like @pesquisa";
-                return await connection.QueryAsync<Produto>(sql, new { pesquisa = "%" + pesquisa + "%" });
+                sql += " where p.name like @search or c.name like @search";
+                return await connection.QueryAsync<Product>(sql, new { search = "%" + search + "%" });
             }
         }
 
-        public async Task<Produto> GetProdutoAsync(string codigo)
+        public async Task<Product> GetProductAsync(string code)
         {
             string connectionString = configuration.GetConnectionString("DefaultConnection");
             using (var connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
 
-                var sql = "select Id, Codigo, Nome, Preco from produto where Codigo = @codigo";
-                return (await connection.QueryAsync<Produto>(sql, new { codigo })).SingleOrDefault();
+                var sql = "select Id, Code, Name, Price from product where Code = @code";
+                return (await connection.QueryAsync<Product>(sql, new { code })).SingleOrDefault();
             }
         }
     }

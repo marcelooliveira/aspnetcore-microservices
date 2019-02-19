@@ -13,15 +13,15 @@ namespace Catalog.API.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            var categoria = modelBuilder.Entity<Categoria>();
-            categoria.HasKey(t => t.Id);
-            categoria.Property("Nome").HasColumnType("nvarchar(255)");
+            var category = modelBuilder.Entity<Category>();
+            category.HasKey(t => t.Id);
+            category.Property("Name").HasColumnType("nvarchar(255)");
 
-            var produto = modelBuilder.Entity<Produto>();
-            produto.HasKey(t => t.Id);
-            produto.Property("Codigo").HasColumnType("nvarchar(3)");
-            produto.Property("Nome").HasColumnType("nvarchar(255)");
-            produto.Property("Preco").HasColumnType("decimal(5,2)");
+            var product = modelBuilder.Entity<Product>();
+            product.HasKey(t => t.Id);
+            product.Property("Code").HasColumnType("nvarchar(3)");
+            product.Property("Name").HasColumnType("nvarchar(255)");
+            product.Property("Price").HasColumnType("decimal(5,2)");
         }
     }
 }

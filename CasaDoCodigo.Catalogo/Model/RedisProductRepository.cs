@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Catalog.API.Model
 {
-    public class RedisProdutoRepository
+    public class RedisProductRepository
     {
         private readonly ConnectionMultiplexer _redis;
 
-        public RedisProdutoRepository(ConnectionMultiplexer redis)
+        public RedisProductRepository(ConnectionMultiplexer redis)
         {
             _redis = redis;
         }

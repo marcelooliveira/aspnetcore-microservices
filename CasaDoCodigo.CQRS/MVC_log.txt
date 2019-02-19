@@ -225,3 +225,222 @@ C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views
    at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-18 22:05:25.459 -03:00 [ERR] The operation was canceled.
+System.Threading.Tasks.TaskCanceledException: The operation was canceled. ---> System.IO.IOException: Unable to read data from the transport connection: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo. ---> System.Net.Sockets.SocketException: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.FillAsync()
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Polly.CircuitBreaker.CircuitBreakerEngine.ImplementationAsync[TResult](Func`3 action, Context context, IEnumerable`1 shouldHandleExceptionPredicates, IEnumerable`1 shouldHandleResultPredicates, ICircuitController`1 breakerController, CancellationToken cancellationToken, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\CircuitBreaker\CircuitBreakerEngineAsync.cs:line 0
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
+2019-02-18 22:05:35.662 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-18 22:12:09.929 -03:00 [ERR] The operation was canceled.
+System.Threading.Tasks.TaskCanceledException: The operation was canceled. ---> System.IO.IOException: Unable to read data from the transport connection: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo. ---> System.Net.Sockets.SocketException: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.FillAsync()
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Polly.CircuitBreaker.CircuitBreakerEngine.ImplementationAsync[TResult](Func`3 action, Context context, IEnumerable`1 shouldHandleExceptionPredicates, IEnumerable`1 shouldHandleResultPredicates, ICircuitController`1 breakerController, CancellationToken cancellationToken, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\CircuitBreaker\CircuitBreakerEngineAsync.cs:line 0
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
+2019-02-18 22:12:19.591 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-18 22:22:19.084 -03:00 [ERR] The operation was canceled.
+System.Threading.Tasks.TaskCanceledException: The operation was canceled. ---> System.IO.IOException: Unable to read data from the transport connection: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo. ---> System.Net.Sockets.SocketException: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.FillAsync()
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Polly.CircuitBreaker.CircuitBreakerEngine.ImplementationAsync[TResult](Func`3 action, Context context, IEnumerable`1 shouldHandleExceptionPredicates, IEnumerable`1 shouldHandleResultPredicates, ICircuitController`1 breakerController, CancellationToken cancellationToken, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\CircuitBreaker\CircuitBreakerEngineAsync.cs:line 0
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
+2019-02-18 22:22:30.697 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-18 22:36:28.868 -03:00 [ERR] A task was canceled.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Polly.Retry.RetryStateWaitAndRetry`1.CanRetryAsync(DelegateResult`1 delegateResult, CancellationToken cancellationToken, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryStateWaitAndRetryAsync.cs:line 32
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 40
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
+2019-02-18 22:36:40.625 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-18 23:46:36.646 -03:00 [ERR] A task was canceled.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Polly.Retry.RetryStateWaitAndRetry`1.CanRetryAsync(DelegateResult`1 delegateResult, CancellationToken cancellationToken, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryStateWaitAndRetryAsync.cs:line 32
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 40
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
+2019-02-18 23:46:51.373 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
