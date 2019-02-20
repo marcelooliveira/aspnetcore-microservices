@@ -1189,3 +1189,775 @@
 2019-02-18 23:44:44.097 -03:00 [DBG] Using Identity.External as default scheme for sign-out
 2019-02-18 23:44:44.097 -03:00 [DBG] Using Identity.Application as default scheme for challenge
 2019-02-18 23:44:44.098 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-19 23:21:53.610 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-19 23:21:56.007 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-19 23:21:56.128 -03:00 [INF] Setting number of workers to 1
+2019-02-19 23:21:56.187 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-19 23:21:56.298 -03:00 [INF] Bus Rebus 1 started
+2019-02-19 23:21:56.342 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-19 23:21:56.458 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-19 23:21:56.592 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-19 23:21:56.686 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-19 23:21:56.687 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-19 23:21:56.687 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-19 23:21:56.687 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-19 23:21:56.688 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-19 23:43:53.304 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-19 23:43:55.271 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-19 23:43:55.466 -03:00 [INF] Setting number of workers to 1
+2019-02-19 23:43:55.527 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-19 23:43:55.616 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-19 23:43:55.619 -03:00 [INF] Bus Rebus 1 started
+2019-02-19 23:43:55.749 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-19 23:43:55.845 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-19 23:43:55.984 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-19 23:43:55.985 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-19 23:43:55.985 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-19 23:43:55.985 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-19 23:43:55.985 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-19 23:57:42.851 -03:00 [WRN] An error occurred when attempting to receive the next message: Rebus.Exceptions.RebusApplicationException: Queue throw EndOfStreamException(meaning it was canceled by rabbitmq) ---> System.IO.EndOfStreamException: SharedQueue closed
+   at RabbitMQ.Util.SharedQueue`1.EnsureIsOpen()
+   at RabbitMQ.Util.SharedQueue`1.Dequeue(Int32 millisecondsTimeout, T& result)
+   at Rebus.RabbitMq.RabbitMqTransport.Receive(ITransactionContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Rebus.RabbitMq.RabbitMqTransport.Receive(ITransactionContext context, CancellationToken cancellationToken)
+   at Rebus.Workers.ThreadPoolBased.ThreadPoolWorker.ReceiveTransportMessage(CancellationToken token, ITransactionContext context) in C:\projects-rebus\Rebus\Rebus\Workers\ThreadPoolBased\ThreadPoolWorker.cs:line 136
+2019-02-19 23:57:42.929 -03:00 [INF] Existing connection found to be CLOSED
+2019-02-19 23:57:43.118 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-19 23:59:52.399 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-19 23:59:54.214 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-19 23:59:54.282 -03:00 [INF] Setting number of workers to 1
+2019-02-19 23:59:54.313 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-19 23:59:54.433 -03:00 [INF] Bus Rebus 1 started
+2019-02-19 23:59:54.451 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-19 23:59:54.558 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-19 23:59:54.707 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-19 23:59:54.750 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-19 23:59:54.750 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-19 23:59:54.751 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-19 23:59:54.751 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-19 23:59:54.751 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-20 00:01:57.443 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:01:59.205 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-20 00:01:59.272 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:01:59.307 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:01:59.342 -03:00 [INF] Bus Rebus 1 started
+2019-02-20 00:01:59.359 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:01:59.439 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:01:59.531 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-20 00:01:59.560 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-20 00:01:59.560 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-20 00:01:59.560 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-20 00:01:59.560 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-20 00:01:59.561 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-20 00:07:58.774 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:08:00.020 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-20 00:08:00.100 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:08:00.115 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:08:00.183 -03:00 [INF] Bus Rebus 1 started
+2019-02-20 00:08:00.239 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:08:00.315 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:08:00.476 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-20 00:08:00.505 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-20 00:08:00.505 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-20 00:08:00.505 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-20 00:08:00.505 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-20 00:08:00.506 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-20 00:20:54.809 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:20:56.831 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-20 00:20:57.002 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:20:57.059 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:20:57.259 -03:00 [INF] Bus Rebus 1 started
+2019-02-20 00:20:57.259 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:20:57.387 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:20:57.552 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-20 00:20:57.578 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-20 00:20:57.578 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-20 00:20:57.578 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-20 00:20:57.578 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-20 00:20:57.578 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-20 00:21:46.477 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:21:46.747 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-20 00:21:46.763 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:21:46.765 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:21:46.767 -03:00 [INF] Bus Rebus 1 started
+2019-02-20 00:21:46.769 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:21:46.804 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:21:46.823 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-20 00:21:46.836 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-20 00:21:46.836 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-20 00:21:46.836 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-20 00:21:46.836 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-20 00:21:46.836 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-20 00:28:32.391 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:28:35.107 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-20 00:28:35.227 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:28:35.261 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:28:35.571 -03:00 [INF] Bus Rebus 1 started
+2019-02-20 00:28:35.605 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:28:35.825 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:28:35.930 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-20 00:28:35.968 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-20 00:28:35.969 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-20 00:28:35.969 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-20 00:28:35.969 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-20 00:28:35.969 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-20 00:29:47.404 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:29:47.811 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-20 00:29:47.854 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:29:47.857 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:29:47.863 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:29:47.868 -03:00 [INF] Bus Rebus 1 started
+2019-02-20 00:29:47.930 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:29:47.949 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-20 00:29:47.967 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-20 00:29:47.967 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-20 00:29:47.967 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-20 00:29:47.967 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-20 00:29:47.967 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-20 00:51:07.257 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:51:12.127 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-20 00:51:12.189 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:51:12.233 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:51:12.311 -03:00 [INF] Bus Rebus 1 started
+2019-02-20 00:51:12.325 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:51:12.409 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:51:12.579 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-20 00:51:12.608 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-20 00:51:12.608 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-20 00:51:12.609 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-20 00:51:12.609 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-20 00:51:12.609 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-20 01:00:58.566 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 01:00:58.932 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-20 01:00:58.953 -03:00 [INF] Setting number of workers to 1
+2019-02-20 01:00:58.954 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 01:00:58.958 -03:00 [INF] Bus Rebus 1 started
+2019-02-20 01:00:58.959 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 01:00:58.998 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 01:00:59.014 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-20 01:00:59.026 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-20 01:00:59.026 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-20 01:00:59.026 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-20 01:00:59.026 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-20 01:00:59.026 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-20 01:02:33.712 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 01:02:38.431 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-20 01:02:38.728 -03:00 [INF] Setting number of workers to 1
+2019-02-20 01:02:38.885 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 01:02:39.227 -03:00 [INF] Bus Rebus 1 started
+2019-02-20 01:02:39.612 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 01:02:39.879 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 01:02:39.993 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-20 01:02:40.016 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-20 01:02:40.016 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-20 01:02:40.016 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-20 01:02:40.016 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-20 01:02:40.016 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-20 01:11:00.874 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 01:11:02.862 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-20 01:11:03.011 -03:00 [INF] Setting number of workers to 1
+2019-02-20 01:11:03.096 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 01:11:03.247 -03:00 [INF] Bus Rebus 1 started
+2019-02-20 01:11:03.267 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 01:11:03.380 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 01:11:03.513 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-20 01:11:03.549 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-20 01:11:03.549 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-20 01:11:03.549 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-20 01:11:03.550 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-20 01:11:03.550 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-20 01:14:33.553 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-02-20 01:14:33.588 -03:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-02-20 01:14:33.588 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-02-20 01:14:33.607 -03:00 [DBG] Start token request.
+2019-02-20 01:14:33.622 -03:00 [DBG] Start client validation
+2019-02-20 01:14:33.636 -03:00 [DBG] Start parsing Basic Authentication secret
+2019-02-20 01:14:33.637 -03:00 [DBG] Parser found secret: BasicAuthenticationSecretParser
+2019-02-20 01:14:33.637 -03:00 [DBG] Secret id found: MVC
+2019-02-20 01:14:33.668 -03:00 [DBG] client configuration validation for client MVC succeeded.
+2019-02-20 01:14:33.700 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-02-20 01:14:33.700 -03:00 [DBG] Client validation success
+2019-02-20 01:14:33.739 -03:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLKMT5NCF53R:00000012",
+  "TimeStamp": "2019-02-20T04:14:33Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:33.800 -03:00 [DBG] Start token request validation
+2019-02-20 01:14:33.819 -03:00 [DBG] Start client credentials token request validation
+2019-02-20 01:14:33.937 -03:00 [DBG] MVC credentials token request validation success
+2019-02-20 01:14:33.958 -03:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-02-20 01:14:34.026 -03:00 [DBG] Getting claims for access token for client: MVC
+2019-02-20 01:14:34.289 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****SK_Q"
+    }
+  ],
+  "ActivityId": "0HLKMT5NCF53R:00000012",
+  "TimeStamp": "2019-02-20T04:14:34Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:34.293 -03:00 [DBG] Token request success.
+2019-02-20 01:14:34.691 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-02-20 01:14:34.693 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-02-20 01:14:34.693 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-02-20 01:14:34.729 -03:00 [DBG] Start discovery request
+2019-02-20 01:14:34.951 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-02-20 01:14:34.952 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-02-20 01:14:34.952 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-02-20 01:14:34.960 -03:00 [DBG] Start key discovery request
+2019-02-20 01:14:40.130 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-02-20 01:14:40.131 -03:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-02-20 01:14:40.131 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-02-20 01:14:40.139 -03:00 [DBG] Start token request.
+2019-02-20 01:14:40.139 -03:00 [DBG] Start client validation
+2019-02-20 01:14:40.139 -03:00 [DBG] Start parsing Basic Authentication secret
+2019-02-20 01:14:40.139 -03:00 [DBG] Parser found secret: BasicAuthenticationSecretParser
+2019-02-20 01:14:40.139 -03:00 [DBG] Secret id found: MVC
+2019-02-20 01:14:40.139 -03:00 [DBG] client configuration validation for client MVC succeeded.
+2019-02-20 01:14:40.140 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-02-20 01:14:40.140 -03:00 [DBG] Client validation success
+2019-02-20 01:14:40.141 -03:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLKMT5NCF53R:00000016",
+  "TimeStamp": "2019-02-20T04:14:40Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:40.144 -03:00 [DBG] Start token request validation
+2019-02-20 01:14:40.144 -03:00 [DBG] Start client credentials token request validation
+2019-02-20 01:14:40.144 -03:00 [DBG] MVC credentials token request validation success
+2019-02-20 01:14:40.145 -03:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-02-20 01:14:40.145 -03:00 [DBG] Getting claims for access token for client: MVC
+2019-02-20 01:14:40.150 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****sOAA"
+    }
+  ],
+  "ActivityId": "0HLKMT5NCF53R:00000016",
+  "TimeStamp": "2019-02-20T04:14:40Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:40.151 -03:00 [DBG] Token request success.
+2019-02-20 01:14:45.918 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-02-20 01:14:45.919 -03:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-02-20 01:14:45.919 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-02-20 01:14:45.919 -03:00 [DBG] Start token request.
+2019-02-20 01:14:45.919 -03:00 [DBG] Start client validation
+2019-02-20 01:14:45.919 -03:00 [DBG] Start parsing Basic Authentication secret
+2019-02-20 01:14:45.919 -03:00 [DBG] Parser found secret: BasicAuthenticationSecretParser
+2019-02-20 01:14:45.919 -03:00 [DBG] Secret id found: MVC
+2019-02-20 01:14:45.919 -03:00 [DBG] client configuration validation for client MVC succeeded.
+2019-02-20 01:14:45.919 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-02-20 01:14:45.919 -03:00 [DBG] Client validation success
+2019-02-20 01:14:45.920 -03:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLKMT5NCF53R:00000017",
+  "TimeStamp": "2019-02-20T04:14:45Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:45.926 -03:00 [DBG] Start token request validation
+2019-02-20 01:14:45.927 -03:00 [DBG] Start client credentials token request validation
+2019-02-20 01:14:45.927 -03:00 [DBG] MVC credentials token request validation success
+2019-02-20 01:14:45.927 -03:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-02-20 01:14:45.927 -03:00 [DBG] Getting claims for access token for client: MVC
+2019-02-20 01:14:45.933 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****wEeA"
+    }
+  ],
+  "ActivityId": "0HLKMT5NCF53R:00000017",
+  "TimeStamp": "2019-02-20T04:14:45Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:45.933 -03:00 [DBG] Token request success.
+2019-02-20 01:14:48.159 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-02-20 01:14:48.160 -03:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-02-20 01:14:48.160 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-02-20 01:14:48.160 -03:00 [DBG] Start token request.
+2019-02-20 01:14:48.160 -03:00 [DBG] Start client validation
+2019-02-20 01:14:48.160 -03:00 [DBG] Start parsing Basic Authentication secret
+2019-02-20 01:14:48.160 -03:00 [DBG] Parser found secret: BasicAuthenticationSecretParser
+2019-02-20 01:14:48.160 -03:00 [DBG] Secret id found: MVC
+2019-02-20 01:14:48.160 -03:00 [DBG] client configuration validation for client MVC succeeded.
+2019-02-20 01:14:48.160 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-02-20 01:14:48.160 -03:00 [DBG] Client validation success
+2019-02-20 01:14:48.161 -03:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLKMT5NCF53R:00000019",
+  "TimeStamp": "2019-02-20T04:14:48Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:48.168 -03:00 [DBG] Start token request validation
+2019-02-20 01:14:48.168 -03:00 [DBG] Start client credentials token request validation
+2019-02-20 01:14:48.169 -03:00 [DBG] MVC credentials token request validation success
+2019-02-20 01:14:48.170 -03:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-02-20 01:14:48.170 -03:00 [DBG] Getting claims for access token for client: MVC
+2019-02-20 01:14:48.175 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****pGXQ"
+    }
+  ],
+  "ActivityId": "0HLKMT5NCF53R:00000019",
+  "TimeStamp": "2019-02-20T04:14:48Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:48.175 -03:00 [DBG] Token request success.
+2019-02-20 01:14:48.731 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-02-20 01:14:48.732 -03:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-02-20 01:14:48.732 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-02-20 01:14:48.732 -03:00 [DBG] Start token request.
+2019-02-20 01:14:48.732 -03:00 [DBG] Start client validation
+2019-02-20 01:14:48.732 -03:00 [DBG] Start parsing Basic Authentication secret
+2019-02-20 01:14:48.732 -03:00 [DBG] Parser found secret: BasicAuthenticationSecretParser
+2019-02-20 01:14:48.732 -03:00 [DBG] Secret id found: MVC
+2019-02-20 01:14:48.732 -03:00 [DBG] client configuration validation for client MVC succeeded.
+2019-02-20 01:14:48.732 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-02-20 01:14:48.732 -03:00 [DBG] Client validation success
+2019-02-20 01:14:48.733 -03:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLKMT5NCF53R:0000001A",
+  "TimeStamp": "2019-02-20T04:14:48Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:48.733 -03:00 [DBG] Start token request validation
+2019-02-20 01:14:48.733 -03:00 [DBG] Start client credentials token request validation
+2019-02-20 01:14:48.733 -03:00 [DBG] MVC credentials token request validation success
+2019-02-20 01:14:48.733 -03:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-02-20 01:14:48.733 -03:00 [DBG] Getting claims for access token for client: MVC
+2019-02-20 01:14:48.738 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****pGXQ"
+    }
+  ],
+  "ActivityId": "0HLKMT5NCF53R:0000001A",
+  "TimeStamp": "2019-02-20T04:14:48Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:48.739 -03:00 [DBG] Token request success.
+2019-02-20 01:14:49.281 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-02-20 01:14:49.282 -03:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-02-20 01:14:49.282 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-02-20 01:14:49.282 -03:00 [DBG] Start token request.
+2019-02-20 01:14:49.282 -03:00 [DBG] Start client validation
+2019-02-20 01:14:49.282 -03:00 [DBG] Start parsing Basic Authentication secret
+2019-02-20 01:14:49.282 -03:00 [DBG] Parser found secret: BasicAuthenticationSecretParser
+2019-02-20 01:14:49.282 -03:00 [DBG] Secret id found: MVC
+2019-02-20 01:14:49.282 -03:00 [DBG] client configuration validation for client MVC succeeded.
+2019-02-20 01:14:49.282 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-02-20 01:14:49.283 -03:00 [DBG] Client validation success
+2019-02-20 01:14:49.283 -03:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLKMT5NCF53R:0000001B",
+  "TimeStamp": "2019-02-20T04:14:49Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:49.284 -03:00 [DBG] Start token request validation
+2019-02-20 01:14:49.284 -03:00 [DBG] Start client credentials token request validation
+2019-02-20 01:14:49.284 -03:00 [DBG] MVC credentials token request validation success
+2019-02-20 01:14:49.284 -03:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-02-20 01:14:49.284 -03:00 [DBG] Getting claims for access token for client: MVC
+2019-02-20 01:14:49.290 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****ltfw"
+    }
+  ],
+  "ActivityId": "0HLKMT5NCF53R:0000001B",
+  "TimeStamp": "2019-02-20T04:14:49Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:14:49.291 -03:00 [DBG] Token request success.
+2019-02-20 01:15:01.582 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-02-20 01:15:01.583 -03:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-02-20 01:15:01.583 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-02-20 01:15:01.584 -03:00 [DBG] Start token request.
+2019-02-20 01:15:01.584 -03:00 [DBG] Start client validation
+2019-02-20 01:15:01.584 -03:00 [DBG] Start parsing Basic Authentication secret
+2019-02-20 01:15:01.584 -03:00 [DBG] Parser found secret: BasicAuthenticationSecretParser
+2019-02-20 01:15:01.584 -03:00 [DBG] Secret id found: MVC
+2019-02-20 01:15:01.584 -03:00 [DBG] client configuration validation for client MVC succeeded.
+2019-02-20 01:15:01.584 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-02-20 01:15:01.584 -03:00 [DBG] Client validation success
+2019-02-20 01:15:01.584 -03:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLKMT5NCF53R:0000001D",
+  "TimeStamp": "2019-02-20T04:15:01Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:15:01.585 -03:00 [DBG] Start token request validation
+2019-02-20 01:15:01.585 -03:00 [DBG] Start client credentials token request validation
+2019-02-20 01:15:01.585 -03:00 [DBG] MVC credentials token request validation success
+2019-02-20 01:15:01.586 -03:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-02-20 01:15:01.586 -03:00 [DBG] Getting claims for access token for client: MVC
+2019-02-20 01:15:01.592 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****UYlQ"
+    }
+  ],
+  "ActivityId": "0HLKMT5NCF53R:0000001D",
+  "TimeStamp": "2019-02-20T04:15:01Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:15:01.593 -03:00 [DBG] Token request success.
+2019-02-20 01:15:02.630 -03:00 [WRN] Unhandled exception [1,"fef2370b-bc95-4662-854c-1eeaeef224f3"] (FINAL) while handling message with ID Rebus.Exceptions.MessageCouldNotBeDispatchedToAnyHandlersException: Message with ID fef2370b-bc95-4662-854c-1eeaeef224f3 and type CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers (and will not be retried under the default fail-fast settings)
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Pipeline\Receive\DispatchIncomingMessageStep.cs:line 64
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Sagas\LoadSagaDataStep.cs:line 66
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Pipeline\Receive\ActivateHandlersStep.cs:line 47
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Pipeline\Receive\HandleRoutingSlipsStep.cs:line 42
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Pipeline\Receive\DeserializeIncomingMessageStep.cs:line 34
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Pipeline\Receive\HandleDeferredMessagesStep.cs:line 121
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Retry\FailFast\FailFastStep.cs:line 41
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId) in C:\projects-rebus\Rebus\Rebus\Retry\Simple\SimpleRetryStrategyStep.cs:line 114
+2019-02-20 01:15:02.724 -03:00 [INF] Message received:
+2019-02-20 01:15:02.724 -03:00 [INF] ----------------------------------
+2019-02-20 01:15:02.733 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"9c1038ce-405e-4905-beb3-bd0f700ebb14","CreationDate":"2019-02-20T04:15:02.7009853Z"}
+2019-02-20 01:15:02.733 -03:00 [INF] ----------------------------------
+2019-02-20 01:15:04.025 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens 0bf7b205-d84c-4d07-aab4-1b35ad7b9bb1 to 1 handlers took 1308 ms
+2019-02-20 01:15:31.484 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-02-20 01:15:31.484 -03:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-02-20 01:15:31.485 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-02-20 01:15:31.485 -03:00 [DBG] Start token request.
+2019-02-20 01:15:31.485 -03:00 [DBG] Start client validation
+2019-02-20 01:15:31.485 -03:00 [DBG] Start parsing Basic Authentication secret
+2019-02-20 01:15:31.485 -03:00 [DBG] Parser found secret: BasicAuthenticationSecretParser
+2019-02-20 01:15:31.485 -03:00 [DBG] Secret id found: MVC
+2019-02-20 01:15:31.485 -03:00 [DBG] client configuration validation for client MVC succeeded.
+2019-02-20 01:15:31.486 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-02-20 01:15:31.486 -03:00 [DBG] Client validation success
+2019-02-20 01:15:31.486 -03:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLKMT5NCF53R:00000020",
+  "TimeStamp": "2019-02-20T04:15:31Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:15:31.503 -03:00 [DBG] Start token request validation
+2019-02-20 01:15:31.503 -03:00 [DBG] Start client credentials token request validation
+2019-02-20 01:15:31.504 -03:00 [DBG] MVC credentials token request validation success
+2019-02-20 01:15:31.504 -03:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-02-20 01:15:31.504 -03:00 [DBG] Getting claims for access token for client: MVC
+2019-02-20 01:15:31.509 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****nLTw"
+    }
+  ],
+  "ActivityId": "0HLKMT5NCF53R:00000020",
+  "TimeStamp": "2019-02-20T04:15:31Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:15:31.509 -03:00 [DBG] Token request success.
+2019-02-20 01:15:35.464 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-02-20 01:15:35.465 -03:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-02-20 01:15:35.465 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-02-20 01:15:35.465 -03:00 [DBG] Start token request.
+2019-02-20 01:15:35.465 -03:00 [DBG] Start client validation
+2019-02-20 01:15:35.465 -03:00 [DBG] Start parsing Basic Authentication secret
+2019-02-20 01:15:35.465 -03:00 [DBG] Parser found secret: BasicAuthenticationSecretParser
+2019-02-20 01:15:35.465 -03:00 [DBG] Secret id found: MVC
+2019-02-20 01:15:35.466 -03:00 [DBG] client configuration validation for client MVC succeeded.
+2019-02-20 01:15:35.466 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-02-20 01:15:35.466 -03:00 [DBG] Client validation success
+2019-02-20 01:15:35.466 -03:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLKMT5NCF53R:00000022",
+  "TimeStamp": "2019-02-20T04:15:35Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:15:35.466 -03:00 [DBG] Start token request validation
+2019-02-20 01:15:35.466 -03:00 [DBG] Start client credentials token request validation
+2019-02-20 01:15:35.467 -03:00 [DBG] MVC credentials token request validation success
+2019-02-20 01:15:35.467 -03:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-02-20 01:15:35.467 -03:00 [DBG] Getting claims for access token for client: MVC
+2019-02-20 01:15:35.473 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****76tg"
+    }
+  ],
+  "ActivityId": "0HLKMT5NCF53R:00000022",
+  "TimeStamp": "2019-02-20T04:15:35Z",
+  "ProcessId": 6468,
+  "LocalIpAddress": "127.0.0.1:47275",
+  "RemoteIpAddress": "::1"
+}
+2019-02-20 01:15:35.473 -03:00 [DBG] Token request success.
+2019-02-20 01:15:35.571 -03:00 [WRN] Unhandled exception [1,"a8ecaf92-c7bd-4b58-9ab4-b2e883c02c13"] (FINAL) while handling message with ID Rebus.Exceptions.MessageCouldNotBeDispatchedToAnyHandlersException: Message with ID a8ecaf92-c7bd-4b58-9ab4-b2e883c02c13 and type CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers (and will not be retried under the default fail-fast settings)
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Pipeline\Receive\DispatchIncomingMessageStep.cs:line 64
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Sagas\LoadSagaDataStep.cs:line 66
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Pipeline\Receive\ActivateHandlersStep.cs:line 47
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Pipeline\Receive\HandleRoutingSlipsStep.cs:line 42
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Pipeline\Receive\DeserializeIncomingMessageStep.cs:line 34
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Pipeline\Receive\HandleDeferredMessagesStep.cs:line 121
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next) in C:\projects-rebus\Rebus\Rebus\Retry\FailFast\FailFastStep.cs:line 41
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId) in C:\projects-rebus\Rebus\Rebus\Retry\Simple\SimpleRetryStrategyStep.cs:line 114
+2019-02-20 01:15:35.585 -03:00 [INF] Message received:
+2019-02-20 01:15:35.585 -03:00 [INF] ----------------------------------
+2019-02-20 01:15:35.585 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"d19568ed-cdd7-4eb7-baee-936c49eba496","CreationDate":"2019-02-20T04:15:35.5849138Z"}
+2019-02-20 01:15:35.586 -03:00 [INF] ----------------------------------
+2019-02-20 01:15:36.020 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens 9d5701c8-b535-4e27-85e9-784ec257778d to 1 handlers took 435 ms

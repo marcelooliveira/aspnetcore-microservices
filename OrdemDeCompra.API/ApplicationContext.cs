@@ -19,11 +19,11 @@ namespace CasaDoCodigo.Ordering
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Pedido>().HasKey(t => t.Id);
-            modelBuilder.Entity<Pedido>().HasMany(t => t.Items).WithOne(t => t.Pedido);
+            modelBuilder.Entity<Order>().HasKey(t => t.Id);
+            modelBuilder.Entity<Order>().HasMany(t => t.Items).WithOne(t => t.Order);
 
-            modelBuilder.Entity<ItemPedido>().HasKey(t => t.Id);
-            modelBuilder.Entity<ItemPedido>().HasOne(t => t.Pedido);
+            modelBuilder.Entity<OrderItem>().HasKey(t => t.Id);
+            modelBuilder.Entity<OrderItem>().HasOne(t => t.Order);
         }
     }
 }

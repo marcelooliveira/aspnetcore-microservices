@@ -17,8 +17,8 @@ namespace CasaDoCodigo.Services
     {
         class ApiUris
         {
-            public static string GetProduto => "api/produto";
-            public static string BuscaProdutos => "api/busca";
+            public static string GetProduct => "api/product";
+            public static string SearchProducts => "api/search";
         }
 
         private readonly ILogger<CatalogService> _logger;
@@ -34,22 +34,22 @@ namespace CasaDoCodigo.Services
             _baseUri = _configuration["CatalogUrl"];
         }
 
-        public async Task<IList<Models.Produto>> GetProdutos()
+        public async Task<IList<Models.Product>> GetProducts()
         {
-            var uri = _baseUri + ApiUris.GetProduto;
+            var uri = _baseUri + ApiUris.GetProduct;
             var json = await _httpClient.GetStringAsync(uri);
-            IList<Produto> result = JsonConvert.DeserializeObject<IList<Models.Produto>>(json);
+            IList<Product> result = JsonConvert.DeserializeObject<IList<Models.Product>>(json);
             return result;
         }
 
-        public async Task<IList<Produto>> BuscaProdutos(string pesquisa)
+        public async Task<IList<Product>> BuscaProducts(string pesquisa)
         {
-            return await GetAsync<List<Produto>>(ApiUris.BuscaProdutos, pesquisa);
+            return await GetAsync<List<Product>>(ApiUris.SearchProducts, pesquisa);
         }
 
-        public async Task<Models.Produto> GetProduto(string codigo)
+        public async Task<Models.Product> GetProduct(string codigo)
         {
-            return await GetAsync<Produto>(ApiUris.GetProduto, codigo);
+            return await GetAsync<Product>(ApiUris.GetProduct, codigo);
         }
 
         public override string Scope => "Catalog.API";

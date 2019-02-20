@@ -31,8 +31,8 @@ namespace CasaDoCodigo.Controllers
 
             try
             {
-                var produtos = await catalogService.GetProdutos();
-                var resultado = new BuscaProdutosViewModel(produtos, "");
+                var products = await catalogService.GetProducts();
+                var resultado = new BuscaProductsViewModel(products, "");
                 return base.View(resultado);
             }
             catch (BrokenCircuitException e)
@@ -49,14 +49,14 @@ namespace CasaDoCodigo.Controllers
             return View();
         }
 
-        public async Task<IActionResult> BuscaProdutos(string pesquisa)
+        public async Task<IActionResult> BuscaProducts(string pesquisa)
         {
             await CheckUserNotificationCount();
 
             try
             {
-                var produtos = await catalogService.BuscaProdutos(pesquisa);
-                var resultado = new BuscaProdutosViewModel(produtos, pesquisa);
+                var products = await catalogService.BuscaProducts(pesquisa);
+                var resultado = new BuscaProductsViewModel(products, pesquisa);
                 return View("Index", resultado);
             }
             catch (BrokenCircuitException e)

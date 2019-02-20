@@ -43,7 +43,7 @@ namespace MVC.Test
 
             string customerId = "123";
             List<ItemPedidoDTO> items = new List<ItemPedidoDTO> {
-                new ItemPedidoDTO("001", "produto 001", 1, 12.34m)
+                new ItemPedidoDTO("001", "product 001", 1, 12.34m)
             };
             PedidoDTO pedido = new PedidoDTO(items, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             pedidoServiceMock
@@ -64,7 +64,7 @@ namespace MVC.Test
             ViewResult viewResult = Assert.IsAssignableFrom<ViewResult>(actionResult);
             List<PedidoDTO>  pedidos = Assert.IsType<List<PedidoDTO>>(viewResult.Model);
             Assert.Collection(pedidos[0].Items,
-                i => Assert.Equal("001", i.ProdutoCodigo));
+                i => Assert.Equal("001", i.ProductCodigo));
             pedidoServiceMock.Verify();
         }
     }

@@ -28,19 +28,19 @@ namespace Ordering.API.Migrations
 
                     b.Property<int>("PedidoId");
 
-                    b.Property<string>("ProdutoCodigo")
+                    b.Property<string>("ProductCodigo")
                         .IsRequired();
 
-                    b.Property<int>("ProdutoId");
+                    b.Property<int>("ProductId");
 
-                    b.Property<string>("ProdutoNome")
+                    b.Property<string>("ProductNome")
                         .IsRequired();
 
-                    b.Property<decimal>("ProdutoPreco");
+                    b.Property<decimal>("ProductPreco");
 
-                    b.Property<decimal>("ProdutoPrecoUnitario");
+                    b.Property<decimal>("ProductPrecoUnitario");
 
-                    b.Property<int>("ProdutoQuantidade");
+                    b.Property<int>("ProductQuantidade");
 
                     b.HasKey("Id");
 

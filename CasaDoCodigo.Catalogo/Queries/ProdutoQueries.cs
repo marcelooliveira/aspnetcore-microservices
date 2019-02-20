@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Catalog.API.Queries
 {
-    public class ProdutoQueries : IProductQueries
+    public class ProductQueries : IProductQueries
     {
         private readonly IConfiguration configuration;
 
-        public ProdutoQueries(IConfiguration configuration)
+        public ProductQueries(IConfiguration configuration)
         {
             this.configuration = configuration;
         }

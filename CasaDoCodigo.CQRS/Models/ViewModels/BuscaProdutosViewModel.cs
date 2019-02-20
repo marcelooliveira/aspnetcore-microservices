@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Models.ViewModels
 {
-    public class BuscaProdutosViewModel
+    public class BuscaProductsViewModel
     {
-        public BuscaProdutosViewModel(IList<Produto> produtos, string pesquisa)
+        public BuscaProductsViewModel(IList<Product> products, string search)
         {
-            Produtos = produtos;
-            Pesquisa = pesquisa;
+            Products = products;
+            Search = search;
         }
 
-        public IList<Produto> Produtos { get; }
-        public string Pesquisa { get; set; }
+        public IList<Product> Products { get; }
+        public string Search { get; set; }
     }
 }

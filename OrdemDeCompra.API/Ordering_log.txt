@@ -1,367 +1,505 @@
-2019-02-18 00:07:13.457 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 00:07:26.107 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 00:07:26.965 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 00:07:27.043 -03:00 [INF] Starting bus 1
-2019-02-18 00:07:27.060 -03:00 [INF] Setting number of workers to 1
-2019-02-18 00:07:27.084 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 00:07:27.104 -03:00 [INF] Started
-2019-02-18 00:07:27.113 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 00:07:27.195 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 00:07:28.222 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:07:28.228 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 00:07:40.920 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:07:52.785 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:08:04.048 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:08:14.612 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:09:19.470 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 00:09:39.642 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 00:09:42.092 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 00:09:42.303 -03:00 [INF] Starting bus 1
-2019-02-18 00:09:42.548 -03:00 [INF] Setting number of workers to 1
-2019-02-18 00:09:42.616 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 00:09:42.821 -03:00 [INF] Started
-2019-02-18 00:09:43.230 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 00:09:43.607 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 00:09:46.590 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:09:46.597 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 00:09:58.543 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:10:10.767 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:10:21.286 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:10:32.107 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:10:42.720 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:10:53.350 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:11:04.018 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:11:14.614 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:11:25.368 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:11:35.996 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:20:32.478 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 00:20:44.640 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 00:20:45.912 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 00:20:45.959 -03:00 [INF] Starting bus 1
-2019-02-18 00:20:45.968 -03:00 [INF] Setting number of workers to 1
-2019-02-18 00:20:45.976 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 00:20:45.979 -03:00 [INF] Started
-2019-02-18 00:20:45.997 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 00:20:46.157 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 00:20:47.905 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:20:47.913 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 00:21:00.139 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:21:11.630 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:21:22.197 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:21:32.987 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:21:43.672 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:21:54.197 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:22:05.180 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:22:15.827 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:22:26.322 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:22:36.930 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:22:47.467 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:22:58.099 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:23:09.397 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:25:04.341 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:25:46.862 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:26:38.067 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:27:27.109 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 00:27:29.118 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 00:27:29.377 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 00:27:29.396 -03:00 [INF] Starting bus 1
-2019-02-18 00:27:29.400 -03:00 [INF] Setting number of workers to 1
-2019-02-18 00:27:29.402 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 00:27:29.406 -03:00 [INF] Started
-2019-02-18 00:27:29.408 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 00:27:29.455 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 00:27:29.961 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:27:29.966 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 00:27:46.536 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:27:56.963 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:28:45.766 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 00:29:01.612 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 00:29:02.299 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 00:29:02.379 -03:00 [INF] Starting bus 1
-2019-02-18 00:29:02.392 -03:00 [INF] Setting number of workers to 1
-2019-02-18 00:29:02.403 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 00:29:02.427 -03:00 [INF] Started
-2019-02-18 00:29:02.462 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 00:29:02.550 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 00:29:03.404 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:29:03.414 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 00:29:14.732 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:29:25.328 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:29:36.051 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:29:47.457 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:29:58.318 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:30:08.835 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:30:19.402 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:30:29.817 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:30:40.710 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:30:51.539 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:31:54.419 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 00:31:56.001 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 00:31:56.346 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 00:31:56.372 -03:00 [INF] Starting bus 1
-2019-02-18 00:31:56.376 -03:00 [INF] Setting number of workers to 1
-2019-02-18 00:31:56.378 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 00:31:56.382 -03:00 [INF] Started
-2019-02-18 00:31:56.383 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 00:31:56.436 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 00:31:56.996 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:31:57.000 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 00:32:07.666 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:32:23.866 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:32:34.190 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:32:44.515 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:32:54.835 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:33:05.157 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:33:15.509 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:33:25.821 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:33:46.470 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:34:08.153 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:34:24.513 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:34:45.684 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:35:07.238 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:35:18.475 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:35:29.063 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:35:39.433 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:35:58.536 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:36:21.715 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:36:42.969 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:37:03.443 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:37:13.863 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:37:32.702 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:37:43.199 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:37:59.295 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:38:09.688 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:38:12.498 -03:00 [INF] Setting number of workers to 0
-2019-02-18 00:38:12.503 -03:00 [DBG] Removing worker Rebus 1 worker 1
-2019-02-18 00:38:14.683 -03:00 [DBG] Worker Rebus 1 worker 1 stopped
-2019-02-18 00:38:14.690 -03:00 [INF] Stopping periodic task CleanupTrackedErrors
-2019-02-18 00:38:14.694 -03:00 [INF] Disposing RabbitMQ connection
-2019-02-18 00:44:48.825 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 00:45:00.874 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 00:45:02.172 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 00:45:02.399 -03:00 [INF] Starting bus 1
-2019-02-18 00:45:02.433 -03:00 [INF] Setting number of workers to 1
-2019-02-18 00:45:02.474 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 00:45:02.516 -03:00 [INF] Started
-2019-02-18 00:45:02.528 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 00:45:02.732 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 00:45:04.848 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:45:04.857 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 00:45:18.156 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:45:28.613 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:45:39.062 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:45:49.591 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:46:00.251 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:46:10.960 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:46:21.494 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:46:32.137 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:46:42.629 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:46:53.099 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:47:03.704 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:47:14.314 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:47:24.801 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:47:35.390 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:47:45.926 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:47:56.582 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:48:07.301 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:48:17.886 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:48:28.522 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:48:39.141 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:48:49.706 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:49:01.041 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:49:13.622 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:49:24.403 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:49:35.057 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:49:45.699 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:49:56.344 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:50:06.837 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:50:17.405 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:50:28.023 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:50:38.617 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:50:49.071 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:50:59.606 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:51:10.110 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:51:20.992 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:51:31.695 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:51:42.436 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:51:53.852 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:51:56.774 -03:00 [INF] Message received:
-2019-02-18 00:51:56.775 -03:00 [INF] ----------------------------------
-2019-02-18 00:51:56.796 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","PedidoId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"42f7319f-8473-4da9-9b17-b3ab24239cfe","Items":[{"Id":"025","ProdutoId":"025","ProdutoNome":"turkish strained yogurt","Quantidade":7,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"001","ProdutoId":"001","ProdutoNome":"skimmed","Quantidade":6,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"002","ProdutoId":"002","ProdutoNome":"strawberry frozen yogurt","Quantidade":2,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"9a13ce1b-6cb4-4253-a065-64c54ccfe74f","CreationDate":"2019-02-18T03:51:56.6065483Z"}
-2019-02-18 00:51:56.796 -03:00 [INF] ----------------------------------
-2019-02-18 00:51:57.146 -03:00 [INF] new CreatePedidoCommandHandler created.
-2019-02-18 00:51:58.691 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens c4cb5c5e-a7ad-4666-a727-38c567a6bbf2 to 1 handlers took 1934.7522000000001 ms
-2019-02-18 00:51:58.720 -03:00 [ERR] Failed executing DbCommand (53ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 50), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
-SET NOCOUNT ON;
-INSERT INTO [Pedido] ([ClienteBairro], [ClienteCEP], [ClienteComplemento], [ClienteEmail], [ClienteEndereco], [ClienteMunicipio], [ClienteNome], [ClienteTelefone], [ClienteUF], [CustomerId], [DateCreated])
-VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
-SELECT [Id]
-FROM [Pedido]
-WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
-System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CustomerId'.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+2019-02-20 00:31:28.659 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:31:32.524 -03:00 [ERR] Failed executing DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[ItemPedido]') AND [c].[name] = N'ProductId');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [ItemPedido] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [ItemPedido] DROP COLUMN [ProductId];
+System.Data.SqlClient.SqlException (0x80131904): ALTER TABLE DROP COLUMN failed because column 'ProductId' does not exist in table 'ItemPedido'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
 --- End of stack trace from previous location where exception was thrown ---
    at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-ClientConnectionId:9519d225-9310-4131-8eda-0c33236f2627
-Error Number:207,State:1,Class:16
-2019-02-18 00:51:58.872 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerId'.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerId'.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+ClientConnectionId:7760a724-6572-487b-81bb-fb2dc89c8f25
+Error Number:4924,State:1,Class:16
+2019-02-20 00:31:41.877 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:31:45.081 -03:00 [ERR] Failed executing DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[ItemPedido]') AND [c].[name] = N'ProductId');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [ItemPedido] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [ItemPedido] DROP COLUMN [ProductId];
+System.Data.SqlClient.SqlException (0x80131904): ALTER TABLE DROP COLUMN failed because column 'ProductId' does not exist in table 'ItemPedido'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
 --- End of stack trace from previous location where exception was thrown ---
    at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-2019-02-18 00:51:59.307 -03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerId'.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at CasaDoCodigo.Ordering.Repositories.PedidoRepository.CreateOrUpdate(Pedido pedido) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\PedidoRepository.cs:line 56
-   at CasaDoCodigo.Ordering.Commands.CreatePedidoCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreatePedidoCommandHandler.cs:line 118
-2019-02-18 00:52:04.441 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:52:15.883 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:52:27.259 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:52:37.820 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:52:48.363 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:52:58.770 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:53:09.235 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:53:19.756 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:53:30.326 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:53:40.806 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:53:51.268 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:54:01.788 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:54:12.288 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:54:23.092 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:54:33.716 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:54:44.218 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:54:54.687 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:55:05.133 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:55:15.671 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:55:26.135 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:55:36.548 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:55:47.012 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:55:57.496 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:56:07.893 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:56:18.322 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:56:28.723 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:56:39.111 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:56:49.612 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:57:00.171 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:57:10.726 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:57:21.354 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:57:31.874 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:57:42.370 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:57:53.520 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:58:04.102 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:58:14.538 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:58:25.031 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:58:36.534 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:58:47.022 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:58:57.640 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:59:08.201 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:59:18.686 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:59:29.939 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:59:40.567 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 00:59:51.021 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:00:01.642 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:00:13.831 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:00:24.401 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:00:34.908 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:00:45.650 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:00:56.206 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:01:06.741 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:01:17.241 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:01:27.687 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:01:38.225 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:01:48.736 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:01:59.312 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:02:09.848 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:02:20.351 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:02:30.857 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:02:41.365 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:02:51.838 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:03:02.358 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:03:12.813 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:03:23.260 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:03:33.774 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:03:44.375 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:03:55.084 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:04:05.862 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:04:16.612 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:04:27.143 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:04:37.819 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:04:48.611 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:04:59.610 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:05:10.599 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:05:21.576 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:05:32.645 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:05:43.518 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:05:54.562 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:06:05.549 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:06:16.478 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:06:27.173 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:06:37.933 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:06:48.614 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:06:59.569 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:07:10.324 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:07:21.152 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:08:10.590 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 01:08:21.340 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 01:08:22.253 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 01:08:22.311 -03:00 [INF] Starting bus 1
-2019-02-18 01:08:22.323 -03:00 [INF] Setting number of workers to 1
-2019-02-18 01:08:22.368 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 01:08:22.401 -03:00 [INF] Started
-2019-02-18 01:08:22.440 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 01:08:22.506 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 01:08:23.905 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:08:23.915 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 01:08:34.925 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:08:45.768 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:08:56.474 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 01:09:01.929 -03:00 [WRN] Unhandled exception [1,"de48419f-fdba-4abd-ae1b-9c51bba80b65"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID de48419f-fdba-4abd-ae1b-9c51bba80b65 and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
+ClientConnectionId:512dcd5b-6ee4-4305-8093-d5611f7e5181
+Error Number:4924,State:1,Class:16
+2019-02-20 00:32:05.102 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:32:07.899 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:32:08.200 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:32:08.226 -03:00 [INF] Starting bus 1
+2019-02-20 00:32:08.228 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:32:08.230 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:32:08.232 -03:00 [INF] Started
+2019-02-20 00:32:08.235 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:32:08.272 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:32:08.664 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:32:08.668 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:32:27.473 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:32:28.606 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:32:28.999 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:32:29.026 -03:00 [INF] Starting bus 1
+2019-02-20 00:32:29.031 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:32:29.033 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:32:29.038 -03:00 [INF] Started
+2019-02-20 00:32:29.039 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:32:29.093 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:32:29.838 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:32:29.847 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:32:47.331 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:32:49.835 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:32:50.445 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:32:50.468 -03:00 [INF] Starting bus 1
+2019-02-20 00:32:50.470 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:32:50.471 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:32:50.473 -03:00 [INF] Started
+2019-02-20 00:32:50.475 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:32:50.526 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:32:51.294 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:32:51.303 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:33:08.086 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:33:18.341 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:33:38.759 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:33:39.963 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:33:40.458 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:33:40.492 -03:00 [INF] Starting bus 1
+2019-02-20 00:33:40.494 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:33:40.496 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:33:40.501 -03:00 [INF] Started
+2019-02-20 00:33:40.504 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:33:40.570 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:33:41.466 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:33:41.476 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:33:56.806 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:33:57.357 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:33:57.746 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:33:57.838 -03:00 [INF] Starting bus 1
+2019-02-20 00:33:57.840 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:33:57.842 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:33:57.931 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:33:57.932 -03:00 [INF] Started
+2019-02-20 00:33:57.993 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:33:58.666 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:33:58.672 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:34:18.143 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:34:18.952 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:34:19.362 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:34:19.387 -03:00 [INF] Starting bus 1
+2019-02-20 00:34:19.390 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:34:19.392 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:34:19.396 -03:00 [INF] Started
+2019-02-20 00:34:19.398 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:34:19.437 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:34:19.852 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:34:19.858 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:34:30.494 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:34:40.926 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:34:51.222 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:35:07.164 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:35:07.861 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:35:08.223 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:35:08.259 -03:00 [INF] Starting bus 1
+2019-02-20 00:35:08.261 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:35:08.264 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:35:08.272 -03:00 [INF] Started
+2019-02-20 00:35:08.273 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:35:08.310 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:35:08.964 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:35:08.970 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:35:25.388 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:35:26.039 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:35:56.080 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:35:57.308 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:35:57.758 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:35:57.790 -03:00 [INF] Starting bus 1
+2019-02-20 00:35:57.793 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:35:57.795 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:35:57.798 -03:00 [INF] Started
+2019-02-20 00:35:57.800 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:35:57.867 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:36:08.335 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:36:08.849 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:36:09.092 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:36:09.108 -03:00 [INF] Starting bus 1
+2019-02-20 00:36:09.109 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:36:09.111 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:36:09.116 -03:00 [INF] Started
+2019-02-20 00:36:09.119 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:36:09.161 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:36:09.733 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:36:09.737 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:36:20.252 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:36:30.716 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:36:45.669 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:36:47.122 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:36:47.522 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:36:47.558 -03:00 [INF] Starting bus 1
+2019-02-20 00:36:47.561 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:36:47.563 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:36:47.575 -03:00 [INF] Started
+2019-02-20 00:36:47.575 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:36:47.625 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:36:48.220 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:36:48.228 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:36:58.903 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:37:15.901 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:37:16.411 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:37:16.645 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:37:16.666 -03:00 [INF] Starting bus 1
+2019-02-20 00:37:16.668 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:37:16.670 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:37:16.673 -03:00 [INF] Started
+2019-02-20 00:37:16.675 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:37:16.716 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:37:17.286 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:37:17.292 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:37:46.158 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:37:46.834 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:37:47.136 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:37:47.165 -03:00 [INF] Starting bus 1
+2019-02-20 00:37:47.168 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:37:47.170 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:37:47.173 -03:00 [INF] Started
+2019-02-20 00:37:47.180 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:37:47.217 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:37:47.729 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:37:47.736 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:38:03.792 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:38:04.360 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:38:04.712 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:38:04.740 -03:00 [INF] Starting bus 1
+2019-02-20 00:38:04.743 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:38:04.745 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:38:04.749 -03:00 [INF] Started
+2019-02-20 00:38:04.751 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:38:04.816 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:38:05.402 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:38:05.407 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:38:20.767 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:38:21.534 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:38:21.930 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:38:21.963 -03:00 [INF] Starting bus 1
+2019-02-20 00:38:21.965 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:38:21.967 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:38:21.970 -03:00 [INF] Started
+2019-02-20 00:38:21.973 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:38:22.016 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:38:22.603 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:38:22.610 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:38:38.316 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:38:39.523 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:38:39.917 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:38:39.942 -03:00 [INF] Starting bus 1
+2019-02-20 00:38:39.947 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:38:39.949 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:38:39.954 -03:00 [INF] Started
+2019-02-20 00:38:39.955 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:38:40.022 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:38:40.907 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:38:40.915 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:38:51.586 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:39:01.945 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:39:12.290 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:39:22.608 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:39:45.001 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:39:45.499 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:39:45.847 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:39:45.883 -03:00 [INF] Starting bus 1
+2019-02-20 00:39:45.885 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:39:45.887 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:39:45.896 -03:00 [INF] Started
+2019-02-20 00:39:45.898 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:39:45.984 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:39:46.676 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:39:46.682 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:40:02.499 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:40:03.575 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:40:03.960 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:40:03.992 -03:00 [INF] Starting bus 1
+2019-02-20 00:40:03.994 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:40:03.996 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:40:04.001 -03:00 [INF] Started
+2019-02-20 00:40:04.003 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:40:04.055 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:40:04.719 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:40:04.729 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:40:20.819 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:40:22.672 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:40:23.028 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:40:23.051 -03:00 [INF] Starting bus 1
+2019-02-20 00:40:23.054 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:40:23.056 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:40:23.059 -03:00 [INF] Started
+2019-02-20 00:40:23.061 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:40:23.105 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:40:23.724 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:40:23.733 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:40:34.983 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:40:45.427 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:40:55.903 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:41:06.344 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:41:16.669 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:41:31.389 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:41:32.087 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:41:32.470 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:41:32.490 -03:00 [INF] Starting bus 1
+2019-02-20 00:41:32.494 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:41:32.497 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:41:32.500 -03:00 [INF] Started
+2019-02-20 00:41:32.502 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:41:32.537 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:41:59.729 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:42:01.235 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:42:01.867 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:42:01.946 -03:00 [INF] Starting bus 1
+2019-02-20 00:42:01.948 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:42:01.951 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:42:01.965 -03:00 [INF] Started
+2019-02-20 00:42:01.965 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:42:02.080 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:42:02.900 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:42:02.909 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:42:21.612 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:42:22.357 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:42:22.692 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:42:22.727 -03:00 [INF] Starting bus 1
+2019-02-20 00:42:22.729 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:42:22.731 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:42:22.736 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:42:22.743 -03:00 [INF] Started
+2019-02-20 00:42:22.786 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:42:34.398 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:42:35.336 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:42:35.700 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:42:35.743 -03:00 [INF] Starting bus 1
+2019-02-20 00:42:35.746 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:42:35.748 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:42:35.761 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:42:35.778 -03:00 [INF] Started
+2019-02-20 00:42:35.884 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:42:36.775 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:42:36.783 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:42:54.922 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:42:58.692 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:42:59.163 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:42:59.205 -03:00 [INF] Starting bus 1
+2019-02-20 00:42:59.209 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:42:59.212 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:42:59.287 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:42:59.306 -03:00 [INF] Started
+2019-02-20 00:42:59.432 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:43:00.284 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:43:00.296 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:43:11.732 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:43:22.395 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:43:32.983 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:43:43.607 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:43:54.126 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:44:06.191 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:44:18.424 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:44:34.464 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:44:35.129 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:44:35.559 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:44:35.604 -03:00 [INF] Starting bus 1
+2019-02-20 00:44:35.606 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:44:35.608 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:44:35.610 -03:00 [INF] Started
+2019-02-20 00:44:35.613 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:44:35.653 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:44:43.982 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:44:44.633 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:44:45.108 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:44:45.142 -03:00 [INF] Starting bus 1
+2019-02-20 00:44:45.144 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:44:45.147 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:44:45.150 -03:00 [INF] Started
+2019-02-20 00:44:45.152 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:44:45.205 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:44:45.603 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:44:45.607 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:45:00.866 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:45:01.587 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:45:01.958 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:45:01.982 -03:00 [INF] Starting bus 1
+2019-02-20 00:45:01.986 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:45:01.989 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:45:01.998 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:45:02.032 -03:00 [INF] Started
+2019-02-20 00:45:02.078 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:45:02.518 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:45:02.523 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:45:17.665 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:45:18.303 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:45:18.587 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:45:18.604 -03:00 [INF] Starting bus 1
+2019-02-20 00:45:18.606 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:45:18.609 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:45:18.612 -03:00 [INF] Started
+2019-02-20 00:45:18.614 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:45:18.650 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:45:19.147 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:45:19.152 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:45:34.468 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:45:34.953 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:45:35.317 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:45:35.331 -03:00 [INF] Starting bus 1
+2019-02-20 00:45:35.334 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:45:35.336 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:45:35.338 -03:00 [INF] Started
+2019-02-20 00:45:35.341 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:45:35.528 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:45:43.850 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:46:09.215 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:46:12.051 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:46:12.767 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:46:12.802 -03:00 [INF] Starting bus 1
+2019-02-20 00:46:12.863 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:46:12.865 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:46:12.937 -03:00 [INF] Started
+2019-02-20 00:46:12.939 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:46:13.072 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:46:14.085 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:46:14.090 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:46:25.112 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:46:35.743 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:46:46.234 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:46:56.992 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:47:07.513 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:47:17.868 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:47:28.514 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:47:39.430 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:47:50.259 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:48:00.781 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:48:19.394 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:49:32.060 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:49:33.084 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:49:33.497 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:49:33.528 -03:00 [INF] Starting bus 1
+2019-02-20 00:49:33.530 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:49:33.532 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:49:33.536 -03:00 [INF] Started
+2019-02-20 00:49:33.538 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:49:33.591 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:49:34.071 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:49:34.076 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:49:44.745 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:49:55.255 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:50:05.854 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:51:08.591 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:51:17.052 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 00:51:19.616 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 00:51:19.884 -03:00 [INF] Starting bus 1
+2019-02-20 00:51:20.026 -03:00 [INF] Setting number of workers to 1
+2019-02-20 00:51:20.130 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 00:51:20.231 -03:00 [INF] Started
+2019-02-20 00:51:20.408 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 00:51:20.859 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 00:51:42.801 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:51:42.808 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 00:51:59.584 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:52:14.388 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:52:28.853 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:52:39.560 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:52:50.263 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:53:00.741 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:53:11.328 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:53:22.168 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:53:32.757 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:53:43.274 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:53:53.978 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:54:04.520 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:54:15.610 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:54:34.755 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:54:46.070 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:54:56.680 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:55:07.337 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:55:18.067 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:55:28.734 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:55:39.204 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:55:49.858 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:56:00.465 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:56:10.902 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:56:21.632 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:56:32.367 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 00:56:42.779 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:01:01.313 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 01:01:01.885 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 01:01:02.124 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 01:01:02.140 -03:00 [INF] Starting bus 1
+2019-02-20 01:01:02.142 -03:00 [INF] Setting number of workers to 1
+2019-02-20 01:01:02.143 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 01:01:02.147 -03:00 [INF] Started
+2019-02-20 01:01:02.149 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 01:01:02.185 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 01:01:02.606 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:01:02.610 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 01:01:13.250 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:01:23.613 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:01:34.024 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:01:44.411 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:02:36.996 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 01:02:48.465 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 01:02:50.972 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 01:02:51.078 -03:00 [INF] Starting bus 1
+2019-02-20 01:02:51.132 -03:00 [INF] Setting number of workers to 1
+2019-02-20 01:02:51.251 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 01:04:06.095 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 01:04:06.834 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 01:04:07.121 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 01:04:07.136 -03:00 [INF] Starting bus 1
+2019-02-20 01:04:07.138 -03:00 [INF] Setting number of workers to 1
+2019-02-20 01:04:07.140 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 01:04:07.143 -03:00 [INF] Started
+2019-02-20 01:04:07.146 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 01:04:07.223 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 01:04:07.752 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:04:07.758 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 01:11:02.179 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 01:11:07.380 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 01:11:08.403 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 01:11:08.652 -03:00 [INF] Starting bus 1
+2019-02-20 01:11:08.709 -03:00 [INF] Setting number of workers to 1
+2019-02-20 01:11:08.809 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 01:11:09.023 -03:00 [INF] Started
+2019-02-20 01:11:09.273 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 01:11:09.428 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 01:11:29.326 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:11:29.355 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 01:11:44.396 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:12:02.987 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:12:15.901 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:12:26.627 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:12:37.308 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:12:47.914 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:12:58.592 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:13:09.272 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:13:20.128 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:13:30.963 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:13:41.802 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:13:52.525 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:14:03.091 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:14:13.847 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:14:24.930 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:14:35.793 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:14:47.124 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:14:58.419 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:15:02.486 -03:00 [WRN] Unhandled exception [1,"0bf7b205-d84c-4d07-aab4-1b35ad7b9bb1"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 0bf7b205-d84c-4d07-aab4-1b35ad7b9bb1 and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
    at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
@@ -370,19 +508,20 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
-2019-02-18 01:09:02.218 -03:00 [INF] Message received:
-2019-02-18 01:09:02.218 -03:00 [INF] ----------------------------------
-2019-02-18 01:09:02.239 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","PedidoId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"ff2d8215-4578-4948-8f85-7a14f66ffa54","Items":[{"Id":"006","ProdutoId":"006","ProdutoNome":"assorted breads","Quantidade":1,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"0f6036be-df46-45e7-8689-cdc66749382f","CreationDate":"2019-02-18T04:09:02.1614521Z"}
-2019-02-18 01:09:02.239 -03:00 [INF] ----------------------------------
-2019-02-18 01:09:02.497 -03:00 [INF] new CreatePedidoCommandHandler created.
-2019-02-18 01:09:03.913 -03:00 [ERR] Failed executing DbCommand (47ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 50), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+2019-02-20 01:15:02.766 -03:00 [INF] Message received:
+2019-02-20 01:15:02.767 -03:00 [INF] ----------------------------------
+2019-02-20 01:15:02.781 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","PedidoId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"995e19ca-163f-4ddf-90e4-370a53f164a4","Items":[{"Id":"025","ProductId":"025","ProductNome":"turkish strained yogurt","Quantidade":2,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"003","ProductId":"003","ProductNome":"rice milk","Quantidade":4,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"0c98f07e-1bf4-4f26-9e0b-72df4c8fa549","CreationDate":"2019-02-20T04:15:02.6998741Z"}
+2019-02-20 01:15:02.781 -03:00 [INF] ----------------------------------
+2019-02-20 01:15:03.216 -03:00 [INF] new CreatePedidoCommandHandler created.
+2019-02-20 01:15:04.731 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens fef2370b-bc95-4662-854c-1eeaeef224f3 to 1 handlers took 2004.6946 ms
+2019-02-20 01:15:04.807 -03:00 [ERR] Failed executing DbCommand (91ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
 SET NOCOUNT ON;
-INSERT INTO [Pedido] ([ClienteBairro], [ClienteCEP], [ClienteComplemento], [ClienteEmail], [ClienteEndereco], [ClienteMunicipio], [ClienteNome], [ClienteTelefone], [ClienteUF], [CustomerId], [DateCreated])
+INSERT INTO [Order] ([CustomerAdditionalAddress], [CustomerAddress], [CustomerCity], [CustomerDistrict], [CustomerEmail], [CustomerId], [CustomerName], [CustomerPhone], [CustomerState], [CustomerZipCode], [DateCreated])
 VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
 SELECT [Id]
-FROM [Pedido]
+FROM [Order]
 WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
-System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CustomerId'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Order'.
    at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
    at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
    at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
@@ -390,27 +529,10 @@ System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CustomerId
    at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
 --- End of stack trace from previous location where exception was thrown ---
    at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-ClientConnectionId:befcf553-25b7-4bbd-bf5b-30fe440d576f
-Error Number:207,State:1,Class:16
-2019-02-18 01:09:03.956 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens c80e0096-1a5e-4cf5-b0f6-00b4d021f217 to 1 handlers took 1756.4756 ms
-2019-02-18 01:09:03.991 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerId'.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerId'.
+ClientConnectionId:e4140587-0833-46e8-b4e9-cd6679db329d
+Error Number:208,State:1,Class:16
+2019-02-20 01:15:04.869 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
    at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
    at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
    at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
@@ -426,8 +548,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-2019-02-18 01:09:04.464 -03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerId'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
    at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
    at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
    at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
@@ -443,146 +564,101 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at CasaDoCodigo.Ordering.Repositories.PedidoRepository.CreateOrUpdate(Pedido pedido) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\PedidoRepository.cs:line 56
+2019-02-20 01:15:05.543 -03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at CasaDoCodigo.Ordering.Repositories.PedidoRepository.CreateOrUpdate(Order pedido) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\PedidoRepository.cs:line 56
    at CasaDoCodigo.Ordering.Commands.CreatePedidoCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreatePedidoCommandHandler.cs:line 118
-2019-02-18 01:09:06.987 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:02:44.225 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 22:03:38.777 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 22:03:46.198 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 22:03:46.652 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 22:03:46.683 -03:00 [INF] Starting bus 1
-2019-02-18 22:03:46.686 -03:00 [INF] Setting number of workers to 1
-2019-02-18 22:03:46.689 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 22:03:46.693 -03:00 [INF] Started
-2019-02-18 22:03:46.695 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 22:03:46.763 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 22:03:47.542 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:03:47.548 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 22:04:18.474 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:05:00.519 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:05:37.032 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:06:13.619 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:06:41.860 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:07:10.391 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:07:40.695 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:08:01.491 -03:00 [INF] Setting number of workers to 0
-2019-02-18 22:08:01.495 -03:00 [DBG] Removing worker Rebus 1 worker 1
-2019-02-18 22:08:02.974 -03:00 [DBG] Worker Rebus 1 worker 1 stopped
-2019-02-18 22:08:02.983 -03:00 [INF] Stopping periodic task CleanupTrackedErrors
-2019-02-18 22:08:02.988 -03:00 [INF] Disposing RabbitMQ connection
-2019-02-18 22:10:21.116 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 22:10:40.922 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 22:10:41.406 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 22:10:41.436 -03:00 [INF] Starting bus 1
-2019-02-18 22:10:41.439 -03:00 [INF] Setting number of workers to 1
-2019-02-18 22:10:41.440 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 22:10:41.448 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 22:10:41.448 -03:00 [INF] Started
-2019-02-18 22:10:41.497 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 22:10:42.035 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:10:42.041 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 22:10:49.860 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:11:38.194 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:12:15.439 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:12:51.003 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:13:21.620 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:13:50.175 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:14:20.575 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:14:52.160 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:15:21.188 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:15:49.588 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:16:18.762 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:16:48.302 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:17:15.936 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:17:44.132 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:18:15.955 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:18:45.923 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:20:30.968 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 22:20:36.837 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 22:20:37.498 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 22:20:37.561 -03:00 [INF] Starting bus 1
-2019-02-18 22:20:37.564 -03:00 [INF] Setting number of workers to 1
-2019-02-18 22:20:37.566 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 22:20:37.604 -03:00 [INF] Started
-2019-02-18 22:20:37.605 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 22:20:37.698 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 22:20:38.762 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:20:38.769 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 22:21:05.904 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:21:44.908 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:22:25.609 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:23:12.222 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:23:40.426 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:24:09.389 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:24:36.295 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:25:04.476 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:25:31.599 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:26:00.098 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:26:34.964 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:27:04.513 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:27:34.308 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:28:04.793 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:28:37.464 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:29:08.842 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:29:38.897 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:30:09.988 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:30:42.030 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:31:13.845 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:31:44.629 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:34:44.352 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 22:34:48.084 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 22:34:48.630 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 22:34:48.662 -03:00 [INF] Starting bus 1
-2019-02-18 22:34:48.664 -03:00 [INF] Setting number of workers to 1
-2019-02-18 22:34:48.665 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 22:34:48.679 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 22:34:48.679 -03:00 [INF] Started
-2019-02-18 22:34:48.748 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 22:34:49.329 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:34:49.333 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 22:35:31.288 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:36:08.604 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:36:47.184 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:37:16.371 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:37:47.596 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:38:16.813 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:38:45.507 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:39:41.198 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:40:09.762 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:40:40.117 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:41:14.761 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:41:44.040 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:42:12.802 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:42:41.218 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:43:08.905 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:43:36.570 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:44:05.060 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:44:33.828 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:45:01.993 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:45:29.948 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:45:58.757 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:46:26.876 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:46:54.596 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:47:21.996 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:47:51.044 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 22:48:19.481 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 23:44:45.334 -03:00 [WRN] No type was specified for the decimal column 'ProdutoPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-18 23:45:06.319 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-18 23:45:07.143 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
-2019-02-18 23:45:07.188 -03:00 [INF] Starting bus 1
-2019-02-18 23:45:07.196 -03:00 [INF] Setting number of workers to 1
-2019-02-18 23:45:07.206 -03:00 [DBG] Adding worker Rebus 1 worker 1
-2019-02-18 23:45:07.211 -03:00 [INF] Started
-2019-02-18 23:45:07.236 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
-2019-02-18 23:45:07.429 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-18 23:45:08.586 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 23:45:08.592 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-18 23:45:19.912 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 23:45:30.955 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 23:45:41.871 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 23:45:52.568 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 23:46:03.177 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 23:46:13.737 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 23:46:24.201 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 23:46:35.243 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-18 23:46:45.982 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:15:09.200 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:15:20.210 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:15:31.863 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 01:15:35.647 -03:00 [INF] Message received:
+2019-02-20 01:15:35.648 -03:00 [INF] ----------------------------------
+2019-02-20 01:15:35.648 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","PedidoId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"b83381bc-e5b5-44ff-b4fd-f2584e521e24","Items":[{"Id":"003","ProductId":"003","ProductNome":"rice milk","Quantidade":1,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"998884d8-65ee-4f75-a9b0-29198248f53a","CreationDate":"2019-02-20T04:15:35.6471489Z"}
+2019-02-20 01:15:35.648 -03:00 [INF] ----------------------------------
+2019-02-20 01:15:35.649 -03:00 [INF] new CreatePedidoCommandHandler created.
+2019-02-20 01:15:35.714 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens a8ecaf92-c7bd-4b58-9ab4-b2e883c02c13 to 1 handlers took 66.6879 ms
+2019-02-20 01:15:35.790 -03:00 [ERR] Failed executing DbCommand (84ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Order] ([CustomerAdditionalAddress], [CustomerAddress], [CustomerCity], [CustomerDistrict], [CustomerEmail], [CustomerId], [CustomerName], [CustomerPhone], [CustomerState], [CustomerZipCode], [DateCreated])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [Id]
+FROM [Order]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:e4140587-0833-46e8-b4e9-cd6679db329d
+Error Number:208,State:1,Class:16
+2019-02-20 01:15:36.043 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2019-02-20 01:15:36.869 -03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at CasaDoCodigo.Ordering.Repositories.PedidoRepository.CreateOrUpdate(Order pedido) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\PedidoRepository.cs:line 56
+   at CasaDoCodigo.Ordering.Commands.CreatePedidoCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreatePedidoCommandHandler.cs:line 118
+2019-02-20 01:15:43.041 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.

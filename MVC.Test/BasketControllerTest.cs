@@ -40,14 +40,14 @@ namespace MVC.Test
         {
             //arrange
             var customerId = "cliente_id";
-            var produtos = GetFakeProdutos();
-            var testProduct = produtos[0];
+            var products = GetFakeProducts();
+            var testProduct = products[0];
             catalogServiceMock
-                .Setup(c => c.GetProduto(testProduct.Codigo))
+                .Setup(c => c.GetProduct(testProduct.Code))
                 .ReturnsAsync(testProduct)
                 .Verifiable();
 
-            var itemBasket = new BasketItem(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 1, testProduct.ImageURL);
+            var itemBasket = new BasketItem(testProduct.Code, testProduct.Code, testProduct.Name, testProduct.Price, 1, testProduct.ImageURL);
             basketServiceMock
                 .Setup(c => c.AddItem(customerId, It.IsAny<BasketItem>()))
                 .ReturnsAsync(
@@ -61,12 +61,12 @@ namespace MVC.Test
             SetControllerUser(customerId, controller);
 
             //act
-            var result = await controller.Index(testProduct.Codigo);
+            var result = await controller.Index(testProduct.Code);
 
             //assert
             var viewResult = Assert.IsType<ViewResult>(result);
             var model = Assert.IsAssignableFrom<CustomerBasket>(viewResult.Model);
-            Assert.Equal(model.Items[0].ProductName, produtos[0].Nome);
+            Assert.Equal(model.Items[0].ProductName, products[0].Name);
             catalogServiceMock.Verify();
         }
 
@@ -75,10 +75,10 @@ namespace MVC.Test
         {
             //arrange
             var customerId = "cliente_id";
-            var produtos = GetFakeProdutos();
-            var testProduct = produtos[0];
+            var products = GetFakeProducts();
+            var testProduct = products[0];
 
-            var itemBasket = new BasketItem(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 1, testProduct.ImageURL);
+            var itemBasket = new BasketItem(testProduct.Code, testProduct.Code, testProduct.Name, testProduct.Price, 1, testProduct.ImageURL);
             basketServiceMock
                 .Setup(c => c.GetBasket(customerId))
                 .ReturnsAsync(
@@ -98,7 +98,7 @@ namespace MVC.Test
             //assert
             var viewResult = Assert.IsType<ViewResult>(result);
             var model = Assert.IsAssignableFrom<CustomerBasket>(viewResult.Model);
-            Assert.Equal(model.Items[0].ProductName, produtos[0].Nome);
+            Assert.Equal(model.Items[0].ProductName, products[0].Name);
             basketServiceMock.Verify();
         }
 
@@ -107,14 +107,14 @@ namespace MVC.Test
         {
             //arrange
             var customerId = "cliente_id";
-            var produtos = GetFakeProdutos();
-            var testProduct = produtos[0];
+            var products = GetFakeProducts();
+            var testProduct = products[0];
             catalogServiceMock
-                .Setup(c => c.GetProduto(It.IsAny<string>()))
+                .Setup(c => c.GetProduct(It.IsAny<string>()))
                 .ThrowsAsync(new BrokenCircuitException())
                 .Verifiable();
 
-            var itemBasket = new BasketItem(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 1, testProduct.ImageURL);
+            var itemBasket = new BasketItem(testProduct.Code, testProduct.Code, testProduct.Name, testProduct.Price, 1, testProduct.ImageURL);
             basketServiceMock
                 .Setup(c => c.AddItem(customerId, It.IsAny<BasketItem>()))
                 .ReturnsAsync(
@@ -129,7 +129,7 @@ namespace MVC.Test
             SetControllerUser(customerId, controller);
 
             //act
-            var result = await controller.Index(testProduct.Codigo);
+            var result = await controller.Index(testProduct.Code);
 
             //assert
             var viewResult = Assert.IsType<ViewResult>(result);
@@ -143,24 +143,24 @@ namespace MVC.Test
         {
             //arrange
             var customerId = "cliente_id";
-            var produtos = GetFakeProdutos();
-            var testProduct = produtos[0];
+            var products = GetFakeProducts();
+            var testProduct = products[0];
             catalogServiceMock
-                .Setup(c => c.GetProduto(testProduct.Codigo))
-                .ReturnsAsync((Produto)null)
+                .Setup(c => c.GetProduct(testProduct.Code))
+                .ReturnsAsync((Product)null)
                 .Verifiable();
 
             var controller = GetBasketController();
             SetControllerUser(customerId, controller);
 
             //act
-            var result = await controller.Index(testProduct.Codigo);
+            var result = await controller.Index(testProduct.Code);
 
             //assert
             var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
             Assert.Equal("ProductNotFound", redirectToActionResult.ActionName);
             Assert.Equal("Basket", redirectToActionResult.ControllerName);
-            Assert.Equal(redirectToActionResult.Fragment, testProduct.Codigo);
+            Assert.Equal(redirectToActionResult.Fragment, testProduct.Code);
             catalogServiceMock.Verify();
         }
         #endregion
@@ -191,7 +191,7 @@ namespace MVC.Test
         }
 
         [Fact]
-        public async Task UpdateQuantidade_Invalid_ProdutoId()
+        public async Task UpdateQuantidade_Invalid_ProductId()
         {
             //arrange
             var customerId = "cliente_id";
@@ -203,7 +203,7 @@ namespace MVC.Test
 
             var controller = GetBasketController();
             SetControllerUser(customerId, controller);
-            controller.ModelState.AddModelError("ProdutoId", "Required");
+            controller.ModelState.AddModelError("ProductId", "Required");
 
             //act
             var result = await controller.UpdateQuantity(updateQuantidadeInput);
@@ -216,7 +216,7 @@ namespace MVC.Test
         }
 
         [Fact]
-        public async Task UpdateQuantidade_ProdutoId_NotFound()
+        public async Task UpdateQuantidade_ProductId_NotFound()
         {
             //arrange
             var customerId = "cliente_id";

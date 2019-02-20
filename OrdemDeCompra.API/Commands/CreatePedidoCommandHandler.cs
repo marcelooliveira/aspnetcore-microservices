@@ -71,7 +71,7 @@ namespace CasaDoCodigo.Ordering.Commands
                 throw new ArgumentException("Guid cannot be empty");
 
             var items = cmd.Items.Select(
-                    i => new ItemPedido(i.ProdutoCodigo, i.ProdutoNome, i.ProdutoQuantidade, i.ProdutoPrecoUnitario)
+                    i => new OrderItem(i.ProductCodigo, i.ProductNome, i.ProductQuantidade, i.ProductPrecoUnitario)
                 ).ToList();
 
             if (items.Count == 0)
@@ -83,10 +83,10 @@ namespace CasaDoCodigo.Ordering.Commands
             foreach (var item in items)
             {
                 if (
-                    string.IsNullOrWhiteSpace(item.ProdutoCodigo)
-                    || string.IsNullOrWhiteSpace(item.ProdutoNome)
-                    || item.ProdutoQuantidade <= 0
-                    || item.ProdutoPrecoUnitario <= 0
+                    string.IsNullOrWhiteSpace(item.ProductCode)
+                    || string.IsNullOrWhiteSpace(item.ProductName)
+                    || item.ProductQuantity <= 0
+                    || item.ProductUnitPrice <= 0
                     )
                 {
                     throw new InvalidItemException();
@@ -107,7 +107,7 @@ namespace CasaDoCodigo.Ordering.Commands
                 )
                 throw new InvalidUserDataException();
 
-            var pedido = new Pedido(items, cmd.CustomerId,
+            var pedido = new Order(items, cmd.CustomerId,
                 cmd.ClienteNome, cmd.ClienteEmail, cmd.ClienteTelefone, 
                 cmd.ClienteEndereco, cmd.ClienteComplemento, cmd.ClienteBairro, 
                 cmd.ClienteMunicipio, cmd.ClienteUF, cmd.ClienteCEP);
@@ -115,7 +115,7 @@ namespace CasaDoCodigo.Ordering.Commands
 
             try
             {
-                Pedido novoPedido = await this._pedidoRepository.CreateOrUpdate(pedido);
+                Order novoPedido = await this._pedidoRepository.CreateOrUpdate(pedido);
 
                 string notificationText = $"Novo pedido gerado com sucesso: {novoPedido.Id}";
 

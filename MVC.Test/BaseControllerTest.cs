@@ -29,21 +29,21 @@ namespace MVC.Test
 
         protected BasketItem GetFakeItemBasket()
         {
-            var produtos = GetFakeProdutos();
-            var testProduct = produtos[0];
-            var itemBasket = new BasketItem(testProduct.Codigo, testProduct.Codigo, testProduct.Nome, testProduct.Preco, 7, testProduct.ImageURL);
+            var products = GetFakeProducts();
+            var testProduct = products[0];
+            var itemBasket = new BasketItem(testProduct.Code, testProduct.Code, testProduct.Name, testProduct.Price, 7, testProduct.ImageURL);
             return itemBasket;
         }
 
-        protected IList<Produto> GetFakeProdutos()
+        protected IList<Product> GetFakeProducts()
         {
-            Categoria categoria = new Categoria("categoria 001");
+            Category categoria = new Category("categoria 001");
 
-            return new List<Produto>
+            return new List<Product>
             {
-                new Produto("001", "produto 001", 12.34m, categoria.Id, categoria.Nome),
-                new Produto("002", "produto 002", 23.45m, categoria.Id, categoria.Nome),
-                new Produto("003", "produto 003", 34.56m, categoria.Id, categoria.Nome)
+                new Product("001", "product 001", 12.34m, categoria.Id, categoria.Name),
+                new Product("002", "product 002", 23.45m, categoria.Id, categoria.Name),
+                new Product("003", "product 003", 34.56m, categoria.Id, categoria.Name)
             };
         }
 

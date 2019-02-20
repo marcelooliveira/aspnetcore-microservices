@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Models
 {
-    public class Pedido : BaseModel
+    public class Order : BaseModel
     {
-        public Pedido()
+        public Order()
         {
             Registration = new Registration();
         }
 
-        public Pedido(Registration registration)
+        public Order(Registration registration)
         {
             Registration = registration;
         }
 
-        public List<ItemPedido> Items { get; private set; } = new List<ItemPedido>();
+        public List<OrderItem> Items { get; private set; } = new List<OrderItem>();
         [Required]
         public virtual Registration Registration { get; private set; }
     }

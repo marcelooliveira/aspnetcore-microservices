@@ -35,9 +35,9 @@
 
             <div class="row row-center product-line" item-id="@item.Id">
                 <div class="col-md-3">
-                    <img class="img-produto-basket" src="@(item.ImageURL)" />
+                    <img class="img-product-basket" src="@(item.ImageURL)" />
                 </div>
-                <input type="hidden" name="produtoId" value="@(item.ProductId)" />
+                <input type="hidden" name="productId" value="@(item.ProductId)" />
                 <div class="col-md-3">@(item.ProductName)</div>
                 <div class="col-md-2 text-center">R$ @(item.UnitPrice.ToString("0.00"))</div>
                 <div class="col-md-2 text-center">
@@ -92,7 +92,7 @@
     <div class="col-md-12">
         <div class="pull-right">
             <a class="btn btn-success" asp-controller="catalog">
-                Adicionar Produtos
+                Adicionar Products
             </a>
             <a class="btn btn-success" asp-controller="registration">
                 Fill in Registration

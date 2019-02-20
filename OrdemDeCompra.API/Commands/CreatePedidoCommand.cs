@@ -46,28 +46,28 @@ namespace CasaDoCodigo.Ordering.Commands
     public class CreatePedidoCommandItem
     {
         public CreatePedidoCommand Pedido { get; set; }
-        public string ProdutoCodigo { get; set; }
-        public string ProdutoNome { get; set; }
-        public int ProdutoQuantidade { get; set; }
-        public decimal ProdutoPrecoUnitario { get; set; }
-        public decimal Subtotal => ProdutoQuantidade * ProdutoPrecoUnitario;
+        public string ProductCodigo { get; set; }
+        public string ProductNome { get; set; }
+        public int ProductQuantidade { get; set; }
+        public decimal ProductPrecoUnitario { get; set; }
+        public decimal Subtotal => ProductQuantidade * ProductPrecoUnitario;
 
         public CreatePedidoCommandItem()
         {
 
         }
 
-        public CreatePedidoCommandItem(string produtoCodigo, string produtoNome, int produtoQuantidade, decimal produtoPrecoUnitario)
+        public CreatePedidoCommandItem(string productCodigo, string productNome, int productQuantidade, decimal productPrecoUnitario)
         {
-            ProdutoCodigo = produtoCodigo;
-            ProdutoNome = produtoNome;
-            ProdutoQuantidade = produtoQuantidade;
-            ProdutoPrecoUnitario = produtoPrecoUnitario;
+            ProductCodigo = productCodigo;
+            ProductNome = productNome;
+            ProductQuantidade = productQuantidade;
+            ProductPrecoUnitario = productPrecoUnitario;
         }
 
-        public void AtualizaQuantidade(int produtoQuantidade)
+        public void AtualizaQuantidade(int productQuantidade)
         {
-            ProdutoQuantidade = produtoQuantidade;
+            ProductQuantidade = productQuantidade;
         }
     }
 }

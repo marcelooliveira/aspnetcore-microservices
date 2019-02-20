@@ -34,8 +34,8 @@ namespace CasaDoCodigo.Mensagens.Events
                     .Select(i => 
                         new CheckoutEventItem(
                             i.Id, 
-                            i.ProdutoId, 
-                            i.ProdutoNome, 
+                            i.ProductId, 
+                            i.ProductNome, 
                             i.PrecoUnitario, 
                             i.Quantidade)).ToList();
         }
@@ -62,18 +62,18 @@ namespace CasaDoCodigo.Mensagens.Events
 
         }
 
-        public CheckoutEventItem(string id, string produtoId, string produtoNome, decimal precoUnitario, int quantidade)
+        public CheckoutEventItem(string id, string productId, string productNome, decimal precoUnitario, int quantidade)
         {
             Id = id;
-            ProdutoId = produtoId;
-            ProdutoNome = produtoNome;
+            ProductId = productId;
+            ProductNome = productNome;
             PrecoUnitario = precoUnitario;
             Quantidade = quantidade;
         }
 
         public string Id { get; set; }
-        public string ProdutoId { get; set; }
-        public string ProdutoNome { get; set; }
+        public string ProductId { get; set; }
+        public string ProductNome { get; set; }
         public int Quantidade { get; set; }
         public decimal PrecoUnitario { get; set; }
         public decimal Subtotal { get; set; }

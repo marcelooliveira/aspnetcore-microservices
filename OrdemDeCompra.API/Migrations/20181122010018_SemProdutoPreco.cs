@@ -2,19 +2,19 @@
 
 namespace Ordering.API.Migrations
 {
-    public partial class SemProdutoPreco : Migration
+    public partial class SemProductPreco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "ProdutoPreco",
+                name: "ProductPreco",
                 table: "ItemPedido");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<decimal>(
-                name: "ProdutoPreco",
+                name: "ProductPreco",
                 table: "ItemPedido",
                 nullable: false,
                 defaultValue: 0m);

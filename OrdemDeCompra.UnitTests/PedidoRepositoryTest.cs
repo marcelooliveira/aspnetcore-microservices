@@ -34,7 +34,7 @@ namespace Ordering.UnitTests
         public async Task CreateOrUpdate_No_Items()
         {
             //arrange
-            var pedido = new Pedido();
+            var pedido = new Order();
             var repo = new PedidoRepository(contextoMock.Object);
 
             //act+assert
@@ -42,19 +42,19 @@ namespace Ordering.UnitTests
         }
 
         [Theory]
-        [InlineData("", "produto 001", 1, 12.34)]
+        [InlineData("", "product 001", 1, 12.34)]
         [InlineData("001", "", 1, 12.34)]
-        [InlineData("001", "produto 001", -1, 12.34)]
-        [InlineData("001", "produto 001", 0, 12.34)]
-        [InlineData("001", "produto 001", 1, 0)]
-        [InlineData("001", "produto 001", 1, -20)]
+        [InlineData("001", "product 001", -1, 12.34)]
+        [InlineData("001", "product 001", 0, 12.34)]
+        [InlineData("001", "product 001", 1, 0)]
+        [InlineData("001", "product 001", 1, -20)]
         public async Task CreateOrUpdate_Invalid_Item(string codigo, string nome, int qtde, decimal preco)
         {
             //arrange
-            var pedido = new Pedido(
-                new List<ItemPedido> {
-                    new ItemPedido("001", "produto 001", 1, 12.34m),
-                    new ItemPedido(codigo, nome, qtde, preco)
+            var pedido = new Order(
+                new List<OrderItem> {
+                    new OrderItem("001", "product 001", 1, 12.34m),
+                    new OrderItem(codigo, nome, qtde, preco)
                 },
                 "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
 
@@ -77,10 +77,10 @@ namespace Ordering.UnitTests
         public async Task CreateOrUpdate_Invalid_Client_Data(string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
         {
             //arrange
-            var pedido = new Pedido(
-                new List<ItemPedido> {
-                    new ItemPedido("001", "produto 001", 1, 12.34m),
-                    new ItemPedido("002", "produto 002", 2, 23.45m)
+            var pedido = new Order(
+                new List<OrderItem> {
+                    new OrderItem("001", "product 001", 1, 12.34m),
+                    new OrderItem("002", "product 002", 2, 23.45m)
                 },
                 customerId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
 
@@ -94,10 +94,10 @@ namespace Ordering.UnitTests
         public async Task CreateOrUpdate_Success()
         {
             //arrange
-            var pedido = new Pedido(
-                new List<ItemPedido> {
-                    new ItemPedido("001", "produto 001", 1, 12.34m),
-                    new ItemPedido("002", "produto 002", 2, 23.45m)
+            var pedido = new Order(
+                new List<OrderItem> {
+                    new OrderItem("001", "product 001", 1, 12.34m),
+                    new OrderItem("002", "product 002", 2, 23.45m)
                 },
                 "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
 
@@ -110,13 +110,13 @@ namespace Ordering.UnitTests
                 var repo = new PedidoRepository(context);
 
                 //act
-                Pedido result = await repo.CreateOrUpdate(pedido);
+                Order result = await repo.CreateOrUpdate(pedido);
 
                 //assert
                 Assert.Equal(2, result.Items.Count);
                 Assert.Collection(result.Items,
-                    item => Assert.Equal("001", item.ProdutoCodigo),
-                    item => Assert.Equal("002", item.ProdutoCodigo)
+                    item => Assert.Equal("001", item.ProductCode),
+                    item => Assert.Equal("002", item.ProductCode)
                 );
             }
 

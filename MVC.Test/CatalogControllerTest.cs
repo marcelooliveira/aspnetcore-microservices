@@ -31,10 +31,10 @@ namespace MVC.Test
         public async Task Index_sucesso()
         {
             //arrange
-            IList<Produto> fakeProdutos = GetFakeProdutos();
+            IList<Product> fakeProducts = GetFakeProducts();
             catalogServiceMock
-                .Setup(s => s.GetProdutos())
-                .ReturnsAsync(fakeProdutos)
+                .Setup(s => s.GetProducts())
+                .ReturnsAsync(fakeProducts)
                .Verifiable();
 
             var catalogController = 
@@ -45,12 +45,12 @@ namespace MVC.Test
 
             //assert
             var viewResult = Assert.IsType<ViewResult>(resultado);
-            var model = Assert.IsAssignableFrom<IList<Produto>>(viewResult.ViewData.Model);
+            var model = Assert.IsAssignableFrom<IList<Product>>(viewResult.ViewData.Model);
 
             Assert.Collection(model,
-                               item => Assert.Equal(fakeProdutos[0].Codigo, item.Codigo),
-                               item => Assert.Equal(fakeProdutos[1].Codigo, item.Codigo),
-                               item => Assert.Equal(fakeProdutos[2].Codigo, item.Codigo)
+                               item => Assert.Equal(fakeProducts[0].Code, item.Code),
+                               item => Assert.Equal(fakeProducts[1].Code, item.Code),
+                               item => Assert.Equal(fakeProducts[2].Code, item.Code)
                 );
             catalogServiceMock.Verify();
         }
@@ -60,7 +60,7 @@ namespace MVC.Test
         {
             //arrange
             catalogServiceMock
-                .Setup(s => s.GetProdutos())
+                .Setup(s => s.GetProducts())
                 .ThrowsAsync(new BrokenCircuitException());
 
             //act
@@ -68,7 +68,7 @@ namespace MVC.Test
                 new CatalogController(catalogServiceMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
 
             var result = await catalogController.Index();
-            var model = result as IList<Produto>;
+            var model = result as IList<Product>;
 
             //assert
             Assert.Null(model);
@@ -80,7 +80,7 @@ namespace MVC.Test
         {
             //arrange
             catalogServiceMock
-                .Setup(s => s.GetProdutos())
+                .Setup(s => s.GetProducts())
                 .ThrowsAsync(new Exception());
 
             //act
@@ -88,7 +88,7 @@ namespace MVC.Test
                 new CatalogController(catalogServiceMock.Object, loggerMock.Object, userRedisRepositoryMock.Object);
 
             var result = await catalogController.Index();
-            var model = result as IList<Produto>;
+            var model = result as IList<Product>;
 
             //assert
             Assert.Null(model);

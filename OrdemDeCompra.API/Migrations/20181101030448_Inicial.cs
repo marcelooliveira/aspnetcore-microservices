@@ -36,12 +36,12 @@ namespace Ordering.API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     PedidoId = table.Column<int>(nullable: false),
-                    ProdutoId = table.Column<int>(nullable: false),
-                    ProdutoCodigo = table.Column<string>(nullable: false),
-                    ProdutoNome = table.Column<string>(nullable: false),
-                    ProdutoPreco = table.Column<decimal>(nullable: false),
-                    ProdutoQuantidade = table.Column<int>(nullable: false),
-                    ProdutoPrecoUnitario = table.Column<decimal>(nullable: false)
+                    ProductId = table.Column<int>(nullable: false),
+                    ProductCodigo = table.Column<string>(nullable: false),
+                    ProductNome = table.Column<string>(nullable: false),
+                    ProductPreco = table.Column<decimal>(nullable: false),
+                    ProductQuantidade = table.Column<int>(nullable: false),
+                    ProductPrecoUnitario = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {

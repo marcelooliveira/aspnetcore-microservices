@@ -31,7 +31,7 @@ namespace CasaDoCodigo.Ordering.Controllers
 
         // POST api/ordemdecompra
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Pedido pedido)
+        public async Task<IActionResult> Post([FromBody] Order pedido)
         {
             if (!ModelState.IsValid)
             {
@@ -51,14 +51,14 @@ namespace CasaDoCodigo.Ordering.Controllers
                 throw new ArgumentNullException();
             }
 
-            IList<Pedido> pedidos = await pedidoRepository.GetPedidos(customerId);
+            IList<Order> pedidos = await pedidoRepository.GetPedidos(customerId);
 
             if (pedidos == null)
             {
                 return NotFound(customerId);
             }
 
-            List<PedidoDTO> dto = mapper.Map<List<PedidoDTO>>(pedidos);
+            List<OrderDTO> dto = mapper.Map<List<OrderDTO>>(pedidos);
             return base.Ok(dto);
         }
 

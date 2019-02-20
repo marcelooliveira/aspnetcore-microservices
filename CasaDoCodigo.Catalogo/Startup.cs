@@ -29,7 +29,7 @@ namespace Catalog.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IProductQueries, ProdutoQueries>();
+            services.AddTransient<IProductQueries, ProductQueries>();
 
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy());

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ordering.API.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20181122010018_SemProdutoPreco")]
-    partial class SemProdutoPreco
+    [Migration("20181122010018_SemProductPreco")]
+    partial class SemProductPreco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,15 +28,15 @@ namespace Ordering.API.Migrations
 
                     b.Property<int>("PedidoId");
 
-                    b.Property<string>("ProdutoCodigo")
+                    b.Property<string>("ProductCodigo")
                         .IsRequired();
 
-                    b.Property<string>("ProdutoNome")
+                    b.Property<string>("ProductNome")
                         .IsRequired();
 
-                    b.Property<decimal>("ProdutoPrecoUnitario");
+                    b.Property<decimal>("ProductPrecoUnitario");
 
-                    b.Property<int>("ProdutoQuantidade");
+                    b.Property<int>("ProductQuantidade");
 
                     b.HasKey("Id");
 

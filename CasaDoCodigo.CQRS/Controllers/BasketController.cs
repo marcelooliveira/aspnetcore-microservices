@@ -51,13 +51,13 @@ namespace CasaDoCodigo.Controllers
                 CustomerBasket basket;
                 if (!string.IsNullOrWhiteSpace(codigo))
                 {
-                    var produto = await catalogService.GetProduto(codigo);
-                    if (produto == null)
+                    var product = await catalogService.GetProduct(codigo);
+                    if (product == null)
                     {
                         return RedirectToAction("ProductNotFound", "Basket", codigo);
                     }
 
-                    BasketItem itemBasket = new BasketItem(produto.Codigo, produto.Codigo, produto.Nome, produto.Preco, 1, produto.ImageURL);
+                    BasketItem itemBasket = new BasketItem(product.Code, product.Code, product.Name, product.Price, 1, product.ImageURL);
                     basket = await basketService.AddItem(idUsuario, itemBasket);
                 }
                 else

@@ -9,22 +9,22 @@ using Xunit;
 
 namespace Catalog.UnitTests
 {
-    public class ProdutoControllerTest
+    public class ProductControllerTest
     {
         private readonly Mock<ILogger<ProductController>> loggerMock;
-        private readonly Mock<IProductQueries> produtoQueriesMock;
+        private readonly Mock<IProductQueries> productQueriesMock;
 
-        public ProdutoControllerTest()
+        public ProductControllerTest()
         {
             this.loggerMock = new Mock<ILogger<ProductController>>();
-            this.produtoQueriesMock = new Mock<IProductQueries>();
+            this.productQueriesMock = new Mock<IProductQueries>();
         }
 
-        public async Task GetProdutos_success()
+        public async Task GetProducts_success()
         {
             //arrange
-            var produtos = new List<Product>();
-            var controller = new ProductController(loggerMock.Object, produtoQueriesMock.Object);
+            var products = new List<Product>();
+            var controller = new ProductController(loggerMock.Object, productQueriesMock.Object);
 
             //act
             var actionResult = await controller.GetProducts();
@@ -33,23 +33,23 @@ namespace Catalog.UnitTests
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult.Result);
             List<Product> catalog = Assert.IsType<List<Product>>(okObjectResult.Value);
             Assert.Collection(catalog,
-                item => Assert.Equal(produtos[0].Code, catalog[0].Code),
-                item => Assert.Equal(produtos[1].Code, catalog[1].Code),
-                item => Assert.Equal(produtos[2].Code, catalog[2].Code)
+                item => Assert.Equal(products[0].Code, catalog[0].Code),
+                item => Assert.Equal(products[1].Code, catalog[1].Code),
+                item => Assert.Equal(products[2].Code, catalog[2].Code)
             );
         }
 
         [Fact]
-        public async Task GetProdutos_empty_catalog()
+        public async Task GetProducts_empty_catalog()
         {
             //arrange
-            IList<Product> produtos = new List<Product>();
-            produtoQueriesMock
+            IList<Product> products = new List<Product>();
+            productQueriesMock
                 .Setup(q => q.GetProductsAsync(It.IsAny<string>()))
-                .ReturnsAsync(produtos)
+                .ReturnsAsync(products)
                .Verifiable();
 
-            var controller = new ProductController(loggerMock.Object, produtoQueriesMock.Object);
+            var controller = new ProductController(loggerMock.Object, productQueriesMock.Object);
 
             //act
             var actionResult = await controller.GetProducts();
@@ -58,60 +58,60 @@ namespace Catalog.UnitTests
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult.Result);
             List<Product> catalog = Assert.IsType<List<Product>>(okObjectResult.Value);
             Assert.Empty(catalog);
-            produtoQueriesMock.Verify();
+            productQueriesMock.Verify();
         }
 
         [Fact]
-        public async Task GetProdutos_successAsync2()
+        public async Task GetProducts_successAsync2()
         {
             //arrange
-            const string produtoCodigo = "001";
-            IList<Product> produtos = GetFakeProdutos();
-            produtoQueriesMock
-                .Setup(q => q.GetProductAsync(produtoCodigo))
-                .ReturnsAsync(produtos[0])
+            const string productCodigo = "001";
+            IList<Product> products = GetFakeProducts();
+            productQueriesMock
+                .Setup(q => q.GetProductAsync(productCodigo))
+                .ReturnsAsync(products[0])
                .Verifiable();
 
-            var controller = new ProductController(loggerMock.Object, produtoQueriesMock.Object);
+            var controller = new ProductController(loggerMock.Object, productQueriesMock.Object);
 
             //act
-            var actionResult = await controller.GetProducts(produtoCodigo);
+            var actionResult = await controller.GetProducts(productCodigo);
 
             //assert
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult.Result);
-            Product produto = Assert.IsType<Product>(okObjectResult.Value);
-            Assert.Equal(produtos[0].Code, produto.Code);
-            produtoQueriesMock.Verify();
+            Product product = Assert.IsType<Product>(okObjectResult.Value);
+            Assert.Equal(products[0].Code, product.Code);
+            productQueriesMock.Verify();
         }
 
         [Fact]
-        public async Task GetProdutos_not_found()
+        public async Task GetProducts_not_found()
         {
             //arrange
-            const string produtoCodigo = "001";
-            var produtos = GetFakeProdutos();
-            produtoQueriesMock
-                .Setup(q => q.GetProductAsync(produtoCodigo))
+            const string productCodigo = "001";
+            var products = GetFakeProducts();
+            productQueriesMock
+                .Setup(q => q.GetProductAsync(productCodigo))
                 .ReturnsAsync((Product)null)
                .Verifiable();
 
-            var controller = new ProductController(loggerMock.Object, produtoQueriesMock.Object);
+            var controller = new ProductController(loggerMock.Object, productQueriesMock.Object);
             
             //act
-            var actionResult = await controller.GetProducts(produtoCodigo);
+            var actionResult = await controller.GetProducts(productCodigo);
 
             //assert
             Assert.IsType<NotFoundResult>(actionResult.Result);
-            produtoQueriesMock.Verify();
+            productQueriesMock.Verify();
         }
 
-        protected IList<Product> GetFakeProdutos()
+        protected IList<Product> GetFakeProducts()
         {
             return new List<Product>
             {
-                new Product("001", "produto 001", 12.34m),
-                new Product("002", "produto 002", 23.45m),
-                new Product("003", "produto 003", 34.56m)
+                new Product("001", "product 001", 12.34m),
+                new Product("002", "product 002", 23.45m),
+                new Product("003", "product 003", 34.56m)
             };
         }
     }

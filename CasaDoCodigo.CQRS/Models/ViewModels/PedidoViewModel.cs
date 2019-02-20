@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Models
 {
-    public class ProdutoViewModel
+    public class ProductViewModel
     {
         public string Codigo { get; set; }
         public string Nome { get; set; }
@@ -18,7 +18,7 @@ namespace CasaDoCodigo.Models
 
     public class Item
     {
-        public ProdutoViewModel Produto { get; set; }
+        public ProductViewModel Product { get; set; }
         public int Quantidade { get; set; }
         public decimal PrecoUnitario { get; set; }
         public decimal Subtotal => Quantidade * PrecoUnitario;

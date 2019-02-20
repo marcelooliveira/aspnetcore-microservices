@@ -7,8 +7,8 @@ namespace CasaDoCodigo.Services
 {
     public interface ICatalogService : IService
     {
-        Task<IList<Produto>> GetProdutos();
-        Task<IList<Produto>> BuscaProdutos(string pesquisa);
-        Task<Produto> GetProduto(string codigo);
+        Task<IList<Product>> GetProducts();
+        Task<IList<Product>> BuscaProducts(string pesquisa);
+        Task<Product> GetProduct(string codigo);
     }
 }

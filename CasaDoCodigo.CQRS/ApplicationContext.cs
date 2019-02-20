@@ -18,15 +18,15 @@ namespace CasaDoCodigo
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Produto>().HasKey(t => t.Id);
+            modelBuilder.Entity<Product>().HasKey(t => t.Id);
 
-            modelBuilder.Entity<Pedido>().HasKey(t => t.Id);
-            modelBuilder.Entity<Pedido>().HasMany(t => t.Items).WithOne(t => t.Pedido);
-            modelBuilder.Entity<Pedido>().HasOne(t => t.Registration).WithOne(t => t.Pedido).IsRequired();
+            modelBuilder.Entity<Order>().HasKey(t => t.Id);
+            modelBuilder.Entity<Order>().HasMany(t => t.Items).WithOne(t => t.Order);
+            modelBuilder.Entity<Order>().HasOne(t => t.Registration).WithOne(t => t.Pedido).IsRequired();
 
-            modelBuilder.Entity<ItemPedido>().HasKey(t => t.Id);
-            modelBuilder.Entity<ItemPedido>().HasOne(t => t.Pedido);
-            modelBuilder.Entity<ItemPedido>().HasOne(t => t.Produto);
+            modelBuilder.Entity<OrderItem>().HasKey(t => t.Id);
+            modelBuilder.Entity<OrderItem>().HasOne(t => t.Order);
+            modelBuilder.Entity<OrderItem>().HasOne(t => t.Product);
 
             modelBuilder.Entity<Registration>().HasKey(t => t.Id);
             modelBuilder.Entity<Registration>().HasOne(t => t.Pedido);

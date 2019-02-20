@@ -84,18 +84,18 @@ namespace Ordering.UnitTests
         }
 
         [Theory]
-        [InlineData("", "produto 001", 1, 12.34)]
+        [InlineData("", "product 001", 1, 12.34)]
         [InlineData("001", "", 1, 12.34)]
-        [InlineData("001", "produto 001", 0, 12.34)]
-        [InlineData("001", "produto 001", -1, 12.34)]
-        [InlineData("001", "produto 001", 1, -10)]
-        public async Task Handle_invalid_item(string produtoCodigo, string produtoNome, int produtoQuantidade, decimal produtoPrecoUnitario)
+        [InlineData("001", "product 001", 0, 12.34)]
+        [InlineData("001", "product 001", -1, 12.34)]
+        [InlineData("001", "product 001", 1, -10)]
+        public async Task Handle_invalid_item(string productCodigo, string productNome, int productQuantidade, decimal productPrecoUnitario)
         {
             //arrange
             CancellationToken token = default(CancellationToken);
             CreatePedidoCommand command = new CreatePedidoCommand(new List<CreatePedidoCommandItem>
             {
-                new CreatePedidoCommandItem(produtoCodigo, produtoNome, produtoQuantidade, produtoPrecoUnitario)
+                new CreatePedidoCommandItem(productCodigo, productNome, productQuantidade, productPrecoUnitario)
             }
             , "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             IdentifiedCommand<CreatePedidoCommand, bool> request = new IdentifiedCommand<CreatePedidoCommand, bool>(command, Guid.NewGuid());
@@ -122,7 +122,7 @@ namespace Ordering.UnitTests
             CancellationToken token = default(CancellationToken);
             CreatePedidoCommand command = new CreatePedidoCommand(new List<CreatePedidoCommandItem>
             {
-                new CreatePedidoCommandItem("001", "produto 001", 1, 12.34m)
+                new CreatePedidoCommandItem("001", "product 001", 1, 12.34m)
             }
             , customerId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
             IdentifiedCommand<CreatePedidoCommand, bool> request = new IdentifiedCommand<CreatePedidoCommand, bool>(command, Guid.NewGuid());
@@ -137,23 +137,23 @@ namespace Ordering.UnitTests
         public async Task Handle_success()
         {
             //arrange
-            var pedido = new Pedido(
-                new List<ItemPedido> {
-                    new ItemPedido("001", "produto 001", 1, 12.34m),
-                    new ItemPedido("002", "produto 002", 2, 23.45m)
+            var pedido = new Order(
+                new List<OrderItem> {
+                    new OrderItem("001", "product 001", 1, 12.34m),
+                    new OrderItem("002", "product 002", 2, 23.45m)
                 },
                 "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
 
             CancellationToken token = default(CancellationToken);
             CreatePedidoCommand command = new CreatePedidoCommand(new List<CreatePedidoCommandItem>
             {
-                new CreatePedidoCommandItem("001", "produto 001", 1, 12.34m),
-                new CreatePedidoCommandItem("002", "produto 002", 2, 23.45m)
+                new CreatePedidoCommandItem("001", "product 001", 1, 12.34m),
+                new CreatePedidoCommandItem("002", "product 002", 2, 23.45m)
             }
             , "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             IdentifiedCommand<CreatePedidoCommand, bool> request = new IdentifiedCommand<CreatePedidoCommand, bool>(command, Guid.NewGuid());
             pedidoRepositoryMock
-                .Setup(r => r.CreateOrUpdate(It.IsAny<Pedido>()))
+                .Setup(r => r.CreateOrUpdate(It.IsAny<Order>()))
                 .ReturnsAsync(pedido)
                 .Verifiable();
 

@@ -1,35 +1,17 @@
-2019-02-18 00:08:06.258 -03:00 [ERR] The view 'Index' was not found. Searched locations: ["/Views/Registration/Index.cshtml","/Views/Shared/Index.cshtml"]
-2019-02-18 00:08:06.407 -03:00 [ERR] An unhandled exception has occurred while executing the request
-System.InvalidOperationException: The view 'Index' was not found. The following locations were searched:
-/Views/Registration/Index.cshtml
-/Views/Shared/Index.cshtml
-   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
-   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
-   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2019-02-18 00:10:38.145 -03:00 [ERR] {"StatusCode":400,"ReasonPhrase":"Bad Request"}
-System.Net.Http.HttpRequestException: {"StatusCode":400,"ReasonPhrase":"Bad Request"}
-   at CasaDoCodigo.Services.BaseHttpService.PutOrPostAsync[T](String uri, Object content, HttpVerbMethod httpVerbMethod) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 77
-   at CasaDoCodigo.Services.BaseHttpService.PostAsync[T](String uri, Object content) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 53
-   at CasaDoCodigo.Services.BasketService.Checkout(String customerId, RegistrationViewModel viewModel) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BasketService.cs:line 91
-   at CasaDoCodigo.Controllers.BasketController.Checkout(Registration registration) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\BasketController.cs:line 136
-2019-02-18 00:10:38.730 -03:00 [ERR] An unhandled exception has occurred while executing the request
+2019-02-19 23:45:42.849 -03:00 [ERR] A task was canceled.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Polly.Retry.RetryStateWaitAndRetry`1.CanRetryAsync(DelegateResult`1 delegateResult, CancellationToken cancellationToken, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryStateWaitAndRetryAsync.cs:line 32
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 40
+   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at CasaDoCodigo.Services.CatalogService.GetProducts() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
+   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
+2019-02-19 23:57:42.843 -03:00 [ERR] An unhandled exception has occurred while executing the request
 System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Basket_Checkout_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Basket\Checkout.cshtml:line 12
+   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
    at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
@@ -52,117 +34,12 @@ System.NullReferenceException: Object reference not set to an instance of an obj
    at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2019-02-18 00:21:38.195 -03:00 [ERR] {"StatusCode":400,"ReasonPhrase":"Bad Request"}
-System.Net.Http.HttpRequestException: {"StatusCode":400,"ReasonPhrase":"Bad Request"}
-   at CasaDoCodigo.Services.BaseHttpService.PutOrPostAsync[T](String uri, Object content, HttpVerbMethod httpVerbMethod) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 77
-   at CasaDoCodigo.Services.BaseHttpService.PostAsync[T](String uri, Object content) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 53
-   at CasaDoCodigo.Services.BasketService.Checkout(String customerId, RegistrationViewModel viewModel) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BasketService.cs:line 91
-   at CasaDoCodigo.Controllers.BasketController.Checkout(Registration registration) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\BasketController.cs:line 136
-2019-02-18 00:21:38.844 -03:00 [ERR] An unhandled exception has occurred while executing the request
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Basket_Checkout_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Basket\Checkout.cshtml:line 12
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
-   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2019-02-18 00:25:13.767 -03:00 [ERR] {"StatusCode":400,"ReasonPhrase":"Bad Request"}
-System.Net.Http.HttpRequestException: {"StatusCode":400,"ReasonPhrase":"Bad Request"}
-   at CasaDoCodigo.Services.BaseHttpService.PutOrPostAsync[T](String uri, Object content, HttpVerbMethod httpVerbMethod) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 77
-   at CasaDoCodigo.Services.BaseHttpService.PostAsync[T](String uri, Object content) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 53
-   at CasaDoCodigo.Services.BasketService.Checkout(String customerId, RegistrationViewModel viewModel) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BasketService.cs:line 91
-   at CasaDoCodigo.Controllers.BasketController.Checkout(Registration registration) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\BasketController.cs:line 136
-2019-02-18 00:25:14.124 -03:00 [ERR] An unhandled exception has occurred while executing the request
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Basket_Checkout_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Basket\Checkout.cshtml:line 12
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
-   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2019-02-18 00:26:38.412 -03:00 [ERR] {"StatusCode":400,"ReasonPhrase":"Bad Request"}
-System.Net.Http.HttpRequestException: {"StatusCode":400,"ReasonPhrase":"Bad Request"}
-   at CasaDoCodigo.Services.BaseHttpService.PutOrPostAsync[T](String uri, Object content, HttpVerbMethod httpVerbMethod) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 77
-   at CasaDoCodigo.Services.BaseHttpService.PostAsync[T](String uri, Object content) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 53
-   at CasaDoCodigo.Services.BasketService.Checkout(String customerId, RegistrationViewModel viewModel) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BasketService.cs:line 91
-   at CasaDoCodigo.Controllers.BasketController.Checkout(Registration registration) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\BasketController.cs:line 136
-2019-02-18 00:26:38.579 -03:00 [ERR] An unhandled exception has occurred while executing the request
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Basket_Checkout_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Basket\Checkout.cshtml:line 12
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
-   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2019-02-18 00:45:26.193 -03:00 [ERR] An unhandled exception has occurred while executing the request
+2019-02-20 01:11:39.894 -03:00 [ERR] An unhandled exception has occurred while executing the request
 Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationFailedException: One or more compilation failures occurred:
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(17,133): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Nome' and no extension method 'Nome' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(18,145): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Nome' and no extension method 'Nome' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(29,133): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Telefone' and no extension method 'Telefone' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(30,145): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Telefone' and no extension method 'Telefone' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(37,133): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Endereco' and no extension method 'Endereco' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(38,145): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Endereco' and no extension method 'Endereco' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(43,133): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Complemento' and no extension method 'Complemento' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(44,145): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Complemento' and no extension method 'Complemento' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(49,133): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Bairro' and no extension method 'Bairro' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(50,145): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Bairro' and no extension method 'Bairro' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(57,133): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Municipio' and no extension method 'Municipio' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(58,145): error CS1061: 'RegistrationViewModel' does not contain a definition for 'Municipio' and no extension method 'Municipio' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(63,134): error CS1061: 'RegistrationViewModel' does not contain a definition for 'UF' and no extension method 'UF' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(93,145): error CS1061: 'RegistrationViewModel' does not contain a definition for 'UF' and no extension method 'UF' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(98,133): error CS1061: 'RegistrationViewModel' does not contain a definition for 'CEP' and no extension method 'CEP' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(99,145): error CS1061: 'RegistrationViewModel' does not contain a definition for 'CEP' and no extension method 'CEP' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(34,28): error CS1061: 'Product' does not contain a definition for 'Categoria' and no extension method 'Categoria' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(38,27): error CS1579: foreach statement cannot operate on variables of type '?' because '?' does not contain a public definition for 'GetEnumerator'
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(42,23): error CS1061: 'Product' does not contain a definition for 'Categoria' and no extension method 'Categoria' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(66,50): error CS1579: foreach statement cannot operate on variables of type '?' because '?' does not contain a public definition for 'GetEnumerator'
    at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(RazorCodeDocument codeDocument, String generatedCode)
    at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(String relativePath)
    at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CreateCacheEntry(String normalizedPath)
@@ -191,12 +68,12 @@ C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views
    at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2019-02-18 00:51:19.910 -03:00 [ERR] An unhandled exception has occurred while executing the request
+2019-02-20 01:11:55.532 -03:00 [ERR] An unhandled exception has occurred while executing the request
 Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationFailedException: One or more compilation failures occurred:
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(64,134): error CS1061: 'RegistrationViewModel' does not contain a definition for 'UF' and no extension method 'UF' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(94,145): error CS1061: 'RegistrationViewModel' does not contain a definition for 'UF' and no extension method 'UF' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(99,133): error CS1061: 'RegistrationViewModel' does not contain a definition for 'CEP' and no extension method 'CEP' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Registration\Index.cshtml(100,145): error CS1061: 'RegistrationViewModel' does not contain a definition for 'CEP' and no extension method 'CEP' accepting a first argument of type 'RegistrationViewModel' could be found (are you missing a using directive or an assembly reference?)
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(34,28): error CS1061: 'Product' does not contain a definition for 'Categoria' and no extension method 'Categoria' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(38,27): error CS1579: foreach statement cannot operate on variables of type '?' because '?' does not contain a public definition for 'GetEnumerator'
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(42,23): error CS1061: 'Product' does not contain a definition for 'Categoria' and no extension method 'Categoria' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(66,50): error CS1579: foreach statement cannot operate on variables of type '?' because '?' does not contain a public definition for 'GetEnumerator'
    at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(RazorCodeDocument codeDocument, String generatedCode)
    at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(String relativePath)
    at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CreateCacheEntry(String normalizedPath)
@@ -208,225 +85,6 @@ C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views
    at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
    at Microsoft.AspNetCore.Mvc.ViewEngines.CompositeViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
    at Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor.FindView(ActionContext actionContext, ViewResult viewResult)
-   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
-   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2019-02-18 22:05:25.459 -03:00 [ERR] The operation was canceled.
-System.Threading.Tasks.TaskCanceledException: The operation was canceled. ---> System.IO.IOException: Unable to read data from the transport connection: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo. ---> System.Net.Sockets.SocketException: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo
-   --- End of inner exception stack trace ---
-   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error)
-   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
-   at System.Net.Http.HttpConnection.FillAsync()
-   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
-   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Polly.CircuitBreaker.CircuitBreakerEngine.ImplementationAsync[TResult](Func`3 action, Context context, IEnumerable`1 shouldHandleExceptionPredicates, IEnumerable`1 shouldHandleResultPredicates, ICircuitController`1 breakerController, CancellationToken cancellationToken, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\CircuitBreaker\CircuitBreakerEngineAsync.cs:line 0
-   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
-   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
-   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
-   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
-2019-02-18 22:05:35.662 -03:00 [ERR] An unhandled exception has occurred while executing the request
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
-   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2019-02-18 22:12:09.929 -03:00 [ERR] The operation was canceled.
-System.Threading.Tasks.TaskCanceledException: The operation was canceled. ---> System.IO.IOException: Unable to read data from the transport connection: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo. ---> System.Net.Sockets.SocketException: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo
-   --- End of inner exception stack trace ---
-   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error)
-   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
-   at System.Net.Http.HttpConnection.FillAsync()
-   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
-   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Polly.CircuitBreaker.CircuitBreakerEngine.ImplementationAsync[TResult](Func`3 action, Context context, IEnumerable`1 shouldHandleExceptionPredicates, IEnumerable`1 shouldHandleResultPredicates, ICircuitController`1 breakerController, CancellationToken cancellationToken, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\CircuitBreaker\CircuitBreakerEngineAsync.cs:line 0
-   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
-   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
-   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
-   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
-2019-02-18 22:12:19.591 -03:00 [ERR] An unhandled exception has occurred while executing the request
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
-   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2019-02-18 22:22:19.084 -03:00 [ERR] The operation was canceled.
-System.Threading.Tasks.TaskCanceledException: The operation was canceled. ---> System.IO.IOException: Unable to read data from the transport connection: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo. ---> System.Net.Sockets.SocketException: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo
-   --- End of inner exception stack trace ---
-   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error)
-   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
-   at System.Net.Http.HttpConnection.FillAsync()
-   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
-   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Polly.CircuitBreaker.CircuitBreakerEngine.ImplementationAsync[TResult](Func`3 action, Context context, IEnumerable`1 shouldHandleExceptionPredicates, IEnumerable`1 shouldHandleResultPredicates, ICircuitController`1 breakerController, CancellationToken cancellationToken, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\CircuitBreaker\CircuitBreakerEngineAsync.cs:line 0
-   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
-   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
-   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
-   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
-2019-02-18 22:22:30.697 -03:00 [ERR] An unhandled exception has occurred while executing the request
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
-   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2019-02-18 22:36:28.868 -03:00 [ERR] A task was canceled.
-System.Threading.Tasks.TaskCanceledException: A task was canceled.
-   at Polly.Retry.RetryStateWaitAndRetry`1.CanRetryAsync(DelegateResult`1 delegateResult, CancellationToken cancellationToken, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryStateWaitAndRetryAsync.cs:line 32
-   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 40
-   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
-   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
-   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
-2019-02-18 22:36:40.625 -03:00 [ERR] An unhandled exception has occurred while executing the request
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
-   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
-   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2019-02-18 23:46:36.646 -03:00 [ERR] A task was canceled.
-System.Threading.Tasks.TaskCanceledException: A task was canceled.
-   at Polly.Retry.RetryStateWaitAndRetry`1.CanRetryAsync(DelegateResult`1 delegateResult, CancellationToken cancellationToken, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryStateWaitAndRetryAsync.cs:line 32
-   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 40
-   at Polly.Retry.RetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory, Boolean continueOnCapturedContext) in C:\projects\polly\src\Polly.Shared\Retry\RetryEngineAsync.cs:line 0
-   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
-   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
-   at CasaDoCodigo.Services.CatalogService.GetProdutos() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\CatalogService.cs:line 40
-   at CasaDoCodigo.Controllers.CatalogController.Index() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\CatalogController.cs:line 34
-2019-02-18 23:46:51.373 -03:00 [ERR] An unhandled exception has occurred while executing the request
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at AspNetCore._Views_Catalog_Index_cshtml.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml:line 30
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
-   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
-   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
    at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
    at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
    at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync()

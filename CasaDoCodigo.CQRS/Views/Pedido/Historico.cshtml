@@ -53,16 +53,16 @@
                 @foreach (var item in pedido.Items)
                 {
 
-                    <div class="row row-center linha-produto" item-id="@item.ProdutoCodigo">
+                    <div class="row row-center linha-product" item-id="@item.ProductCodigo">
                         <div class="col-md-3">
-                            @*<img class="img-produto-basket" src="@(item.ImageURL)" />*@
+                            @*<img class="img-product-basket" src="@(item.ImageURL)" />*@
                         </div>
-                        <input type="hidden" name="produtoId" value="@(item.ProdutoCodigo)" />
-                        <div class="col-md-3">@(item.ProdutoNome)</div>
-                        <div class="col-md-2 text-center">R$ @(item.ProdutoPrecoUnitario.ToString("0.00"))</div>
+                        <input type="hidden" name="productId" value="@(item.ProductCodigo)" />
+                        <div class="col-md-3">@(item.ProductNome)</div>
+                        <div class="col-md-2 text-center">R$ @(item.ProductPrecoUnitario.ToString("0.00"))</div>
                         <div class="col-md-2 text-center">
                             <div class="input-group">
-                                <input type="text" value="@(item.ProdutoQuantidade)"
+                                <input type="text" value="@(item.ProductQuantidade)"
                                         class="form-control text-center quantidade" disabled />
                             </div>
                         </div>

@@ -59,30 +59,30 @@ textarea {
     align-items: center;
 }
 
-.img-produto-catalog {
+.img-product-catalog {
     width: 100%;
 }
 
-.img-produto-basket {
+.img-product-basket {
     height: 120px;
     filter: drop-shadow(2px 2px 2px #ccc);
 }
 
-.linha-produto {
+.linha-product {
     margin: 20px;
 }
 
-.produto-nome {
+.product-nome {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.produto-footer {
+.product-footer {
     max-height: 140px;
 }
 
-.produto-nome {
+.product-nome {
 }
 
 /* Notification */

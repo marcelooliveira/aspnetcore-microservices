@@ -18,7 +18,7 @@ namespace CasaDoCodigo.Mensagens.EventHandling
         protected override CreatePedidoCommand GetCommand(CheckoutEvent message)
         {
             var items = message.Items.Select(
-                    i => new CreatePedidoCommandItem(i.ProdutoId, i.ProdutoNome, i.Quantidade, i.PrecoUnitario)
+                    i => new CreatePedidoCommandItem(i.ProductId, i.ProductNome, i.Quantidade, i.PrecoUnitario)
                 ).ToList();
 
             var command = new CreatePedidoCommand(items, message.UserId, message.UserName, message.Email, message.Fone, message.Endereco, message.Complemento, message.Bairro, message.Municipio, message.UF, message.Cep);

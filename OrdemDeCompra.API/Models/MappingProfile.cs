@@ -12,8 +12,8 @@ namespace Ordering.API.Models
     {
         public MappingProfile()
         {
-            CreateMap<Pedido, PedidoDTO>();
-            CreateMap<ItemPedido, ItemPedidoDTO>();
+            CreateMap<Order, OrderDTO>();
+            CreateMap<OrderItem, OrderItemDTO>();
         }
     }
 }
