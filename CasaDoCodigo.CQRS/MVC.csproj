@@ -86,10 +86,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\Pedido\Notificacoes.cshtml">
+    <Content Update="Views\Order\Notificacoes.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Pedido\Historico.cshtml">
+    <Content Update="Views\Order\Historico.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>
