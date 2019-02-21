@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Services
 {
-    public interface IPedidoService : IService
+    public interface IOrderService : IService
     {
-        Task<List<PedidoDTO>> GetAsync(string customerId);
+        Task<List<OrderDTO>> GetAsync(string customerId);
     }
 }

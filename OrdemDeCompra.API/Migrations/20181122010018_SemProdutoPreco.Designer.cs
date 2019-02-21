@@ -20,13 +20,13 @@ namespace Ordering.API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CasaDoCodigo.Ordering.Models.ItemPedido", b =>
+            modelBuilder.Entity("CasaDoCodigo.Ordering.Models.OrderItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("PedidoId");
+                    b.Property<int>("OrderId");
 
                     b.Property<string>("ProductCodigo")
                         .IsRequired();
@@ -40,12 +40,12 @@ namespace Ordering.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PedidoId");
+                    b.HasIndex("OrderId");
 
-                    b.ToTable("ItemPedido");
+                    b.ToTable("OrderItem");
                 });
 
-            modelBuilder.Entity("CasaDoCodigo.Ordering.Models.Pedido", b =>
+            modelBuilder.Entity("CasaDoCodigo.Ordering.Models.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,14 +84,14 @@ namespace Ordering.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pedido");
+                    b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("CasaDoCodigo.Ordering.Models.ItemPedido", b =>
+            modelBuilder.Entity("CasaDoCodigo.Ordering.Models.OrderItem", b =>
                 {
-                    b.HasOne("CasaDoCodigo.Ordering.Models.Pedido", "Pedido")
+                    b.HasOne("CasaDoCodigo.Ordering.Models.Order", "Order")
                         .WithMany("Items")
-                        .HasForeignKey("PedidoId")
+                        .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

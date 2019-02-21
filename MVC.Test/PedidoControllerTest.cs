@@ -15,16 +15,16 @@ using Xunit;
 
 namespace MVC.Test
 {
-    public class PedidoControllerTest : BaseControllerTest
+    public class OrderControllerTest : BaseControllerTest
     {
-        private readonly Mock<ILogger<PedidoController>> loggerMock;
-        private readonly Mock<IPedidoService> pedidoServiceMock;
+        private readonly Mock<ILogger<OrderController>> loggerMock;
+        private readonly Mock<IOrderService> orderServiceMock;
         private readonly Mock<IUserRedisRepository> userRedisRepositoryMock;
 
-        public PedidoControllerTest() :base()
+        public OrderControllerTest() :base()
         {
-            loggerMock = new Mock<ILogger<PedidoController>>();
-            pedidoServiceMock = new Mock<IPedidoService>();
+            loggerMock = new Mock<ILogger<OrderController>>();
+            orderServiceMock = new Mock<IOrderService>();
             userRedisRepositoryMock = new Mock<IUserRedisRepository>();
 
             var mappings = new MapperConfigurationExpression();
@@ -42,17 +42,17 @@ namespace MVC.Test
                 .Verifiable();
 
             string customerId = "123";
-            List<ItemPedidoDTO> items = new List<ItemPedidoDTO> {
-                new ItemPedidoDTO("001", "product 001", 1, 12.34m)
+            List<OrderItemDTO> items = new List<OrderItemDTO> {
+                new OrderItemDTO("001", "product 001", 1, 12.34m)
             };
-            PedidoDTO pedido = new PedidoDTO(items, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
-            pedidoServiceMock
+            OrderDTO order = new OrderDTO(items, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            orderServiceMock
                 .Setup(c => c.GetAsync(It.IsAny<string>()))
-                .ReturnsAsync( new List<PedidoDTO> { pedido })
+                .ReturnsAsync( new List<OrderDTO> { order })
                 .Verifiable();
 
-            var controller = new PedidoController(appUserParserMock.Object
-                , pedidoServiceMock.Object
+            var controller = new OrderController(appUserParserMock.Object
+                , orderServiceMock.Object
                 , loggerMock.Object
                 , userRedisRepositoryMock.Object);
             SetControllerUser(customerId, controller);
@@ -62,10 +62,10 @@ namespace MVC.Test
 
             //assert
             ViewResult viewResult = Assert.IsAssignableFrom<ViewResult>(actionResult);
-            List<PedidoDTO>  pedidos = Assert.IsType<List<PedidoDTO>>(viewResult.Model);
-            Assert.Collection(pedidos[0].Items,
-                i => Assert.Equal("001", i.ProductCodigo));
-            pedidoServiceMock.Verify();
+            List<OrderDTO>  orders = Assert.IsType<List<OrderDTO>>(viewResult.Model);
+            Assert.Collection(orders[0].Items,
+                i => Assert.Equal("001", i.ProductCode));
+            orderServiceMock.Verify();
         }
     }
 }

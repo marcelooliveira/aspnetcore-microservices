@@ -11,20 +11,20 @@ using Xunit;
 
 namespace Ordering.UnitTests
 {
-    public class PedidoRepositoryTest
+    public class OrderRepositoryTest
     {
         private readonly Mock<ApplicationContext> contextoMock;
 
-        public PedidoRepositoryTest()
+        public OrderRepositoryTest()
         {
             this.contextoMock = new Mock<ApplicationContext>();
         }
 
         [Fact]
-        public async Task CreateOrUpdate_Pedido_NullAsync()
+        public async Task CreateOrUpdate_Order_NullAsync()
         {
             //arrange
-            var repo = new PedidoRepository(contextoMock.Object);
+            var repo = new OrderRepository(contextoMock.Object);
 
             //act+assert
             await Assert.ThrowsAsync<ArgumentNullException>(() => repo.CreateOrUpdate(null));
@@ -34,11 +34,11 @@ namespace Ordering.UnitTests
         public async Task CreateOrUpdate_No_Items()
         {
             //arrange
-            var pedido = new Order();
-            var repo = new PedidoRepository(contextoMock.Object);
+            var order = new Order();
+            var repo = new OrderRepository(contextoMock.Object);
 
             //act+assert
-            await Assert.ThrowsAsync<NoItemsException>(() => repo.CreateOrUpdate(pedido));
+            await Assert.ThrowsAsync<NoItemsException>(() => repo.CreateOrUpdate(order));
         }
 
         [Theory]
@@ -51,17 +51,17 @@ namespace Ordering.UnitTests
         public async Task CreateOrUpdate_Invalid_Item(string codigo, string nome, int qtde, decimal preco)
         {
             //arrange
-            var pedido = new Order(
+            var order = new Order(
                 new List<OrderItem> {
                     new OrderItem("001", "product 001", 1, 12.34m),
                     new OrderItem(codigo, nome, qtde, preco)
                 },
                 "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
 
-            var repo = new PedidoRepository(contextoMock.Object);
+            var repo = new OrderRepository(contextoMock.Object);
 
             //act+assert
-            await Assert.ThrowsAsync<InvalidItemException>(() => repo.CreateOrUpdate(pedido));
+            await Assert.ThrowsAsync<InvalidItemException>(() => repo.CreateOrUpdate(order));
         }
 
         [Theory]
@@ -77,24 +77,24 @@ namespace Ordering.UnitTests
         public async Task CreateOrUpdate_Invalid_Client_Data(string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
         {
             //arrange
-            var pedido = new Order(
+            var order = new Order(
                 new List<OrderItem> {
                     new OrderItem("001", "product 001", 1, 12.34m),
                     new OrderItem("002", "product 002", 2, 23.45m)
                 },
                 customerId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
 
-            var repo = new PedidoRepository(contextoMock.Object);
+            var repo = new OrderRepository(contextoMock.Object);
 
             //act+assert
-            await Assert.ThrowsAsync<InvalidUserDataException>(() => repo.CreateOrUpdate(pedido));
+            await Assert.ThrowsAsync<InvalidUserDataException>(() => repo.CreateOrUpdate(order));
         }
 
         [Fact]
         public async Task CreateOrUpdate_Success()
         {
             //arrange
-            var pedido = new Order(
+            var order = new Order(
                 new List<OrderItem> {
                     new OrderItem("001", "product 001", 1, 12.34m),
                     new OrderItem("002", "product 002", 2, 23.45m)
@@ -105,12 +105,12 @@ namespace Ordering.UnitTests
 
             using (var context = new ApplicationContext(options))
             {
-                var pedidoEntity = await context.AddAsync(pedido);
+                var orderEntity = await context.AddAsync(order);
 
-                var repo = new PedidoRepository(context);
+                var repo = new OrderRepository(context);
 
                 //act
-                Order result = await repo.CreateOrUpdate(pedido);
+                Order result = await repo.CreateOrUpdate(order);
 
                 //assert
                 Assert.Equal(2, result.Items.Count);
@@ -126,14 +126,14 @@ namespace Ordering.UnitTests
         [InlineData(null)]
         [InlineData("")]
         [InlineData(" ")]
-        public async Task GetPedidos_Invalid_Client(string customerId)
+        public async Task GetOrders_Invalid_Client(string customerId)
         {
             //arrange
-            var repository = new PedidoRepository(contextoMock.Object);
+            var repository = new OrderRepository(contextoMock.Object);
 
             //act
             //assert
-            await Assert.ThrowsAsync<ArgumentNullException>(() => repository.GetPedidos(customerId));
+            await Assert.ThrowsAsync<ArgumentNullException>(() => repository.GetOrders(customerId));
         }
 
         //public class FakeContext : DbContext
@@ -153,8 +153,8 @@ namespace Ordering.UnitTests
         //        base.OnConfiguring(optionsBuilder);
         //    }
 
-        //    public DbSet<Pedido> Pedidos { get; set; }
-        //    public DbSet<ItemPedido> ItemPedidos { get; set; }
+        //    public DbSet<Order> Orders { get; set; }
+        //    public DbSet<OrderItem> OrderItems { get; set; }
         //}
 
     }

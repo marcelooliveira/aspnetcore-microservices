@@ -7,67 +7,67 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Ordering.Commands
 {
-    public class CreatePedidoCommand
+    public class CreateOrderCommand
         : IRequest<bool>
     {
-        public CreatePedidoCommand()
+        public CreateOrderCommand()
         {
 
         }
 
-        public CreatePedidoCommand(List<CreatePedidoCommandItem> items, string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
+        public CreateOrderCommand(List<CreateOrderCommandItem> items, string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
         {
             Items = items;
             CustomerId = customerId;
-            ClienteNome = clienteNome;
-            ClienteEmail = clienteEmail;
-            ClienteTelefone = clienteTelefone;
-            ClienteEndereco = clienteEndereco;
-            ClienteComplemento = clienteComplemento;
-            ClienteBairro = clienteBairro;
-            ClienteMunicipio = clienteMunicipio;
-            ClienteUF = clienteUF;
-            ClienteCEP = clienteCEP;
+            CustomerName = clienteNome;
+            CustomerEmail = clienteEmail;
+            CustomerPhone = clienteTelefone;
+            CustomerAddress = clienteEndereco;
+            CustomerAdditionalCustomer = clienteComplemento;
+            CustomerDistrict = clienteBairro;
+            CustomerCity = clienteMunicipio;
+            CustomerState = clienteUF;
+            CustomerZipCode = clienteCEP;
         }
 
-        public List<CreatePedidoCommandItem> Items { get; private set; } = new List<CreatePedidoCommandItem>();
+        public List<CreateOrderCommandItem> Items { get; private set; } = new List<CreateOrderCommandItem>();
         public string CustomerId { get; set; } = "";
-        public string ClienteNome { get; set; } = "";
-        public string ClienteEmail { get; set; } = "";
-        public string ClienteTelefone { get; set; } = "";
-        public string ClienteEndereco { get; set; } = "";
-        public string ClienteComplemento { get; set; } = "";
-        public string ClienteBairro { get; set; } = "";
-        public string ClienteMunicipio { get; set; } = "";
-        public string ClienteUF { get; set; } = "";
-        public string ClienteCEP { get; set; } = "";
+        public string CustomerName { get; set; } = "";
+        public string CustomerEmail { get; set; } = "";
+        public string CustomerPhone { get; set; } = "";
+        public string CustomerAddress { get; set; } = "";
+        public string CustomerAdditionalCustomer { get; set; } = "";
+        public string CustomerDistrict { get; set; } = "";
+        public string CustomerCity { get; set; } = "";
+        public string CustomerState { get; set; } = "";
+        public string CustomerZipCode { get; set; } = "";
     }
 
-    public class CreatePedidoCommandItem
+    public class CreateOrderCommandItem
     {
-        public CreatePedidoCommand Pedido { get; set; }
-        public string ProductCodigo { get; set; }
-        public string ProductNome { get; set; }
-        public int ProductQuantidade { get; set; }
-        public decimal ProductPrecoUnitario { get; set; }
-        public decimal Subtotal => ProductQuantidade * ProductPrecoUnitario;
+        public CreateOrderCommand Order { get; set; }
+        public string ProductCode { get; set; }
+        public string ProductName { get; set; }
+        public int ProductQuantity { get; set; }
+        public decimal ProductUnitPrice { get; set; }
+        public decimal Subtotal => ProductQuantity * ProductUnitPrice;
 
-        public CreatePedidoCommandItem()
+        public CreateOrderCommandItem()
         {
 
         }
 
-        public CreatePedidoCommandItem(string productCodigo, string productNome, int productQuantidade, decimal productPrecoUnitario)
+        public CreateOrderCommandItem(string productCodigo, string productNome, int productQuantidade, decimal productPrecoUnitario)
         {
-            ProductCodigo = productCodigo;
-            ProductNome = productNome;
-            ProductQuantidade = productQuantidade;
-            ProductPrecoUnitario = productPrecoUnitario;
+            ProductCode = productCodigo;
+            ProductName = productNome;
+            ProductQuantity = productQuantidade;
+            ProductUnitPrice = productPrecoUnitario;
         }
 
         public void AtualizaQuantidade(int productQuantidade)
         {
-            ProductQuantidade = productQuantidade;
+            ProductQuantity = productQuantidade;
         }
     }
 }

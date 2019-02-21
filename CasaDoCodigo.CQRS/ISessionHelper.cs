@@ -5,8 +5,8 @@ namespace CasaDoCodigo
     public interface ISessionHelper
     {
         Task<string> GetAccessToken(string scope);
-        int? GetPedidoId();
+        int? GetOrderId();
         void SetAccessToken(string accessToken);
-        void SetPedidoId(int pedidoId);
+        void SetOrderId(int orderId);
     }
 }

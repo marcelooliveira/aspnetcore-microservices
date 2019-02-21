@@ -9,21 +9,21 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Ordering.Repositories
 {
-    public class PedidoRepository : BaseRepository<Order>, IPedidoRepository
+    public class OrderRepository : BaseRepository<Order>, IOrderRepository
     {
-        public PedidoRepository(ApplicationContext contexto) : base(contexto)
+        public OrderRepository(ApplicationContext contexto) : base(contexto)
         {
         }
 
-        public async Task<Order> CreateOrUpdate(Order pedido)
+        public async Task<Order> CreateOrUpdate(Order order)
         {
-            if (pedido == null)
+            if (order == null)
                 throw new ArgumentNullException();
 
-            if (pedido.Items.Count == 0)
+            if (order.Items.Count == 0)
                 throw new NoItemsException();
 
-            foreach (var item in pedido.Items)
+            foreach (var item in order.Items)
             {
                 if (
                     string.IsNullOrWhiteSpace(item.ProductCode)
@@ -36,23 +36,23 @@ namespace CasaDoCodigo.Ordering.Repositories
                 }
             }
 
-            if (string.IsNullOrWhiteSpace(pedido.CustomerId)
-                 || string.IsNullOrWhiteSpace(pedido.CustomerName)
-                 || string.IsNullOrWhiteSpace(pedido.CustomerEmail)
-                 || string.IsNullOrWhiteSpace(pedido.CustomerPhone)
-                 || string.IsNullOrWhiteSpace(pedido.CustomerAddress)
-                 || string.IsNullOrWhiteSpace(pedido.CustomerAdditionalAddress)
-                 || string.IsNullOrWhiteSpace(pedido.CustomerDistrict)
-                 || string.IsNullOrWhiteSpace(pedido.CustomerCity)
-                 || string.IsNullOrWhiteSpace(pedido.CustomerState)
-                 || string.IsNullOrWhiteSpace(pedido.CustomerZipCode)
+            if (string.IsNullOrWhiteSpace(order.CustomerId)
+                 || string.IsNullOrWhiteSpace(order.CustomerName)
+                 || string.IsNullOrWhiteSpace(order.CustomerEmail)
+                 || string.IsNullOrWhiteSpace(order.CustomerPhone)
+                 || string.IsNullOrWhiteSpace(order.CustomerAddress)
+                 || string.IsNullOrWhiteSpace(order.CustomerAdditionalAddress)
+                 || string.IsNullOrWhiteSpace(order.CustomerDistrict)
+                 || string.IsNullOrWhiteSpace(order.CustomerCity)
+                 || string.IsNullOrWhiteSpace(order.CustomerState)
+                 || string.IsNullOrWhiteSpace(order.CustomerZipCode)
                 )
                 throw new InvalidUserDataException();
 
             EntityEntry<Order> entityEntry;
             try
             {
-                entityEntry = await dbSet.AddAsync(pedido);
+                entityEntry = await dbSet.AddAsync(order);
                 await contexto.SaveChangesAsync();
             }
             catch (Exception e)
@@ -62,7 +62,7 @@ namespace CasaDoCodigo.Ordering.Repositories
             return entityEntry.Entity;
         }
 
-        public async Task<IList<Order>> GetPedidos(string customerId)
+        public async Task<IList<Order>> GetOrders(string customerId)
         {
             if (string.IsNullOrWhiteSpace(customerId))
             {

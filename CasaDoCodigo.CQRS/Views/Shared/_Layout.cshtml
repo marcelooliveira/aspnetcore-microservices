@@ -67,7 +67,7 @@
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a asp-action="Historico" asp-controller="Pedido" asp-route-customerId="@customerId">Meus Pedidos</a></li>
+                                    <li><a asp-action="Historico" asp-controller="Order" asp-route-customerId="@customerId">Meus Orders</a></li>
                                     <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
                                 </ul>
                             </li>
@@ -77,7 +77,7 @@
                         @if (!true.Equals(ViewData["signed-out"]))
                         {
                             <div class="container-notification">
-                                <a asp-action="notificacoes" asp-controller="pedido">
+                                <a asp-action="notifications" asp-controller="order">
                                     @if (userNotificationCount > 0)
                                     {
                                         <div class="notification show-count" data-count="@userNotificationCount"></div>

@@ -87,7 +87,7 @@ namespace CasaDoCodigo.Ordering
                     Version = "v1",
                     Title = "The Grocery Store - Ordering API",
                     Description = "Uma API contendo funcionalidades da aplicação de e-Commerce:" +
-                    "Criação de pedidos.",
+                    "Criação de orders.",
                     TermsOfService = "Nenhum",
                     Contact = new Contact
                     {
@@ -128,11 +128,11 @@ namespace CasaDoCodigo.Ordering
             var contexto = serviceProvider.GetService<ApplicationContext>();
             services.AddSingleton<ApplicationContext>(contexto);
 
-            services.AddScoped<IPedidoRepository, PedidoRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
 
             services.AddScoped<IMediator, NoMediator>();
-            services.AddScoped<IRequest<bool>, CreatePedidoCommand>();
-            services.AddMediatR(typeof(CreatePedidoCommand).GetTypeInfo().Assembly);
+            services.AddScoped<IRequest<bool>, CreateOrderCommand>();
+            services.AddMediatR(typeof(CreateOrderCommand).GetTypeInfo().Assembly);
             RegisterRebus(services);
 
         }

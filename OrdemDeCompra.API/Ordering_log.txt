@@ -1,13 +1,13 @@
-2019-02-20 00:31:28.659 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:31:28.659 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:31:32.524 -03:00 [ERR] Failed executing DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
 DECLARE @var0 sysname;
 SELECT @var0 = [d].[name]
 FROM [sys].[default_constraints] [d]
 INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
-WHERE ([d].[parent_object_id] = OBJECT_ID(N'[ItemPedido]') AND [c].[name] = N'ProductId');
-IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [ItemPedido] DROP CONSTRAINT [' + @var0 + '];');
-ALTER TABLE [ItemPedido] DROP COLUMN [ProductId];
-System.Data.SqlClient.SqlException (0x80131904): ALTER TABLE DROP COLUMN failed because column 'ProductId' does not exist in table 'ItemPedido'.
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[OrderItem]') AND [c].[name] = N'ProductId');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [OrderItem] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [OrderItem] DROP COLUMN [ProductId];
+System.Data.SqlClient.SqlException (0x80131904): ALTER TABLE DROP COLUMN failed because column 'ProductId' does not exist in table 'OrderItem'.
    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -19,16 +19,16 @@ System.Data.SqlClient.SqlException (0x80131904): ALTER TABLE DROP COLUMN failed 
    at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
 ClientConnectionId:7760a724-6572-487b-81bb-fb2dc89c8f25
 Error Number:4924,State:1,Class:16
-2019-02-20 00:31:41.877 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:31:41.877 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:31:45.081 -03:00 [ERR] Failed executing DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
 DECLARE @var0 sysname;
 SELECT @var0 = [d].[name]
 FROM [sys].[default_constraints] [d]
 INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
-WHERE ([d].[parent_object_id] = OBJECT_ID(N'[ItemPedido]') AND [c].[name] = N'ProductId');
-IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [ItemPedido] DROP CONSTRAINT [' + @var0 + '];');
-ALTER TABLE [ItemPedido] DROP COLUMN [ProductId];
-System.Data.SqlClient.SqlException (0x80131904): ALTER TABLE DROP COLUMN failed because column 'ProductId' does not exist in table 'ItemPedido'.
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[OrderItem]') AND [c].[name] = N'ProductId');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [OrderItem] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [OrderItem] DROP COLUMN [ProductId];
+System.Data.SqlClient.SqlException (0x80131904): ALTER TABLE DROP COLUMN failed because column 'ProductId' does not exist in table 'OrderItem'.
    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -40,7 +40,7 @@ System.Data.SqlClient.SqlException (0x80131904): ALTER TABLE DROP COLUMN failed 
    at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
 ClientConnectionId:512dcd5b-6ee4-4305-8093-d5611f7e5181
 Error Number:4924,State:1,Class:16
-2019-02-20 00:32:05.102 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:32:05.102 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:32:07.899 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:32:08.200 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:32:08.226 -03:00 [INF] Starting bus 1
@@ -51,7 +51,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:32:08.272 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
 2019-02-20 00:32:08.664 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:32:08.668 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-20 00:32:27.473 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:32:27.473 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:32:28.606 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:32:28.999 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:32:29.026 -03:00 [INF] Starting bus 1
@@ -62,7 +62,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:32:29.093 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
 2019-02-20 00:32:29.838 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:32:29.847 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-20 00:32:47.331 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:32:47.331 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:32:49.835 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:32:50.445 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:32:50.468 -03:00 [INF] Starting bus 1
@@ -73,9 +73,9 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:32:50.526 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
 2019-02-20 00:32:51.294 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:32:51.303 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-20 00:33:08.086 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-20 00:33:18.341 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
-2019-02-20 00:33:38.759 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:33:08.086 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:33:18.341 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:33:38.759 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:33:39.963 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:33:40.458 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:33:40.492 -03:00 [INF] Starting bus 1
@@ -86,7 +86,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:33:40.570 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
 2019-02-20 00:33:41.466 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:33:41.476 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-20 00:33:56.806 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:33:56.806 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:33:57.357 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:33:57.746 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:33:57.838 -03:00 [INF] Starting bus 1
@@ -97,7 +97,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:33:57.993 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
 2019-02-20 00:33:58.666 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:33:58.672 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-20 00:34:18.143 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:34:18.143 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:34:18.952 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:34:19.362 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:34:19.387 -03:00 [INF] Starting bus 1
@@ -111,7 +111,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:34:30.494 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:34:40.926 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:34:51.222 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-20 00:35:07.164 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:35:07.164 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:35:07.861 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:35:08.223 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:35:08.259 -03:00 [INF] Starting bus 1
@@ -122,9 +122,9 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:35:08.310 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
 2019-02-20 00:35:08.964 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:35:08.970 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-20 00:35:25.388 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:35:25.388 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:35:26.039 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
-2019-02-20 00:35:56.080 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:35:56.080 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:35:57.308 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:35:57.758 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:35:57.790 -03:00 [INF] Starting bus 1
@@ -133,7 +133,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:35:57.798 -03:00 [INF] Started
 2019-02-20 00:35:57.800 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
 2019-02-20 00:35:57.867 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
-2019-02-20 00:36:08.335 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:36:08.335 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:36:08.849 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:36:09.092 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:36:09.108 -03:00 [INF] Starting bus 1
@@ -146,7 +146,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:36:09.737 -03:00 [WRN] Failed to determine the https port for redirect.
 2019-02-20 00:36:20.252 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:36:30.716 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-20 00:36:45.669 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:36:45.669 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:36:47.122 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:36:47.522 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:36:47.558 -03:00 [INF] Starting bus 1
@@ -158,7 +158,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:36:48.220 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:36:48.228 -03:00 [WRN] Failed to determine the https port for redirect.
 2019-02-20 00:36:58.903 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-20 00:37:15.901 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:37:15.901 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:37:16.411 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:37:16.645 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:37:16.666 -03:00 [INF] Starting bus 1
@@ -169,7 +169,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:37:16.716 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
 2019-02-20 00:37:17.286 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:37:17.292 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-20 00:37:46.158 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:37:46.158 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:37:46.834 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:37:47.136 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:37:47.165 -03:00 [INF] Starting bus 1
@@ -180,7 +180,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:37:47.217 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
 2019-02-20 00:37:47.729 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:37:47.736 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-20 00:38:03.792 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:38:03.792 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:38:04.360 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:38:04.712 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:38:04.740 -03:00 [INF] Starting bus 1
@@ -191,7 +191,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:38:04.816 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
 2019-02-20 00:38:05.402 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:38:05.407 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-20 00:38:20.767 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:38:20.767 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:38:21.534 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:38:21.930 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:38:21.963 -03:00 [INF] Starting bus 1
@@ -202,7 +202,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 00:38:22.016 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
 2019-02-20 00:38:22.603 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 00:38:22.610 -03:00 [WRN] Failed to determine the https port for redirect.
-2019-02-20 00:38:38.316 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'ItemPedido'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 00:38:38.316 -03:00 [WRN] No type was specified for the decimal column 'ProductPrecoUnitario' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 00:38:39.523 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
 2019-02-20 00:38:39.917 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
 2019-02-20 00:38:39.942 -03:00 [INF] Starting bus 1
@@ -510,9 +510,9 @@ Error Number:4924,State:1,Class:16
    at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
 2019-02-20 01:15:02.766 -03:00 [INF] Message received:
 2019-02-20 01:15:02.767 -03:00 [INF] ----------------------------------
-2019-02-20 01:15:02.781 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","PedidoId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"995e19ca-163f-4ddf-90e4-370a53f164a4","Items":[{"Id":"025","ProductId":"025","ProductNome":"turkish strained yogurt","Quantidade":2,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"003","ProductId":"003","ProductNome":"rice milk","Quantidade":4,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"0c98f07e-1bf4-4f26-9e0b-72df4c8fa549","CreationDate":"2019-02-20T04:15:02.6998741Z"}
+2019-02-20 01:15:02.781 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","OrderId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"995e19ca-163f-4ddf-90e4-370a53f164a4","Items":[{"Id":"025","ProductId":"025","ProductNome":"turkish strained yogurt","Quantidade":2,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"003","ProductId":"003","ProductNome":"rice milk","Quantidade":4,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"0c98f07e-1bf4-4f26-9e0b-72df4c8fa549","CreationDate":"2019-02-20T04:15:02.6998741Z"}
 2019-02-20 01:15:02.781 -03:00 [INF] ----------------------------------
-2019-02-20 01:15:03.216 -03:00 [INF] new CreatePedidoCommandHandler created.
+2019-02-20 01:15:03.216 -03:00 [INF] new CreateOrderCommandHandler created.
 2019-02-20 01:15:04.731 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens fef2370b-bc95-4662-854c-1eeaeef224f3 to 1 handlers took 2004.6946 ms
 2019-02-20 01:15:04.807 -03:00 [ERR] Failed executing DbCommand (91ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
 SET NOCOUNT ON;
@@ -581,16 +581,16 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at CasaDoCodigo.Ordering.Repositories.PedidoRepository.CreateOrUpdate(Order pedido) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\PedidoRepository.cs:line 56
-   at CasaDoCodigo.Ordering.Commands.CreatePedidoCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreatePedidoCommandHandler.cs:line 118
+   at CasaDoCodigo.Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
+   at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 118
 2019-02-20 01:15:09.200 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 01:15:20.210 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 01:15:31.863 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 01:15:35.647 -03:00 [INF] Message received:
 2019-02-20 01:15:35.648 -03:00 [INF] ----------------------------------
-2019-02-20 01:15:35.648 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","PedidoId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"b83381bc-e5b5-44ff-b4fd-f2584e521e24","Items":[{"Id":"003","ProductId":"003","ProductNome":"rice milk","Quantidade":1,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"998884d8-65ee-4f75-a9b0-29198248f53a","CreationDate":"2019-02-20T04:15:35.6471489Z"}
+2019-02-20 01:15:35.648 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","OrderId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"b83381bc-e5b5-44ff-b4fd-f2584e521e24","Items":[{"Id":"003","ProductId":"003","ProductNome":"rice milk","Quantidade":1,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"998884d8-65ee-4f75-a9b0-29198248f53a","CreationDate":"2019-02-20T04:15:35.6471489Z"}
 2019-02-20 01:15:35.648 -03:00 [INF] ----------------------------------
-2019-02-20 01:15:35.649 -03:00 [INF] new CreatePedidoCommandHandler created.
+2019-02-20 01:15:35.649 -03:00 [INF] new CreateOrderCommandHandler created.
 2019-02-20 01:15:35.714 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens a8ecaf92-c7bd-4b58-9ab4-b2e883c02c13 to 1 handlers took 66.6879 ms
 2019-02-20 01:15:35.790 -03:00 [ERR] Failed executing DbCommand (84ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
 SET NOCOUNT ON;
@@ -659,6 +659,262 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at CasaDoCodigo.Ordering.Repositories.PedidoRepository.CreateOrUpdate(Order pedido) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\PedidoRepository.cs:line 56
-   at CasaDoCodigo.Ordering.Commands.CreatePedidoCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreatePedidoCommandHandler.cs:line 118
+   at CasaDoCodigo.Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
+   at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 118
 2019-02-20 01:15:43.041 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:44:41.642 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 22:45:15.545 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 22:45:17.056 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 22:45:17.099 -03:00 [INF] Starting bus 1
+2019-02-20 22:45:17.124 -03:00 [INF] Setting number of workers to 1
+2019-02-20 22:45:17.139 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 22:45:17.159 -03:00 [INF] Started
+2019-02-20 22:45:17.172 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 22:45:17.246 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 22:45:18.594 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:45:18.606 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 22:45:30.283 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:45:44.819 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:45:55.873 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:46:06.446 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:46:09.102 -03:00 [WRN] Unhandled exception [1,"87151c80-dfee-4f97-97bb-0a69cd397a92"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 87151c80-dfee-4f97-97bb-0a69cd397a92 and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
+2019-02-20 22:46:09.265 -03:00 [INF] Message received:
+2019-02-20 22:46:09.266 -03:00 [INF] ----------------------------------
+2019-02-20 22:46:09.291 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","OrderId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"9a32ac5a-da7b-491e-bf5b-06ba22eed4a1","Items":[{"Id":"001","ProductId":"001","ProductNome":"skimmed","Quantidade":3,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"02901bd1-16ca-4763-8a76-536be1c8f171","CreationDate":"2019-02-21T01:46:09.2218244Z"}
+2019-02-20 22:46:09.292 -03:00 [INF] ----------------------------------
+2019-02-20 22:46:09.652 -03:00 [INF] new CreateOrderCommandHandler created.
+2019-02-20 22:46:11.129 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens c99d6ce3-36ba-4cf3-adb8-3aadb735e9b1 to 1 handlers took 1877.6989 ms
+2019-02-20 22:46:11.287 -03:00 [ERR] Failed executing DbCommand (235ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Order] ([CustomerAdditionalAddress], [CustomerAddress], [CustomerCity], [CustomerDistrict], [CustomerEmail], [CustomerId], [CustomerName], [CustomerPhone], [CustomerState], [CustomerZipCode], [DateCreated])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [Id]
+FROM [Order]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:f8d44174-e7a1-4c4b-9e62-42c7530c18fc
+Error Number:208,State:1,Class:16
+2019-02-20 22:46:11.328 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2019-02-20 22:46:11.854 -03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at CasaDoCodigo.Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
+   at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 118
+2019-02-20 22:46:16.922 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:46:27.794 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:46:38.424 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:46:49.086 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:46:59.668 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:47:10.210 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:47:20.836 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:47:31.319 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:47:41.874 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:47:52.666 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:48:03.253 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:48:13.874 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:48:25.095 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:48:35.919 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:48:46.564 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:48:57.588 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:49:08.687 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:49:20.180 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 22:49:30.799 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:00:17.556 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 23:00:32.567 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 23:00:33.273 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 23:00:33.325 -03:00 [INF] Starting bus 1
+2019-02-20 23:00:33.327 -03:00 [INF] Setting number of workers to 1
+2019-02-20 23:00:33.329 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 23:00:33.368 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 23:00:33.370 -03:00 [INF] Started
+2019-02-20 23:00:33.480 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 23:00:34.273 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:00:34.273 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:00:34.281 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 23:00:48.397 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:01:01.334 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:01:12.315 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:01:23.867 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:01:39.963 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:01:50.648 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:02:01.830 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:02:12.291 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:02:22.619 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:02:33.092 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:02:43.406 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:02:53.892 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:03:04.583 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:03:15.304 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:03:25.877 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:03:36.454 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:03:46.963 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:03:57.424 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:04:07.896 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:04:18.522 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:04:29.013 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:04:39.676 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:04:50.147 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:05:01.677 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:05:12.250 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:05:22.594 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:05:33.146 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:06:17.610 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 23:06:38.336 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 23:06:38.939 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 23:06:38.970 -03:00 [INF] Starting bus 1
+2019-02-20 23:06:38.977 -03:00 [INF] Setting number of workers to 1
+2019-02-20 23:06:38.984 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 23:06:38.987 -03:00 [INF] Started
+2019-02-20 23:06:39.001 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 23:06:39.061 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 23:06:40.119 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:06:40.130 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 23:06:55.289 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:07:06.248 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:07:13.031 -03:00 [WRN] Unhandled exception [1,"a2c961ef-8210-43b7-8815-51e5d49ce645"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID a2c961ef-8210-43b7-8815-51e5d49ce645 and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
+2019-02-20 23:07:13.303 -03:00 [INF] Message received:
+2019-02-20 23:07:13.304 -03:00 [INF] ----------------------------------
+2019-02-20 23:07:13.321 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","OrderId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"b2386905-b116-4c3f-b465-56fd955043e9","Items":[{"Id":"001","ProductId":"001","ProductNome":"skimmed","Quantidade":1,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"27e43069-dd98-4248-bfd9-14e3acc7a852","CreationDate":"2019-02-21T02:07:13.2515774Z"}
+2019-02-20 23:07:13.321 -03:00 [INF] ----------------------------------
+2019-02-20 23:07:13.718 -03:00 [INF] new CreateOrderCommandHandler created.
+2019-02-20 23:07:15.511 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens cdcffb6b-d47f-4990-9a3e-9f0bf44fc4cb to 1 handlers took 2217.3838 ms
+2019-02-20 23:07:15.520 -03:00 [ERR] Failed executing DbCommand (26ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Order] ([CustomerAdditionalAddress], [CustomerAddress], [CustomerCity], [CustomerDistrict], [CustomerEmail], [CustomerId], [CustomerName], [CustomerPhone], [CustomerState], [CustomerZipCode], [DateCreated])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [Id]
+FROM [Order]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:90d50de3-e248-4b9e-b311-9c290eacd18f
+Error Number:208,State:1,Class:16
+2019-02-20 23:07:15.561 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2019-02-20 23:07:15.977 -03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at CasaDoCodigo.Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
+   at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 114
+2019-02-20 23:07:16.709 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:07:27.703 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.

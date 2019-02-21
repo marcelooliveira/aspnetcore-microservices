@@ -1,24 +1,24 @@
 ﻿namespace CasaDoCodigo.Models.ViewModels
 {
-    public class ItemPedidoDTO
+    public class OrderItemDTO
     {
-        public ItemPedidoDTO()
+        public OrderItemDTO()
         {
 
         }
 
-        public ItemPedidoDTO(string productCodigo, string productNome, int productQuantidade, decimal productPrecoUnitario)
+        public OrderItemDTO(string productCode, string productName, int productQuantity, decimal productUnitPrice)
         {
-            ProductCodigo = productCodigo;
-            ProductNome = productNome;
-            ProductQuantidade = productQuantidade;
-            ProductPrecoUnitario = productPrecoUnitario;
+            ProductCode = productCode;
+            ProductName = productName;
+            ProductQuantity = productQuantity;
+            ProductUnitPrice = productUnitPrice;
         }
 
-        public string ProductCodigo { get; set; }
-        public string ProductNome { get; set; }
-        public int ProductQuantidade { get; set; }
-        public decimal ProductPrecoUnitario { get; set; }
-        public decimal Subtotal => ProductQuantidade * ProductPrecoUnitario;
+        public string ProductCode { get; set; }
+        public string ProductName { get; set; }
+        public int ProductQuantity { get; set; }
+        public decimal ProductUnitPrice { get; set; }
+        public decimal Subtotal => ProductQuantity * ProductUnitPrice;
     }
 }

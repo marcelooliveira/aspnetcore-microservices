@@ -90,7 +90,7 @@ namespace CasaDoCodigo.Models
         }
     }
 
-    public class PedidoViewModel
+    public class OrderViewModel
     {
         public List<Item> Items { get; set; }
         public int RegistrationId { get; set; }

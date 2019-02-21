@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Ordering.API.Queries
 {
-    public class PedidoQueries : IPedidoQueries
+    public class OrderQueries : IOrderQueries
     {
-        public IList<Order> GetPedidos(string customerId)
+        public IList<Order> GetOrders(string customerId)
         {
             throw new NotImplementedException();
         }

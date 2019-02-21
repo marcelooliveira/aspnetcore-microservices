@@ -17,12 +17,12 @@ namespace Ordering.UnitTests
 {
     public class OrderingControllerTest
     {
-        private readonly Mock<IPedidoRepository> pedidoRepositoryMock;
+        private readonly Mock<IOrderRepository> orderRepositoryMock;
         private readonly IMapper mapper;
 
         public OrderingControllerTest()
         {
-            pedidoRepositoryMock = new Mock<IPedidoRepository>();
+            orderRepositoryMock = new Mock<IOrderRepository>();
             //auto mapper configuration
             var mockMapper = new MapperConfiguration(cfg =>
             {
@@ -41,70 +41,70 @@ namespace Ordering.UnitTests
         [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "", "uf", "12345-678")]
         [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "", "12345-678")]
         [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "")]
-        public async Task Post_Invalid_Pedido(string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
+        public async Task Post_Invalid_Order(string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
         {
             //arrange
             List<OrderItem> items = new List<OrderItem> {
                 new OrderItem("001", "product 001", 1, 12.34m)
             };
-            Order pedido = new Order(items, customerId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
-            var controller = new OrderingController(pedidoRepositoryMock.Object, mapper);
+            Order order = new Order(items, customerId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
+            var controller = new OrderingController(orderRepositoryMock.Object, mapper);
             controller.ModelState.AddModelError("cliente", "Required");
             //act
-            IActionResult actionResult = await controller.Post(pedido);
+            IActionResult actionResult = await controller.Post(order);
 
             //assert
             Assert.IsType<BadRequestObjectResult>(actionResult);
         }
 
         [Fact]
-        public async Task Post_Invalid_Pedido_No_Items()
+        public async Task Post_Invalid_Order_No_Items()
         {
             //arrange
-            Order pedido = new Order(new List<OrderItem>(), "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
-            var controller = new OrderingController(pedidoRepositoryMock.Object, mapper);
+            Order order = new Order(new List<OrderItem>(), "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            var controller = new OrderingController(orderRepositoryMock.Object, mapper);
             controller.ModelState.AddModelError("cliente", "Required");
             //act
-            IActionResult actionResult = await controller.Post(pedido);
+            IActionResult actionResult = await controller.Post(order);
 
             //assert
             Assert.IsType<BadRequestObjectResult>(actionResult);
         }
 
         [Fact]
-        public async Task Post_Invalid_Pedido_Items_Null()
+        public async Task Post_Invalid_Order_Items_Null()
         {
             //arrange
-            Order pedido = new Order(null, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
-            var controller = new OrderingController(pedidoRepositoryMock.Object, mapper);
+            Order order = new Order(null, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            var controller = new OrderingController(orderRepositoryMock.Object, mapper);
             controller.ModelState.AddModelError("cliente", "Required");
             //act
-            IActionResult actionResult = await controller.Post(pedido);
+            IActionResult actionResult = await controller.Post(order);
 
             //assert
             Assert.IsType<BadRequestObjectResult>(actionResult);
         }
 
         [Fact]
-        public async Task Post_Invalid_Pedido_Success()
+        public async Task Post_Invalid_Order_Success()
         {
             //arrange
             List<OrderItem> items = new List<OrderItem> {
                 new OrderItem("001", "product 001", 1, 12.34m)
             };
-            Order pedido = new Order(items, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
-            pedido.Id = 123;
-            pedidoRepositoryMock
+            Order order = new Order(items, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            order.Id = 123;
+            orderRepositoryMock
                 .Setup(r => r.CreateOrUpdate(It.IsAny<Order>()))
-                .ReturnsAsync(pedido);
-            var controller = new OrderingController(pedidoRepositoryMock.Object, mapper);
+                .ReturnsAsync(order);
+            var controller = new OrderingController(orderRepositoryMock.Object, mapper);
             //act
-            IActionResult actionResult = await controller.Post(pedido);
+            IActionResult actionResult = await controller.Post(order);
 
             //assert
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult);
-            Order pedidoCriado = Assert.IsType<Order>(okObjectResult.Value);
-            Assert.Equal(123, pedidoCriado.Id);
+            Order orderCriado = Assert.IsType<Order>(okObjectResult.Value);
+            Assert.Equal(123, orderCriado.Id);
         }
 
         [Theory]
@@ -113,7 +113,7 @@ namespace Ordering.UnitTests
         public async Task Get_Invalid_CustomerId(string customerId)
         {
             //arrange
-            var controller = new OrderingController(pedidoRepositoryMock.Object, mapper);
+            var controller = new OrderingController(orderRepositoryMock.Object, mapper);
             SetControllerUser(customerId, controller);
 
             //act
@@ -126,12 +126,12 @@ namespace Ordering.UnitTests
         public async Task Get_Not_Found()
         {
             //arrange
-            pedidoRepositoryMock
-                .Setup(r => r.GetPedidos(It.IsAny<string>()))
+            orderRepositoryMock
+                .Setup(r => r.GetOrders(It.IsAny<string>()))
                 .ReturnsAsync((List<Order>)null)
                 .Verifiable();
 
-            var controller = new OrderingController(pedidoRepositoryMock.Object, mapper);
+            var controller = new OrderingController(orderRepositoryMock.Object, mapper);
             SetControllerUser("xpto", controller);
 
             //act
@@ -140,7 +140,7 @@ namespace Ordering.UnitTests
             //assert
             Assert.IsType<NotFoundObjectResult>(result);
 
-            pedidoRepositoryMock.Verify();
+            orderRepositoryMock.Verify();
         }
 
         [Fact]
@@ -150,15 +150,15 @@ namespace Ordering.UnitTests
             List<OrderItem> items = new List<OrderItem> {
                 new OrderItem("001", "product 001", 1, 12.34m)
             };
-            Order pedido = new Order(items, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
-            pedido.Id = 123;
+            Order order = new Order(items, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            order.Id = 123;
 
-            pedidoRepositoryMock
-                .Setup(r => r.GetPedidos(It.IsAny<string>()))
-                .ReturnsAsync(new List<Order> { pedido })
+            orderRepositoryMock
+                .Setup(r => r.GetOrders(It.IsAny<string>()))
+                .ReturnsAsync(new List<Order> { order })
                 .Verifiable();
 
-            var controller = new OrderingController(pedidoRepositoryMock.Object, mapper);
+            var controller = new OrderingController(orderRepositoryMock.Object, mapper);
             SetControllerUser("xpto", controller);
 
             //act
@@ -166,14 +166,14 @@ namespace Ordering.UnitTests
 
             //assert
             var objectResult = Assert.IsAssignableFrom<OkObjectResult>(result);
-            var pedidos = Assert.IsType<List<OrderDTO>>(objectResult.Value);
-            Assert.Collection(pedidos,
+            var orders = Assert.IsType<List<OrderDTO>>(objectResult.Value);
+            Assert.Collection(orders,
                 (p) => Assert.Equal("123", p.Id));
 
-            Assert.Collection(pedidos[0].Items,
+            Assert.Collection(orders[0].Items,
                 (i) => Assert.Equal("001", i.ProductCode));
 
-            pedidoRepositoryMock.Verify();
+            orderRepositoryMock.Verify();
         }
 
         protected static void SetControllerUser(string customerId, ControllerBase controller)

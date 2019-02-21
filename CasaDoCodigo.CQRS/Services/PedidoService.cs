@@ -10,13 +10,13 @@ using Microsoft.Extensions.Configuration;
 
 namespace CasaDoCodigo.Services
 {
-    public class PedidoService : BaseHttpService, IPedidoService
+    public class OrderService : BaseHttpService, IOrderService
     {
         private readonly IConfiguration configuration;
         private readonly HttpClient httpClient;
         private readonly ISessionHelper sessionHelper;
 
-        public PedidoService(IConfiguration configuration
+        public OrderService(IConfiguration configuration
             , HttpClient httpClient
             , ISessionHelper sessionHelper) 
             : base(configuration, httpClient, sessionHelper)
@@ -29,12 +29,12 @@ namespace CasaDoCodigo.Services
 
         class Uris
         {
-            public static string GetPedidos => "api/ordemdecompra";
+            public static string GetOrders => "api/ordemdecompra";
         }
 
-        public async Task<List<PedidoDTO>> GetAsync(string customerId)
+        public async Task<List<OrderDTO>> GetAsync(string customerId)
         {
-            return await GetAuthenticatedAsync<List<PedidoDTO>>(Uris.GetPedidos, customerId);
+            return await GetAuthenticatedAsync<List<OrderDTO>>(Uris.GetOrders, customerId);
         }
 
         public override string Scope => "Ordering.API";

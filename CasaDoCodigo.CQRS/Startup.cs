@@ -56,7 +56,7 @@ namespace CasaDoCodigo
 
             services.AddSingleton(typeof(HttpClient), httpClient);
             services.AddHttpContextAccessor();
-            services.AddTransient<IPedidoService, PedidoService>();
+            services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<ICatalogService, CatalogService>();
             services.AddTransient<IBasketService, BasketService>();
             services.AddTransient<ISessionHelper, SessionHelper>();
@@ -161,7 +161,6 @@ namespace CasaDoCodigo
 
                     options.Scope.Add("Basket.API");
                     options.Scope.Add("Ordering.API");
-                    options.Scope.Add("CasaDoCodigo.API");
                     options.Scope.Add("offline_access");
                 });
             services.AddSignalR();
@@ -177,7 +176,7 @@ namespace CasaDoCodigo
                    .AddPolicyHandler(GetRetryPolicy())
                    .AddPolicyHandler(GetCircuitBreakerPolicy());
 
-            services.AddHttpClient<IPedidoService, PedidoService>()
+            services.AddHttpClient<IOrderService, OrderService>()
                    .AddPolicyHandler(GetRetryPolicy())
                    .AddPolicyHandler(GetCircuitBreakerPolicy());
         }

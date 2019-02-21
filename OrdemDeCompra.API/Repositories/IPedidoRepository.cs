@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Ordering.Repositories
 {
-    public interface IPedidoRepository
+    public interface IOrderRepository
     {
-        Task<Order> CreateOrUpdate(Order pedido);
-        Task<IList<Order>> GetPedidos(string customerId);
+        Task<Order> CreateOrUpdate(Order order);
+        Task<IList<Order>> GetOrders(string customerId);
     }
 }

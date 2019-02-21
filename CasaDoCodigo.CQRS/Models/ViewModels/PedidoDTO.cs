@@ -4,14 +4,14 @@ using System.Linq;
 
 namespace CasaDoCodigo.Models.ViewModels
 {
-    public class PedidoDTO
+    public class OrderDTO
     {
-        public PedidoDTO()
+        public OrderDTO()
         {
 
         }
 
-        public PedidoDTO(List<ItemPedidoDTO> items, string id, string nome, string email, string telefone, string endereco, string complemento, string bairro, string municipio, string uF, string cEP)
+        public OrderDTO(List<OrderItemDTO> items, string id, string nome, string email, string telefone, string endereco, string complemento, string bairro, string municipio, string uF, string cEP)
         {
             Items = items;
             Id = id;
@@ -26,7 +26,7 @@ namespace CasaDoCodigo.Models.ViewModels
             CEP = cEP;
         }
 
-        public List<ItemPedidoDTO> Items { get; set; } = new List<ItemPedidoDTO>();
+        public List<OrderItemDTO> Items { get; set; } = new List<OrderItemDTO>();
         public string Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }

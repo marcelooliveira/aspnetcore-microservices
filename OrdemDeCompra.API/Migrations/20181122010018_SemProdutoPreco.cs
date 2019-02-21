@@ -8,14 +8,14 @@ namespace Ordering.API.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "ProductPreco",
-                table: "ItemPedido");
+                table: "OrderItem");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<decimal>(
                 name: "ProductPreco",
-                table: "ItemPedido",
+                table: "OrderItem",
                 nullable: false,
                 defaultValue: 0m);
         }

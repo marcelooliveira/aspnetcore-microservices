@@ -1,46 +1,42 @@
 ﻿using CasaDoCodigo.Mensagens.Commands;
-using CasaDoCodigo.Mensagens.IntegrationEvents.Events;
 using CasaDoCodigo.Ordering.Models;
 using CasaDoCodigo.Ordering.Repositories;
 using MediatR;
-using Microsoft.AspNet.SignalR.Client.Hubs;
 using Microsoft.AspNetCore.Http.Connections;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Rebus.Bus;
 using System;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Ordering.Commands
 {
-    public class CreatePedidoCommandHandler
-        : IRequestHandler<IdentifiedCommand<CreatePedidoCommand, bool>, bool>
+    public class CreateOrderCommandHandler
+        : IRequestHandler<IdentifiedCommand<CreateOrderCommand, bool>, bool>
     {
-        private readonly IPedidoRepository _pedidoRepository;
-        private readonly ILogger<CreatePedidoCommandHandler> _logger;
+        private readonly IOrderRepository _orderRepository;
+        private readonly ILogger<CreateOrderCommandHandler> _logger;
         private readonly IBus _bus;
         private readonly IConfiguration _configuration;
         private readonly HubConnection _connection;
 
-        public CreatePedidoCommandHandler(
-            ILogger<CreatePedidoCommandHandler> logger
-            , IPedidoRepository pedidoRepository
+        public CreateOrderCommandHandler(
+            ILogger<CreateOrderCommandHandler> logger
+            , IOrderRepository orderRepository
             , IBus bus
             , IConfiguration configuration
             )
         {
-            this._pedidoRepository = pedidoRepository;
+            this._orderRepository = orderRepository;
             this._logger = logger;
             this._bus = bus;
             this._configuration = configuration;
 
-            _logger.LogInformation("new CreatePedidoCommandHandler created.");
+            _logger.LogInformation("new CreateOrderCommandHandler created.");
 
             string userNotificationHubUrl = $"{_configuration["SignalRServerUrl"]}usernotificationhub";
             
@@ -56,7 +52,7 @@ namespace CasaDoCodigo.Ordering.Commands
             this._connection.StartAsync().GetAwaiter();
         }
 
-        public async Task<bool> Handle(IdentifiedCommand<CreatePedidoCommand, bool> request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(IdentifiedCommand<CreateOrderCommand, bool> request, CancellationToken cancellationToken)
         {
             if (request == null)
                 throw new ArgumentNullException("Request cannot be empty");
@@ -71,7 +67,7 @@ namespace CasaDoCodigo.Ordering.Commands
                 throw new ArgumentException("Guid cannot be empty");
 
             var items = cmd.Items.Select(
-                    i => new OrderItem(i.ProductCodigo, i.ProductNome, i.ProductQuantidade, i.ProductPrecoUnitario)
+                    i => new OrderItem(i.ProductCode, i.ProductName, i.ProductQuantity, i.ProductUnitPrice)
                 ).ToList();
 
             if (items.Count == 0)
@@ -95,35 +91,35 @@ namespace CasaDoCodigo.Ordering.Commands
 
 
             if (string.IsNullOrWhiteSpace(cmd.CustomerId)
-                 || string.IsNullOrWhiteSpace(cmd.ClienteNome)
-                 || string.IsNullOrWhiteSpace(cmd.ClienteEmail)
-                 || string.IsNullOrWhiteSpace(cmd.ClienteTelefone)
-                 || string.IsNullOrWhiteSpace(cmd.ClienteEndereco)
-                 || string.IsNullOrWhiteSpace(cmd.ClienteComplemento)
-                 || string.IsNullOrWhiteSpace(cmd.ClienteBairro)
-                 || string.IsNullOrWhiteSpace(cmd.ClienteMunicipio)
-                 || string.IsNullOrWhiteSpace(cmd.ClienteUF)
-                 || string.IsNullOrWhiteSpace(cmd.ClienteCEP)
+                 || string.IsNullOrWhiteSpace(cmd.CustomerName)
+                 || string.IsNullOrWhiteSpace(cmd.CustomerEmail)
+                 || string.IsNullOrWhiteSpace(cmd.CustomerPhone)
+                 || string.IsNullOrWhiteSpace(cmd.CustomerAddress)
+                 || string.IsNullOrWhiteSpace(cmd.CustomerAdditionalCustomer)
+                 || string.IsNullOrWhiteSpace(cmd.CustomerDistrict)
+                 || string.IsNullOrWhiteSpace(cmd.CustomerCity)
+                 || string.IsNullOrWhiteSpace(cmd.CustomerState)
+                 || string.IsNullOrWhiteSpace(cmd.CustomerZipCode)
                 )
                 throw new InvalidUserDataException();
 
-            var pedido = new Order(items, cmd.CustomerId,
-                cmd.ClienteNome, cmd.ClienteEmail, cmd.ClienteTelefone, 
-                cmd.ClienteEndereco, cmd.ClienteComplemento, cmd.ClienteBairro, 
-                cmd.ClienteMunicipio, cmd.ClienteUF, cmd.ClienteCEP);
-            pedido.DateCreated = DateTime.Now;
+            var order = new Order(items, cmd.CustomerId,
+                cmd.CustomerName, cmd.CustomerEmail, cmd.CustomerPhone, 
+                cmd.CustomerAddress, cmd.CustomerAdditionalCustomer, cmd.CustomerDistrict, 
+                cmd.CustomerCity, cmd.CustomerState, cmd.CustomerZipCode);
+            order.DateCreated = DateTime.Now;
 
             try
             {
-                Order novoPedido = await this._pedidoRepository.CreateOrUpdate(pedido);
+                Order newOrder = await this._orderRepository.CreateOrUpdate(order);
 
-                string notificationText = $"Novo pedido gerado com sucesso: {novoPedido.Id}";
+                string notificationText = $"New order placed successfully: {newOrder.Id}";
 
                 HttpClient httpClient = new HttpClient();
                 string userNotificationHubUrl = $"{_configuration["SignalRServerUrl"]}usernotificationhub";
 
                 await this._connection.InvokeAsync("SendUserNotification",
-                    $"{novoPedido.CustomerId}", notificationText);
+                    $"{newOrder.CustomerId}", notificationText);
 
                 return true;
             }

@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Ordering.API.Queries
 {
-    public interface IPedidoQueries
+    public interface IOrderQueries
     {
-        IList<Order> GetPedidos(string customerId);
+        IList<Order> GetOrders(string customerId);
     }
 }

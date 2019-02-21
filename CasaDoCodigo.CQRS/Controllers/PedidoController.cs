@@ -10,20 +10,20 @@ using System.Threading.Tasks;
 namespace CasaDoCodigo.Controllers
 {
     [Route("[controller]")]
-    public class PedidoController : BaseController
+    public class OrderController : BaseController
     {
         private readonly IIdentityParser<ApplicationUser> appUserParser;
-        private readonly IPedidoService pedidoService;
+        private readonly IOrderService orderService;
 
-        public PedidoController(
+        public OrderController(
             IIdentityParser<ApplicationUser> appUserParser,
-            IPedidoService pedidoService,
-            ILogger<PedidoController> logger,
+            IOrderService orderService,
+            ILogger<OrderController> logger,
             IUserRedisRepository repository) 
             : base(logger, repository)
         {
             this.appUserParser = appUserParser;
-            this.pedidoService = pedidoService;
+            this.orderService = orderService;
         }
 
         [HttpGet("{customerId}")]
@@ -31,12 +31,12 @@ namespace CasaDoCodigo.Controllers
         {
             await CheckUserNotificationCount();
 
-            List<PedidoDTO> model = await pedidoService.GetAsync(customerId);
+            List<OrderDTO> model = await orderService.GetAsync(customerId);
             return base.View(model);
         }
 
-        [Route("Notificacoes")]
-        public async Task<ActionResult> Notificacoes()
+        [Route("Notifications")]
+        public async Task<ActionResult> Notifications()
         {
             string customerId = GetUserId();
             List<Models.UserNotification> notifications = await userRedisRepository.GetUserNotificationsAsync(customerId);

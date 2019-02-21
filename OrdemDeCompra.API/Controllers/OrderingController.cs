@@ -18,27 +18,27 @@ namespace CasaDoCodigo.Ordering.Controllers
     [ApiController]
     public class OrderingController : ControllerBase
     {
-        private readonly IPedidoRepository pedidoRepository;
+        private readonly IOrderRepository orderRepository;
         private readonly IMapper mapper;
 
         public object JwtClaimTypes { get; private set; }
 
-        public OrderingController(IPedidoRepository pedidoRepository, IMapper mapper)
+        public OrderingController(IOrderRepository orderRepository, IMapper mapper)
         {
-            this.pedidoRepository = pedidoRepository;
+            this.orderRepository = orderRepository;
             this.mapper = mapper;
         }
 
         // POST api/ordemdecompra
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Order pedido)
+        public async Task<IActionResult> Post([FromBody] Order order)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var resultado = await pedidoRepository.CreateOrUpdate(pedido);
+            var resultado = await orderRepository.CreateOrUpdate(order);
             return Ok(resultado);
         }
 
@@ -51,14 +51,14 @@ namespace CasaDoCodigo.Ordering.Controllers
                 throw new ArgumentNullException();
             }
 
-            IList<Order> pedidos = await pedidoRepository.GetPedidos(customerId);
+            IList<Order> orders = await orderRepository.GetOrders(customerId);
 
-            if (pedidos == null)
+            if (orders == null)
             {
                 return NotFound(customerId);
             }
 
-            List<OrderDTO> dto = mapper.Map<List<OrderDTO>>(pedidos);
+            List<OrderDTO> dto = mapper.Map<List<OrderDTO>>(orders);
             return base.Ok(dto);
         }
 

@@ -42,7 +42,7 @@ namespace CasaDoCodigo.Mensagens.Events
 
         public string UserId { get; set; }
         public string UserName { get; set; }
-        public int PedidoId { get; set; }
+        public int OrderId { get; set; }
         public string Municipio { get; set; }
         public string Email { get; set; }
         public string Fone { get; set; }

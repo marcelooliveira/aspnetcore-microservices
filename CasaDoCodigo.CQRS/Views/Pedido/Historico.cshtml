@@ -1,6 +1,6 @@
-﻿@model List<PedidoDTO>;
+﻿@model List<OrderDTO>;
 
-<h3>Histórico de Pedidos</h3>
+<h3>Histórico de Orders</h3>
 
 <div class="row">
     <div class="col-md-12">
@@ -13,18 +13,18 @@
 </div>
 
 <div class="panel-body">
-    @foreach (var pedido in Model)
+    @foreach (var order in Model)
     {
         <h4>
-            <span>Pedido: </span>@pedido.Id
+            <span>Order: </span>@order.Id
         </h4>
         <h4>
-            <span>Data: </span>@pedido.DateCreated.ToShortDateString()
+            <span>Data: </span>@order.DateCreated.ToShortDateString()
         </h4>
         <h4>
             <span>Total: </span>
             <span>
-                @pedido.Total.ToString("C")
+                @order.Total.ToString("C")
             </span>
         </h4>
 
@@ -50,7 +50,7 @@
             </div>
             <div class="panel-body">
 
-                @foreach (var item in pedido.Items)
+                @foreach (var item in order.Items)
                 {
 
                     <div class="row row-center linha-product" item-id="@item.ProductCodigo">
@@ -82,13 +82,13 @@
                 <div class="row">
                     <div class="col-md-10">
                         <span numero-items>
-                            Total: @(pedido.Items.Count())
+                            Total: @(order.Items.Count())
                             items
                         </span>
                     </div>
                     <div class="col-md-2">
                         Total: R$ <span class="pull-right" total>
-                            @((pedido.Total).ToString("0.00"))
+                            @((order.Total).ToString("0.00"))
                         </span>
                     </div>
                 </div>

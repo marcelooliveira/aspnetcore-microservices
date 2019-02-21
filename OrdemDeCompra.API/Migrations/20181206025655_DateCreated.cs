@@ -9,7 +9,7 @@ namespace Ordering.API.Migrations
         {
             migrationBuilder.AddColumn<DateTime>(
                 name: "DateCreated",
-                table: "Pedido",
+                table: "Order",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
         }
@@ -18,7 +18,7 @@ namespace Ordering.API.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "DateCreated",
-                table: "Pedido");
+                table: "Order");
         }
     }
 }

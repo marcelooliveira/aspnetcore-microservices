@@ -22,14 +22,14 @@ namespace CasaDoCodigo
 
             modelBuilder.Entity<Order>().HasKey(t => t.Id);
             modelBuilder.Entity<Order>().HasMany(t => t.Items).WithOne(t => t.Order);
-            modelBuilder.Entity<Order>().HasOne(t => t.Registration).WithOne(t => t.Pedido).IsRequired();
+            modelBuilder.Entity<Order>().HasOne(t => t.Registration).WithOne(t => t.Order).IsRequired();
 
             modelBuilder.Entity<OrderItem>().HasKey(t => t.Id);
             modelBuilder.Entity<OrderItem>().HasOne(t => t.Order);
             modelBuilder.Entity<OrderItem>().HasOne(t => t.Product);
 
             modelBuilder.Entity<Registration>().HasKey(t => t.Id);
-            modelBuilder.Entity<Registration>().HasOne(t => t.Pedido);
+            modelBuilder.Entity<Registration>().HasOne(t => t.Order);
         }
     }
 }

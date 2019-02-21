@@ -16,14 +16,14 @@ namespace CasaDoCodigo
             Configuration = configuration;
         }
 
-        public int? GetPedidoId()
+        public int? GetOrderId()
         {
-            return contextAccessor.HttpContext.Session.GetInt32("pedidoId");
+            return contextAccessor.HttpContext.Session.GetInt32("orderId");
         }
 
-        public void SetPedidoId(int pedidoId)
+        public void SetOrderId(int orderId)
         {
-            contextAccessor.HttpContext.Session.SetInt32("pedidoId", pedidoId);
+            contextAccessor.HttpContext.Session.SetInt32("orderId", orderId);
         }
 
         public async Task<string> GetAccessToken(string scope)
