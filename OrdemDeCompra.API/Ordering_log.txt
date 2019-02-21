@@ -918,3 +918,140 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 114
 2019-02-20 23:07:16.709 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 23:07:27.703 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:25:19.591 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-20 23:25:28.203 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-20 23:25:28.800 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-20 23:25:28.856 -03:00 [INF] Starting bus 1
+2019-02-20 23:25:28.876 -03:00 [INF] Setting number of workers to 1
+2019-02-20 23:25:28.903 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-20 23:25:28.907 -03:00 [INF] Started
+2019-02-20 23:25:28.922 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-20 23:25:30.450 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-20 23:25:55.340 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:25:55.364 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-20 23:26:13.017 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:26:23.812 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:26:34.622 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:26:45.327 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:26:57.292 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:27:14.190 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:27:25.723 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:27:28.638 -03:00 [WRN] Unhandled exception [1,"d73c292c-62f6-46ab-8690-135e7650063c"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID d73c292c-62f6-46ab-8690-135e7650063c and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
+2019-02-20 23:27:28.849 -03:00 [INF] Message received:
+2019-02-20 23:27:28.849 -03:00 [INF] ----------------------------------
+2019-02-20 23:27:28.879 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","OrderId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"eb811924-1a07-4989-bf99-76cc8d88d3c4","Items":[{"Id":"001","ProductId":"001","ProductNome":"skimmed","Quantidade":1,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"bc199af4-c9c0-4ceb-860d-745251096f0e","CreationDate":"2019-02-21T02:27:28.8034397Z"}
+2019-02-20 23:27:28.880 -03:00 [INF] ----------------------------------
+2019-02-20 23:27:29.154 -03:00 [INF] new CreateOrderCommandHandler created.
+2019-02-20 23:27:30.854 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens 1e0975f3-9dec-4d2f-acf0-c3b73d7b2e64 to 1 handlers took 2017.5629000000001 ms
+2019-02-20 23:27:31.123 -03:00 [ERR] Failed executing DbCommand (290ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Order] ([CustomerAdditionalAddress], [CustomerAddress], [CustomerCity], [CustomerDistrict], [CustomerEmail], [CustomerId], [CustomerName], [CustomerPhone], [CustomerState], [CustomerZipCode], [DateCreated])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [Id]
+FROM [Order]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CustomerAdditionalAddress'.
+Invalid column name 'CustomerAddress'.
+Invalid column name 'CustomerCity'.
+Invalid column name 'CustomerDistrict'.
+Invalid column name 'CustomerEmail'.
+Invalid column name 'CustomerName'.
+Invalid column name 'CustomerPhone'.
+Invalid column name 'CustomerState'.
+Invalid column name 'CustomerZipCode'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:a2c5a6c4-7aec-4d15-a9de-211d0c0d3d50
+Error Number:207,State:1,Class:16
+2019-02-20 23:27:31.171 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerAdditionalAddress'.
+Invalid column name 'CustomerAddress'.
+Invalid column name 'CustomerCity'.
+Invalid column name 'CustomerDistrict'.
+Invalid column name 'CustomerEmail'.
+Invalid column name 'CustomerName'.
+Invalid column name 'CustomerPhone'.
+Invalid column name 'CustomerState'.
+Invalid column name 'CustomerZipCode'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerAdditionalAddress'.
+Invalid column name 'CustomerAddress'.
+Invalid column name 'CustomerCity'.
+Invalid column name 'CustomerDistrict'.
+Invalid column name 'CustomerEmail'.
+Invalid column name 'CustomerName'.
+Invalid column name 'CustomerPhone'.
+Invalid column name 'CustomerState'.
+Invalid column name 'CustomerZipCode'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2019-02-20 23:27:31.733 -03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerAdditionalAddress'.
+Invalid column name 'CustomerAddress'.
+Invalid column name 'CustomerCity'.
+Invalid column name 'CustomerDistrict'.
+Invalid column name 'CustomerEmail'.
+Invalid column name 'CustomerName'.
+Invalid column name 'CustomerPhone'.
+Invalid column name 'CustomerState'.
+Invalid column name 'CustomerZipCode'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at CasaDoCodigo.Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
+   at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 114
+2019-02-20 23:27:36.330 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:27:48.762 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-20 23:27:59.369 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.

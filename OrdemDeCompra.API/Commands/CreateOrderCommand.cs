@@ -15,19 +15,19 @@ namespace CasaDoCodigo.Ordering.Commands
 
         }
 
-        public CreateOrderCommand(List<CreateOrderCommandItem> items, string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
+        public CreateOrderCommand(List<CreateOrderCommandItem> items, string customerId, string customerName, string customerEmail, string customerPhone, string customerAddress, string customerAdditionalCustomer, string customerDistrict, string customerCity, string customerState, string customerZipCode)
         {
             Items = items;
             CustomerId = customerId;
-            CustomerName = clienteNome;
-            CustomerEmail = clienteEmail;
-            CustomerPhone = clienteTelefone;
-            CustomerAddress = clienteEndereco;
-            CustomerAdditionalCustomer = clienteComplemento;
-            CustomerDistrict = clienteBairro;
-            CustomerCity = clienteMunicipio;
-            CustomerState = clienteUF;
-            CustomerZipCode = clienteCEP;
+            CustomerName = customerName;
+            CustomerEmail = customerEmail;
+            CustomerPhone = customerPhone;
+            CustomerAddress = customerAddress;
+            CustomerAdditionalCustomer = customerAdditionalCustomer;
+            CustomerDistrict = customerDistrict;
+            CustomerCity = customerCity;
+            CustomerState = customerState;
+            CustomerZipCode = customerZipCode;
         }
 
         public List<CreateOrderCommandItem> Items { get; private set; } = new List<CreateOrderCommandItem>();

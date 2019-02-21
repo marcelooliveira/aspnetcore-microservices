@@ -14,15 +14,15 @@ namespace Ordering.API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CustomerId = table.Column<string>(maxLength: 50, nullable: false),
-                    ClienteNome = table.Column<string>(nullable: false),
-                    ClienteEmail = table.Column<string>(nullable: false),
-                    ClienteTelefone = table.Column<string>(nullable: false),
-                    ClienteEndereco = table.Column<string>(nullable: false),
-                    ClienteComplemento = table.Column<string>(nullable: false),
-                    ClienteBairro = table.Column<string>(nullable: false),
-                    ClienteMunicipio = table.Column<string>(nullable: false),
-                    ClienteUF = table.Column<string>(nullable: false),
-                    ClienteCEP = table.Column<string>(nullable: false)
+                    CustomerName  = table.Column<string>(nullable: false),
+                    CustomerEmail  = table.Column<string>(nullable: false),
+                    CustomerPhone  = table.Column<string>(nullable: false),
+                    CustomerAddress  = table.Column<string>(nullable: false),
+                    CustomerAdditionalCustomer  = table.Column<string>(nullable: false),
+                    CustomerDistrict  = table.Column<string>(nullable: false),
+                    CustomerCity  = table.Column<string>(nullable: false),
+                    CustomerState  = table.Column<string>(nullable: false),
+                    CustomerZipCode = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -37,11 +37,11 @@ namespace Ordering.API.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     OrderId = table.Column<int>(nullable: false),
                     ProductId = table.Column<int>(nullable: false),
-                    ProductCodigo = table.Column<string>(nullable: false),
-                    ProductNome = table.Column<string>(nullable: false),
-                    ProductPreco = table.Column<decimal>(nullable: false),
-                    ProductQuantidade = table.Column<int>(nullable: false),
-                    ProductPrecoUnitario = table.Column<decimal>(nullable: false)
+                    ProductCode = table.Column<string>(nullable: false),
+                    ProductName = table.Column<string>(nullable: false),
+                    ProductPrice = table.Column<decimal>(nullable: false),
+                    ProductQuantity = table.Column<int>(nullable: false),
+                    ProductUnitPrice = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {

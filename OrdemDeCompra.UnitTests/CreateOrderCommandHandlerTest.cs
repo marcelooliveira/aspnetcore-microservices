@@ -97,7 +97,7 @@ namespace Ordering.UnitTests
             {
                 new CreateOrderCommandItem(productCodigo, productNome, productQuantidade, productPrecoUnitario)
             }
-            , "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            , "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             IdentifiedCommand<CreateOrderCommand, bool> request = new IdentifiedCommand<CreateOrderCommand, bool>(command, Guid.NewGuid());
             var handler = new CreateOrderCommandHandler(loggerMock.Object, orderRepositoryMock.Object, busMock.Object, configurationMock.Object);
 
@@ -107,16 +107,16 @@ namespace Ordering.UnitTests
         }
 
         [Theory]
-        [InlineData("", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
         [InlineData("customerId", "", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "clienteNome", "", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "clienteNome", "cliente@email.com", "", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "", "uf", "12345-678")]
-        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "", "12345-678")]
-        [InlineData("customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "")]
-        public async Task Handle_invalid_user_data(string customerId, string clienteNome, string clienteEmail, string clienteTelefone, string clienteEndereco, string clienteComplemento, string clienteBairro, string clienteMunicipio, string clienteUF, string clienteCEP)
+        [InlineData("customerId", "customerName", "", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "customerName", "cliente@email.com", "", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "", "complemento", "bairro", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "", "municipio", "uf", "12345-678")]
+        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "", "uf", "12345-678")]
+        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "", "12345-678")]
+        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "")]
+        public async Task Handle_invalid_user_data(string customerId, string customerName, string customerEmail, string customerPhone, string customerAddress, string customerAdditionalAddress, string customerDistrict, string customerCity, string customerState, string customerZipCode)
         {
             //arrange
             CancellationToken token = default(CancellationToken);
@@ -124,7 +124,7 @@ namespace Ordering.UnitTests
             {
                 new CreateOrderCommandItem("001", "product 001", 1, 12.34m)
             }
-            , customerId, clienteNome, clienteEmail, clienteTelefone, clienteEndereco, clienteComplemento, clienteBairro, clienteMunicipio, clienteUF, clienteCEP);
+            , customerId, customerName, customerEmail, customerPhone, customerAddress, customerAdditionalAddress, customerDistrict, customerCity, customerState, customerZipCode);
             IdentifiedCommand<CreateOrderCommand, bool> request = new IdentifiedCommand<CreateOrderCommand, bool>(command, Guid.NewGuid());
             var handler = new CreateOrderCommandHandler(loggerMock.Object, orderRepositoryMock.Object, busMock.Object, configurationMock.Object);
 
@@ -142,7 +142,7 @@ namespace Ordering.UnitTests
                     new OrderItem("001", "product 001", 1, 12.34m),
                     new OrderItem("002", "product 002", 2, 23.45m)
                 },
-                "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+                "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
 
             CancellationToken token = default(CancellationToken);
             CreateOrderCommand command = new CreateOrderCommand(new List<CreateOrderCommandItem>
@@ -150,7 +150,7 @@ namespace Ordering.UnitTests
                 new CreateOrderCommandItem("001", "product 001", 1, 12.34m),
                 new CreateOrderCommandItem("002", "product 002", 2, 23.45m)
             }
-            , "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            , "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             IdentifiedCommand<CreateOrderCommand, bool> request = new IdentifiedCommand<CreateOrderCommand, bool>(command, Guid.NewGuid());
             orderRepositoryMock
                 .Setup(r => r.CreateOrUpdate(It.IsAny<Order>()))

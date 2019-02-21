@@ -51,35 +51,35 @@ namespace Ordering.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ClienteBairro")
+                    b.Property<string>("CustomerDistrict")
                         .IsRequired();
 
-                    b.Property<string>("ClienteCEP")
+                    b.Property<string>("CustomerZipCode")
                         .IsRequired();
 
-                    b.Property<string>("ClienteComplemento")
+                    b.Property<string>("CustomerAdditionalAddress")
                         .IsRequired();
 
-                    b.Property<string>("ClienteEmail")
+                    b.Property<string>("CustomerEmail")
                         .IsRequired();
 
-                    b.Property<string>("ClienteEndereco")
+                    b.Property<string>("CustomerAddress")
                         .IsRequired();
 
                     b.Property<string>("CustomerId")
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<string>("ClienteMunicipio")
+                    b.Property<string>("CustomerCity")
                         .IsRequired();
 
-                    b.Property<string>("ClienteNome")
+                    b.Property<string>("CustomerName")
                         .IsRequired();
 
-                    b.Property<string>("ClienteTelefone")
+                    b.Property<string>("CustomerPhone")
                         .IsRequired();
 
-                    b.Property<string>("ClienteUF")
+                    b.Property<string>("CustomerState")
                         .IsRequired();
 
                     b.HasKey("Id");

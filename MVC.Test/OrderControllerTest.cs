@@ -45,7 +45,7 @@ namespace MVC.Test
             List<OrderItemDTO> items = new List<OrderItemDTO> {
                 new OrderItemDTO("001", "product 001", 1, 12.34m)
             };
-            OrderDTO order = new OrderDTO(items, "customerId", "clienteNome", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            OrderDTO order = new OrderDTO(items, "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             orderServiceMock
                 .Setup(c => c.GetAsync(It.IsAny<string>()))
                 .ReturnsAsync( new List<OrderDTO> { order })
