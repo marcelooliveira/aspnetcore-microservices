@@ -89,13 +89,13 @@ namespace Ordering.UnitTests
         [InlineData("001", "product 001", 0, 12.34)]
         [InlineData("001", "product 001", -1, 12.34)]
         [InlineData("001", "product 001", 1, -10)]
-        public async Task Handle_invalid_item(string productCodigo, string productNome, int productQuantidade, decimal productPrecoUnitario)
+        public async Task Handle_invalid_item(string productCodigo, string productNome, int productQuantity, decimal productUnitPrice)
         {
             //arrange
             CancellationToken token = default(CancellationToken);
             CreateOrderCommand command = new CreateOrderCommand(new List<CreateOrderCommandItem>
             {
-                new CreateOrderCommandItem(productCodigo, productNome, productQuantidade, productPrecoUnitario)
+                new CreateOrderCommandItem(productCodigo, productNome, productQuantity, productUnitPrice)
             }
             , "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
             IdentifiedCommand<CreateOrderCommand, bool> request = new IdentifiedCommand<CreateOrderCommand, bool>(command, Guid.NewGuid());

@@ -15,34 +15,9 @@ namespace Ordering.API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
+                .HasAnnotation("ProductVersion", "2.2.1-servicing-10028")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("CasaDoCodigo.Ordering.Models.OrderItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("OrderId");
-
-                    b.Property<string>("ProductCodigo")
-                        .IsRequired();
-
-                    b.Property<string>("ProductNome")
-                        .IsRequired();
-
-                    b.Property<decimal>("ProductPrecoUnitario");
-
-                    b.Property<int>("ProductQuantidade");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("OrderItem");
-                });
 
             modelBuilder.Entity("CasaDoCodigo.Ordering.Models.Order", b =>
                 {
@@ -50,27 +25,24 @@ namespace Ordering.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CustomerDistrict")
-                        .IsRequired();
-
-                    b.Property<string>("CustomerZipCode")
-                        .IsRequired();
-
                     b.Property<string>("CustomerAdditionalAddress")
-                        .IsRequired();
-
-                    b.Property<string>("CustomerEmail")
                         .IsRequired();
 
                     b.Property<string>("CustomerAddress")
                         .IsRequired();
 
+                    b.Property<string>("CustomerCity")
+                        .IsRequired();
+
+                    b.Property<string>("CustomerDistrict")
+                        .IsRequired();
+
+                    b.Property<string>("CustomerEmail")
+                        .IsRequired();
+
                     b.Property<string>("CustomerId")
                         .IsRequired()
                         .HasMaxLength(50);
-
-                    b.Property<string>("CustomerCity")
-                        .IsRequired();
 
                     b.Property<string>("CustomerName")
                         .IsRequired();
@@ -81,11 +53,39 @@ namespace Ordering.API.Migrations
                     b.Property<string>("CustomerState")
                         .IsRequired();
 
+                    b.Property<string>("CustomerZipCode")
+                        .IsRequired();
+
                     b.Property<DateTime>("DateCreated");
 
                     b.HasKey("Id");
 
                     b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("CasaDoCodigo.Ordering.Models.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("OrderId");
+
+                    b.Property<string>("ProductCode")
+                        .IsRequired();
+
+                    b.Property<string>("ProductName")
+                        .IsRequired();
+
+                    b.Property<int>("ProductQuantity");
+
+                    b.Property<decimal>("ProductUnitPrice");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderItem");
                 });
 
             modelBuilder.Entity("CasaDoCodigo.Ordering.Models.OrderItem", b =>

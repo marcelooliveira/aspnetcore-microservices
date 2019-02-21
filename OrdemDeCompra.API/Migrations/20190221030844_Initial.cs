@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Ordering.API.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,15 +15,16 @@ namespace Ordering.API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CustomerId = table.Column<string>(maxLength: 50, nullable: false),
-                    CustomerName  = table.Column<string>(nullable: false),
-                    CustomerEmail  = table.Column<string>(nullable: false),
-                    CustomerPhone  = table.Column<string>(nullable: false),
-                    CustomerAddress  = table.Column<string>(nullable: false),
-                    CustomerAdditionalCustomer  = table.Column<string>(nullable: false),
-                    CustomerDistrict  = table.Column<string>(nullable: false),
-                    CustomerCity  = table.Column<string>(nullable: false),
-                    CustomerState  = table.Column<string>(nullable: false),
-                    CustomerZipCode = table.Column<string>(nullable: false)
+                    CustomerName = table.Column<string>(nullable: false),
+                    CustomerEmail = table.Column<string>(nullable: false),
+                    CustomerPhone = table.Column<string>(nullable: false),
+                    CustomerAddress = table.Column<string>(nullable: false),
+                    CustomerAdditionalAddress = table.Column<string>(nullable: false),
+                    CustomerDistrict = table.Column<string>(nullable: false),
+                    CustomerCity = table.Column<string>(nullable: false),
+                    CustomerState = table.Column<string>(nullable: false),
+                    CustomerZipCode = table.Column<string>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -36,10 +38,8 @@ namespace Ordering.API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     OrderId = table.Column<int>(nullable: false),
-                    ProductId = table.Column<int>(nullable: false),
                     ProductCode = table.Column<string>(nullable: false),
                     ProductName = table.Column<string>(nullable: false),
-                    ProductPrice = table.Column<decimal>(nullable: false),
                     ProductQuantity = table.Column<int>(nullable: false),
                     ProductUnitPrice = table.Column<decimal>(nullable: false)
                 },

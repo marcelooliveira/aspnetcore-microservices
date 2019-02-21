@@ -1,12 +1,12 @@
 ﻿@model List<OrderDTO>;
 
-<h3>Histórico de Orders</h3>
+<h3>Order History</h3>
 
 <div class="row">
     <div class="col-md-12">
         <div class="pull-right">
             <a class="btn btn-success" asp-action="index" asp-controller="catalog">
-                Voltar ao Catalog
+                Back to Catalog
             </a>
         </div>
     </div>
@@ -36,10 +36,10 @@
                         Item
                     </div>
                     <div class="col-md-2 text-center">
-                        Preço Unitário
+                        Unit Price
                     </div>
                     <div class="col-md-2 text-center">
-                        Quantidade
+                        Quantity
                     </div>
                     <div class="col-md-2">
                         <span class="pull-right">
@@ -53,16 +53,16 @@
                 @foreach (var item in order.Items)
                 {
 
-                    <div class="row row-center linha-product" item-id="@item.ProductCodigo">
+                    <div class="row row-center linha-product" item-id="@item.ProductCode">
                         <div class="col-md-3">
                             @*<img class="img-product-basket" src="@(item.ImageURL)" />*@
                         </div>
-                        <input type="hidden" name="productId" value="@(item.ProductCodigo)" />
-                        <div class="col-md-3">@(item.ProductNome)</div>
-                        <div class="col-md-2 text-center">R$ @(item.ProductPrecoUnitario.ToString("0.00"))</div>
+                        <input type="hidden" name="productId" value="@(item.ProductCode)" />
+                        <div class="col-md-3">@(item.ProductName)</div>
+                        <div class="col-md-2 text-center">R$ @(item.ProductUnitPrice.ToString("0.00"))</div>
                         <div class="col-md-2 text-center">
                             <div class="input-group">
-                                <input type="text" value="@(item.ProductQuantidade)"
+                                <input type="text" value="@(item.ProductQuantity)"
                                         class="form-control text-center quantidade" disabled />
                             </div>
                         </div>

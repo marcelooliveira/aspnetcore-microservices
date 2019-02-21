@@ -57,17 +57,17 @@ namespace CasaDoCodigo.Ordering.Commands
 
         }
 
-        public CreateOrderCommandItem(string productCodigo, string productNome, int productQuantidade, decimal productPrecoUnitario)
+        public CreateOrderCommandItem(string productCodigo, string productNome, int productQuantity, decimal productUnitPrice)
         {
             ProductCode = productCodigo;
             ProductName = productNome;
-            ProductQuantity = productQuantidade;
-            ProductUnitPrice = productPrecoUnitario;
+            ProductQuantity = productQuantity;
+            ProductUnitPrice = productUnitPrice;
         }
 
-        public void AtualizaQuantidade(int productQuantidade)
+        public void AtualizaQuantidade(int productQuantity)
         {
-            ProductQuantity = productQuantidade;
+            ProductQuantity = productQuantity;
         }
     }
 }
