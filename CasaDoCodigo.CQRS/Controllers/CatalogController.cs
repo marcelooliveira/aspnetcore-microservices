@@ -55,7 +55,7 @@ namespace CasaDoCodigo.Controllers
 
             try
             {
-                var products = await catalogService.BuscaProducts(pesquisa);
+                var products = await catalogService.SearchProducts(pesquisa);
                 var resultado = new SearchProductsViewModel(products, pesquisa);
                 return View("Index", resultado);
             }

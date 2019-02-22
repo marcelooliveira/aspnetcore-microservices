@@ -43,7 +43,7 @@ namespace Identity.API.Commands
             if (string.IsNullOrWhiteSpace(command.UsuarioId)
                  || string.IsNullOrWhiteSpace(command.Nome)
                  || string.IsNullOrWhiteSpace(command.Email)
-                 || string.IsNullOrWhiteSpace(command.Telefone)
+                 || string.IsNullOrWhiteSpace(command.Telephone)
                  || string.IsNullOrWhiteSpace(command.Endereco)
                  || string.IsNullOrWhiteSpace(command.Complemento)
                  || string.IsNullOrWhiteSpace(command.Bairro)
@@ -61,8 +61,8 @@ namespace Identity.API.Commands
                     ["email"] = command.Email,
                     ["address"] = command.Endereco,
                     ["address_details"] = command.Complemento,
-                    ["phone"] = command.Telefone,
-                    ["neighborhood"] = command.Bairro,
+                    ["phone"] = command.Telephone,
+                    ["district"] = command.Bairro,
                     ["city"] = command.Municipio,
                     ["state"] = command.UF,
                     ["zip_code"] = command.CEP

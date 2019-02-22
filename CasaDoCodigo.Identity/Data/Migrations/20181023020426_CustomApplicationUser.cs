@@ -39,7 +39,7 @@ namespace Identity.API.Data.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "Telefone",
+                name: "Telephone",
                 table: "AspNetUsers",
                 nullable: true);
 
@@ -76,7 +76,7 @@ namespace Identity.API.Data.Migrations
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(
-                name: "Telefone",
+                name: "Telephone",
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(

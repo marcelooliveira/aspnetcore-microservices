@@ -29,7 +29,7 @@ namespace CasaDoCodigo.Services
 
         class Uris
         {
-            public static string GetOrders => "api/ordemdecompra";
+            public static string GetOrders => "api/ordering";
         }
 
         public async Task<List<OrderDTO>> GetAsync(string customerId)

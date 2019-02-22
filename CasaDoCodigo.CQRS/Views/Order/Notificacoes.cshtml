@@ -1,12 +1,12 @@
 ﻿@model List<UserNotification>;
 
-<h3>Notificações do Usuário</h3>
+<h3>User Notifications</h3>
 
 <div class="row">
     <div class="col-md-12">
         <div class="pull-right">
             <a class="btn btn-success" asp-action="index" asp-controller="catalog">
-                Voltar ao Catalog
+                Back to Catalog
             </a>
         </div>
     </div>
@@ -17,13 +17,13 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-md-2 text-center">
-                    <!--NOVO?-->
+                    <!--NEW?-->
                 </div>
                 <div class="col-md-8">
-                    Mensagem
+                    Message
                 </div>
                 <div class="col-md-2 text-center">
-                    Data / Hora
+                    Date / Time
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
                         }
                     </div>
                     <div class="col-md-8">
-                        @notification.Mensagem
+                        @notification.Message
                     </div>
                     <div class="col-md-2 text-center">
                         <span>
@@ -64,7 +64,7 @@
     <div class="col-md-12">
         <div class="pull-right">
             <a class="btn btn-success" asp-action="index" asp-controller="catalog">
-                Voltar ao Catalog
+                Back to Catalog
             </a>
         </div>
     </div>

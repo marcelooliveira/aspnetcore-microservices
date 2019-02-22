@@ -13,16 +13,16 @@ namespace Identity.API.Commands
 
         }
 
-        public RegistrationCommand(string usuarioId, string nome, string email, string telefone, string endereco, string complemento, string bairro, string municipio, string uF, string cEP)
+        public RegistrationCommand(string usuarioId, string nome, string email, string telephone, string address, string additionalAddress, string district, string city, string uF, string cEP)
         {
             UsuarioId = usuarioId;
             Nome = nome;
             Email = email;
-            Telefone = telefone;
-            Endereco = endereco;
-            Complemento = complemento;
-            Bairro = bairro;
-            Municipio = municipio;
+            Telephone = telephone;
+            Endereco = address;
+            Complemento = additionalAddress;
+            Bairro = district;
+            Municipio = city;
             UF = uF;
             CEP = cEP;
         }
@@ -30,7 +30,7 @@ namespace Identity.API.Commands
         public string UsuarioId { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
-        public string Telefone { get; set; }
+        public string Telephone { get; set; }
         public string Endereco { get; set; }
         public string Complemento { get; set; }
         public string Bairro { get; set; }

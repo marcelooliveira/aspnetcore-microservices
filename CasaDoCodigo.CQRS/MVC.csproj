@@ -89,7 +89,7 @@
     <Content Update="Views\Order\Notificacoes.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Order\Historico.cshtml">
+    <Content Update="Views\Order\History.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>

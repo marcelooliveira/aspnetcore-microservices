@@ -27,12 +27,12 @@ namespace CasaDoCodigo.Controllers
 
         protected void HandleBrokenCircuitException(IService service)
         {
-            ViewBag.MsgServicoIndisponivel = $"O serviço '{service.Scope}' não está ativo, por favor tente novamente mais tarde.";
+            ViewBag.MsgServiceUnavailable = $"O serviço '{service.Scope}' não está ativo, por favor tente novamente mais tarde.";
         }
 
         protected void HandleException()
         {
-            ViewBag.MsgServicoIndisponivel = $"O serviço está indisponível no momento, por favor tente novamente mais tarde.";
+            ViewBag.MsgServiceUnavailable = $"O serviço está indisponível no momento, por favor tente novamente mais tarde.";
         }
 
         public async Task Logout()

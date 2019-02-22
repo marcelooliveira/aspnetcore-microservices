@@ -27,7 +27,7 @@ namespace CasaDoCodigo.Controllers
         }
 
         [HttpGet("{customerId}")]
-        public async Task<ActionResult> Historico(string customerId)
+        public async Task<ActionResult> History(string customerId)
         {
             await CheckUserNotificationCount();
 

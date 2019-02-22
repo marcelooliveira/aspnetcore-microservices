@@ -65,15 +65,15 @@ namespace Identity.UnitTests
         }
 
         [Theory]
-        [InlineData("", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "")]
+        [InlineData("", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "")]
         public async Task Handle_invalid_user_data(string customerId, string customerName, string customerEmail, string customerPhone, string customerAddress, string customerAdditionalAddress, string customerDistrict, string customerCity, string customerState, string customerZipCode)
         {
             //arrange
@@ -97,7 +97,7 @@ namespace Identity.UnitTests
                .Verifiable();
 
             var handler = new RegistrationCommandHandler(mediatorMock.Object, loggerMock.Object, claimsManagerMock.Object);
-            RegistrationCommand command = new RegistrationCommand("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            RegistrationCommand command = new RegistrationCommand("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678");
 
             IdentifiedCommand<RegistrationCommand, bool> request = new IdentifiedCommand<RegistrationCommand, bool>(command, Guid.NewGuid());
             CancellationToken token = default(CancellationToken);

@@ -2,18 +2,18 @@
     ViewData["Title"] = "Catalog";
 }
 
-@model BuscaProductsViewModel;
+@model SearchProductsViewModel;
 
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <h2>Buscar products</h2>
+            <h2>Search products</h2>
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
-                    <form asp-action="BuscaProducts">
-                        <input type="text" asp-for="@Model.Search" name="pesquisa"
+                    <form asp-action="SearchProducts">
+                        <input type="text" asp-for="@Model.Search" name="search"
                                class="form-control input-lg"
-                               placeholder="categoria ou product" />
+                               placeholder="category or product" />
                         <span class="input-group-btn">
                             <button class="btn btn-info btn-lg" type="submit">
                                 <i class="glyphicon glyphicon-search"></i>
@@ -77,8 +77,8 @@
                                         <div class="text-center">
                                             <a asp-controller="basket"
                                                asp-action="index"
-                                               asp-route-codigo="@product.Code"
-                                               class="btn btn-success">Adicionar</a>
+                                               asp-route-code="@product.Code"
+                                               class="btn btn-success">Add to basket</a>
                                         </div>
                                     </div>
                                 </div>

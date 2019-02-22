@@ -29,7 +29,7 @@ namespace CasaDoCodigo.Ordering.Controllers
             this.mapper = mapper;
         }
 
-        // POST api/ordemdecompra
+        // POST api/ordering
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Order order)
         {

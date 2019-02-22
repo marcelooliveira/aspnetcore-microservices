@@ -40,7 +40,7 @@ namespace CasaDoCodigo.Controllers
             this.basketService = basketService;
         }
 
-        public async Task<IActionResult> Index(string codigo = null)
+        public async Task<IActionResult> Index(string code = null)
         {
             await CheckUserNotificationCount();
 
@@ -49,12 +49,12 @@ namespace CasaDoCodigo.Controllers
                 string idUsuario = GetUserId();
 
                 CustomerBasket basket;
-                if (!string.IsNullOrWhiteSpace(codigo))
+                if (!string.IsNullOrWhiteSpace(code))
                 {
-                    var product = await catalogService.GetProduct(codigo);
+                    var product = await catalogService.GetProduct(code);
                     if (product == null)
                     {
-                        return RedirectToAction("ProductNotFound", "Basket", codigo);
+                        return RedirectToAction("ProductNotFound", "Basket", code);
                     }
 
                     BasketItem itemBasket = new BasketItem(product.Code, product.Code, product.Name, product.Price, 1, product.ImageURL);
@@ -79,9 +79,9 @@ namespace CasaDoCodigo.Controllers
             return View();
         }
 
-        public IActionResult ProductNotFound(string codigo)
+        public IActionResult ProductNotFound(string code)
         {
-            return View(codigo);
+            return View(code);
         }
 
         [HttpPost]
@@ -90,7 +90,7 @@ namespace CasaDoCodigo.Controllers
             try
             {
                 var usuario = appUserParser.Parse(HttpContext.User);
-                var basket = basketService.DefinirQuantidades(usuario, quantidades);
+                var basket = basketService.UpdateQuantities(usuario, quantidades);
             }
             catch (BrokenCircuitException e)
             {

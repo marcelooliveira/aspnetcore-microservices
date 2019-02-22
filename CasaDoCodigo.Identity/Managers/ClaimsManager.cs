@@ -40,8 +40,8 @@ namespace Identity.API.Managers
                 applicationUser.Email = newClaims["email"];
                 applicationUser.Endereco = newClaims["address"];
                 applicationUser.Complemento = newClaims["address_details"];
-                applicationUser.Telefone = newClaims["phone"];
-                applicationUser.Bairro = newClaims["neighborhood"];
+                applicationUser.Telephone = newClaims["phone"];
+                applicationUser.Bairro = newClaims["district"];
                 applicationUser.Municipio = newClaims["city"];
                 applicationUser.UF = newClaims["state"];
                 applicationUser.CEP = newClaims["zip_code"];

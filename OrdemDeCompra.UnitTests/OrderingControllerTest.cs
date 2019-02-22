@@ -32,15 +32,15 @@ namespace Ordering.UnitTests
         }
 
         [Theory]
-        [InlineData("", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "")]
+        [InlineData("", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "")]
         public async Task Post_Invalid_Order(string customerId, string customerName, string customerEmail, string customerPhone, string customerAddress, string customerAdditionalAddress, string customerDistrict, string customerCity, string customerState, string customerZipCode)
         {
             //arrange
@@ -61,7 +61,7 @@ namespace Ordering.UnitTests
         public async Task Post_Invalid_Order_No_Items()
         {
             //arrange
-            Order order = new Order(new List<OrderItem>(), "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            Order order = new Order(new List<OrderItem>(), "customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678");
             var controller = new OrderingController(orderRepositoryMock.Object, mapper);
             controller.ModelState.AddModelError("cliente", "Required");
             //act
@@ -75,7 +75,7 @@ namespace Ordering.UnitTests
         public async Task Post_Invalid_Order_Items_Null()
         {
             //arrange
-            Order order = new Order(null, "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            Order order = new Order(null, "customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678");
             var controller = new OrderingController(orderRepositoryMock.Object, mapper);
             controller.ModelState.AddModelError("cliente", "Required");
             //act
@@ -92,7 +92,7 @@ namespace Ordering.UnitTests
             List<OrderItem> items = new List<OrderItem> {
                 new OrderItem("001", "product 001", 1, 12.34m)
             };
-            Order order = new Order(items, "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            Order order = new Order(items, "customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678");
             order.Id = 123;
             orderRepositoryMock
                 .Setup(r => r.CreateOrUpdate(It.IsAny<Order>()))
@@ -150,7 +150,7 @@ namespace Ordering.UnitTests
             List<OrderItem> items = new List<OrderItem> {
                 new OrderItem("001", "product 001", 1, 12.34m)
             };
-            Order order = new Order(items, "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            Order order = new Order(items, "customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678");
             order.Id = 123;
 
             orderRepositoryMock

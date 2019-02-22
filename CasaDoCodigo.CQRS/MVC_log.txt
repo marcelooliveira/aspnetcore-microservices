@@ -36,9 +36,9 @@ System.NullReferenceException: Object reference not set to an instance of an obj
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
 2019-02-20 01:11:39.894 -03:00 [ERR] An unhandled exception has occurred while executing the request
 Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationFailedException: One or more compilation failures occurred:
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(34,28): error CS1061: 'Product' does not contain a definition for 'Categoria' and no extension method 'Categoria' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(34,28): error CS1061: 'Product' does not contain a definition for 'Category' and no extension method 'Category' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
 C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(38,27): error CS1579: foreach statement cannot operate on variables of type '?' because '?' does not contain a public definition for 'GetEnumerator'
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(42,23): error CS1061: 'Product' does not contain a definition for 'Categoria' and no extension method 'Categoria' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(42,23): error CS1061: 'Product' does not contain a definition for 'Category' and no extension method 'Category' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
 C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(66,50): error CS1579: foreach statement cannot operate on variables of type '?' because '?' does not contain a public definition for 'GetEnumerator'
    at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(RazorCodeDocument codeDocument, String generatedCode)
    at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(String relativePath)
@@ -70,9 +70,9 @@ C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
 2019-02-20 01:11:55.532 -03:00 [ERR] An unhandled exception has occurred while executing the request
 Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationFailedException: One or more compilation failures occurred:
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(34,28): error CS1061: 'Product' does not contain a definition for 'Categoria' and no extension method 'Categoria' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(34,28): error CS1061: 'Product' does not contain a definition for 'Category' and no extension method 'Category' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
 C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(38,27): error CS1579: foreach statement cannot operate on variables of type '?' because '?' does not contain a public definition for 'GetEnumerator'
-C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(42,23): error CS1061: 'Product' does not contain a definition for 'Categoria' and no extension method 'Categoria' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
+C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(42,23): error CS1061: 'Product' does not contain a definition for 'Category' and no extension method 'Category' accepting a first argument of type 'Product' could be found (are you missing a using directive or an assembly reference?)
 C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Views\Catalog\Index.cshtml(66,50): error CS1579: foreach statement cannot operate on variables of type '?' because '?' does not contain a public definition for 'GetEnumerator'
    at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(RazorCodeDocument codeDocument, String generatedCode)
    at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(String relativePath)
@@ -131,7 +131,7 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at CasaDoCodigo.Services.BaseHttpService.GetAsync[T](String uri, Object[] param) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 46
    at CasaDoCodigo.Services.BaseHttpService.GetAuthenticatedAsync[T](String uri, Object[] param) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 33
    at CasaDoCodigo.Services.OrderService.GetAsync(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\OrderService.cs:line 37
-   at CasaDoCodigo.Controllers.OrderController.Historico(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\OrderController.cs:line 34
+   at CasaDoCodigo.Controllers.OrderController.History(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\OrderController.cs:line 34
    at lambda_method(Closure , Object )
    at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
    at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
@@ -179,7 +179,7 @@ Polly.CircuitBreaker.BrokenCircuitException: The circuit is now open and is not 
    at CasaDoCodigo.Services.BaseHttpService.GetAsync[T](String uri, Object[] param) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 46
    at CasaDoCodigo.Services.BaseHttpService.GetAuthenticatedAsync[T](String uri, Object[] param) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\BaseHttpService.cs:line 33
    at CasaDoCodigo.Services.OrderService.GetAsync(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Services\OrderService.cs:line 37
-   at CasaDoCodigo.Controllers.OrderController.Historico(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\OrderController.cs:line 34
+   at CasaDoCodigo.Controllers.OrderController.History(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\CasaDoCodigo.CQRS\Controllers\OrderController.cs:line 34
    at lambda_method(Closure , Object )
    at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
    at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()

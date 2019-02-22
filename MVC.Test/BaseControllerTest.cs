@@ -37,13 +37,13 @@ namespace MVC.Test
 
         protected IList<Product> GetFakeProducts()
         {
-            Category categoria = new Category("categoria 001");
+            Category category = new Category("category 001");
 
             return new List<Product>
             {
-                new Product("001", "product 001", 12.34m, categoria.Id, categoria.Name),
-                new Product("002", "product 002", 23.45m, categoria.Id, categoria.Name),
-                new Product("003", "product 003", 34.56m, categoria.Id, categoria.Name)
+                new Product("001", "product 001", 12.34m, category.Id, category.Name),
+                new Product("002", "product 002", 23.45m, category.Id, category.Name),
+                new Product("003", "product 003", 34.56m, category.Id, category.Name)
             };
         }
 

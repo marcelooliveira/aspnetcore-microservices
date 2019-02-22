@@ -67,7 +67,7 @@
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a asp-action="Historico" asp-controller="Order" asp-route-customerId="@customerId">Meus Orders</a></li>
+                                    <li><a asp-action="History" asp-controller="Order" asp-route-customerId="@customerId">My Orders</a></li>
                                     <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
                                 </ul>
                             </li>
@@ -101,10 +101,10 @@
         <div class="container">
             <div class="row">
                 <br />
-                @if (ViewBag.MsgServicoIndisponivel != null)
+                @if (ViewBag.MsgServiceUnavailable != null)
                 {
                     <div class="alert alert-warning" role="alert">
-                        &nbsp;@ViewBag.MsgServicoIndisponivel
+                        &nbsp;@ViewBag.MsgServiceUnavailable
                     </div>
                 }
             </div>

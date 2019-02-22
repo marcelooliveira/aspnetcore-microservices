@@ -72,7 +72,7 @@ namespace MVC.Test
 
             //assert
             Assert.Null(model);
-            Assert.True(!string.IsNullOrWhiteSpace(catalogController.ViewBag.MsgServicoIndisponivel));
+            Assert.True(!string.IsNullOrWhiteSpace(catalogController.ViewBag.MsgServiceUnavailable));
         }
 
         [Fact]
@@ -92,7 +92,7 @@ namespace MVC.Test
 
             //assert
             Assert.Null(model);
-            Assert.True(!string.IsNullOrWhiteSpace(catalogController.ViewBag.MsgServicoIndisponivel));
+            Assert.True(!string.IsNullOrWhiteSpace(catalogController.ViewBag.MsgServiceUnavailable));
         }
     }
 }

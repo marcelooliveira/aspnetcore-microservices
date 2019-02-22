@@ -35,7 +35,7 @@ namespace CasaDoCodigo.Ordering.Models
         public string CustomerName { get; set; } = "";
         [Required(ErrorMessage = "Email is required")]
         public string CustomerEmail { get; set; } = "";
-        [Required(ErrorMessage = "Telefone is required")]
+        [Required(ErrorMessage = "Telephone is required")]
         public string CustomerPhone { get; set; } = "";
         [Required(ErrorMessage = "Endereco is required")]
         public string CustomerAddress { get; set; } = "";

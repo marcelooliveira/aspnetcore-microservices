@@ -33,7 +33,7 @@ namespace MVC.Test
         }
 
         [Fact]
-        public async Task Historico_Ok()
+        public async Task History_Ok()
         {
             //arrange
             appUserParserMock
@@ -45,7 +45,7 @@ namespace MVC.Test
             List<OrderItemDTO> items = new List<OrderItemDTO> {
                 new OrderItemDTO("001", "product 001", 1, 12.34m)
             };
-            OrderDTO order = new OrderDTO(items, "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+            OrderDTO order = new OrderDTO(items, "customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678");
             orderServiceMock
                 .Setup(c => c.GetAsync(It.IsAny<string>()))
                 .ReturnsAsync( new List<OrderDTO> { order })
@@ -58,7 +58,7 @@ namespace MVC.Test
             SetControllerUser(customerId, controller);
 
             //act
-            ActionResult actionResult = await controller.Historico(customerId);
+            ActionResult actionResult = await controller.History(customerId);
 
             //assert
             ViewResult viewResult = Assert.IsAssignableFrom<ViewResult>(actionResult);

@@ -42,14 +42,14 @@ namespace CasaDoCodigo.Services
             return result;
         }
 
-        public async Task<IList<Product>> BuscaProducts(string pesquisa)
+        public async Task<IList<Product>> SearchProducts(string search)
         {
-            return await GetAsync<List<Product>>(ApiUris.SearchProducts, pesquisa);
+            return await GetAsync<List<Product>>(ApiUris.SearchProducts, search);
         }
 
-        public async Task<Models.Product> GetProduct(string codigo)
+        public async Task<Models.Product> GetProduct(string code)
         {
-            return await GetAsync<Product>(ApiUris.GetProduct, codigo);
+            return await GetAsync<Product>(ApiUris.GetProduct, code);
         }
 
         public override string Scope => "Catalog.API";

@@ -21,7 +21,7 @@ namespace CasaDoCodigo.Services
                     Phone = claims.Claims.FirstOrDefault(x => x.Type == "phone")?.Value ?? "",
                     Address = claims.Claims.FirstOrDefault(x => x.Type == "address")?.Value ?? "",
                     AdditionalAddress = claims.Claims.FirstOrDefault(x => x.Type == "address_details")?.Value ?? "",
-                    District = claims.Claims.FirstOrDefault(x => x.Type == "neighborhood")?.Value ?? "",
+                    District = claims.Claims.FirstOrDefault(x => x.Type == "district")?.Value ?? "",
                     City = claims.Claims.FirstOrDefault(x => x.Type == "city")?.Value ?? "",
                     State = claims.Claims.FirstOrDefault(x => x.Type == "state")?.Value ?? "",
                     ZipCode = claims.Claims.FirstOrDefault(x => x.Type == "zip_code")?.Value ?? ""

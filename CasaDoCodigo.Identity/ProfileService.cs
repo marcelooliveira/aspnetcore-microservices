@@ -31,10 +31,10 @@ namespace Identity.API
                 var claims = await userMgr.GetClaimsAsync(user);
                 context.IssuedClaims.Add(new Claim("name", user.Nome ?? ""));
                 context.IssuedClaims.Add(new Claim("email", user.Email ?? ""));
-                context.IssuedClaims.Add(new Claim("phone", user.Telefone ?? ""));
+                context.IssuedClaims.Add(new Claim("phone", user.Telephone ?? ""));
                 context.IssuedClaims.Add(new Claim("address", user.Endereco ?? ""));
                 context.IssuedClaims.Add(new Claim("address_details", user.Complemento ?? ""));
-                context.IssuedClaims.Add(new Claim("neighborhood", user.Bairro ?? ""));
+                context.IssuedClaims.Add(new Claim("district", user.Bairro ?? ""));
                 context.IssuedClaims.Add(new Claim("city", user.Municipio ?? ""));
                 context.IssuedClaims.Add(new Claim("state", user.UF ?? ""));
                 context.IssuedClaims.Add(new Claim("zip_code", user.CEP ?? ""));

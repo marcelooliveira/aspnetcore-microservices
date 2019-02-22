@@ -211,7 +211,7 @@ namespace CasaDoCodigo
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Catalog}/{action=Index}/{codigo?}");
+                    template: "{controller=Catalog}/{action=Index}/{code?}");
             });
 
             app.UseSignalR(routes =>

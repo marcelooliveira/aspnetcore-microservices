@@ -61,7 +61,7 @@ namespace Identity.API.Data.Migrations
 
                     b.Property<string>("SecurityStamp");
 
-                    b.Property<string>("Telefone");
+                    b.Property<string>("Telephone");
 
                     b.Property<bool>("TwoFactorEnabled");
 

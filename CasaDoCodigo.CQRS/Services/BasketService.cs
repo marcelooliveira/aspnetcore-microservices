@@ -19,7 +19,7 @@ namespace CasaDoCodigo.Services
             public static string GetBasket => "api/basket";
             public static string AddItem => "api/basket/additem";
             public static string UpdateItem => "api/basket/updateitem";
-            public static string Finalizar => "api/basket/checkout";
+            public static string Checkout => "api/basket/checkout";
         }
 
         private readonly HttpClient _apiClient;
@@ -55,7 +55,7 @@ namespace CasaDoCodigo.Services
             return await PutAsync<UpdateQuantityOutput>(uri, input);
         }
 
-        public async Task<CustomerBasket> DefinirQuantidades(ApplicationUser applicationUser, Dictionary<string, int> quantidades)
+        public async Task<CustomerBasket> UpdateQuantities(ApplicationUser applicationUser, Dictionary<string, int> quantidades)
         {
             var uri = UrlAPIs.Basket.UpdateItemBasket(_basketUrl);
 
@@ -80,14 +80,14 @@ namespace CasaDoCodigo.Services
             return JsonConvert.DeserializeObject<CustomerBasket>(jsonResponse);
         }
 
-        public Task AtualizarBasket(CustomerBasket customerBasket)
+        public Task UpdateBasket(CustomerBasket customerBasket)
         {
             throw new System.NotImplementedException();
         }
 
         public async Task<bool> Checkout(string customerId, RegistrationViewModel viewModel)
         {
-            var uri = $"{BasketUris.Finalizar}/{customerId}";
+            var uri = $"{BasketUris.Checkout}/{customerId}";
             return await PostAsync<bool>(uri, viewModel);
         }
 

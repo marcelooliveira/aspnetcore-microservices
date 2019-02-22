@@ -25,10 +25,10 @@ namespace Identity.API.Models
             ((ClaimsIdentity)principal.Identity).AddClaims(new[] {
                 new Claim("name", user.Nome ?? string.Empty),
                 new Claim("email", user.Email ?? string.Empty),
-                new Claim("phone", user.Telefone ?? string.Empty),
+                new Claim("phone", user.Telephone ?? string.Empty),
                 new Claim("address", user.Endereco ?? string.Empty),
                 new Claim("address_details", user.Complemento ?? string.Empty),
-                new Claim("neighborhood", user.Bairro ?? string.Empty),
+                new Claim("district", user.Bairro ?? string.Empty),
                 new Claim("city", user.Municipio ?? string.Empty),
                 new Claim("state", user.UF ?? string.Empty),
                 new Claim("zip_code", user.CEP ?? string.Empty)

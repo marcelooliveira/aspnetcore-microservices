@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Moq;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -48,15 +47,15 @@ namespace Ordering.UnitTests
         [InlineData("001", "product 001", 0, 12.34)]
         [InlineData("001", "product 001", 1, 0)]
         [InlineData("001", "product 001", 1, -20)]
-        public async Task CreateOrUpdate_Invalid_Item(string codigo, string nome, int qtde, decimal preco)
+        public async Task CreateOrUpdate_Invalid_Item(string code, string name, int qty, decimal price)
         {
             //arrange
             var order = new Order(
                 new List<OrderItem> {
                     new OrderItem("001", "product 001", 1, 12.34m),
-                    new OrderItem(codigo, nome, qtde, preco)
+                    new OrderItem(code, name, qty, price)
                 },
-                "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+                "customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678");
 
             var repo = new OrderRepository(contextoMock.Object);
 
@@ -65,15 +64,15 @@ namespace Ordering.UnitTests
         }
 
         [Theory]
-        [InlineData("", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "", "complemento", "bairro", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "", "municipio", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "", "uf", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "", "12345-678")]
-        [InlineData("customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "")]
+        [InlineData("", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "", "address", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "", "additionalAddress", "district", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "", "city", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "", "state", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "", "12345-678")]
+        [InlineData("customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "")]
         public async Task CreateOrUpdate_Invalid_Client_Data(string customerId, string customerName, string customerEmail, string customerPhone, string customerAddress, string customerAdditionalAddress, string customerDistrict, string customerCity, string customerState, string customerZipCode)
         {
             //arrange
@@ -99,7 +98,7 @@ namespace Ordering.UnitTests
                     new OrderItem("001", "product 001", 1, 12.34m),
                     new OrderItem("002", "product 002", 2, 23.45m)
                 },
-                "customerId", "customerName", "cliente@email.com", "fone", "endereco", "complemento", "bairro", "municipio", "uf", "12345-678");
+                "customerId", "customerName", "customer@email.com", "phone", "address", "additionalAddress", "district", "city", "state", "12345-678");
 
             var options = new DbContextOptionsBuilder<ApplicationContext>().UseInMemoryDatabase(databaseName: "database_name").Options;
 
@@ -135,27 +134,5 @@ namespace Ordering.UnitTests
             //assert
             await Assert.ThrowsAsync<ArgumentNullException>(() => repository.GetOrders(customerId));
         }
-
-        //public class FakeContext : DbContext
-        //{
-        //    public FakeContext()
-        //    {
-
-        //    }
-
-        //    public FakeContext(DbContextOptions options) : base(options)
-        //    {
-
-        //    }
-
-        //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //    {
-        //        base.OnConfiguring(optionsBuilder);
-        //    }
-
-        //    public DbSet<Order> Orders { get; set; }
-        //    public DbSet<OrderItem> OrderItems { get; set; }
-        //}
-
     }
 }

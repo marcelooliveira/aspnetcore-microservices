@@ -943,7 +943,7 @@
 2019-02-18 00:51:55.912 -03:00 [DBG] Token request success.
 2019-02-18 00:51:56.724 -03:00 [INF] Message received:
 2019-02-18 00:51:56.724 -03:00 [INF] ----------------------------------
-2019-02-18 00:51:56.732 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"d47895d7-3b39-4e29-8a1d-4875b8c94ebf","CreationDate":"2019-02-18T03:51:56.5990179Z"}
+2019-02-18 00:51:56.732 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telephone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"d47895d7-3b39-4e29-8a1d-4875b8c94ebf","CreationDate":"2019-02-18T03:51:56.5990179Z"}
 2019-02-18 00:51:56.732 -03:00 [INF] ----------------------------------
 2019-02-18 00:51:57.617 -03:00 [DBG] Dispatching Messages.IntegrationEvents.Events.RegistryEvent, Messages 5c2b32b7-e007-4019-a9d9-860a6f96ac36 to 1 handlers took 905 ms
 2019-02-18 01:08:11.108 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
@@ -1102,7 +1102,7 @@
    at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId) in C:\projects-rebus\Rebus\Rebus\Retry\Simple\SimpleRetryStrategyStep.cs:line 114
 2019-02-18 01:09:02.165 -03:00 [INF] Message received:
 2019-02-18 01:09:02.165 -03:00 [INF] ----------------------------------
-2019-02-18 01:09:02.181 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"bc897331-e407-4b49-8666-272a27b11fdc","CreationDate":"2019-02-18T04:09:02.1354344Z"}
+2019-02-18 01:09:02.181 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telephone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"bc897331-e407-4b49-8666-272a27b11fdc","CreationDate":"2019-02-18T04:09:02.1354344Z"}
 2019-02-18 01:09:02.181 -03:00 [INF] ----------------------------------
 2019-02-18 01:09:03.251 -03:00 [DBG] Dispatching Messages.IntegrationEvents.Events.RegistryEvent, Messages de48419f-fdba-4abd-ae1b-9c51bba80b65 to 1 handlers took 1095 ms
 2019-02-18 22:02:43.536 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
@@ -1820,7 +1820,7 @@
    at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId) in C:\projects-rebus\Rebus\Rebus\Retry\Simple\SimpleRetryStrategyStep.cs:line 114
 2019-02-20 01:15:02.724 -03:00 [INF] Message received:
 2019-02-20 01:15:02.724 -03:00 [INF] ----------------------------------
-2019-02-20 01:15:02.733 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"9c1038ce-405e-4905-beb3-bd0f700ebb14","CreationDate":"2019-02-20T04:15:02.7009853Z"}
+2019-02-20 01:15:02.733 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telephone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"9c1038ce-405e-4905-beb3-bd0f700ebb14","CreationDate":"2019-02-20T04:15:02.7009853Z"}
 2019-02-20 01:15:02.733 -03:00 [INF] ----------------------------------
 2019-02-20 01:15:04.025 -03:00 [DBG] Dispatching Messages.IntegrationEvents.Events.RegistryEvent, Messages 0bf7b205-d84c-4d07-aab4-1b35ad7b9bb1 to 1 handlers took 1308 ms
 2019-02-20 01:15:31.484 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
@@ -1958,7 +1958,7 @@
    at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId) in C:\projects-rebus\Rebus\Rebus\Retry\Simple\SimpleRetryStrategyStep.cs:line 114
 2019-02-20 01:15:35.585 -03:00 [INF] Message received:
 2019-02-20 01:15:35.585 -03:00 [INF] ----------------------------------
-2019-02-20 01:15:35.585 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"d19568ed-cdd7-4eb7-baee-936c49eba496","CreationDate":"2019-02-20T04:15:35.5849138Z"}
+2019-02-20 01:15:35.585 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telephone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"d19568ed-cdd7-4eb7-baee-936c49eba496","CreationDate":"2019-02-20T04:15:35.5849138Z"}
 2019-02-20 01:15:35.586 -03:00 [INF] ----------------------------------
 2019-02-20 01:15:36.020 -03:00 [DBG] Dispatching Messages.IntegrationEvents.Events.RegistryEvent, Messages 9d5701c8-b535-4e27-85e9-784ec257778d to 1 handlers took 435 ms
 2019-02-20 22:44:36.482 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
@@ -2241,7 +2241,7 @@
    at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId) in C:\projects-rebus\Rebus\Rebus\Retry\Simple\SimpleRetryStrategyStep.cs:line 114
 2019-02-20 22:46:09.256 -03:00 [INF] Message received:
 2019-02-20 22:46:09.256 -03:00 [INF] ----------------------------------
-2019-02-20 22:46:09.262 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"2ff00c6d-9e2c-4bd1-a768-f0e04850afd9","CreationDate":"2019-02-21T01:46:09.2191552Z"}
+2019-02-20 22:46:09.262 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telephone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"2ff00c6d-9e2c-4bd1-a768-f0e04850afd9","CreationDate":"2019-02-21T01:46:09.2191552Z"}
 2019-02-20 22:46:09.262 -03:00 [INF] ----------------------------------
 2019-02-20 22:46:10.391 -03:00 [DBG] Dispatching Messages.IntegrationEvents.Events.RegistryEvent, Messages 87151c80-dfee-4f97-97bb-0a69cd397a92 to 1 handlers took 1152 ms
 2019-02-20 22:46:55.115 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
@@ -2537,7 +2537,7 @@
    at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId) in C:\projects-rebus\Rebus\Rebus\Retry\Simple\SimpleRetryStrategyStep.cs:line 114
 2019-02-20 23:07:13.309 -03:00 [INF] Message received:
 2019-02-20 23:07:13.309 -03:00 [INF] ----------------------------------
-2019-02-20 23:07:13.318 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"dba34fc5-7516-4907-9b2c-cf6a7cbc80e6","CreationDate":"2019-02-21T02:07:13.2515204Z"}
+2019-02-20 23:07:13.318 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telephone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"dba34fc5-7516-4907-9b2c-cf6a7cbc80e6","CreationDate":"2019-02-21T02:07:13.2515204Z"}
 2019-02-20 23:07:13.318 -03:00 [INF] ----------------------------------
 2019-02-20 23:07:14.828 -03:00 [DBG] Dispatching Messages.IntegrationEvents.Events.RegistryEvent, Messages a2c961ef-8210-43b7-8815-51e5d49ce645 to 1 handlers took 1557 ms
 2019-02-20 23:25:18.454 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
@@ -2696,7 +2696,7 @@
    at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId) in C:\projects-rebus\Rebus\Rebus\Retry\Simple\SimpleRetryStrategyStep.cs:line 114
 2019-02-20 23:27:28.836 -03:00 [INF] Message received:
 2019-02-20 23:27:28.836 -03:00 [INF] ----------------------------------
-2019-02-20 23:27:28.847 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"eb94b66b-6a38-47f4-86f1-690a5218eed4","CreationDate":"2019-02-21T02:27:28.8030186Z"}
+2019-02-20 23:27:28.847 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telephone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"eb94b66b-6a38-47f4-86f1-690a5218eed4","CreationDate":"2019-02-21T02:27:28.8030186Z"}
 2019-02-20 23:27:28.847 -03:00 [INF] ----------------------------------
 2019-02-20 23:27:30.007 -03:00 [DBG] Dispatching Messages.IntegrationEvents.Events.RegistryEvent, Messages d73c292c-62f6-46ab-8690-135e7650063c to 1 handlers took 1185 ms
 2019-02-20 23:53:15.779 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
@@ -2855,7 +2855,7 @@
    at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId) in C:\projects-rebus\Rebus\Rebus\Retry\Simple\SimpleRetryStrategyStep.cs:line 114
 2019-02-20 23:54:28.351 -03:00 [INF] Message received:
 2019-02-20 23:54:28.351 -03:00 [INF] ----------------------------------
-2019-02-20 23:54:28.363 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"2ac1fad1-fa5a-47ed-a42e-779e179db91c","CreationDate":"2019-02-21T02:54:28.312221Z"}
+2019-02-20 23:54:28.363 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telephone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"2ac1fad1-fa5a-47ed-a42e-779e179db91c","CreationDate":"2019-02-21T02:54:28.312221Z"}
 2019-02-20 23:54:28.363 -03:00 [INF] ----------------------------------
 2019-02-20 23:54:29.717 -03:00 [DBG] Dispatching Messages.IntegrationEvents.Events.RegistryEvent, Messages 2c512741-1562-4e4d-b880-746d7a7a83b2 to 1 handlers took 1382 ms
 2019-02-20 23:56:35.362 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
@@ -3053,6 +3053,6 @@
    at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId) in C:\projects-rebus\Rebus\Rebus\Retry\Simple\SimpleRetryStrategyStep.cs:line 114
 2019-02-21 00:15:14.604 -03:00 [INF] Message received:
 2019-02-21 00:15:14.604 -03:00 [INF] ----------------------------------
-2019-02-21 00:15:14.615 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telefone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"58160f01-cace-4b69-90aa-419896319954","CreationDate":"2019-02-21T03:15:14.5689738Z"}
+2019-02-21 00:15:14.615 -03:00 [INF] {"UsuarioId":"173f964f-1eb9-43cf-91c7-df753717c16c","Nome":"Alice Smith","Email":"alice@asp.net","Telephone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","Municipio":"São Paulo","UF":"SP","CEP":"69118","Id":"58160f01-cace-4b69-90aa-419896319954","CreationDate":"2019-02-21T03:15:14.5689738Z"}
 2019-02-21 00:15:14.615 -03:00 [INF] ----------------------------------
 2019-02-21 00:15:16.063 -03:00 [DBG] Dispatching Messages.IntegrationEvents.Events.RegistryEvent, Messages a66f07cc-a3c7-4ab7-805b-cc908a2f16eb to 1 handlers took 1476 ms
