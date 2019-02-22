@@ -1,27 +1,23 @@
-﻿using CasaDoCodigo.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Models
 {
     public class ProductViewModel
     {
-        public string Codigo { get; set; }
-        public string Nome { get; set; }
-        public decimal Preco { get; set; }
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
         public int Id { get; set; }
     }
 
     public class Item
     {
         public ProductViewModel Product { get; set; }
-        public int Quantidade { get; set; }
-        public decimal PrecoUnitario { get; set; }
-        public decimal Subtotal => Quantidade * PrecoUnitario;
+        public int Quantity { get; set; }
+        public decimal UnitPrice { get; set; }
+        public decimal Subtotal => Quantity * UnitPrice;
         public int Id { get; set; }
     }
 
@@ -29,25 +25,25 @@ namespace CasaDoCodigo.Models
     {
         public int Id { get; set; }
         public int OrderId { get; set; }
-        [MinLength(5, ErrorMessage = "Nome deve ter no mínimo 5 caracteres")]
-        [MaxLength(50, ErrorMessage = "Nome deve ter no máximo 50 caracteres")]
-        [Required(ErrorMessage = "Nome é obrigatório")]
+        [MinLength(5, ErrorMessage = "Name must be at least 5 characters long")]
+        [MaxLength(50, ErrorMessage = "Name must be at least 50 characters long")]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; } = "";
-        [Required(ErrorMessage = "Email é obrigatório")]
+        [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; } = "";
-        [Required(ErrorMessage = "Telefone é obrigatório")]
+        [Required(ErrorMessage = "Phone is required")]
         public string Phone { get; set; } = "";
-        [Required(ErrorMessage = "Endereco é obrigatório")]
+        [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; } = "";
-        [Required(ErrorMessage = "Complemento é obrigatório")]
+        [Required(ErrorMessage = "AdditionalAddress is required")]
         public string AdditionalAddress { get; set; } = "";
-        [Required(ErrorMessage = "Bairro é obrigatório")]
+        [Required(ErrorMessage = "District is required")]
         public string District { get; set; } = "";
-        [Required(ErrorMessage = "Municipio é obrigatório")]
+        [Required(ErrorMessage = "City is required")]
         public string City { get; set; } = "";
-        [Required(ErrorMessage = "UF é obrigatório")]
+        [Required(ErrorMessage = "State is required")]
         public string State { get; set; } = "";
-        [Required(ErrorMessage = "CEP é obrigatório")]
+        [Required(ErrorMessage = "ZipCode is required")]
         public string ZipCode { get; set; } = "";
 
         public RegistrationViewModel()

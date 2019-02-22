@@ -9,25 +9,25 @@ namespace CasaDoCodigo.Models
         }
 
         public virtual Order Order { get; set; }
-        [MinLength(5, ErrorMessage = "Nome deve ter no mínimo 5 caracteres")]
-        [MaxLength(50, ErrorMessage = "Nome deve ter no máximo 50 caracteres")]
-        [Required(ErrorMessage = "Nome é obrigatório")]
+        [MinLength(5, ErrorMessage = "Name must be at least 5 characters long")]
+        [MaxLength(50, ErrorMessage = "Name must be at least 50 characters long")]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; } = "";
-        [Required(ErrorMessage = "Email é obrigatório")]
+        [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; } = "";
-        [Required(ErrorMessage = "Telefone é obrigatório")]
+        [Required(ErrorMessage = "Phone is required")]
         public string Phone { get; set; } = "";
-        [Required(ErrorMessage = "Endereco é obrigatório")]
+        [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; } = "";
-        [Required(ErrorMessage = "Complemento é obrigatório")]
+        [Required(ErrorMessage = "AdditionalAddress is required")]
         public string AdditionalAddress { get; set; } = "";
-        [Required(ErrorMessage = "Bairro é obrigatório")]
+        [Required(ErrorMessage = "District is required")]
         public string District { get; set; } = "";
-        [Required(ErrorMessage = "Municipio é obrigatório")]
+        [Required(ErrorMessage = "City is required")]
         public string City { get; set; } = "";
-        [Required(ErrorMessage = "UF é obrigatório")]
+        [Required(ErrorMessage = "State is required")]
         public string State { get; set; } = "";
-        [Required(ErrorMessage = "CEP é obrigatório")]
+        [Required(ErrorMessage = "ZipCode is required")]
         public string ZipCode { get; set; } = "";
 
         internal void Update(Registration newRegistration)

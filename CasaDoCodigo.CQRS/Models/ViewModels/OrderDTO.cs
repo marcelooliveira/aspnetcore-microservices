@@ -11,32 +11,32 @@ namespace CasaDoCodigo.Models.ViewModels
 
         }
 
-        public OrderDTO(List<OrderItemDTO> items, string id, string nome, string email, string telefone, string endereco, string complemento, string bairro, string municipio, string uF, string cEP)
+        public OrderDTO(List<OrderItemDTO> items, string id, string name, string email, string phone, string address, string additionalAddress, string district, string city, string state, string zipCode)
         {
             Items = items;
             Id = id;
-            Nome = nome;
+            Name = name;
             Email = email;
-            Telefone = telefone;
-            Endereco = endereco;
-            Complemento = complemento;
-            Bairro = bairro;
-            Municipio = municipio;
-            UF = uF;
-            CEP = cEP;
+            Phone = phone;
+            Address = address;
+            AdditionalAddress = additionalAddress;
+            District = district;
+            City = city;
+            State = state;
+            ZipCode = zipCode;
         }
 
         public List<OrderItemDTO> Items { get; set; } = new List<OrderItemDTO>();
         public string Id { get; set; }
-        public string Nome { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
-        public string Telefone { get; set; }
-        public string Endereco { get; set; }
-        public string Complemento { get; set; }
-        public string Bairro { get; set; }
-        public string Municipio { get; set; }
-        public string UF { get; set; }
-        public string CEP { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
+        public string AdditionalAddress { get; set; }
+        public string District { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string ZipCode { get; set; }
         public DateTime DateCreated { get; set; }
         public decimal Total => Items.Sum(i => i.Subtotal);
     }

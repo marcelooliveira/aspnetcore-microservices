@@ -32,7 +32,7 @@ namespace CasaDoCodigo.Controllers
             try
             {
                 var products = await catalogService.GetProducts();
-                var resultado = new BuscaProductsViewModel(products, "");
+                var resultado = new SearchProductsViewModel(products, "");
                 return base.View(resultado);
             }
             catch (BrokenCircuitException e)
@@ -56,7 +56,7 @@ namespace CasaDoCodigo.Controllers
             try
             {
                 var products = await catalogService.BuscaProducts(pesquisa);
-                var resultado = new BuscaProductsViewModel(products, pesquisa);
+                var resultado = new SearchProductsViewModel(products, pesquisa);
                 return View("Index", resultado);
             }
             catch (BrokenCircuitException e)
