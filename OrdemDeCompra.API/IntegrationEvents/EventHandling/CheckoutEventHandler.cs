@@ -1,12 +1,12 @@
-﻿using CasaDoCodigo.Mensagens.Events;
-using CasaDoCodigo.Mensagens.IntegrationEvents;
+﻿using Messages.Events;
+using Messages.IntegrationEvents;
 using CasaDoCodigo.Ordering.Commands;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Rebus.Handlers;
 using System.Linq;
 
-namespace CasaDoCodigo.Mensagens.EventHandling
+namespace Messages.EventHandling
 {
     public class CheckoutEventHandler : BaseEventHandler<CheckoutEvent, CreateOrderCommand>, IHandleMessages<CheckoutEvent>
     {
@@ -18,10 +18,10 @@ namespace CasaDoCodigo.Mensagens.EventHandling
         protected override CreateOrderCommand GetCommand(CheckoutEvent message)
         {
             var items = message.Items.Select(
-                    i => new CreateOrderCommandItem(i.ProductId, i.ProductNome, i.Quantidade, i.PrecoUnitario)
+                    i => new CreateOrderCommandItem(i.ProductId, i.ProductName, i.Quantity, i.UnitPrice)
                 ).ToList();
 
-            var command = new CreateOrderCommand(items, message.UserId, message.UserName, message.Email, message.Fone, message.Endereco, message.Complemento, message.Bairro, message.Municipio, message.UF, message.Cep);
+            var command = new CreateOrderCommand(items, message.UserId, message.UserName, message.Email, message.Phone, message.Address, message.AdditionalAddress, message.District, message.City, message.State, message.ZipCode);
             return command;
         }
     }

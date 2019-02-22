@@ -1,6 +1,6 @@
-﻿using CasaDoCodigo.Mensagens.Commands;
-using CasaDoCodigo.Mensagens.Events;
-using CasaDoCodigo.Mensagens.IntegrationEvents.Events;
+﻿using Messages.Commands;
+using Messages.Events;
+using Messages.IntegrationEvents.Events;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Mensagens.IntegrationEvents
+namespace Messages.IntegrationEvents
 {
     public abstract class BaseEventHandler<TMessage, TCommand> 
         where TMessage: IntegrationEvent

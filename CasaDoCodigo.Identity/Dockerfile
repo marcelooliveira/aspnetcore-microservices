@@ -6,7 +6,7 @@ EXPOSE 44338
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
 COPY CasaDoCodigo.Identity/Identity.API.csproj CasaDoCodigo.Identity/
-COPY CasaDoCodigo.Mensagens/CasaDoCodigo.Mensagens.csproj CasaDoCodigo.Mensagens/
+COPY Messages/Messages.csproj Messages/
 RUN dotnet restore CasaDoCodigo.Identity/Identity.API.csproj
 COPY . .
 WORKDIR /src/CasaDoCodigo.Identity

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC", "CasaDoCodigo.CQRS\MVC.csproj", "{616AEE63-21B3-4243-8A2A-D162242F161A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasaDoCodigo.Mensagens", "CasaDoCodigo.Mensagens\CasaDoCodigo.Mensagens.csproj", "{4B257028-6B62-496E-AD3B-0D93F2C1FF14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messages", "CasaDoCodigo.Mensagens\Messages.csproj", "{4B257028-6B62-496E-AD3B-0D93F2C1FF14}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "CasaDoCodigo.Catalogo\Catalog.API.csproj", "{99EC294B-8F3C-4CAA-AF38-65A4BA64736A}"
 EndProject

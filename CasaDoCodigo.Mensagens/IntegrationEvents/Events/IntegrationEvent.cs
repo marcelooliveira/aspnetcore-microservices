@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CasaDoCodigo.Mensagens.Events
+namespace Messages.Events
 {
     public class IntegrationEvent
     {

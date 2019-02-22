@@ -1,7 +1,7 @@
 ﻿using Basket.API.Model;
 using Basket.API.Services;
-using CasaDoCodigo.Mensagens.Events;
-using CasaDoCodigo.Mensagens.IntegrationEvents.Events;
+using Messages.Events;
+using Messages.IntegrationEvents.Events;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

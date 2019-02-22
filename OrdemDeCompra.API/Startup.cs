@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using CasaDoCodigo.Mensagens.EventHandling;
-using CasaDoCodigo.Mensagens.Events;
+using Messages.EventHandling;
+using Messages.Events;
 using CasaDoCodigo.Ordering.Commands;
 using CasaDoCodigo.Ordering.Repositories;
 using HealthChecks.UI.Client;

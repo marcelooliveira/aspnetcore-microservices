@@ -1,4 +1,4 @@
-using CasaDoCodigo.Mensagens.Commands;
+using Messages.Commands;
 using Identity.API.Commands;
 using Identity.API.Managers;
 using MediatR;

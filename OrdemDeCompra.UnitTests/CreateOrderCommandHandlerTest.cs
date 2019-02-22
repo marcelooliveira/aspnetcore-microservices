@@ -1,4 +1,4 @@
-﻿using CasaDoCodigo.Mensagens.Commands;
+﻿using Messages.Commands;
 using CasaDoCodigo.Ordering.Commands;
 using CasaDoCodigo.Ordering.Models;
 using CasaDoCodigo.Ordering.Repositories;

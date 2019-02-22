@@ -6,7 +6,7 @@ EXPOSE 44398
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
 COPY Ordering.API/Ordering.API.csproj Ordering.API/
-COPY CasaDoCodigo.Mensagens/CasaDoCodigo.Mensagens.csproj CasaDoCodigo.Mensagens/
+COPY Messages/Messages.csproj Messages/
 RUN dotnet restore Ordering.API/Ordering.API.csproj
 COPY . .
 WORKDIR /src/Ordering.API

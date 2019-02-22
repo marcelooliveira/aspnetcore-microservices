@@ -1,5 +1,5 @@
-﻿using CasaDoCodigo.Mensagens.IntegrationEvents;
-using CasaDoCodigo.Mensagens.IntegrationEvents.Events;
+﻿using Messages.IntegrationEvents;
+using Messages.IntegrationEvents.Events;
 using Identity.API.Commands;
 using Identity.API.Managers;
 using MediatR;
@@ -18,7 +18,7 @@ namespace Identity.API.IntegrationEvents.EventHandling
 
         protected override RegistrationCommand GetCommand(RegistryEvent message)
         {
-            return new RegistrationCommand(message.UsuarioId, message.Nome, message.Email, message.Telefone, message.Endereco, message.Complemento, message.Bairro, message.Municipio, message.UF, message.CEP);
+            return new RegistrationCommand(message.UsuarioId, message.Name, message.Email, message.Phone, message.Address, message.AdditionalAddress, message.District, message.City, message.State, message.ZipCode);
         }
     }
 }

@@ -46,7 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CasaDoCodigo.Mensagens\CasaDoCodigo.Mensagens.csproj" />
+    <ProjectReference Include="..\CasaDoCodigo.Mensagens\Messages.csproj" />
   </ItemGroup>
 
 </Project>

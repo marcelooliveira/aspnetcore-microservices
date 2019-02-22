@@ -499,7 +499,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 01:14:35.793 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 01:14:47.124 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 01:14:58.419 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-20 01:15:02.486 -03:00 [WRN] Unhandled exception [1,"0bf7b205-d84c-4d07-aab4-1b35ad7b9bb1"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 0bf7b205-d84c-4d07-aab4-1b35ad7b9bb1 and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
+2019-02-20 01:15:02.486 -03:00 [WRN] Unhandled exception [1,"0bf7b205-d84c-4d07-aab4-1b35ad7b9bb1"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 0bf7b205-d84c-4d07-aab4-1b35ad7b9bb1 and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
    at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
@@ -513,7 +513,7 @@ Error Number:4924,State:1,Class:16
 2019-02-20 01:15:02.781 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","OrderId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"995e19ca-163f-4ddf-90e4-370a53f164a4","Items":[{"Id":"025","ProductId":"025","ProductNome":"turkish strained yogurt","Quantidade":2,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"003","ProductId":"003","ProductNome":"rice milk","Quantidade":4,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"0c98f07e-1bf4-4f26-9e0b-72df4c8fa549","CreationDate":"2019-02-20T04:15:02.6998741Z"}
 2019-02-20 01:15:02.781 -03:00 [INF] ----------------------------------
 2019-02-20 01:15:03.216 -03:00 [INF] new CreateOrderCommandHandler created.
-2019-02-20 01:15:04.731 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens fef2370b-bc95-4662-854c-1eeaeef224f3 to 1 handlers took 2004.6946 ms
+2019-02-20 01:15:04.731 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages fef2370b-bc95-4662-854c-1eeaeef224f3 to 1 handlers took 2004.6946 ms
 2019-02-20 01:15:04.807 -03:00 [ERR] Failed executing DbCommand (91ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
 SET NOCOUNT ON;
 INSERT INTO [Order] ([CustomerAdditionalAddress], [CustomerAddress], [CustomerCity], [CustomerDistrict], [CustomerEmail], [CustomerId], [CustomerName], [CustomerPhone], [CustomerState], [CustomerZipCode], [DateCreated])
@@ -591,7 +591,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
 2019-02-20 01:15:35.648 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","OrderId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"b83381bc-e5b5-44ff-b4fd-f2584e521e24","Items":[{"Id":"003","ProductId":"003","ProductNome":"rice milk","Quantidade":1,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"998884d8-65ee-4f75-a9b0-29198248f53a","CreationDate":"2019-02-20T04:15:35.6471489Z"}
 2019-02-20 01:15:35.648 -03:00 [INF] ----------------------------------
 2019-02-20 01:15:35.649 -03:00 [INF] new CreateOrderCommandHandler created.
-2019-02-20 01:15:35.714 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens a8ecaf92-c7bd-4b58-9ab4-b2e883c02c13 to 1 handlers took 66.6879 ms
+2019-02-20 01:15:35.714 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages a8ecaf92-c7bd-4b58-9ab4-b2e883c02c13 to 1 handlers took 66.6879 ms
 2019-02-20 01:15:35.790 -03:00 [ERR] Failed executing DbCommand (84ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
 SET NOCOUNT ON;
 INSERT INTO [Order] ([CustomerAdditionalAddress], [CustomerAddress], [CustomerCity], [CustomerDistrict], [CustomerEmail], [CustomerId], [CustomerName], [CustomerPhone], [CustomerState], [CustomerZipCode], [DateCreated])
@@ -677,7 +677,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
 2019-02-20 22:45:44.819 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 22:45:55.873 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 22:46:06.446 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-20 22:46:09.102 -03:00 [WRN] Unhandled exception [1,"87151c80-dfee-4f97-97bb-0a69cd397a92"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 87151c80-dfee-4f97-97bb-0a69cd397a92 and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
+2019-02-20 22:46:09.102 -03:00 [WRN] Unhandled exception [1,"87151c80-dfee-4f97-97bb-0a69cd397a92"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 87151c80-dfee-4f97-97bb-0a69cd397a92 and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
    at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
@@ -691,7 +691,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
 2019-02-20 22:46:09.291 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","OrderId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"9a32ac5a-da7b-491e-bf5b-06ba22eed4a1","Items":[{"Id":"001","ProductId":"001","ProductNome":"skimmed","Quantidade":3,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"02901bd1-16ca-4763-8a76-536be1c8f171","CreationDate":"2019-02-21T01:46:09.2218244Z"}
 2019-02-20 22:46:09.292 -03:00 [INF] ----------------------------------
 2019-02-20 22:46:09.652 -03:00 [INF] new CreateOrderCommandHandler created.
-2019-02-20 22:46:11.129 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens c99d6ce3-36ba-4cf3-adb8-3aadb735e9b1 to 1 handlers took 1877.6989 ms
+2019-02-20 22:46:11.129 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages c99d6ce3-36ba-4cf3-adb8-3aadb735e9b1 to 1 handlers took 1877.6989 ms
 2019-02-20 22:46:11.287 -03:00 [ERR] Failed executing DbCommand (235ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
 SET NOCOUNT ON;
 INSERT INTO [Order] ([CustomerAdditionalAddress], [CustomerAddress], [CustomerCity], [CustomerDistrict], [CustomerEmail], [CustomerId], [CustomerName], [CustomerPhone], [CustomerState], [CustomerZipCode], [DateCreated])
@@ -832,7 +832,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
 2019-02-20 23:06:40.130 -03:00 [WRN] Failed to determine the https port for redirect.
 2019-02-20 23:06:55.289 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 23:07:06.248 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-20 23:07:13.031 -03:00 [WRN] Unhandled exception [1,"a2c961ef-8210-43b7-8815-51e5d49ce645"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID a2c961ef-8210-43b7-8815-51e5d49ce645 and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
+2019-02-20 23:07:13.031 -03:00 [WRN] Unhandled exception [1,"a2c961ef-8210-43b7-8815-51e5d49ce645"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID a2c961ef-8210-43b7-8815-51e5d49ce645 and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
    at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
@@ -846,7 +846,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
 2019-02-20 23:07:13.321 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","OrderId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"b2386905-b116-4c3f-b465-56fd955043e9","Items":[{"Id":"001","ProductId":"001","ProductNome":"skimmed","Quantidade":1,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"27e43069-dd98-4248-bfd9-14e3acc7a852","CreationDate":"2019-02-21T02:07:13.2515774Z"}
 2019-02-20 23:07:13.321 -03:00 [INF] ----------------------------------
 2019-02-20 23:07:13.718 -03:00 [INF] new CreateOrderCommandHandler created.
-2019-02-20 23:07:15.511 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens cdcffb6b-d47f-4990-9a3e-9f0bf44fc4cb to 1 handlers took 2217.3838 ms
+2019-02-20 23:07:15.511 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages cdcffb6b-d47f-4990-9a3e-9f0bf44fc4cb to 1 handlers took 2217.3838 ms
 2019-02-20 23:07:15.520 -03:00 [ERR] Failed executing DbCommand (26ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
 SET NOCOUNT ON;
 INSERT INTO [Order] ([CustomerAdditionalAddress], [CustomerAddress], [CustomerCity], [CustomerDistrict], [CustomerEmail], [CustomerId], [CustomerName], [CustomerPhone], [CustomerState], [CustomerZipCode], [DateCreated])
@@ -936,7 +936,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
 2019-02-20 23:26:57.292 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 23:27:14.190 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 23:27:25.723 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-20 23:27:28.638 -03:00 [WRN] Unhandled exception [1,"d73c292c-62f6-46ab-8690-135e7650063c"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID d73c292c-62f6-46ab-8690-135e7650063c and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
+2019-02-20 23:27:28.638 -03:00 [WRN] Unhandled exception [1,"d73c292c-62f6-46ab-8690-135e7650063c"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID d73c292c-62f6-46ab-8690-135e7650063c and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
    at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
@@ -950,7 +950,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
 2019-02-20 23:27:28.879 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","OrderId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"eb811924-1a07-4989-bf99-76cc8d88d3c4","Items":[{"Id":"001","ProductId":"001","ProductNome":"skimmed","Quantidade":1,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"bc199af4-c9c0-4ceb-860d-745251096f0e","CreationDate":"2019-02-21T02:27:28.8034397Z"}
 2019-02-20 23:27:28.880 -03:00 [INF] ----------------------------------
 2019-02-20 23:27:29.154 -03:00 [INF] new CreateOrderCommandHandler created.
-2019-02-20 23:27:30.854 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens 1e0975f3-9dec-4d2f-acf0-c3b73d7b2e64 to 1 handlers took 2017.5629000000001 ms
+2019-02-20 23:27:30.854 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages 1e0975f3-9dec-4d2f-acf0-c3b73d7b2e64 to 1 handlers took 2017.5629000000001 ms
 2019-02-20 23:27:31.123 -03:00 [ERR] Failed executing DbCommand (290ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
 SET NOCOUNT ON;
 INSERT INTO [Order] ([CustomerAdditionalAddress], [CustomerAddress], [CustomerCity], [CustomerDistrict], [CustomerEmail], [CustomerId], [CustomerName], [CustomerPhone], [CustomerState], [CustomerZipCode], [DateCreated])
@@ -1068,7 +1068,7 @@ Invalid column name 'CustomerZipCode'.
 2019-02-20 23:53:54.470 -03:00 [WRN] Failed to determine the https port for redirect.
 2019-02-20 23:54:05.458 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 23:54:17.754 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-20 23:54:28.078 -03:00 [WRN] Unhandled exception [1,"2c512741-1562-4e4d-b880-746d7a7a83b2"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 2c512741-1562-4e4d-b880-746d7a7a83b2 and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
+2019-02-20 23:54:28.078 -03:00 [WRN] Unhandled exception [1,"2c512741-1562-4e4d-b880-746d7a7a83b2"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 2c512741-1562-4e4d-b880-746d7a7a83b2 and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
    at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
@@ -1083,7 +1083,7 @@ Invalid column name 'CustomerZipCode'.
 2019-02-20 23:54:28.417 -03:00 [INF] ----------------------------------
 2019-02-20 23:54:28.915 -03:00 [INF] new CreateOrderCommandHandler created.
 2019-02-20 23:54:29.745 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-20 23:54:31.442 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens 2c465fc0-176f-44e6-b1f3-970dc17581d1 to 1 handlers took 3051.7925 ms
+2019-02-20 23:54:31.442 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages 2c465fc0-176f-44e6-b1f3-970dc17581d1 to 1 handlers took 3051.7925 ms
 2019-02-20 23:54:31.495 -03:00 [ERR] Failed executing DbCommand (89ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
 SET NOCOUNT ON;
 INSERT INTO [Order] ([CustomerAdditionalAddress], [CustomerAddress], [CustomerCity], [CustomerDistrict], [CustomerEmail], [CustomerId], [CustomerName], [CustomerPhone], [CustomerState], [CustomerZipCode], [DateCreated])
@@ -1664,7 +1664,7 @@ Error Number:15248,State:1,Class:11
 2019-02-21 00:14:48.796 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-21 00:14:59.547 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-21 00:15:11.187 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
-2019-02-21 00:15:14.335 -03:00 [WRN] Unhandled exception [1,"a66f07cc-a3c7-4ab7-805b-cc908a2f16eb"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID a66f07cc-a3c7-4ab7-805b-cc908a2f16eb and type CasaDoCodigo.Mensagens.IntegrationEvents.Events.RegistryEvent, CasaDoCodigo.Mensagens could not be dispatched to any handlers
+2019-02-21 00:15:14.335 -03:00 [WRN] Unhandled exception [1,"a66f07cc-a3c7-4ab7-805b-cc908a2f16eb"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID a66f07cc-a3c7-4ab7-805b-cc908a2f16eb and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
    at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
    at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
@@ -1678,5 +1678,5 @@ Error Number:15248,State:1,Class:11
 2019-02-21 00:15:14.642 -03:00 [INF] {"UserId":"173f964f-1eb9-43cf-91c7-df753717c16c","UserName":"Alice Smith","OrderId":0,"Municipio":"São Paulo","Email":"alice@asp.net","Fone":"1234-5678","Endereco":"Rua Vergueiro, 456","Complemento":"8 andar sala 801","Bairro":"Vila Galvão","UF":"SP","Cep":"69118","RequestId":"1817ca59-72e6-42be-8756-f58174a3b940","Items":[{"Id":"001","ProductId":"001","ProductNome":"skimmed","Quantidade":1,"PrecoUnitario":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"597acb46-b02a-4e58-aec1-33311453ad92","CreationDate":"2019-02-21T03:15:14.5728384Z"}
 2019-02-21 00:15:14.642 -03:00 [INF] ----------------------------------
 2019-02-21 00:15:15.341 -03:00 [INF] new CreateOrderCommandHandler created.
-2019-02-21 00:15:16.802 -03:00 [DBG] Dispatching CasaDoCodigo.Mensagens.Events.CheckoutEvent, CasaDoCodigo.Mensagens ace7417e-151d-45d7-93f2-4ba8421e3d4c to 1 handlers took 2186.8902000000003 ms
+2019-02-21 00:15:16.802 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages ace7417e-151d-45d7-93f2-4ba8421e3d4c to 1 handlers took 2186.8902000000003 ms
 2019-02-21 00:15:21.951 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.

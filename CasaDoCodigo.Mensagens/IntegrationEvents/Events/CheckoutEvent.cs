@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CasaDoCodigo.Mensagens.Events
+namespace Messages.Events
 {
     public class CheckoutEvent : IntegrationEvent
     {
@@ -12,22 +12,22 @@ namespace CasaDoCodigo.Mensagens.Events
         }
 
         public CheckoutEvent(
-              string userId, string userName, string email, string fone
-            , string endereco, string complemento, string bairro
-            , string municipio, string uf, string cep
+              string userId, string userName, string email, string phone
+            , string address, string additionalAddress, string district
+            , string city, string state, string zipCode
             , Guid requestId
             , IList<CheckoutEventItem> items)
         {
             UserId = userId;
             UserName = userName;
-            Municipio = municipio;
+            City = city;
             Email = email;
-            Fone = fone;
-            Endereco = endereco;
-            Complemento = complemento;
-            Bairro = bairro;
-            UF = uf;
-            Cep = cep;
+            Phone = phone;
+            Address = address;
+            AdditionalAddress = additionalAddress;
+            District = district;
+            State = state;
+            ZipCode = zipCode;
             RequestId = requestId;
             Items = 
                 items
@@ -35,22 +35,22 @@ namespace CasaDoCodigo.Mensagens.Events
                         new CheckoutEventItem(
                             i.Id, 
                             i.ProductId, 
-                            i.ProductNome, 
-                            i.PrecoUnitario, 
-                            i.Quantidade)).ToList();
+                            i.ProductName, 
+                            i.UnitPrice, 
+                            i.Quantity)).ToList();
         }
 
         public string UserId { get; set; }
         public string UserName { get; set; }
         public int OrderId { get; set; }
-        public string Municipio { get; set; }
+        public string City { get; set; }
         public string Email { get; set; }
-        public string Fone { get; set; }
-        public string Endereco { get; set; }
-        public string Complemento { get; set; }
-        public string Bairro { get; set; }
-        public string UF { get; set; }
-        public string Cep { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
+        public string AdditionalAddress { get; set; }
+        public string District { get; set; }
+        public string State { get; set; }
+        public string ZipCode { get; set; }
         public Guid RequestId { get; set; }
         public List<CheckoutEventItem> Items { get; } = new List<CheckoutEventItem>();
     }
@@ -66,16 +66,16 @@ namespace CasaDoCodigo.Mensagens.Events
         {
             Id = id;
             ProductId = productId;
-            ProductNome = productNome;
-            PrecoUnitario = precoUnitario;
-            Quantidade = quantidade;
+            ProductName = productNome;
+            UnitPrice = precoUnitario;
+            Quantity = quantidade;
         }
 
         public string Id { get; set; }
         public string ProductId { get; set; }
-        public string ProductNome { get; set; }
-        public int Quantidade { get; set; }
-        public decimal PrecoUnitario { get; set; }
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public decimal UnitPrice { get; set; }
         public decimal Subtotal { get; set; }
         public string ImageURL { get; set; }
     }

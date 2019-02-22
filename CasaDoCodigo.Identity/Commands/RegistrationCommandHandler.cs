@@ -1,5 +1,5 @@
-﻿using CasaDoCodigo.Mensagens.Commands;
-using CasaDoCodigo.Mensagens.IntegrationEvents.Events;
+﻿using Messages.Commands;
+using Messages.IntegrationEvents.Events;
 using Identity.API.Managers;
 using IdentityModel;
 using MediatR;

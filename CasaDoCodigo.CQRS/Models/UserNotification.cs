@@ -1,4 +1,4 @@
-﻿using CasaDoCodigo.Mensagens.Events;
+﻿using Messages.Events;
 using System;
 using System.Collections.Generic;
 using System.Text;

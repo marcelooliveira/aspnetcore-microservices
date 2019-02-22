@@ -1,5 +1,5 @@
 ﻿using CasaDoCodigo.Identity.API;
-using CasaDoCodigo.Mensagens.IntegrationEvents.Events;
+using Messages.IntegrationEvents.Events;
 using HealthChecks.UI.Client;
 //using HealthChecks.UI.Client;
 using Identity.API.Commands;
