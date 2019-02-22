@@ -4,11 +4,11 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY CasaDoCodigo.Basket/Basket.API.csproj CasaDoCodigo.Basket/
-COPY CasaDoCodigo.Mensagens/CasaDoCodigo.Mensagens.csproj CasaDoCodigo.Mensagens/
-RUN dotnet restore CasaDoCodigo.Basket/Basket.API.csproj
+COPY Basket.API/Basket.API.csproj Basket.API/
+COPY Messages/Messages.csproj Messages/
+RUN dotnet restore Basket.API/Basket.API.csproj
 COPY . .
-WORKDIR /src/CasaDoCodigo.Basket
+WORKDIR /src/Basket.API
 RUN dotnet build Basket.API.csproj -c Release -o /app
 
 FROM build AS publish
