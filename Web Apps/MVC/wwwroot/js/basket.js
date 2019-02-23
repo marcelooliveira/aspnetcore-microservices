@@ -44,7 +44,7 @@
             let basketItem = response.BasketItem;
             let itemLine = $('[item-id=' + basketItem.Id + ']');
             itemLine.find('input').val(basketItem.Quantity);
-            itemLine.find('[subtotal]').html((v.Subtotal).duasCasas());
+            itemLine.find('[subtotal]').html((basketItem.Subtotal).twoDigits());
             let customerBasket = response.CustomerBasket;
             $('[item-qty]').html('Total: ' + customerBasket.Items.length + ' items');
             $('[total]').html((customerBasket.Total).twoDigits());
