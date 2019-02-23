@@ -1,142 +1,152 @@
 [
   {
     "number": 1,
-    "name": "skimmed",
-    "category": "milk"
+    "name": "Oranges",
+    "category": "Fruits"
   },
   {
     "number": 2,
-    "name": "strawberry frozen yogurt",
-    "category": "yogurt"
+    "name": "Lemons",
+    "category": "Fruits"
   },
   {
     "number": 3,
-    "name": "rice milk",
-    "category": "milk"
+    "name": "Bananas",
+    "category": "Fruits"
   },
   {
     "number": 4,
-    "name": "almond milk",
-    "category": "milk"
+    "name": "Strawberries",
+    "category": "Fruits"
   },
   {
     "number": 5,
-    "name": "artisan bread",
-    "category": "bread"
+    "name": "Grapes",
+    "category": "Fruits"
   },
   {
     "number": 6,
-    "name": "assorted breads",
-    "category": "bread"
+    "name": "Carrots",
+    "category": "Legumes"
   },
   {
     "number": 7,
-    "name": "banana",
-    "category": "fruit"
+    "name": "Yellow peppers",
+    "category": "Legumes"
   },
   {
     "number": 8,
-    "name": "blue grapes",
-    "category": "fruit"
+    "name": "Potatoes",
+    "category": "Legumes"
   },
   {
     "number": 9,
-    "name": "Chocolate",
-    "category": "chocolate"
+    "name": "Tomatoes",
+    "category": "Legumes"
   },
   {
     "number": 10,
-    "name": "chocolate chip muffin",
-    "category": "chocolate"
+    "name": "Eggplants",
+    "category": "Legumes"
   },
   {
     "number": 11,
-    "name": "chocolates",
-    "category": "chocolate"
+    "name": "Lettuce",
+    "category": "Vegetables"
   },
   {
     "number": 12,
-    "name": "coffee beans",
-    "category": "coffee"
+    "name": "Broccoli",
+    "category": "Vegetables"
   },
   {
     "number": 13,
-    "name": "green-grapes",
-    "category": "fruit"
+    "name": "Cauliflower",
+    "category": "Vegetables"
   },
   {
     "number": 14,
-    "name": "lemons",
-    "category": "fruit"
+    "name": "Onion",
+    "category": "Vegetables"
   },
   {
     "number": 15,
-    "name": "melon",
-    "category": "fruit"
+    "name": "Aspargus",
+    "category": "Vegetables"
   },
   {
     "number": 16,
-    "name": "mexican sweet breads",
-    "category": "bread"
+    "name": "Rice",
+    "category": "Grains / Beans"
   },
   {
     "number": 17,
-    "name": "oranges",
-    "category": "fruit"
+    "name": "Beans",
+    "category": "Grains / Beans"
   },
   {
     "number": 18,
-    "name": "peaches",
-    "category": "fruit"
+    "name": "Oat",
+    "category": "Grains / Beans"
   },
   {
     "number": 19,
-    "name": "peanuts",
-    "category": "nuts"
+    "name": "Corn",
+    "category": "Grains / Beans"
   },
   {
     "number": 20,
-    "name": "red flame grapes",
-    "category": "fruit"
+    "name": "Peas",
+    "category": "Grains / Beans"
   },
   {
     "number": 21,
-    "name": "rice flour",
-    "category": "flour"
+    "name": "Milk",
+    "category": "Dairy products"
   },
   {
     "number": 22,
-    "name": "soy milk",
-    "category": "milk"
+    "name": "Cheese",
+    "category": "Dairy products"
   },
   {
     "number": 23,
-    "name": "strawberries",
-    "category": "fruit"
+    "name": "Yogurt",
+    "category": "Dairy products"
   },
   {
     "number": 24,
-    "name": "toranja",
-    "category": "fruit"
+    "name": "Butter",
+    "category": "Dairy products"
   },
   {
     "number": 25,
-    "name": "turkish strained yogurt",
-    "category": "yogurt"
+    "name": "Cream cheese",
+    "category": "Dairy products"
   },
   {
     "number": 26,
-    "name": "walnuts",
-    "category": "nuts"
+    "name": "Sliced ham",
+    "category": "Meat & eggs"
   },
   {
     "number": 27,
-    "name": "watermelon",
-    "category": "fruit"
+    "name": "Beef",
+    "category": "Meat & eggs"
   },
   {
     "number": 28,
-    "name": "wheat flour",
-    "category": "flour"
+    "name": "Shrimp",
+    "category": "Meat & eggs"
+  },
+  {
+    "number": 29,
+    "name": "Barbecue",
+    "category": "Meat & eggs"
+  },
+  {
+    "number": 30,
+    "name": "Eggs",
+    "category": "Meat & eggs"
   }
 ]

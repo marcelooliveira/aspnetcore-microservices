@@ -7181,3 +7181,55 @@ Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such col
 2019-02-23 00:34:08.346 -03:00 [INF] {"UsuarioId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"62a1756a-6b15-41ff-b7bb-c5a2ca57eaee","CreationDate":"2019-02-23T03:34:08.3053055Z"}
 2019-02-23 00:34:08.346 -03:00 [INF] ----------------------------------
 2019-02-23 00:34:08.921 -03:00 [DBG] Dispatching Messages.IntegrationEvents.Events.RegistryEvent, Messages 26c34b51-567e-4dc3-b463-f679389a8c13 to 1 handlers took 592 ms
+2019-02-23 11:03:12.687 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-23 11:03:14.024 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-23 11:03:14.112 -03:00 [INF] Setting number of workers to 1
+2019-02-23 11:03:14.132 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-23 11:03:14.184 -03:00 [INF] Bus Rebus 1 started
+2019-02-23 11:03:14.233 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-23 11:03:14.466 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-23 11:03:14.551 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-23 11:03:14.661 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-23 11:03:14.661 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-23 11:03:14.661 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-23 11:03:14.661 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-23 11:03:14.661 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-23 16:28:05.617 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-23 16:28:08.101 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-23 16:28:08.345 -03:00 [INF] Setting number of workers to 1
+2019-02-23 16:28:08.487 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-23 16:28:09.263 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-23 16:28:09.307 -03:00 [INF] Bus Rebus 1 started
+2019-02-23 16:28:09.659 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-23 16:28:09.890 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-23 16:28:09.917 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-23 16:28:09.918 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-23 16:28:09.918 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-23 16:28:09.918 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-23 16:28:09.918 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-23 16:52:28.133 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-23 16:52:34.088 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-23 16:52:34.302 -03:00 [INF] Setting number of workers to 1
+2019-02-23 16:52:34.355 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-23 16:52:34.391 -03:00 [INF] Bus Rebus 1 started
+2019-02-23 16:52:34.427 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-23 16:52:35.019 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-23 16:52:35.644 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-23 16:52:35.735 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-23 16:52:35.735 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-23 16:52:35.735 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-23 16:52:35.736 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-23 16:52:35.740 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2019-02-23 17:17:09.230 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-23 17:17:10.772 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:00:10"
+2019-02-23 17:17:10.925 -03:00 [INF] Setting number of workers to 1
+2019-02-23 17:17:11.020 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-23 17:17:11.086 -03:00 [INF] Bus Rebus 1 started
+2019-02-23 17:17:11.150 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-23 17:17:11.269 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-23 17:17:11.390 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-23 17:17:11.420 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2019-02-23 17:17:11.421 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2019-02-23 17:17:11.422 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2019-02-23 17:17:11.422 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2019-02-23 17:17:11.422 -03:00 [DBG] Using Identity.Application as default scheme for forbid
