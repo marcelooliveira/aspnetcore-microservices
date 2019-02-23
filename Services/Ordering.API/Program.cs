@@ -9,7 +9,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Ordering
+namespace Ordering
 {
     public class Program
     {

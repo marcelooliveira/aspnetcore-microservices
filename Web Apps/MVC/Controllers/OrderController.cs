@@ -1,5 +1,5 @@
-﻿using CasaDoCodigo.Models.ViewModels;
-using CasaDoCodigo.Services;
+﻿using Models.ViewModels;
+using Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MVC.Model.Redis;
@@ -7,7 +7,7 @@ using MVC.SignalR;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Controllers
+namespace Controllers
 {
     [Route("[controller]")]
     public class OrderController : BaseController

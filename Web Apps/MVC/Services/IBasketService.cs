@@ -1,12 +1,12 @@
-﻿using CasaDoCodigo.Models;
-using CasaDoCodigo.Models.ViewModels;
+﻿using Models;
+using Models.ViewModels;
 using MVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Services
+namespace Services
 {
     public interface IBasketService : IService
     {

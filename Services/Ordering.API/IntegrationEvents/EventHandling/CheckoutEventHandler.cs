@@ -1,6 +1,6 @@
 ﻿using Messages.Events;
 using Messages.IntegrationEvents;
-using CasaDoCodigo.Ordering.Commands;
+using Ordering.Commands;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Rebus.Handlers;

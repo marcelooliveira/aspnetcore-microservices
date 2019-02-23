@@ -1,4 +1,4 @@
-﻿using CasaDoCodigo.Ordering;
+﻿using Ordering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;

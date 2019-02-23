@@ -24,9 +24,8 @@ namespace Identity.API
         {
             return new List<ApiResource>
             {
-                new ApiResource("Basket.API", "Basket da CasaDoCodigo"),
-                new ApiResource("CasaDoCodigo.API", "API CasaDoCodigo"),
-                new ApiResource("Ordering.API", "Ordering da CasaDoCodigo")
+                new ApiResource("Basket.API", "Grocery Store Basket"),
+                new ApiResource("Ordering.API", "Grocery Store Ordering")
             };
         }
 
@@ -56,7 +55,7 @@ namespace Identity.API
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         "Basket.API",
-                        "CasaDoCodigo.API",
+                        "API",
                         "Ordering.API"
                     },
                     AllowOfflineAccess = true

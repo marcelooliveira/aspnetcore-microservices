@@ -1,4 +1,4 @@
-﻿using CasaDoCodigo.Ordering.Models;
+﻿using Ordering.Models;
 using System;
 using System.Collections.Generic;
 

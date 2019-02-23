@@ -1,4 +1,4 @@
-﻿using CasaDoCodigo.Identity.API;
+﻿using Identity.API;
 using Messages.IntegrationEvents.Events;
 using HealthChecks.UI.Client;
 //using HealthChecks.UI.Client;

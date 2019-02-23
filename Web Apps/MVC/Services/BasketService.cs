@@ -1,6 +1,6 @@
-﻿using CasaDoCodigo.Infrastructure;
-using CasaDoCodigo.Models;
-using CasaDoCodigo.Models.ViewModels;
+﻿using Infrastructure;
+using Models;
+using Models.ViewModels;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MVC.Models;
@@ -9,8 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using MVC;
 
-namespace CasaDoCodigo.Services
+namespace Services
 {
     public class BasketService : BaseHttpService, IBasketService
     {

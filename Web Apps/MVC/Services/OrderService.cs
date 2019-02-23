@@ -1,14 +1,11 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using Models.ViewModels;
+using MVC;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using CasaDoCodigo;
-using CasaDoCodigo.Models.ViewModels;
-using CasaDoCodigo.Services;
-using Microsoft.Extensions.Configuration;
 
-namespace CasaDoCodigo.Services
+namespace Services
 {
     public class OrderService : BaseHttpService, IOrderService
     {

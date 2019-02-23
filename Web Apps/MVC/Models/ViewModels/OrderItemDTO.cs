@@ -1,4 +1,4 @@
-﻿namespace CasaDoCodigo.Models.ViewModels
+﻿namespace Models.ViewModels
 {
     public class OrderItemDTO
     {

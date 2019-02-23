@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using CasaDoCodigo.Models.ViewModels;
-using CasaDoCodigo.Services;
+using Models.ViewModels;
+using Services;
 using HealthChecks.UI.Client;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
@@ -30,7 +30,7 @@ using System.Reflection;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo
+namespace MVC
 {
     public class Startup
     {

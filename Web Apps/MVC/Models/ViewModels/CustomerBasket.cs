@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Models.ViewModels
+namespace Models.ViewModels
 {
     public class CustomerBasket
     {

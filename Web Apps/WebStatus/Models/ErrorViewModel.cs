@@ -1,6 +1,6 @@
 using System;
 
-namespace CasaDoCodigo.Status.Models
+namespace Status.Models
 {
     public class ErrorViewModel
     {

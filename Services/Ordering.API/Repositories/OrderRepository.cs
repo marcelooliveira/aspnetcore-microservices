@@ -1,5 +1,5 @@
-﻿using CasaDoCodigo.Ordering;
-using CasaDoCodigo.Ordering.Models;
+﻿using Ordering;
+using Ordering.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Ordering.Repositories
+namespace Ordering.Repositories
 {
     public class OrderRepository : BaseRepository<Order>, IOrderRepository
     {

@@ -5,11 +5,11 @@ EXPOSE 44338
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY CasaDoCodigo.Identity/Identity.API.csproj CasaDoCodigo.Identity/
+COPY Identity/Identity.API.csproj Identity/
 COPY Messages/Messages.csproj Messages/
-RUN dotnet restore CasaDoCodigo.Identity/Identity.API.csproj
+RUN dotnet restore Identity/Identity.API.csproj
 COPY . .
-WORKDIR /src/CasaDoCodigo.Identity
+WORKDIR /src/Identity
 RUN dotnet build Identity.API.csproj -c Release -o /app
 
 FROM build AS publish

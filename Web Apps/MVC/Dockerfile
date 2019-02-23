@@ -4,11 +4,11 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY CasaDoCodigo.CQRS/MVC.csproj CasaDoCodigo.CQRS/
+COPY CQRS/MVC.csproj CQRS/
 COPY Messages/Messages.csproj Messages/
-RUN dotnet restore CasaDoCodigo.CQRS/MVC.csproj
+RUN dotnet restore CQRS/MVC.csproj
 COPY . .
-WORKDIR /src/CasaDoCodigo.CQRS
+WORKDIR /src/CQRS
 RUN dotnet build MVC.csproj -c Release -o /app
 
 FROM build AS publish

@@ -5,10 +5,10 @@ EXPOSE 44375
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY CasaDoCodigo.Catalog/Catalog.API.csproj CasaDoCodigo.Catalog/
-RUN dotnet restore CasaDoCodigo.Catalog/Catalog.API.csproj
+COPY Catalog/Catalog.API.csproj Catalog/
+RUN dotnet restore Catalog/Catalog.API.csproj
 COPY . .
-WORKDIR /src/CasaDoCodigo.Catalog
+WORKDIR /src/Catalog
 RUN dotnet build Catalog.API.csproj -c Release -o /app
 
 FROM build AS publish

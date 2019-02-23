@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CasaDoCodigo.Ordering.Models
+namespace Ordering.Models
 {
     public class Order : BaseModel
     {

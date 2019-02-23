@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace CasaDoCodigo.Models.ViewModels
+namespace Models.ViewModels
 {
     public class ApplicationUser : IdentityUser
     {

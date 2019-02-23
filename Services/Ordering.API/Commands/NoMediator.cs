@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Ordering.Commands
+namespace Ordering.Commands
 {
     public class NoMediator : IMediator
     {

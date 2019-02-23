@@ -531,7 +531,7 @@ System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Order'.
    at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
 ClientConnectionId:e4140587-0833-46e8-b4e9-cd6679db329d
 Error Number:208,State:1,Class:16
-2019-02-20 01:15:04.869 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+2019-02-20 01:15:04.869 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'Ordering.ApplicationContext'.
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
    at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
    at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
@@ -581,8 +581,8 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at CasaDoCodigo.Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
-   at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 118
+   at Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
+   at Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 118
 2019-02-20 01:15:09.200 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 01:15:20.210 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 01:15:31.863 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
@@ -609,7 +609,7 @@ System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Order'.
    at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
 ClientConnectionId:e4140587-0833-46e8-b4e9-cd6679db329d
 Error Number:208,State:1,Class:16
-2019-02-20 01:15:36.043 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+2019-02-20 01:15:36.043 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'Ordering.ApplicationContext'.
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
    at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
    at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
@@ -659,8 +659,8 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at CasaDoCodigo.Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
-   at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 118
+   at Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
+   at Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 118
 2019-02-20 01:15:43.041 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 22:44:41.642 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 22:45:15.545 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
@@ -709,7 +709,7 @@ System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Order'.
    at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
 ClientConnectionId:f8d44174-e7a1-4c4b-9e62-42c7530c18fc
 Error Number:208,State:1,Class:16
-2019-02-20 22:46:11.328 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+2019-02-20 22:46:11.328 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'Ordering.ApplicationContext'.
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
    at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
    at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
@@ -759,8 +759,8 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at CasaDoCodigo.Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
-   at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 118
+   at Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
+   at Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 118
 2019-02-20 22:46:16.922 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 22:46:27.794 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 22:46:38.424 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
@@ -864,7 +864,7 @@ System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Order'.
    at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
 ClientConnectionId:90d50de3-e248-4b9e-b311-9c290eacd18f
 Error Number:208,State:1,Class:16
-2019-02-20 23:07:15.561 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+2019-02-20 23:07:15.561 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'Ordering.ApplicationContext'.
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'Order'.
    at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
    at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
@@ -914,8 +914,8 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at CasaDoCodigo.Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
-   at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 114
+   at Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
+   at Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 114
 2019-02-20 23:07:16.709 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 23:07:27.703 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 23:25:19.591 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
@@ -976,7 +976,7 @@ Invalid column name 'CustomerZipCode'.
    at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
 ClientConnectionId:a2c5a6c4-7aec-4d15-a9de-211d0c0d3d50
 Error Number:207,State:1,Class:16
-2019-02-20 23:27:31.171 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+2019-02-20 23:27:31.171 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'Ordering.ApplicationContext'.
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerAdditionalAddress'.
 Invalid column name 'CustomerAddress'.
 Invalid column name 'CustomerCity'.
@@ -1050,8 +1050,8 @@ Invalid column name 'CustomerZipCode'.
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at CasaDoCodigo.Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
-   at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 114
+   at Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
+   at Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 114
 2019-02-20 23:27:36.330 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 23:27:48.762 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 23:27:59.369 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
@@ -1109,7 +1109,7 @@ Invalid column name 'CustomerZipCode'.
    at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
 ClientConnectionId:203629d3-cc22-4ee6-b819-b485d9a4e235
 Error Number:207,State:1,Class:16
-2019-02-20 23:54:31.539 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'CasaDoCodigo.Ordering.ApplicationContext'.
+2019-02-20 23:54:31.539 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'Ordering.ApplicationContext'.
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'CustomerAdditionalAddress'.
 Invalid column name 'CustomerAddress'.
 Invalid column name 'CustomerCity'.
@@ -1183,8 +1183,8 @@ Invalid column name 'CustomerZipCode'.
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at CasaDoCodigo.Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
-   at CasaDoCodigo.Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 114
+   at Ordering.Repositories.OrderRepository.CreateOrUpdate(Order order) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Repositories\OrderRepository.cs:line 56
+   at Ordering.Commands.CreateOrderCommandHandler.Handle(IdentifiedCommand`2 request, CancellationToken cancellationToken) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\OrdemDeCompra.API\Commands\CreateOrderCommandHandler.cs:line 114
 2019-02-20 23:54:47.396 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-20 23:56:09.343 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2019-02-20 23:56:13.102 -03:00 [ERR] Failed executing DbCommand (107ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
@@ -2066,3 +2066,39 @@ Error Number:15248,State:1,Class:11
 2019-02-23 17:20:48.556 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-23 17:20:59.156 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2019-02-23 17:21:10.702 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:38:21.891 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-23 17:38:32.874 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-23 17:38:33.835 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-23 17:38:33.906 -03:00 [INF] Starting bus 1
+2019-02-23 17:38:33.922 -03:00 [INF] Setting number of workers to 1
+2019-02-23 17:38:33.943 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-23 17:38:33.989 -03:00 [INF] Started
+2019-02-23 17:38:34.028 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-23 17:38:34.297 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-23 17:38:41.723 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:38:41.741 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-23 17:38:52.451 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:39:03.960 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:39:14.424 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:39:24.930 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:39:35.388 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:39:46.133 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:39:56.960 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:40:08.050 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:40:19.233 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:40:22.596 -03:00 [WRN] Unhandled exception [1,"9993454c-0360-4776-8b1c-7ba318b471ef"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 9993454c-0360-4776-8b1c-7ba318b471ef and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
+2019-02-23 17:40:22.721 -03:00 [INF] Message received:
+2019-02-23 17:40:22.721 -03:00 [INF] ----------------------------------
+2019-02-23 17:40:22.734 -03:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"2023717c-d2d2-4dbb-ae11-ff877b38a712","Items":[{"Id":"001","ProductId":"001","ProductName":"Oranges","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"006","ProductId":"006","ProductName":"Carrots","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"014","ProductId":"014","ProductName":"Onion","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"019","ProductId":"019","ProductName":"Corn","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"022","ProductId":"022","ProductName":"Cheese","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"026","ProductId":"026","ProductName":"Sliced ham","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"969f1133-1ab4-4468-b895-377f7e0a4c47","CreationDate":"2019-02-23T20:40:22.6788008Z"}
+2019-02-23 17:40:22.735 -03:00 [INF] ----------------------------------
+2019-02-23 17:40:22.829 -03:00 [INF] new CreateOrderCommandHandler created.
+2019-02-23 17:40:24.244 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages 44d09595-9285-4c48-aeac-7c4f8251137a to 1 handlers took 1530.4883 ms
+2019-02-23 17:40:29.722 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.

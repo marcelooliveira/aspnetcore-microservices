@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Messages.EventHandling;
 using Messages.Events;
-using CasaDoCodigo.Ordering.Commands;
-using CasaDoCodigo.Ordering.Repositories;
+using Ordering.Commands;
+using Ordering.Repositories;
 using HealthChecks.UI.Client;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
@@ -33,7 +33,7 @@ using System.Reflection;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Ordering
+namespace Ordering
 {
     public class Startup
     {

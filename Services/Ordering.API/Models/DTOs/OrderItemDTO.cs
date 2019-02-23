@@ -1,4 +1,4 @@
-﻿namespace CasaDoCodigo.Ordering.Models.DTOs
+﻿namespace Ordering.Models.DTOs
 {
     public class OrderItemDTO
     {

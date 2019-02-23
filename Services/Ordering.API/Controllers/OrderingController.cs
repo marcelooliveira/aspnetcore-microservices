@@ -5,14 +5,14 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.Configuration;
-using CasaDoCodigo.Ordering.Models;
-using CasaDoCodigo.Ordering.Models.DTOs;
-using CasaDoCodigo.Ordering.Repositories;
+using Ordering.Models;
+using Ordering.Models.DTOs;
+using Ordering.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Ordering.API.Models;
 
-namespace CasaDoCodigo.Ordering.Controllers
+namespace Ordering.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

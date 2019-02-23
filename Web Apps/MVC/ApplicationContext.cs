@@ -1,7 +1,7 @@
-﻿using CasaDoCodigo.Models;
+﻿using Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CasaDoCodigo
+namespace MVC
 {
     public class ApplicationContext : DbContext
     {

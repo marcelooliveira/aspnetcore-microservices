@@ -1,9 +1,9 @@
-﻿using CasaDoCodigo.Models;
-using CasaDoCodigo.Models.ViewModels;
+﻿using Models;
+using Models.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Services
+namespace Services
 {
     public interface ICatalogService : IService
     {

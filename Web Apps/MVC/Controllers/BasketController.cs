@@ -1,6 +1,6 @@
-﻿using CasaDoCodigo.Models;
-using CasaDoCodigo.Models.ViewModels;
-using CasaDoCodigo.Services;
+﻿using Models;
+using Models.ViewModels;
+using Services;
 using IdentityModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -17,7 +17,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Controllers
+namespace Controllers
 {
     [Authorize]
     public class BasketController : BaseController

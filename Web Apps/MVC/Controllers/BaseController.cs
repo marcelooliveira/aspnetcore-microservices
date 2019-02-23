@@ -1,4 +1,4 @@
-﻿using CasaDoCodigo.Services;
+﻿using Services;
 using IdentityModel;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
@@ -12,7 +12,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Controllers
+namespace Controllers
 {
     public abstract class BaseController : Controller
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CasaDoCodigo.Ordering.Models.DTOs
+namespace Ordering.Models.DTOs
 {
     public class OrderDTO
     {

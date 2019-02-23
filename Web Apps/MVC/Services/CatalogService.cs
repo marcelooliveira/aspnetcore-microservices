@@ -1,5 +1,5 @@
-﻿using CasaDoCodigo.Models;
-using CasaDoCodigo.Models.ViewModels;
+﻿using Models;
+using Models.ViewModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -10,8 +10,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using MVC;
 
-namespace CasaDoCodigo.Services
+namespace Services
 {
     public class CatalogService : BaseHttpService, ICatalogService
     {

@@ -1,8 +1,8 @@
-﻿using CasaDoCodigo.Ordering.Models;
+﻿using Ordering.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace CasaDoCodigo.Ordering
+namespace Ordering
 {
     public class ApplicationContext : DbContext
     {

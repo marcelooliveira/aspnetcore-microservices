@@ -4,10 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using CasaDoCodigo.Status.Models;
+using Status.Models;
 using Microsoft.Extensions.Configuration;
 
-namespace CasaDoCodigo.Status.Controllers
+namespace Status.Controllers
 {
     public class HomeController : Controller
     {

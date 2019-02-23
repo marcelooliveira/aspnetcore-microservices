@@ -1,4 +1,4 @@
-﻿namespace CasaDoCodigo.Services
+﻿namespace Services
 {
     public interface IService
     {

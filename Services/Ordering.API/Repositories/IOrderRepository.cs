@@ -1,9 +1,9 @@
-﻿using CasaDoCodigo.Ordering.Models;
-using CasaDoCodigo.Ordering.Models.DTOs;
+﻿using Ordering.Models;
+using Ordering.Models.DTOs;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Ordering.Repositories
+namespace Ordering.Repositories
 {
     public interface IOrderRepository
     {

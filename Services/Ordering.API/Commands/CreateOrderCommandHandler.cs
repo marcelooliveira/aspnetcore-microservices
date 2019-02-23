@@ -1,6 +1,6 @@
 ﻿using Messages.Commands;
-using CasaDoCodigo.Ordering.Models;
-using CasaDoCodigo.Ordering.Repositories;
+using Ordering.Models;
+using Ordering.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.SignalR.Client;
@@ -13,7 +13,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Ordering.Commands
+namespace Ordering.Commands
 {
     public class CreateOrderCommandHandler
         : IRequestHandler<IdentifiedCommand<CreateOrderCommand, bool>, bool>

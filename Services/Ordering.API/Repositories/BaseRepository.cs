@@ -1,8 +1,8 @@
-﻿using CasaDoCodigo.Ordering;
-using CasaDoCodigo.Ordering.Models;
+﻿using Ordering;
+using Ordering.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CasaDoCodigo.Ordering.Repositories
+namespace Ordering.Repositories
 {
     public abstract class BaseRepository<T> where T : BaseModel
     {

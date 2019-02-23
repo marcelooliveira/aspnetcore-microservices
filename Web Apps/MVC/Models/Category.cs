@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CasaDoCodigo.Models
+namespace Models
 {
     public class Category : BaseModel
     { 

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using CasaDoCodigo.Ordering.Models;
-using CasaDoCodigo.Ordering.Models.DTOs;
+using Ordering.Models;
+using Ordering.Models.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -10,7 +10,7 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Infrastructure
+namespace Infrastructure
 {
     public class HttpClientAuthorizationDelegatingHandler
         : DelegatingHandler
