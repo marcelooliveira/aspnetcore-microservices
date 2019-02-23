@@ -1,7 +1,4 @@
-﻿using Messages.Events;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
 namespace CasaDoCodigo.Models
 {

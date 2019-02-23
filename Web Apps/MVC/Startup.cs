@@ -1,10 +1,10 @@
-﻿using CasaDoCodigo.Models.ViewModels;
+﻿using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using CasaDoCodigo.Models.ViewModels;
 using CasaDoCodigo.Services;
 using HealthChecks.UI.Client;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.SignalR;

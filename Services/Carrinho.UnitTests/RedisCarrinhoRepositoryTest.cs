@@ -33,7 +33,7 @@ namespace Basket.API.Tests
                   ""CustomerId"": ""123"",
                   ""Items"": [{
                   ""Id"": ""001"",
-                  ""ProdutoId"": ""001"",
+                  ""ProductId"": ""001"",
                   ""ProdutoNome"": ""Produto 001"",
                   ""Quantidade"": 7,
                   ""PrecoUnitario"": 12.34}]
@@ -260,7 +260,7 @@ namespace Basket.API.Tests
             var repository
                 = new RedisBasketRepository(loggerMock.Object, redisMock.Object);
 
-            var item = new UpdateQuantityOutput("001", 2);
+            var item = new UpdateQuantityInput("001", 2);
 
             //act
             var output = await repository.UpdateBasketAsync(customerId, item);
@@ -303,7 +303,7 @@ namespace Basket.API.Tests
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentException>(
-                () => repository.UpdateBasketAsync(customerId, new UpdateQuantityOutput() { ProdutoId = "" }));
+                () => repository.UpdateBasketAsync(customerId, new UpdateQuantityInput() { ProductId = "" }));
         }
 
 
@@ -318,7 +318,7 @@ namespace Basket.API.Tests
             //act
             //assert
             await Assert.ThrowsAsync<ArgumentOutOfRangeException>(
-                () => repository.UpdateBasketAsync(customerId, new UpdateQuantityOutput () { ProdutoId = "001", Quantidade = -1 }));
+                () => repository.UpdateBasketAsync(customerId, new UpdateQuantityInput() { ProductId = "001", Quantity = -1 }));
         }
         #endregion
 

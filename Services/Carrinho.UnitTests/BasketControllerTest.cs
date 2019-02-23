@@ -1,13 +1,8 @@
 using Basket.API.Controllers;
 using Basket.API.Model;
-using CasaDoCodigo.Controllers;
-using CasaDoCodigo.Mensagens.Events;
-using CasaDoCodigo.Models;
-using CasaDoCodigo.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using MVC.Models;
 using Rebus.Bus;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +40,7 @@ namespace Basket.API.Tests
                 .Returns(Task.FromResult(basketFake))
                 .Verifiable();
             _identityServiceMock.Setup(x => x.GetUserIdentity()).Returns(fakeCustomerId);
-            _serviceBusMock.Setup(x => x.Publish(It.IsAny<CheckoutEvent>(), null));
+            _serviceBusMock.Setup(x => x.Publish(It.IsAny<Messages.Events.CheckoutEvent>(), null));
 
             //Act
             var basketController = new BasketController(
@@ -57,11 +52,11 @@ namespace Basket.API.Tests
 
             //Assert
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult);
-            CasaDoCodigo.Models.ViewModels.CustomerBasket customerBasket = Assert.IsAssignableFrom<CasaDoCodigo.Models.ViewModels.CustomerBasket>(okObjectResult.Value);
+            CustomerBasket customerBasket = Assert.IsAssignableFrom<CustomerBasket>(okObjectResult.Value);
             Assert.Equal(fakeCustomerId, customerBasket.CustomerId);
-            Assert.Equal(basketFake.Items[0].ProdutoId, customerBasket.Items[0].ProductId);
-            Assert.Equal(basketFake.Items[1].ProdutoId, customerBasket.Items[1].ProductId);
-            Assert.Equal(basketFake.Items[2].ProdutoId, customerBasket.Items[2].ProductId);
+            Assert.Equal(basketFake.Items[0].ProductId, customerBasket.Items[0].ProductId);
+            Assert.Equal(basketFake.Items[1].ProductId, customerBasket.Items[1].ProductId);
+            Assert.Equal(basketFake.Items[2].ProductId, customerBasket.Items[2].ProductId);
             _basketRepositoryMock.Verify();
             _identityServiceMock.Verify();
             _serviceBusMock.Verify();
@@ -88,10 +83,10 @@ namespace Basket.API.Tests
         {
             //arrange
             string customerId = "123";
-            CasaDoCodigo.Models.ViewModels.CustomerBasket basketFake = GetCustomerBasketFake(customerId);
+            CustomerBasket basketFake = GetCustomerBasketFake(customerId);
             _basketRepositoryMock
                 .Setup(r => r.GetBasketAsync(customerId))
-                .ReturnsAsync((CasaDoCodigo.Models.ViewModels.CustomerBasket)null)
+                .ReturnsAsync((CustomerBasket)null)
                 .Verifiable();
 
             var controller =
@@ -103,7 +98,7 @@ namespace Basket.API.Tests
 
             //assert
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult);
-            CasaDoCodigo.Models.ViewModels.CustomerBasket customerBasket = Assert.IsAssignableFrom<CasaDoCodigo.Models.ViewModels.CustomerBasket>(okObjectResult.Value);
+            CustomerBasket customerBasket = Assert.IsAssignableFrom<CustomerBasket>(okObjectResult.Value);
             Assert.Equal(customerId, customerBasket.CustomerId);
             _basketRepositoryMock.Verify();
         }
@@ -117,10 +112,10 @@ namespace Basket.API.Tests
             var fakeCustomerId = "1";
             var fakeCustomerBasket = GetCustomerBasketFake(fakeCustomerId);
 
-            _basketRepositoryMock.Setup(x => x.UpdateBasketAsync(It.IsAny<CasaDoCodigo.Models.ViewModels.CustomerBasket>()))
-                .Returns(Task.FromResult((CasaDoCodigo.Models.ViewModels.CustomerBasket)fakeCustomerBasket))
+            _basketRepositoryMock.Setup(x => x.UpdateBasketAsync(It.IsAny<CustomerBasket>()))
+                .Returns(Task.FromResult((CustomerBasket)fakeCustomerBasket))
                 .Verifiable();
-            _serviceBusMock.Setup(x => x.Publish(It.IsAny<CheckoutEvent>(), null))
+            _serviceBusMock.Setup(x => x.Publish(It.IsAny<Messages.Events.CheckoutEvent>(), null))
                 .Verifiable();
 
             //Act
@@ -133,7 +128,7 @@ namespace Basket.API.Tests
 
             //Assert
             Assert.Equal(actionResult.StatusCode, (int)System.Net.HttpStatusCode.OK);
-            Assert.Equal(((CasaDoCodigo.Models.ViewModels.CustomerBasket)actionResult.Value).CustomerId, fakeCustomerId);
+            Assert.Equal(((CustomerBasket)actionResult.Value).CustomerId, fakeCustomerId);
 
             _basketRepositoryMock.Verify();
         }
@@ -145,11 +140,11 @@ namespace Basket.API.Tests
             var fakeCustomerId = "1";
             var fakeCustomerBasket = GetCustomerBasketFake(fakeCustomerId);
 
-            _basketRepositoryMock.Setup(x => x.UpdateBasketAsync(It.IsAny<CasaDoCodigo.Models.ViewModels.CustomerBasket>()))
+            _basketRepositoryMock.Setup(x => x.UpdateBasketAsync(It.IsAny<CustomerBasket>()))
                 .ThrowsAsync(new KeyNotFoundException())
                 .Verifiable();
             _identityServiceMock.Setup(x => x.GetUserIdentity()).Returns(fakeCustomerId);
-            _serviceBusMock.Setup(x => x.Publish(It.IsAny<CheckoutEvent>(), null));
+            _serviceBusMock.Setup(x => x.Publish(It.IsAny<Messages.Events.CheckoutEvent>(), null));
 
             //Act
             var basketController = new BasketController(
@@ -177,7 +172,7 @@ namespace Basket.API.Tests
             controller.ModelState.AddModelError("CustomerId", "Required");
 
             //Act
-            var actionResult = await controller.Post(new CasaDoCodigo.Models.ViewModels.CustomerBasket());
+            var actionResult = await controller.Post(new CustomerBasket());
 
             //Assert
             BadRequestObjectResult badRequestObjectResult = Assert.IsType<BadRequestObjectResult>(actionResult);
@@ -196,7 +191,7 @@ namespace Basket.API.Tests
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
                 _serviceBusMock.Object);
-            CasaDoCodigo.Models.RegistrationViewModel input = new CasaDoCodigo.Models.RegistrationViewModel();
+            RegistrationViewModel input = new RegistrationViewModel();
             basketController.ModelState.AddModelError("Email", "Required");
 
             //Act
@@ -218,7 +213,7 @@ namespace Basket.API.Tests
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
                 _serviceBusMock.Object);
-            CasaDoCodigo.Models.RegistrationViewModel input = new CasaDoCodigo.Models.RegistrationViewModel();
+            RegistrationViewModel input = new RegistrationViewModel();
 
             //Act
             ActionResult<bool> actionResult = await basketController.Checkout(fakeCustomerId, input);
@@ -255,10 +250,10 @@ namespace Basket.API.Tests
             };
 
             //Act
-            ActionResult<bool> actionResult = await basketController.Checkout(fakeCustomerId, new CasaDoCodigo.Models.RegistrationViewModel());
+            ActionResult<bool> actionResult = await basketController.Checkout(fakeCustomerId, new RegistrationViewModel());
 
             //assert
-            _serviceBusMock.Verify(mock => mock.Publish(It.IsAny<CheckoutEvent>(), null), Times.Once);
+            _serviceBusMock.Verify(mock => mock.Publish(It.IsAny<Messages.Events.CheckoutEvent>(), null), Times.Once);
             Assert.NotNull(actionResult);
             _basketRepositoryMock.Verify();
             //_identityServiceMock.Verify();
@@ -273,12 +268,12 @@ namespace Basket.API.Tests
             //arrange
             var customerId = "123";
             var basket = GetCustomerBasketFake(customerId);
-            CasaDoCodigo.Models.ViewModels.BasketItem input = new CasaDoCodigo.Models.ViewModels.BasketItem("004", "004", "produto 004", 45.67m, 4);
+            BasketItem input = new BasketItem("004", "004", "produto 004", 45.67m, 4);
             var items = basket.Items;
             items.Add(input);
             _basketRepositoryMock
-                .Setup(c => c.AddBasketAsync(customerId, It.IsAny<CasaDoCodigo.Models.ViewModels.BasketItem>()))
-                .ReturnsAsync(new CasaDoCodigo.Models.ViewModels.CustomerBasket
+                .Setup(c => c.AddBasketAsync(customerId, It.IsAny<BasketItem>()))
+                .ReturnsAsync(new CustomerBasket
                 {
                     CustomerId = customerId,
                     Items = items
@@ -291,11 +286,11 @@ namespace Basket.API.Tests
                 _serviceBusMock.Object);
 
             //act
-            ActionResult<CasaDoCodigo.Models.ViewModels.CustomerBasket> actionResult = await controller.AddItem(customerId, input);
+            ActionResult<CustomerBasket> actionResult = await controller.AddItem(customerId, input);
 
             //assert
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult.Result);
-            CasaDoCodigo.Models.ViewModels.CustomerBasket customerBasket = Assert.IsAssignableFrom<CasaDoCodigo.Models.ViewModels.CustomerBasket>(okObjectResult.Value);
+            CustomerBasket customerBasket = Assert.IsAssignableFrom<CustomerBasket>(okObjectResult.Value);
             Assert.Equal(4, customerBasket.Items.Count());
             _basketRepositoryMock.Verify();
             _identityServiceMock.Verify();
@@ -307,9 +302,9 @@ namespace Basket.API.Tests
         {
             //arrange
             var customerId = "123";
-            CasaDoCodigo.Models.ViewModels.BasketItem input = new CasaDoCodigo.Models.ViewModels.BasketItem("004", "004", "produto 004", 45.67m, 4);
+            BasketItem input = new BasketItem("004", "004", "produto 004", 45.67m, 4);
             _basketRepositoryMock
-                .Setup(c => c.AddBasketAsync(customerId, It.IsAny<CasaDoCodigo.Models.ViewModels.BasketItem>()))
+                .Setup(c => c.AddBasketAsync(customerId, It.IsAny<BasketItem>()))
                 .ThrowsAsync(new KeyNotFoundException());
             var controller = new BasketController(
                 _basketRepositoryMock.Object,
@@ -317,7 +312,7 @@ namespace Basket.API.Tests
                 _serviceBusMock.Object);
 
             //act
-            ActionResult<CasaDoCodigo.Models.ViewModels.CustomerBasket> actionResult = await controller.AddItem(customerId, input);
+            ActionResult<CustomerBasket> actionResult = await controller.AddItem(customerId, input);
 
             //assert
             NotFoundObjectResult notFoundObjectResult =  Assert.IsType<NotFoundObjectResult>(actionResult.Result);
@@ -329,18 +324,18 @@ namespace Basket.API.Tests
         {
             //arrange
             var customerId = "123";
-            CasaDoCodigo.Models.ViewModels.BasketItem input = new CasaDoCodigo.Models.ViewModels.BasketItem("004", "004", "produto 004", 45.67m, 4);
+            BasketItem input = new BasketItem("004", "004", "produto 004", 45.67m, 4);
             _basketRepositoryMock
-                .Setup(c => c.AddBasketAsync(customerId, It.IsAny<CasaDoCodigo.Models.ViewModels.BasketItem>()))
+                .Setup(c => c.AddBasketAsync(customerId, It.IsAny<BasketItem>()))
                 .ThrowsAsync(new KeyNotFoundException());
             var controller = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
                 _serviceBusMock.Object);
-            controller.ModelState.AddModelError("ProdutoId", "Required");
+            controller.ModelState.AddModelError("ProductId", "Required");
 
             //act
-            ActionResult<CasaDoCodigo.Models.ViewModels.CustomerBasket> actionResult = await controller.AddItem(customerId, input);
+            ActionResult<CustomerBasket> actionResult = await controller.AddItem(customerId, input);
 
             //assert
             Assert.IsType<BadRequestObjectResult>(actionResult.Result);
@@ -354,13 +349,13 @@ namespace Basket.API.Tests
             //arrange
             var customerId = "123";
             var basket = GetCustomerBasketFake(customerId);
-            CasaDoCodigo.Models.ViewModels.BasketItem input = new CasaDoCodigo.Models.ViewModels.BasketItem("004", "004", "produto 004", 45.67m, 4);
+            BasketItem input = new BasketItem("004", "004", "produto 004", 45.67m, 4);
             var items = basket.Items;
             items.Add(input);
             _basketRepositoryMock
-                .Setup(c => c.UpdateBasketAsync(customerId, It.IsAny<MVC.Models.UpdateQuantityInput>()))
-                .ReturnsAsync(new CasaDoCodigo.Models.UpdateQuantityOutput(input,
-                new CasaDoCodigo.Models.ViewModels.CustomerBasket
+                .Setup(c => c.UpdateBasketAsync(customerId, It.IsAny<UpdateQuantityInput>()))
+                .ReturnsAsync(new UpdateQuantityOutput(input,
+                new CustomerBasket
                 {
                     CustomerId = customerId,
                     Items = items
@@ -373,11 +368,11 @@ namespace Basket.API.Tests
                 _serviceBusMock.Object);
 
             //act
-            ActionResult<CasaDoCodigo.Models.UpdateQuantityOutput> actionResult = await controller.UpdateItem(customerId, new MVC.Models.UpdateQuantityInput(input.ProductId, input.Quantity));
+            ActionResult<UpdateQuantityOutput> actionResult = await controller.UpdateItem(customerId, new UpdateQuantityInput(input.ProductId, input.Quantity));
 
             //assert
             OkObjectResult okObjectResult = Assert.IsType<OkObjectResult>(actionResult.Result);
-            CasaDoCodigo.Models.UpdateQuantityOutput updateQuantidadeOutput = Assert.IsAssignableFrom<CasaDoCodigo.Models.UpdateQuantityOutput>(okObjectResult.Value);
+            UpdateQuantityOutput updateQuantidadeOutput = Assert.IsAssignableFrom<UpdateQuantityOutput>(okObjectResult.Value);
             Assert.Equal(input.ProductId, updateQuantidadeOutput.BasketItem.ProductId);
             _basketRepositoryMock.Verify();
             _identityServiceMock.Verify();
@@ -389,9 +384,9 @@ namespace Basket.API.Tests
         {
             //arrange
             var customerId = "123";
-            CasaDoCodigo.Models.ViewModels.BasketItem input = new CasaDoCodigo.Models.ViewModels.BasketItem("004", "004", "produto 004", 45.67m, 4);
+            BasketItem input = new BasketItem("004", "004", "produto 004", 45.67m, 4);
             _basketRepositoryMock
-                .Setup(c => c.UpdateBasketAsync(customerId, It.IsAny<MVC.Models.UpdateQuantityInput>()))
+                .Setup(c => c.UpdateBasketAsync(customerId, It.IsAny<UpdateQuantityInput>()))
                 .ThrowsAsync(new KeyNotFoundException());
             var controller = new BasketController(
                 _basketRepositoryMock.Object,
@@ -399,7 +394,7 @@ namespace Basket.API.Tests
                 _serviceBusMock.Object);
 
             //act
-            ActionResult<CasaDoCodigo.Models.UpdateQuantityOutput> actionResult = await controller.UpdateItem(customerId, new MVC.Models.UpdateQuantityInput(input.ProductId, input.Quantity));
+            ActionResult<UpdateQuantityOutput> actionResult = await controller.UpdateItem(customerId, new UpdateQuantityInput(input.ProductId, input.Quantity));
 
             //assert
             NotFoundObjectResult notFoundObjectResult = Assert.IsType<NotFoundObjectResult>(actionResult.Result);
@@ -411,15 +406,15 @@ namespace Basket.API.Tests
         {
             //arrange
             var customerId = "123";
-            CasaDoCodigo.Models.ViewModels.BasketItem input = new CasaDoCodigo.Models.ViewModels.BasketItem("004", "004", "produto 004", 45.67m, 4);
+            BasketItem input = new BasketItem("004", "004", "produto 004", 45.67m, 4);
             var controller = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
                 _serviceBusMock.Object);
-            controller.ModelState.AddModelError("ProdutoId", "Required");
+            controller.ModelState.AddModelError("ProductId", "Required");
 
             //act
-            ActionResult<CasaDoCodigo.Models.UpdateQuantityOutput> actionResult = await controller.UpdateItem(customerId, new MVC.Models.UpdateQuantityInput(input.ProductId, input.Quantity));
+            ActionResult<UpdateQuantityOutput> actionResult = await controller.UpdateItem(customerId, new UpdateQuantityInput(input.ProductId, input.Quantity));
 
             //assert
             Assert.IsType<BadRequestObjectResult>(actionResult.Result);
@@ -428,14 +423,14 @@ namespace Basket.API.Tests
 
         private CustomerBasket GetCustomerBasketFake(string fakeCustomerId)
         {
-            return new CasaDoCodigo.Models.ViewModels.CustomerBasket(fakeCustomerId)
+            return new CustomerBasket(fakeCustomerId)
             {
                 CustomerId = fakeCustomerId,
-                Items = new List<CasaDoCodigo.Models.ViewModels.BasketItem>()
+                Items = new List<BasketItem>()
                 {
-                    new CasaDoCodigo.Models.ViewModels.BasketItem("001", "001", "produto 001", 12.34m, 1),
-                    new CasaDoCodigo.Models.ViewModels.BasketItem("002", "002", "produto 002", 23.45m, 2),
-                    new CasaDoCodigo.Models.ViewModels.BasketItem("003", "003", "produto 003", 34.56m, 3)
+                    new BasketItem("001", "001", "produto 001", 12.34m, 1),
+                    new BasketItem("002", "002", "produto 002", 23.45m, 2),
+                    new BasketItem("003", "003", "produto 003", 34.56m, 3)
                 }
             };
         }

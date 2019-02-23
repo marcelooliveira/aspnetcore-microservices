@@ -40,16 +40,16 @@ namespace Identity.API.Commands
             if (guid == Guid.Empty)
                 throw new ArgumentException();
 
-            if (string.IsNullOrWhiteSpace(command.UsuarioId)
+            if (string.IsNullOrWhiteSpace(command.UserId)
                  || string.IsNullOrWhiteSpace(command.Nome)
                  || string.IsNullOrWhiteSpace(command.Email)
-                 || string.IsNullOrWhiteSpace(command.Telephone)
-                 || string.IsNullOrWhiteSpace(command.Endereco)
-                 || string.IsNullOrWhiteSpace(command.Complemento)
-                 || string.IsNullOrWhiteSpace(command.Bairro)
-                 || string.IsNullOrWhiteSpace(command.Municipio)
-                 || string.IsNullOrWhiteSpace(command.UF)
-                 || string.IsNullOrWhiteSpace(command.CEP)
+                 || string.IsNullOrWhiteSpace(command.Phone)
+                 || string.IsNullOrWhiteSpace(command.Address)
+                 || string.IsNullOrWhiteSpace(command.AdditionalAddress)
+                 || string.IsNullOrWhiteSpace(command.District)
+                 || string.IsNullOrWhiteSpace(command.City)
+                 || string.IsNullOrWhiteSpace(command.State)
+                 || string.IsNullOrWhiteSpace(command.ZipCode)
                 )
                 throw new InvalidUserDataException();
 
@@ -59,16 +59,16 @@ namespace Identity.API.Commands
                 {
                     ["name"] = command.Nome,
                     ["email"] = command.Email,
-                    ["address"] = command.Endereco,
-                    ["address_details"] = command.Complemento,
-                    ["phone"] = command.Telephone,
-                    ["district"] = command.Bairro,
-                    ["city"] = command.Municipio,
-                    ["state"] = command.UF,
-                    ["zip_code"] = command.CEP
+                    ["address"] = command.Address,
+                    ["address_details"] = command.AdditionalAddress,
+                    ["phone"] = command.Phone,
+                    ["district"] = command.District,
+                    ["city"] = command.City,
+                    ["state"] = command.State,
+                    ["zip_code"] = command.ZipCode
                 };
             
-                await _claimsManager.AddUpdateClaim(command.UsuarioId, claims);
+                await _claimsManager.AddUpdateClaim(command.UserId, claims);
                 return true;
             }
             catch (Exception e)
