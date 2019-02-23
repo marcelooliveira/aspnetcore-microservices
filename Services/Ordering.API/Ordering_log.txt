@@ -2102,3 +2102,169 @@ Error Number:15248,State:1,Class:11
 2019-02-23 17:40:22.829 -03:00 [INF] new CreateOrderCommandHandler created.
 2019-02-23 17:40:24.244 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages 44d09595-9285-4c48-aeac-7c4f8251137a to 1 handlers took 1530.4883 ms
 2019-02-23 17:40:29.722 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:40:40.676 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:40:51.140 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:41:01.987 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:41:13.307 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:41:24.217 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:41:34.974 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:41:45.380 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:41:55.947 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:42:07.139 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:42:17.609 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:42:28.200 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:42:39.478 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:42:50.442 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:43:00.866 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:43:11.302 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:43:22.261 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:43:32.836 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:43:44.181 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:43:56.530 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:44:07.482 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:44:20.394 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:44:31.690 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:44:42.616 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:44:53.274 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:45:03.972 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:45:14.496 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:45:24.992 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:45:35.538 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:45:46.418 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:45:57.017 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:46:07.640 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:46:18.143 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:46:28.727 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:46:39.465 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:46:50.335 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:47:01.006 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:47:11.773 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:47:23.237 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:47:33.976 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:47:44.538 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:47:55.034 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:48:05.601 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:48:16.309 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:48:26.832 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:48:37.479 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:48:48.004 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:48:58.510 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:49:09.376 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:49:19.912 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:49:30.654 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:49:41.300 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:49:52.099 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:50:02.676 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:50:13.370 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:50:24.856 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:50:35.351 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:50:45.988 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:50:56.614 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:51:07.172 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:51:18.711 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:51:30.616 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:51:58.028 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:52:08.944 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:52:19.483 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:52:30.160 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:52:40.654 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:52:51.887 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:53:02.366 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:53:12.859 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:53:23.913 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:53:34.506 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:53:45.089 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:53:55.606 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:54:06.469 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:54:16.960 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:54:27.645 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:54:38.189 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:54:48.633 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:54:59.849 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:55:10.322 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:55:22.721 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:55:33.822 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:55:44.332 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:55:54.850 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:56:05.845 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:56:16.400 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:56:27.116 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:56:38.209 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 17:56:45.318 -03:00 [INF] Setting number of workers to 0
+2019-02-23 17:56:45.385 -03:00 [DBG] Removing worker Rebus 1 worker 1
+2019-02-23 17:56:45.801 -03:00 [DBG] Worker Rebus 1 worker 1 stopped
+2019-02-23 17:56:45.820 -03:00 [INF] Stopping periodic task CleanupTrackedErrors
+2019-02-23 17:56:46.026 -03:00 [INF] Disposing RabbitMQ connection
+2019-02-23 18:04:17.558 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-23 18:04:23.749 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-23 18:04:24.265 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-23 18:04:24.307 -03:00 [INF] Starting bus 1
+2019-02-23 18:04:24.320 -03:00 [INF] Setting number of workers to 1
+2019-02-23 18:04:24.330 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-23 18:04:24.335 -03:00 [INF] Started
+2019-02-23 18:04:24.348 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-23 18:04:24.519 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-23 18:04:28.645 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:04:28.653 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-23 18:04:41.181 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:04:53.505 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:05:05.839 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:05:18.269 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:05:30.744 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:05:43.102 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:05:56.032 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:06:09.821 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:06:22.553 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:06:34.922 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:06:47.271 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:06:59.583 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:07:11.925 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:07:24.347 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:07:36.785 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:07:47.341 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:07:57.670 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:08:15.319 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:08:26.719 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:08:37.036 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:08:47.595 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:08:58.003 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:09:08.406 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:09:18.795 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:09:29.284 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:09:39.865 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:09:50.284 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:10:00.808 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:10:11.336 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:10:22.767 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:10:33.316 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:10:44.080 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:10:55.612 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:11:06.137 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:11:16.680 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:11:27.696 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:11:38.348 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:11:48.925 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:11:59.514 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:12:10.591 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:12:22.253 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:12:32.815 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:12:43.627 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:12:54.337 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:13:04.885 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:13:15.386 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 18:13:17.233 -03:00 [WRN] Unhandled exception [1,"af8ee756-8d76-41fd-9053-b83fc98e8b58"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID af8ee756-8d76-41fd-9053-b83fc98e8b58 and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
+2019-02-23 18:13:17.319 -03:00 [INF] Message received:
+2019-02-23 18:13:17.319 -03:00 [INF] ----------------------------------
+2019-02-23 18:13:17.334 -03:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"5b0dc728-2000-4c77-b406-50aef712fcce","Items":[{"Id":"002","ProductId":"002","ProductName":"Lemons","Quantity":3,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"001","ProductId":"001","ProductName":"Oranges","Quantity":4,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"42fa5303-bdcf-42cf-8190-dbe137e73f57","CreationDate":"2019-02-23T21:13:17.2852355Z"}
+2019-02-23 18:13:17.334 -03:00 [INF] ----------------------------------
+2019-02-23 18:13:17.439 -03:00 [INF] new CreateOrderCommandHandler created.
+2019-02-23 18:13:18.392 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages f46dda44-f589-485c-956e-af7510e6fa50 to 1 handlers took 1083.777 ms
+2019-02-23 18:13:25.844 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
