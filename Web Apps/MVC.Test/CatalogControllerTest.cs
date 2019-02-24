@@ -1,12 +1,11 @@
-using CasaDoCodigo.Controllers;
-using CasaDoCodigo.Models;
-using CasaDoCodigo.Services;
-using Castle.Core.Logging;
+using Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Models;
 using Moq;
 using MVC.Model.Redis;
 using Polly.CircuitBreaker;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

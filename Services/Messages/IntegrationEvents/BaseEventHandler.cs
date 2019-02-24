@@ -1,12 +1,9 @@
-﻿using Messages.Commands;
+﻿using MediatR;
+using Messages.Commands;
 using Messages.Events;
-using Messages.IntegrationEvents.Events;
-using MediatR;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Messages.IntegrationEvents

@@ -1,16 +1,12 @@
-﻿using CasaDoCodigo.Controllers;
-using CasaDoCodigo.Models;
-using CasaDoCodigo.Models.ViewModels;
-using CasaDoCodigo.Services;
+﻿using Controllers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using Models;
+using Models.ViewModels;
 using Moq;
-using MVC.SignalR;
-using System;
+using Services;
 using System.Collections.Generic;
 using System.Security.Claims;
-using System.Text;
 
 namespace MVC.Test
 {

@@ -1,7 +1,7 @@
-﻿using CasaDoCodigo.Controllers;
-using CasaDoCodigo.Models;
-using CasaDoCodigo.Models.ViewModels;
-using CasaDoCodigo.Services;
+﻿using Controllers;
+using Models;
+using Models.ViewModels;
+using Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

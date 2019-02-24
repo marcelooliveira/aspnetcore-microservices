@@ -2268,3 +2268,162 @@ Error Number:15248,State:1,Class:11
 2019-02-23 18:13:17.439 -03:00 [INF] new CreateOrderCommandHandler created.
 2019-02-23 18:13:18.392 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages f46dda44-f589-485c-956e-af7510e6fa50 to 1 handlers took 1083.777 ms
 2019-02-23 18:13:25.844 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:36:29.647 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-23 20:36:57.460 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-23 20:36:58.112 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-23 20:36:58.158 -03:00 [INF] Starting bus 1
+2019-02-23 20:36:58.172 -03:00 [INF] Setting number of workers to 1
+2019-02-23 20:36:58.181 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-23 20:36:58.198 -03:00 [INF] Started
+2019-02-23 20:36:58.224 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-23 20:36:58.301 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-23 20:36:59.400 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:36:59.410 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-23 20:37:12.536 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:37:25.168 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:37:37.842 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:37:50.451 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:38:02.985 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:38:15.602 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:38:29.640 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:38:43.591 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:39:02.225 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:39:16.846 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:39:29.725 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:39:42.295 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:39:54.702 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:40:07.083 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:40:20.140 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:40:32.932 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:40:45.395 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:40:57.725 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:41:10.142 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:41:22.629 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:41:35.177 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:41:47.769 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:42:00.807 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:42:13.621 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:42:26.141 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:42:38.500 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:42:51.026 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:43:05.162 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:43:19.221 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:43:31.636 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:43:44.011 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:43:57.333 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:44:10.109 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:44:23.351 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:44:36.898 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 20:44:49.665 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:17:57.851 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-23 21:18:11.109 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-23 21:18:11.686 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-23 21:18:11.796 -03:00 [INF] Starting bus 1
+2019-02-23 21:18:11.853 -03:00 [INF] Setting number of workers to 1
+2019-02-23 21:18:11.888 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-23 21:18:11.924 -03:00 [INF] Started
+2019-02-23 21:18:11.944 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-23 21:18:12.050 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-23 21:18:13.034 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:18:13.042 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-23 21:18:25.844 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:20:09.221 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-23 21:20:23.193 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-23 21:20:23.889 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-23 21:20:24.061 -03:00 [INF] Starting bus 1
+2019-02-23 21:20:24.168 -03:00 [INF] Setting number of workers to 1
+2019-02-23 21:20:24.313 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-23 21:20:24.427 -03:00 [INF] Started
+2019-02-23 21:20:24.499 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-23 21:20:24.681 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-23 21:20:26.023 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:20:26.030 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-23 21:20:42.819 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:20:56.216 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:21:09.292 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:21:21.847 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:21:34.364 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:21:47.118 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:22:10.685 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:22:24.771 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:22:37.382 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:22:49.826 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:23:02.693 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:23:15.493 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:23:27.992 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:23:40.502 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:23:53.359 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:24:05.841 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:24:18.351 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:24:30.821 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:24:43.217 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:24:56.702 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:25:15.121 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:35:57.026 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-23 21:36:10.757 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-23 21:36:11.357 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-23 21:36:11.390 -03:00 [INF] Starting bus 1
+2019-02-23 21:36:11.399 -03:00 [INF] Setting number of workers to 1
+2019-02-23 21:36:11.410 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-23 21:36:11.424 -03:00 [INF] Started
+2019-02-23 21:36:11.434 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-23 21:36:11.518 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-23 21:36:12.327 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:36:12.334 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-23 21:36:25.242 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:36:37.709 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:36:50.115 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:37:02.536 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:37:14.968 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:37:27.367 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:37:41.732 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:37:57.127 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:38:09.660 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:38:22.040 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:38:34.524 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:38:46.936 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:38:59.867 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:39:12.619 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:39:25.207 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:39:37.691 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:39:50.409 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:40:02.857 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:40:15.545 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:40:28.662 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:40:41.221 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:40:56.810 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:41:09.583 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:41:26.795 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:42:24.223 -03:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-23 21:42:34.276 -03:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-23 21:42:34.655 -03:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-23 21:42:34.707 -03:00 [INF] Starting bus 1
+2019-02-23 21:42:34.716 -03:00 [INF] Setting number of workers to 1
+2019-02-23 21:42:34.723 -03:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-23 21:42:34.728 -03:00 [INF] Started
+2019-02-23 21:42:34.743 -03:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-23 21:42:34.807 -03:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-23 21:42:35.735 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:42:35.745 -03:00 [WRN] Failed to determine the https port for redirect.
+2019-02-23 21:42:47.589 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:42:58.485 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:43:09.065 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:43:19.702 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:43:30.430 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:43:41.678 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-23 21:43:41.754 -03:00 [WRN] Unhandled exception [1,"9e196263-df6f-4831-b489-14424b490af0"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 9e196263-df6f-4831-b489-14424b490af0 and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
+2019-02-23 21:43:42.032 -03:00 [INF] Message received:
+2019-02-23 21:43:42.032 -03:00 [INF] ----------------------------------
+2019-02-23 21:43:42.055 -03:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"baab874f-5df2-4d70-89d7-610cc6608155","Items":[{"Id":"005","ProductId":"005","ProductName":"Grapes","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"001","ProductId":"001","ProductName":"Oranges","Quantity":2,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"004","ProductId":"004","ProductName":"Strawberries","Quantity":3,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"017","ProductId":"017","ProductName":"Beans","Quantity":2,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"402655e4-ecdf-48a2-b544-3709850169e3","CreationDate":"2019-02-24T00:43:41.9902983Z"}
+2019-02-23 21:43:42.055 -03:00 [INF] ----------------------------------
+2019-02-23 21:43:42.314 -03:00 [INF] new CreateOrderCommandHandler created.
+2019-02-23 21:43:43.798 -03:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages fd544d43-dee0-47d5-bb9e-8e117f285df8 to 1 handlers took 1774.2445 ms
+2019-02-23 21:43:52.573 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.

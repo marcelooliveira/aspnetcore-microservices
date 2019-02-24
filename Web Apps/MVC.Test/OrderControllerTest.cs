@@ -1,13 +1,12 @@
 ﻿using AutoMapper;
 using AutoMapper.Configuration;
-using CasaDoCodigo.Controllers;
-using CasaDoCodigo.Models.ViewModels;
-using CasaDoCodigo.Services;
+using Controllers;
+using Models.ViewModels;
+using Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
 using MVC.Model.Redis;
-using Ordering.API.Models;
 using System.Collections.Generic;
 using System.Security.Principal;
 using System.Threading.Tasks;
@@ -27,9 +26,9 @@ namespace MVC.Test
             orderServiceMock = new Mock<IOrderService>();
             userRedisRepositoryMock = new Mock<IUserRedisRepository>();
 
-            var mappings = new MapperConfigurationExpression();
-            mappings.AddProfile<MappingProfile>();
-            Mapper.Initialize(mappings);
+            //var mappings = new MapperConfigurationExpression();
+            //mappings.AddProfile<MappingProfile>();
+            //Mapper.Initialize(mappings);
         }
 
         [Fact]

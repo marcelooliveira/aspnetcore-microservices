@@ -75,7 +75,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Messages\Messages.csproj" />
+    <ProjectReference Include="..\..\Services\Messages\Messages.csproj" />
   </ItemGroup>
 
   <ItemGroup>
