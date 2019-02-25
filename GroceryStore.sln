@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{84
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6121E0B6-C97B-4D9C-B51B-02E7422F754D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API.Tests", "Services\Carrinho.UnitTests\Basket.API.Tests.csproj", "{0B130B3C-5E10-48BC-972F-80BADA11CA6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API.Tests", "Services\Basket.UnitTests\Basket.API.Tests.csproj", "{0B130B3C-5E10-48BC-972F-80BADA11CA6A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API", "Services\Basket.API\Basket.API.csproj", "{1E0FB0EF-3F1B-497C-B342-D8F0440824C6}"
 EndProject
@@ -45,13 +45,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC", "Web Apps\MVC\MVC.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStatus", "Web Apps\WebStatus\WebStatus.csproj", "{8E907E4A-A726-4FE3-A5C7-B4C3ECEADF2B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Services\CasaDoCodigo.Catalogo\Catalog.API.csproj", "{AA84B34C-18EF-4B20-AA6C-A71608063C3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Services\Catalog.API\Catalog.API.csproj", "{AA84B34C-18EF-4B20-AA6C-A71608063C3F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messages", "Services\Messages\Messages.csproj", "{E1DAF3D4-3A1B-4C8F-B2FC-A27CAA7FB340}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC.Test", "Web Apps\MVC.Test\MVC.Test.csproj", "{8B5C3106-0ED2-4451-B904-F86A023CBC48}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.UnitTests", "Services\Catalogo.UnitTests\Catalog.UnitTests.csproj", "{9A08D15A-36EC-43A0-8551-1108BDE2018F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.UnitTests", "Services\Catalog.UnitTests\Catalog.UnitTests.csproj", "{9A08D15A-36EC-43A0-8551-1108BDE2018F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
