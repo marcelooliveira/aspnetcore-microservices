@@ -1,19 +1,4 @@
-﻿using AutoMapper;
-using CasaDoCodigo.Ordering.Controllers;
-using CasaDoCodigo.Ordering.Models;
-using CasaDoCodigo.Ordering.Models.DTOs;
-using CasaDoCodigo.Ordering.Repositories;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Moq;
-using Ordering.API.Models;
-using System;
-using System.Collections.Generic;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace Ordering.UnitTests
+﻿namespace Ordering.UnitTests
 {
     public class OrderingControllerTest
     {

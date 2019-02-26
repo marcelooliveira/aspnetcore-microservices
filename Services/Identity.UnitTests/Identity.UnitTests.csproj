@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CasaDoCodigo.Identity\Identity.API.csproj" />
+    <ProjectReference Include="..\Identity.API\Identity.API.csproj" />
   </ItemGroup>
 
 </Project>

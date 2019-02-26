@@ -1,13 +1,3 @@
-using CasaDoCodigo.Ordering;
-using CasaDoCodigo.Ordering.Models;
-using CasaDoCodigo.Ordering.Repositories;
-using Microsoft.EntityFrameworkCore;
-using Moq;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Xunit;
-
 namespace Ordering.UnitTests
 {
     public class OrderRepositoryTest

@@ -1,19 +1,4 @@
-﻿using Messages.Commands;
-using CasaDoCodigo.Ordering.Commands;
-using CasaDoCodigo.Ordering.Models;
-using CasaDoCodigo.Ordering.Repositories;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using Moq;
-using Rebus.Bus;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace Ordering.UnitTests
+﻿namespace Ordering.UnitTests
 {
     public class CreateOrderCommandHandlerTest
     {

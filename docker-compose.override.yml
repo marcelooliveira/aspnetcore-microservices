@@ -17,7 +17,7 @@ services:
       - "15672:15672"  # Important: In a production environment your should remove the external port
       - "5672:5672"    # Important: In a production environment your should remove the external port
 
-  carrinho.api:
+  basket.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - IdentityUrl=http://10.0.75.1:5105
@@ -26,7 +26,7 @@ services:
     ports:
       - "5103:80"
 
-  catalogo.api:
+  catalog.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
@@ -49,11 +49,11 @@ services:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
-  ordemdecompra.api:
+  ordering.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
-      - ConnectionString=${CASADOCODIGO_ORDERING_DB:-Server=sql.data;Database=CasaDoCodigo.OrdemDeCompra;User Id=sa;Password=Pass@word;}
+      - ConnectionString=${CASADOCODIGO_ORDERING_DB:-Server=sql.data;Database=Ordering;User Id=sa;Password=Pass@word;}
       - SignalRServerUrl=http://mvc/
       - RabbitMQConnectionString=amqp://rabbitmq
     ports:
@@ -64,10 +64,10 @@ services:
   mvc:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - CatalogoUrl=http://catalogo.api/
+      - CatalogUrl=http://catalog.api/
       - IdentityUrl=http://10.0.75.1:5105/
-      - CarrinhoUrl=http://carrinho.api/
-      - OrdemDeCompraUrl=http://ordemdecompra.api/
+      - BasketUrl=http://basket.api/
+      - OrderingUrl=http://ordering.api/
       - CallBackUrl=http://localhost:5100/
       - SignalRServerUrl=http://mvc/
       - RedisConnectionString=ecommerce.data:6379
@@ -78,11 +78,11 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
-      - CarrinhoHC=http://carrinho.api/hc
+      - BasketHC=http://basket.api/hc
       - MvcHC=http://mvc/hc
-      - CatalogoHC=http://catalogo.api/hc
+      - CatalogHC=http://catalog.api/hc
       - IdentityHC=http://10.0.75.1:5105/hc
-      - OrdemDeCompraHC=http://ordemdecompra.api/hc
+      - OrderingHC=http://ordering.api/hc
     ports:
       - "5107:80"
 
