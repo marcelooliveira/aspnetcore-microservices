@@ -23,3 +23,239 @@
 2019-02-26 03:30:14.689 +00:00 [INF] ----------------------------------
 2019-02-26 03:30:14.999 +00:00 [INF] new CreateOrderCommandHandler created.
 2019-02-26 03:30:16.819 +00:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages 24cce245-b9bc-4f32-81fd-4406db2e1443 to 1 handlers took 2156.5012 ms
+2019-02-26 03:32:25.158 +00:00 [INF] Message received:
+2019-02-26 03:32:25.160 +00:00 [INF] ----------------------------------
+2019-02-26 03:32:25.169 +00:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"e11815bd-4bfe-4bde-a7f2-0157bfb026db","Items":[{"Id":"003","ProductId":"003","ProductName":"Bananas","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"6a23204e-1337-42a7-b744-84d7fab95ab8","CreationDate":"2019-02-26T03:32:25.1581657Z"}
+2019-02-26 03:32:25.172 +00:00 [INF] ----------------------------------
+2019-02-26 03:32:25.188 +00:00 [INF] new CreateOrderCommandHandler created.
+2019-02-26 03:32:25.495 +00:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages 04fc61e7-be61-43e2-a104-9d84344c43c9 to 1 handlers took 336.6055 ms
+2019-02-26 03:39:57.017 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-26 03:40:05.104 +00:00 [WRN] No XML encryptor configured. Key "fcf50744-28be-4aff-b722-88105137612c" may be persisted to storage in unencrypted form.
+2019-02-26 03:40:05.612 +00:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-26 03:40:06.015 +00:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-26 03:40:06.114 +00:00 [INF] Starting bus 1
+2019-02-26 03:40:06.137 +00:00 [INF] Setting number of workers to 1
+2019-02-26 03:40:06.168 +00:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-26 03:40:06.249 +00:00 [INF] Started
+2019-02-26 03:40:06.252 +00:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-26 03:40:06.467 +00:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-26 03:47:59.683 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-26 03:48:05.004 +00:00 [WRN] No XML encryptor configured. Key "e5a11b0b-a089-4567-aea2-5e3a2fd398e1" may be persisted to storage in unencrypted form.
+2019-02-26 03:48:05.393 +00:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-26 03:48:06.100 +00:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-26 03:48:06.130 +00:00 [INF] Starting bus 1
+2019-02-26 03:48:06.155 +00:00 [INF] Setting number of workers to 1
+2019-02-26 03:48:06.170 +00:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-26 03:48:06.184 +00:00 [INF] Started
+2019-02-26 03:48:06.186 +00:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-26 03:48:06.296 +00:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-26 12:21:18.246 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-26 12:21:31.875 +00:00 [WRN] No XML encryptor configured. Key "d173fb5a-e1de-40f0-82d0-7b614154bee6" may be persisted to storage in unencrypted form.
+2019-02-26 12:21:32.744 +00:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-26 12:21:33.420 +00:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-26 12:21:33.459 +00:00 [INF] Starting bus 1
+2019-02-26 12:21:33.500 +00:00 [INF] Setting number of workers to 1
+2019-02-26 12:21:33.521 +00:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-26 12:21:33.551 +00:00 [INF] Started
+2019-02-26 12:21:33.555 +00:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-26 12:21:33.873 +00:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-26 12:21:36.858 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:21:55.886 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:22:07.264 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:22:18.322 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:22:29.346 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:22:40.492 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:22:51.537 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:23:03.525 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:23:15.589 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:23:26.716 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:23:37.682 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:23:48.682 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:23:59.835 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:24:12.039 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:24:22.963 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:24:33.950 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:24:45.041 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:24:55.961 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:25:06.905 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:25:17.873 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:25:28.982 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:25:41.271 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:25:53.598 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:26:05.006 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:26:16.743 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:26:20.146 +00:00 [WRN] Unhandled exception [1,"012e473e-fce4-46b5-a187-62b261d78b97"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 012e473e-fce4-46b5-a187-62b261d78b97 and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
+2019-02-26 12:26:20.247 +00:00 [WRN] Unhandled exception [2,"012e473e-fce4-46b5-a187-62b261d78b97"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 012e473e-fce4-46b5-a187-62b261d78b97 and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
+2019-02-26 12:26:27.863 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:26:38.784 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:26:50.063 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:26:59.566 +00:00 [INF] Message received:
+2019-02-26 12:26:59.569 +00:00 [INF] ----------------------------------
+2019-02-26 12:27:00.268 +00:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"c138028a-1eba-447e-b2ab-16102a68cb2e","Items":[{"Id":"002","ProductId":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"38246ec5-31d2-4cc6-9568-a1d31cae195d","CreationDate":"2019-02-26T12:26:58.9729027Z"}
+2019-02-26 12:27:00.271 +00:00 [INF] ----------------------------------
+2019-02-26 12:27:07.106 +00:00 [INF] new CreateOrderCommandHandler created.
+2019-02-26 12:27:11.118 +00:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages 11edbd91-564e-456b-a511-c1b1d6006c50 to 1 handlers took 11572.619400000001 ms
+2019-02-26 12:27:11.297 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:27:22.557 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:27:33.689 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:27:44.874 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:27:56.130 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:28:07.249 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:28:18.483 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:28:29.579 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:28:40.712 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:28:51.723 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:29:02.933 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:29:13.933 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:29:25.004 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:29:36.220 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:29:47.244 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:29:58.243 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:30:09.793 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:30:22.283 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:30:33.475 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:30:44.530 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:30:55.743 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:31:06.774 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:31:17.881 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:31:28.927 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:31:40.304 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:31:51.370 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:32:02.304 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:32:13.351 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:32:24.381 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:32:35.396 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:32:46.671 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:32:57.925 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:35:01.914 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-26 12:35:09.897 +00:00 [WRN] No XML encryptor configured. Key "ace516ff-fc81-4952-a011-efe58c999a43" may be persisted to storage in unencrypted form.
+2019-02-26 12:35:10.497 +00:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-26 12:35:10.884 +00:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-26 12:35:10.919 +00:00 [INF] Starting bus 1
+2019-02-26 12:35:10.937 +00:00 [INF] Setting number of workers to 1
+2019-02-26 12:35:11.001 +00:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-26 12:35:11.036 +00:00 [INF] Started
+2019-02-26 12:35:11.075 +00:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-26 12:35:11.590 +00:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-26 12:35:18.142 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:35:30.533 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:35:41.983 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:35:53.420 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:36:04.577 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:36:18.757 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:36:30.487 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:36:41.794 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:36:53.077 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:37:04.788 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:37:16.948 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:37:28.587 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:37:40.161 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:37:51.257 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:38:02.164 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:38:13.477 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:38:24.430 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:38:35.410 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:38:46.318 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:38:57.233 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:39:08.242 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:39:19.202 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:39:30.375 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:39:44.036 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:39:55.078 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:40:06.042 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:40:17.033 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:40:28.386 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:40:39.475 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:40:50.461 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:41:01.624 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:41:12.484 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:41:23.437 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:41:34.585 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:41:45.498 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:41:56.664 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:42:07.871 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:42:19.031 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:42:25.007 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:42:30.147 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:42:41.404 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:42:52.276 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:44:47.786 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-26 12:45:12.468 +00:00 [WRN] No XML encryptor configured. Key "1a165e93-3a28-4fa8-887d-d3c98728f898" may be persisted to storage in unencrypted form.
+2019-02-26 12:45:13.192 +00:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-26 12:45:13.692 +00:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-26 12:45:13.796 +00:00 [INF] Starting bus 1
+2019-02-26 12:45:13.822 +00:00 [INF] Setting number of workers to 1
+2019-02-26 12:45:13.857 +00:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-26 12:45:13.883 +00:00 [INF] Started
+2019-02-26 12:45:13.889 +00:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-26 12:45:14.185 +00:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-26 12:45:26.199 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:45:37.855 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:45:48.831 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:45:59.917 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:47:56.250 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-26 12:48:03.588 +00:00 [WRN] No XML encryptor configured. Key "72f18234-7f03-4e26-b7d2-0604b5c1f7c4" may be persisted to storage in unencrypted form.
+2019-02-26 12:48:04.591 +00:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-26 12:48:05.477 +00:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-26 12:48:05.593 +00:00 [INF] Starting bus 1
+2019-02-26 12:48:05.629 +00:00 [INF] Setting number of workers to 1
+2019-02-26 12:48:05.649 +00:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-26 12:48:05.706 +00:00 [INF] Started
+2019-02-26 12:48:05.708 +00:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-26 12:48:06.035 +00:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-26 12:49:48.474 +00:00 [WRN] Unhandled exception [1,"49897e2a-6dc6-4ad9-9a41-895925aa544a"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 49897e2a-6dc6-4ad9-9a41-895925aa544a and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
+2019-02-26 12:49:48.567 +00:00 [WRN] Unhandled exception [2,"49897e2a-6dc6-4ad9-9a41-895925aa544a"] while handling message with ID Rebus.Exceptions.RebusApplicationException: Message with ID 49897e2a-6dc6-4ad9-9a41-895925aa544a and type Messages.IntegrationEvents.Events.RegistryEvent, Messages could not be dispatched to any handlers
+   at Rebus.Pipeline.Receive.DispatchIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Sagas.LoadSagaDataStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.ActivateHandlersStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleRoutingSlipsStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.DeserializeIncomingMessageStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Pipeline.Receive.HandleDeferredMessagesStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.FailFast.FailFastStep.Process(IncomingStepContext context, Func`1 next)
+   at Rebus.Retry.Simple.SimpleRetryStrategyStep.DispatchWithTrackerIdentifier(Func`1 next, String identifierToTrackMessageBy, ITransactionContext transactionContext, String messageId, String secondLevelMessageId)
+2019-02-26 12:50:21.044 +00:00 [INF] Message received:
+2019-02-26 12:50:21.044 +00:00 [INF] ----------------------------------
+2019-02-26 12:50:21.080 +00:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"a8556ee0-bc06-4a2f-bf11-78bdf917accd","Items":[{"Id":"002","ProductId":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"932a5871-90bb-4e56-91b7-3d5cf43a49e6","CreationDate":"2019-02-26T12:50:21.0093424Z"}
+2019-02-26 12:50:21.080 +00:00 [INF] ----------------------------------
+2019-02-26 12:50:21.475 +00:00 [INF] new CreateOrderCommandHandler created.
+2019-02-26 12:50:23.022 +00:00 [DBG] Dispatching Messages.Events.CheckoutEvent, Messages b60db01b-8f21-4cd6-9456-55cec0eb8291 to 1 handlers took 1990.4968000000001 ms
+2019-02-26 12:53:29.647 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-26 12:53:38.502 +00:00 [WRN] No XML encryptor configured. Key "60a173b8-e563-44a2-954f-4acf9947748c" may be persisted to storage in unencrypted form.
+2019-02-26 12:54:21.732 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-02-26 12:54:25.098 +00:00 [INF] Initializing RabbitMQ connection manager for transport with input queue 'RegistrationEvent'
+2019-02-26 12:54:25.684 +00:00 [INF] Starting periodic task CleanupTrackedErrors with interval "00:01:00"
+2019-02-26 12:54:25.723 +00:00 [INF] Starting bus 1
+2019-02-26 12:54:25.749 +00:00 [INF] Setting number of workers to 1
+2019-02-26 12:54:25.772 +00:00 [DBG] Adding worker Rebus 1 worker 1
+2019-02-26 12:54:25.781 +00:00 [INF] Started
+2019-02-26 12:54:25.811 +00:00 [DBG] Starting (threadpool-based) worker Rebus 1 worker 1
+2019-02-26 12:54:26.059 +00:00 [INF] Successfully initialized consumer for RegistrationEvent
+2019-02-26 12:54:35.526 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:54:47.351 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:54:58.424 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:55:09.548 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-02-26 12:55:20.610 +00:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
