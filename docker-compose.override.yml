@@ -51,7 +51,7 @@ services:
   ordering.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_URLS=http://0.0.0.0:80
       - ConnectionString=${CASADOCODIGO_ORDERING_DB:-Server=sql.data;Database=Ordering;User Id=sa;Password=Pass@word;}
       - SignalRServerUrl=http://mvc/
       - RabbitMQConnectionString=amqp://rabbitmq
