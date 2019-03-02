@@ -18,6 +18,9 @@ using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
 using Rebus.Config;
 using Rebus.ServiceProvider;
+using Serilog;
+using Serilog.Events;
+using Serilog.Sinks.Elasticsearch;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
@@ -36,6 +39,17 @@ namespace Basket.API
         public Startup(ILoggerFactory loggerFactory, 
             IConfiguration configuration)
         {
+            // Create Serilog Elasticsearch logger
+            Log.Logger = new LoggerConfiguration()
+               .Enrich.FromLogContext()
+               .MinimumLevel.Debug()
+               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+               {
+                   MinimumLogEventLevel = LogEventLevel.Verbose,
+                   AutoRegisterTemplate = true
+               })
+               .CreateLogger();
+
             Configuration = configuration;
             _loggerFactory = loggerFactory;
             _loggerFactory.AddDebug(); // logs to the debug output window in VS.
@@ -46,6 +60,8 @@ namespace Basket.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
+
             services
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
@@ -141,8 +157,11 @@ namespace Basket.API
                 .Transport(t => t.UseRabbitMq(Configuration["RabbitMQConnectionString"], Configuration["RabbitMQInputQueueName"])));
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

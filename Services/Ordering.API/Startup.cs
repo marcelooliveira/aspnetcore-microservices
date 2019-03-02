@@ -32,6 +32,9 @@ using System.Net.Http;
 using System.Reflection;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Serilog;
+using Serilog.Sinks.Elasticsearch;
+using Serilog.Events;
 
 namespace Ordering
 {
@@ -42,6 +45,16 @@ namespace Ordering
         public Startup(ILoggerFactory loggerFactory,
             IConfiguration configuration)
         {
+            Log.Logger = new LoggerConfiguration()
+               .Enrich.FromLogContext()
+               .MinimumLevel.Debug()
+               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+               {
+                   MinimumLogEventLevel = LogEventLevel.Verbose,
+                   AutoRegisterTemplate = true
+               })
+               .CreateLogger();
+
             Configuration = configuration;
             _loggerFactory = loggerFactory;
             _loggerFactory.AddDebug(); // logs to the debug output window in VS.
@@ -52,6 +65,8 @@ namespace Ordering
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSignalR();
@@ -149,8 +164,11 @@ namespace Ordering
                 .AutoRegisterHandlersFromAssemblyOf<CheckoutEvent>();
         }
 
-        public void Configure(IServiceProvider serviceProvider, IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
+        public void Configure(IServiceProvider serviceProvider, IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+
             app.UseRebus(
                 async (bus) =>
                 {

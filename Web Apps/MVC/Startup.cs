@@ -29,6 +29,9 @@ using System.Net.Http;
 using System.Reflection;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Serilog;
+using Serilog.Sinks.Elasticsearch;
+using Serilog.Events;
 
 namespace MVC
 {
@@ -39,6 +42,16 @@ namespace MVC
         public Startup(ILoggerFactory loggerFactory,
             IConfiguration configuration)
         {
+            Log.Logger = new LoggerConfiguration()
+               .Enrich.FromLogContext()
+               .MinimumLevel.Debug()
+               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+               {
+                   MinimumLogEventLevel = LogEventLevel.Verbose,
+                   AutoRegisterTemplate = true
+               })
+               .CreateLogger();
+
             Configuration = configuration;
             _loggerFactory = loggerFactory;
             _loggerFactory.AddDebug(); // logs to the debug output window in VS.
@@ -68,6 +81,8 @@ namespace MVC
                     Configuration["RedisConnectionString"],
                     name: "redis-check",
                     tags: new string[] { "redis" });
+
+            services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 
             services.AddMvc()
                 .AddJsonOptions(a => a.SerializerSettings.ContractResolver = new DefaultContractResolver());
@@ -181,8 +196,11 @@ namespace MVC
                    .AddPolicyHandler(GetCircuitBreakerPolicy());
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

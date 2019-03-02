@@ -24,6 +24,9 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
 using System.Threading.Tasks;
+using Serilog;
+using Serilog.Sinks.Elasticsearch;
+using Serilog.Events;
 
 namespace Identity.API
 {
@@ -36,6 +39,16 @@ namespace Identity.API
 
         public Startup(ILoggerFactory loggerFactory, IConfiguration configuration, IHostingEnvironment environment)
         {
+            Log.Logger = new LoggerConfiguration()
+               .Enrich.FromLogContext()
+               .MinimumLevel.Debug()
+               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+               {
+                   MinimumLogEventLevel = LogEventLevel.Verbose,
+                   AutoRegisterTemplate = true
+               })
+               .CreateLogger();
+
             Configuration = configuration;
             Environment = environment;
             _loggerFactory = loggerFactory;
@@ -60,6 +73,9 @@ namespace Identity.API
 
             services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, AppClaimsPrincipalFactory>();
             services.AddScoped<IClaimsManager, ClaimsManager>();
+
+            services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
+
             services.AddMvc();
             services.AddSingleton<IProfileService, ProfileService>();
 
@@ -117,8 +133,11 @@ namespace Identity.API
                 .AutoRegisterHandlersFromAssemblyOf<RegistryEvent>();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             app.UseRebus(
                 async (bus) =>
