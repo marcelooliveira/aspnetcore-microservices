@@ -39,20 +39,21 @@ namespace Identity.API
 
         public Startup(ILoggerFactory loggerFactory, IConfiguration configuration, IHostingEnvironment environment)
         {
-            Log.Logger = new LoggerConfiguration()
-               .Enrich.FromLogContext()
-               .MinimumLevel.Debug()
-               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
-               {
-                   MinimumLogEventLevel = LogEventLevel.Verbose,
-                   AutoRegisterTemplate = true
-               })
-               .CreateLogger();
 
             Configuration = configuration;
             Environment = environment;
             _loggerFactory = loggerFactory;
             _loggerFactory.AddDebug(); // logs to the debug output window in VS.
+
+            Log.Logger = new LoggerConfiguration()
+               .Enrich.FromLogContext()
+               .MinimumLevel.Debug()
+               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
+               {
+                   MinimumLogEventLevel = LogEventLevel.Verbose,
+                   AutoRegisterTemplate = true
+               })
+               .CreateLogger();
         }
 
         public void ConfigureServices(IServiceCollection services)

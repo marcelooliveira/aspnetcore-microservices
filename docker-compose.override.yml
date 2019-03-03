@@ -1,27 +1,14 @@
 version: '3.4'
 
 services:
-#   kibana:
-#     environment:
-#       - cluster.name=docker-cluster
-#       - bootstrap.memory_lock=true
-#       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-#     ulimits:
-#       memlock:
-#         soft: -1
-#         hard: -1
-#       nofile:
-#         soft: 65536
-#         hard: 65536
-#     mem_limit: 1g
-#     cap_add:
-#       - IPC_LOCK
-#     volumes:
-#       - esdata1:/usr/share/elasticsearch/data
-#     ports:
-#       - 9200:9200
-#     networks:
-#       - esnet
+  elasticsearch:
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+      - "5601:5601"
+      - "12201:12201/udp"
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
 
   sql.data:
     environment:
@@ -45,6 +32,7 @@ services:
       - IdentityUrl=http://10.0.75.1:5105
       - RedisConnectionString=ecommerce.data:6379
       - RabbitMQConnectionString=amqp://rabbitmq
+      - ELASTICSEARCH_URL=http://10.0.75.1:9200
     ports:
       - "5103:80"
 
@@ -52,6 +40,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ELASTICSEARCH_URL=http://10.0.75.1:9200
     ports:
       - "50518:80"
     volumes:
@@ -64,6 +53,7 @@ services:
       - ASPNETCORE_URLS=http://0.0.0.0:80
       - CallBackUrl=http://localhost:5100/
       - RabbitMQConnectionString=amqp://rabbitmq
+      - ELASTICSEARCH_URL=http://10.0.75.1:9200
     ports:
       - "5105:80"
     volumes:
@@ -77,11 +67,13 @@ services:
       - ConnectionString=${CASADOCODIGO_ORDERING_DB:-Server=sql.data;Database=Ordering;User Id=sa;Password=Pass@word;}
       - SignalRServerUrl=http://mvc/
       - RabbitMQConnectionString=amqp://rabbitmq
+      - ELASTICSEARCH_URL=http://10.0.75.1:9200
     ports:
       - "5106:80"
     volumes:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
   mvc:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
@@ -92,6 +84,7 @@ services:
       - CallBackUrl=http://localhost:5100/
       - SignalRServerUrl=http://mvc/
       - RedisConnectionString=ecommerce.data:6379
+      - ELASTICSEARCH_URL=http://10.0.75.1:9200
     ports:
       - "5100:80"
 
@@ -111,4 +104,3 @@ services:
       - HealthChecks-UI__HealthChecks__5__Uri=http://ordering.api/hc
     ports:
       - "5107:80"
-

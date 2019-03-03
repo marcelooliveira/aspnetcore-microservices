@@ -45,19 +45,20 @@ namespace Ordering
         public Startup(ILoggerFactory loggerFactory,
             IConfiguration configuration)
         {
+
+            Configuration = configuration;
+            _loggerFactory = loggerFactory;
+            _loggerFactory.AddDebug(); // logs to the debug output window in VS.
+
             Log.Logger = new LoggerConfiguration()
                .Enrich.FromLogContext()
                .MinimumLevel.Debug()
-               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
                {
                    MinimumLogEventLevel = LogEventLevel.Verbose,
                    AutoRegisterTemplate = true
                })
                .CreateLogger();
-
-            Configuration = configuration;
-            _loggerFactory = loggerFactory;
-            _loggerFactory.AddDebug(); // logs to the debug output window in VS.
         }
 
         public IConfiguration Configuration { get; }

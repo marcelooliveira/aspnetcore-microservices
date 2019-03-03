@@ -26,18 +26,18 @@ namespace Catalog.API
     {
         public Startup(IConfiguration configuration)
         {
+            Configuration = configuration;
+
             // Create Serilog Elasticsearch logger
             Log.Logger = new LoggerConfiguration()
                .Enrich.FromLogContext()
                .MinimumLevel.Debug()
-               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
                {
                    MinimumLogEventLevel = LogEventLevel.Verbose,
                    AutoRegisterTemplate = true
                })
                .CreateLogger();
-
-            Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }

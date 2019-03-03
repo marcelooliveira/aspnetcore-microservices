@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-#   kibana:
-#     image: nshou/elasticsearch-kibana
+  elasticsearch:
+    image: nshou/elasticsearch-kibana
 
   sql.data:
     image: microsoft/mssql-server-linux:2017-latest
@@ -30,7 +30,8 @@ services:
     build:
       context: .
       dockerfile: Services/Catalog.API/Dockerfile
-
+    depends_on:
+      - rabbitmq
 
   identity.api:
     image: identityapi
@@ -56,6 +57,7 @@ services:
       dockerfile: Web Apps/MVC/Dockerfile
     depends_on:
       - ecommerce.data
+      - rabbitmq
 
   webstatus:
     image: webstatus
