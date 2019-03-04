@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -19,17 +18,11 @@ using Newtonsoft.Json.Serialization;
 using Rebus.Config;
 using Rebus.ServiceProvider;
 using Serilog;
-using Serilog.Events;
-using Serilog.Sinks.Elasticsearch;
-using Serilog.Sinks.SystemConsole.Themes;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.IO;
-using System.Net;
-using System.Net.Http;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Basket.API
 {
@@ -38,23 +31,19 @@ namespace Basket.API
         private readonly ILoggerFactory _loggerFactory;
 
         public Startup(ILoggerFactory loggerFactory, 
-            IConfiguration configuration)
+            IConfiguration configuration,
+            IHostingEnvironment env)
         {
             Configuration = configuration;
             _loggerFactory = loggerFactory;
 
+            var configurationByFile = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json")
+                .Build();
+
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Information()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-                .MinimumLevel.Override("System", LogEventLevel.Warning)
-                .MinimumLevel.Override("Basket.API", LogEventLevel.Information)
-                .Enrich.FromLogContext()
-                .WriteTo.File(@"Basket.API_log.txt")
-                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
-                {
-                    MinimumLogEventLevel = LogEventLevel.Information,
-                    AutoRegisterTemplate = true
-                })
+                .ReadFrom.Configuration(configurationByFile)
                 .CreateLogger();
         }
 

@@ -1,12 +1,8 @@
 ﻿using AutoMapper;
-using Messages.EventHandling;
-using Messages.Events;
-using Ordering.Commands;
-using Ordering.Repositories;
 using HealthChecks.UI.Client;
 using MediatR;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Messages.EventHandling;
+using Messages.Events;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -18,23 +14,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Linq;
 using Ordering.API.SignalR;
+using Ordering.Commands;
+using Ordering.Repositories;
 using Rebus.Config;
 using Rebus.ServiceProvider;
+using Serilog;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Reflection;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Serilog;
-using Serilog.Sinks.Elasticsearch;
-using Serilog.Events;
 
 namespace Ordering
 {
@@ -43,24 +32,20 @@ namespace Ordering
         private readonly ILoggerFactory _loggerFactory;
 
         public Startup(ILoggerFactory loggerFactory,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            Microsoft.AspNetCore.Hosting.IHostingEnvironment environment)
         {
 
             Configuration = configuration;
             _loggerFactory = loggerFactory;
 
+            var configurationByFile = new ConfigurationBuilder()
+                .SetBasePath(environment.ContentRootPath)
+                .AddJsonFile("appsettings.json")
+                .Build();
+
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Information()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-                .MinimumLevel.Override("System", LogEventLevel.Warning)
-                .MinimumLevel.Override("Ordering.API", LogEventLevel.Information)
-                .Enrich.FromLogContext()
-                .WriteTo.File(@"Ordering.API_log.txt")
-                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
-                {
-                    MinimumLogEventLevel = LogEventLevel.Information,
-                    AutoRegisterTemplate = true
-                })
+                .ReadFrom.Configuration(configurationByFile)
                 .CreateLogger();
         }
 

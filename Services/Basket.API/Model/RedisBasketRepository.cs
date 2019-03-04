@@ -54,7 +54,6 @@ namespace Basket.API.Model
                 _logger.LogError("Error while updating customer basket.");
                 return null;
             }
-            _logger.LogInformation("Basket updated.");
             return await GetBasketAsync(basket.CustomerId);
         }
 

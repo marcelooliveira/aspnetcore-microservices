@@ -2,7 +2,6 @@
 using Messages.Commands;
 using Messages.Events;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
 
@@ -23,7 +22,6 @@ namespace Messages.IntegrationEvents
 
         public Task Handle(TMessage message)
         {
-            LogMessage(message);
             SendCommand(message);
             return Task.CompletedTask;
         }
@@ -46,13 +44,5 @@ namespace Messages.IntegrationEvents
         }
 
         protected abstract TCommand GetCommand(TMessage message);
-
-        void LogMessage(TMessage message)
-        {
-            _logger.LogInformation("Message received:");
-            _logger.LogInformation("----------------------------------");
-            _logger.LogInformation(JsonConvert.SerializeObject(message));
-            _logger.LogInformation("----------------------------------");
-        }
     }
 }

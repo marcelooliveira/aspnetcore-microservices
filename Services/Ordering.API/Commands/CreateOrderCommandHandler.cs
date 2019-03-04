@@ -38,8 +38,6 @@ namespace Ordering.Commands
             this._bus = bus;
             this._configuration = configuration;
 
-            _logger.LogInformation("new CreateOrderCommandHandler created.");
-
             string userNotificationHubUrl = $"{_configuration["SignalRServerUrl"]}usernotificationhub";
             
             this._connection = new HubConnectionBuilder()

@@ -52,4 +52,6 @@
     <ProjectReference Include="..\Messages\Messages.csproj" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="http://json.schemastore.org/bukkit-plugin" /></VisualStudio></ProjectExtensions>
+
 </Project>

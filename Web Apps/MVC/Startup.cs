@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Models.ViewModels;
-using Services;
-using HealthChecks.UI.Client;
+﻿using HealthChecks.UI.Client;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.SignalR;
@@ -12,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
+using Models.ViewModels;
 using MVC.Commands;
 using MVC.Model.Redis;
 using MVC.SignalR;
@@ -19,6 +18,8 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 using Polly;
 using Polly.Extensions.Http;
+using Serilog;
+using Services;
 using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
@@ -29,9 +30,6 @@ using System.Net.Http;
 using System.Reflection;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Serilog;
-using Serilog.Sinks.Elasticsearch;
-using Serilog.Events;
 
 namespace MVC
 {
@@ -40,24 +38,19 @@ namespace MVC
         private readonly ILoggerFactory _loggerFactory;
 
         public Startup(ILoggerFactory loggerFactory,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            IHostingEnvironment environment)
         {
-
             Configuration = configuration;
             _loggerFactory = loggerFactory;
 
+            var configurationByFile = new ConfigurationBuilder()
+                .SetBasePath(environment.ContentRootPath)
+                .AddJsonFile("appsettings.json")
+                .Build();
+
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Information()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-                .MinimumLevel.Override("System", LogEventLevel.Warning)
-                .MinimumLevel.Override("MVC", LogEventLevel.Information)
-                .Enrich.FromLogContext()
-                .WriteTo.File(@"MVC.API_log.txt")
-                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
-                {
-                    MinimumLogEventLevel = LogEventLevel.Information,
-                    AutoRegisterTemplate = true
-                })
+                .ReadFrom.Configuration(configurationByFile)
                 .CreateLogger();
         }
 

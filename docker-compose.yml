@@ -1,6 +1,13 @@
 version: '3.4'
 
 services:
+  rabbitmq:
+    hostname: rabbit
+    image: rabbitmq:3-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
   elasticsearch:
     image: nshou/elasticsearch-kibana
 
@@ -9,13 +16,6 @@ services:
 
   ecommerce.data:
     image: redis:alpine
-
-  rabbitmq:
-    hostname: rabbit
-    image: rabbitmq:3-management-alpine
-    environment:
-      RABBITMQ_DEFAULT_USER: guest
-      RABBITMQ_DEFAULT_PASS: guest
 
   basket.api:
     image: basketapi
@@ -60,8 +60,8 @@ services:
       context: .
       dockerfile: Web Apps/MVC/Dockerfile
     depends_on:
-      - ecommerce.data
       - rabbitmq
+      - ecommerce.data
       - elasticsearch
 
   webstatus:

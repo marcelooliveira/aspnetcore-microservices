@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace Ordering.Models
@@ -7,7 +8,6 @@ namespace Ordering.Models
     public class OrderItem : BaseModel
     {
         [Required]
-        [DataMember]
         public Order Order { get; set; }
         [Required]
         [DataMember]
@@ -19,6 +19,7 @@ namespace Ordering.Models
         [DataMember]
         public int ProductQuantity { get; set; }
         [DataMember]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal ProductUnitPrice { get; set; }
         public decimal Subtotal => ProductQuantity * ProductUnitPrice;
 
