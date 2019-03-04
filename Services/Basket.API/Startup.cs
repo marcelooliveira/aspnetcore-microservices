@@ -21,6 +21,7 @@ using Rebus.ServiceProvider;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.Elasticsearch;
+using Serilog.Sinks.SystemConsole.Themes;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
@@ -39,20 +40,22 @@ namespace Basket.API
         public Startup(ILoggerFactory loggerFactory, 
             IConfiguration configuration)
         {
-
             Configuration = configuration;
             _loggerFactory = loggerFactory;
-            _loggerFactory.AddDebug(); // logs to the debug output window in VS.
 
-            // Create Serilog Elasticsearch logger
             Log.Logger = new LoggerConfiguration()
-               .Enrich.FromLogContext()
-               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
-               {
-                   MinimumLogEventLevel = LogEventLevel.Information,
-                   AutoRegisterTemplate = true
-               })
-               .CreateLogger();
+                .MinimumLevel.Information()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                .MinimumLevel.Override("System", LogEventLevel.Warning)
+                .MinimumLevel.Override("Basket.API", LogEventLevel.Information)
+                .Enrich.FromLogContext()
+                .WriteTo.File(@"Basket.API_log.txt")
+                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
+                {
+                    MinimumLogEventLevel = LogEventLevel.Information,
+                    AutoRegisterTemplate = true
+                })
+                .CreateLogger();
         }
 
         public IConfiguration Configuration { get; }

@@ -43,16 +43,21 @@ namespace Identity.API
             Configuration = configuration;
             Environment = environment;
             _loggerFactory = loggerFactory;
-            _loggerFactory.AddDebug(); // logs to the debug output window in VS.
 
             Log.Logger = new LoggerConfiguration()
-               .Enrich.FromLogContext()
-               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
-               {
-                   MinimumLogEventLevel = LogEventLevel.Information,
-                   AutoRegisterTemplate = true
-               })
-               .CreateLogger();
+                .MinimumLevel.Information()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                .MinimumLevel.Override("System", LogEventLevel.Warning)
+                .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Warning)
+                .MinimumLevel.Override("Identity.API", LogEventLevel.Information)
+                .Enrich.FromLogContext()
+                .WriteTo.File(@"Identity.API_log.txt")
+                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
+                {
+                    MinimumLogEventLevel = LogEventLevel.Information,
+                    AutoRegisterTemplate = true
+                })
+                .CreateLogger();
         }
 
         public void ConfigureServices(IServiceCollection services)

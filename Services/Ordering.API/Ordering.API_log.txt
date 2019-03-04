@@ -1,0 +1,62 @@
+2019-03-04 04:42:52.269 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-03-04 04:44:16.516 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-03-04 04:44:26.028 +00:00 [WRN] No XML encryptor configured. Key "8d15a585-2c8f-4016-beb0-fe11cdc22d19" may be persisted to storage in unencrypted form.
+2019-03-04 04:44:33.829 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 04:44:33.843 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 04:46:54.175 +00:00 [INF] Message received:
+2019-03-04 04:46:54.184 +00:00 [INF] Message received:
+2019-03-04 04:46:54.258 +00:00 [INF] ----------------------------------
+2019-03-04 04:46:54.259 +00:00 [INF] ----------------------------------
+2019-03-04 04:46:54.323 +00:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"f472ec99-9732-4612-bfd8-46230a9961a7","Items":[{"Id":"001","ProductId":"001","ProductName":"Oranges","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"3dd0110b-3595-4ff0-972d-c53c7ea9b496","CreationDate":"2019-03-04T04:46:54.0873587Z"}
+2019-03-04 04:46:54.329 +00:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"f472ec99-9732-4612-bfd8-46230a9961a7","Items":[{"Id":"001","ProductId":"001","ProductName":"Oranges","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"3dd0110b-3595-4ff0-972d-c53c7ea9b496","CreationDate":"2019-03-04T04:46:54.0873587Z"}
+2019-03-04 04:46:54.359 +00:00 [INF] ----------------------------------
+2019-03-04 04:46:54.371 +00:00 [INF] ----------------------------------
+2019-03-04 04:46:54.663 +00:00 [INF] new CreateOrderCommandHandler created.
+2019-03-04 04:46:54.664 +00:00 [INF] new CreateOrderCommandHandler created.
+2019-03-04 04:46:56.544 +00:00 [INF] New order has been placed successfully: {"Id":1}
+2019-03-04 04:46:56.545 +00:00 [INF] New order has been placed successfully: {"Id":1}
+2019-03-04 04:57:12.877 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-03-04 04:57:29.647 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 04:57:29.659 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 05:01:54.254 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-03-04 05:02:19.754 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 05:02:19.763 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 05:14:00.391 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-03-04 05:14:29.294 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 05:14:29.307 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 05:17:24.414 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-03-04 05:17:41.411 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 05:17:41.419 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 05:23:50.957 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-03-04 05:24:13.247 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 05:24:13.267 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 13:11:18.805 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-03-04 13:11:38.146 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 13:11:38.170 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 13:12:10.540 +00:00 [INF] Message received:
+2019-03-04 13:12:10.542 +00:00 [INF] Message received:
+2019-03-04 13:12:10.548 +00:00 [INF] ----------------------------------
+2019-03-04 13:12:10.550 +00:00 [INF] ----------------------------------
+2019-03-04 13:12:10.566 +00:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"de511fc2-ee1b-44f0-91e9-016553f237b3","Items":[{"Id":"002","ProductId":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"a62099f2-af37-4953-8896-dd9fcde857ac","CreationDate":"2019-03-04T13:12:10.4701768Z"}
+2019-03-04 13:12:10.567 +00:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"de511fc2-ee1b-44f0-91e9-016553f237b3","Items":[{"Id":"002","ProductId":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"a62099f2-af37-4953-8896-dd9fcde857ac","CreationDate":"2019-03-04T13:12:10.4701768Z"}
+2019-03-04 13:12:10.579 +00:00 [INF] ----------------------------------
+2019-03-04 13:12:10.583 +00:00 [INF] ----------------------------------
+2019-03-04 13:12:10.716 +00:00 [INF] new CreateOrderCommandHandler created.
+2019-03-04 13:12:10.718 +00:00 [INF] new CreateOrderCommandHandler created.
+2019-03-04 13:12:12.661 +00:00 [INF] New order has been placed successfully: {"Id":1004}
+2019-03-04 13:12:12.667 +00:00 [INF] New order has been placed successfully: {"Id":1004}
+2019-03-04 13:14:53.078 +00:00 [WRN] No type was specified for the decimal column 'ProductUnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-03-04 13:15:08.532 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 13:15:08.543 +00:00 [WRN] Failed to determine the https port for redirect.
+2019-03-04 13:22:50.752 +00:00 [INF] Message received:
+2019-03-04 13:22:50.776 +00:00 [INF] Message received:
+2019-03-04 13:22:50.827 +00:00 [INF] ----------------------------------
+2019-03-04 13:22:50.836 +00:00 [INF] ----------------------------------
+2019-03-04 13:22:51.033 +00:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"12406c02-e15f-43cc-ab9b-577fb978457a","Items":[{"Id":"003","ProductId":"003","ProductName":"Bananas","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"326e22d2-6ef7-43a4-9953-845a02e4a876","CreationDate":"2019-03-04T13:22:50.3561843Z"}
+2019-03-04 13:22:51.050 +00:00 [INF] {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"12406c02-e15f-43cc-ab9b-577fb978457a","Items":[{"Id":"003","ProductId":"003","ProductName":"Bananas","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"326e22d2-6ef7-43a4-9953-845a02e4a876","CreationDate":"2019-03-04T13:22:50.3561843Z"}
+2019-03-04 13:22:51.117 +00:00 [INF] ----------------------------------
+2019-03-04 13:22:51.119 +00:00 [INF] ----------------------------------
+2019-03-04 13:22:52.655 +00:00 [INF] new CreateOrderCommandHandler created.
+2019-03-04 13:22:52.658 +00:00 [INF] new CreateOrderCommandHandler created.
+2019-03-04 13:22:56.896 +00:00 [INF] New order has been placed successfully: {"Id":1005}
+2019-03-04 13:22:56.902 +00:00 [INF] New order has been placed successfully: {"Id":1005}

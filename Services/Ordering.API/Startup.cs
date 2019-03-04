@@ -48,16 +48,20 @@ namespace Ordering
 
             Configuration = configuration;
             _loggerFactory = loggerFactory;
-            _loggerFactory.AddDebug(); // logs to the debug output window in VS.
 
             Log.Logger = new LoggerConfiguration()
-               .Enrich.FromLogContext()
-               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
-               {
-                   MinimumLogEventLevel = LogEventLevel.Information,
-                   AutoRegisterTemplate = true
-               })
-               .CreateLogger();
+                .MinimumLevel.Information()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                .MinimumLevel.Override("System", LogEventLevel.Warning)
+                .MinimumLevel.Override("Ordering.API", LogEventLevel.Information)
+                .Enrich.FromLogContext()
+                .WriteTo.File(@"Ordering.API_log.txt")
+                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
+                {
+                    MinimumLogEventLevel = LogEventLevel.Information,
+                    AutoRegisterTemplate = true
+                })
+                .CreateLogger();
         }
 
         public IConfiguration Configuration { get; }

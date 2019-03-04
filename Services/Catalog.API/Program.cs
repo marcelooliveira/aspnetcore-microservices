@@ -23,11 +23,6 @@ namespace Catalog.API
             return WebHost
                     .CreateDefaultBuilder(args)
                     .UseStartup<Startup>()
-                    .ConfigureLogging(builder =>
-                    {
-                        builder.ClearProviders();
-                        builder.AddSerilog();
-                    })
                     .Build();
         }
     }

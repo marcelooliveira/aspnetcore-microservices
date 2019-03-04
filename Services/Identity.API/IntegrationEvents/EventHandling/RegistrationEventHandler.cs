@@ -18,7 +18,7 @@ namespace Identity.API.IntegrationEvents.EventHandling
 
         protected override RegistrationCommand GetCommand(RegistryEvent message)
         {
-            return new RegistrationCommand(message.UsuarioId, message.Name, message.Email, message.Phone, message.Address, message.AdditionalAddress, message.District, message.City, message.State, message.ZipCode);
+            return new RegistrationCommand(message.UserId, message.Name, message.Email, message.Phone, message.Address, message.AdditionalAddress, message.District, message.City, message.State, message.ZipCode);
         }
     }
 }

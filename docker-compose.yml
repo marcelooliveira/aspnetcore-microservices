@@ -24,6 +24,7 @@ services:
       dockerfile: Services/Basket.API/Dockerfile
     depends_on:
       - rabbitmq
+      - elasticsearch
 
   catalog.api:
     image: catalogapi
@@ -32,6 +33,7 @@ services:
       dockerfile: Services/Catalog.API/Dockerfile
     depends_on:
       - rabbitmq
+      - elasticsearch
 
   identity.api:
     image: identityapi
@@ -40,6 +42,7 @@ services:
       dockerfile: Services/Identity.API/Dockerfile
     depends_on:
       - rabbitmq
+      - elasticsearch
 
   ordering.api:
     image: orderingapi
@@ -49,6 +52,7 @@ services:
     depends_on:
       - rabbitmq
       - sql.data
+      - elasticsearch
 
   mvc:
     image: mvc
@@ -58,6 +62,7 @@ services:
     depends_on:
       - ecommerce.data
       - rabbitmq
+      - elasticsearch
 
   webstatus:
     image: webstatus

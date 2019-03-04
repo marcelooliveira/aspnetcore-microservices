@@ -1,0 +1,957 @@
+2019-03-04 04:42:49.567 +00:00 [WRN] No XML encryptor configured. Key "e1ea715a-b570-4674-ba6d-457a8e6099ce" may be persisted to storage in unencrypted form.
+2019-03-04 04:44:09.692 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-04 04:44:09.758 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-04 04:46:26.022 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-04 04:46:26.035 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-04 04:46:26.458 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-04 04:46:26.461 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-04 04:46:26.861 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2019-03-04 04:46:26.862 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2019-03-04 04:46:27.236 +00:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "RedirectUri": "http://localhost:5100/signin-oidc",
+  "AllowedRedirectUris": [
+    "http://localhost:5100/signin-oidc"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "code id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "hybrid",
+  "RequestedScopes": "openid profile Basket.API Ordering.API offline_access",
+  "State": "CfDJ8GYYABICP9dGpL2y_MN4AcC1ahFxAiWk-puTnJ7MmmGoM6jg_7PJJ4yHs5YuQWYCiuK6PhSaM5sQoKrfPd00DTwiMUta0HrM1PAkmkMmu2-i6nxygN2VEAiwrCenp_WHz8nw4SYg4SAd1ZG7q4125SYFEbpWXasT8WrvrWQsA0T0YBTUiRrCH-I5ywJCC0BfiSn8MjOyHEdZ0AbK87H5lJ8lZKenJpcaAoIyZi4ghKNh4_yZJMVUUmalI-8V5zIlA89osT27Dcl2GIxqqNvZfqGB-jl0ei0stA7pxwSvjXMmxUcbswgNFNJh4FiEmToY8TTRc9oCqG9XpKQT1JhHRJo",
+  "Nonce": "636872715866453406.MzgyZGQwMjEtMTQxOS00OTFjLWFjMjUtNDhhMGE2NTM4NGRmNzcxOGRlOGItNTU3ZS00NTYxLWJjNzYtNTg2ZWQzMzViNTll",
+  "Raw": {
+    "client_id": "MVC",
+    "redirect_uri": "http://localhost:5100/signin-oidc",
+    "response_type": "code id_token",
+    "scope": "openid profile Basket.API Ordering.API offline_access",
+    "response_mode": "form_post",
+    "nonce": "636872715866453406.MzgyZGQwMjEtMTQxOS00OTFjLWFjMjUtNDhhMGE2NTM4NGRmNzcxOGRlOGItNTU3ZS00NTYxLWJjNzYtNTg2ZWQzMzViNTll",
+    "state": "CfDJ8GYYABICP9dGpL2y_MN4AcC1ahFxAiWk-puTnJ7MmmGoM6jg_7PJJ4yHs5YuQWYCiuK6PhSaM5sQoKrfPd00DTwiMUta0HrM1PAkmkMmu2-i6nxygN2VEAiwrCenp_WHz8nw4SYg4SAd1ZG7q4125SYFEbpWXasT8WrvrWQsA0T0YBTUiRrCH-I5ywJCC0BfiSn8MjOyHEdZ0AbK87H5lJ8lZKenJpcaAoIyZi4ghKNh4_yZJMVUUmalI-8V5zIlA89osT27Dcl2GIxqqNvZfqGB-jl0ei0stA7pxwSvjXMmxUcbswgNFNJh4FiEmToY8TTRc9oCqG9XpKQT1JhHRJo",
+    "x-client-SKU": "ID_NET",
+    "x-client-ver": "2.1.4.0"
+  }
+}
+2019-03-04 04:46:27.237 +00:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "RedirectUri": "http://localhost:5100/signin-oidc",
+  "AllowedRedirectUris": [
+    "http://localhost:5100/signin-oidc"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "code id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "hybrid",
+  "RequestedScopes": "openid profile Basket.API Ordering.API offline_access",
+  "State": "CfDJ8GYYABICP9dGpL2y_MN4AcC1ahFxAiWk-puTnJ7MmmGoM6jg_7PJJ4yHs5YuQWYCiuK6PhSaM5sQoKrfPd00DTwiMUta0HrM1PAkmkMmu2-i6nxygN2VEAiwrCenp_WHz8nw4SYg4SAd1ZG7q4125SYFEbpWXasT8WrvrWQsA0T0YBTUiRrCH-I5ywJCC0BfiSn8MjOyHEdZ0AbK87H5lJ8lZKenJpcaAoIyZi4ghKNh4_yZJMVUUmalI-8V5zIlA89osT27Dcl2GIxqqNvZfqGB-jl0ei0stA7pxwSvjXMmxUcbswgNFNJh4FiEmToY8TTRc9oCqG9XpKQT1JhHRJo",
+  "Nonce": "636872715866453406.MzgyZGQwMjEtMTQxOS00OTFjLWFjMjUtNDhhMGE2NTM4NGRmNzcxOGRlOGItNTU3ZS00NTYxLWJjNzYtNTg2ZWQzMzViNTll",
+  "Raw": {
+    "client_id": "MVC",
+    "redirect_uri": "http://localhost:5100/signin-oidc",
+    "response_type": "code id_token",
+    "scope": "openid profile Basket.API Ordering.API offline_access",
+    "response_mode": "form_post",
+    "nonce": "636872715866453406.MzgyZGQwMjEtMTQxOS00OTFjLWFjMjUtNDhhMGE2NTM4NGRmNzcxOGRlOGItNTU3ZS00NTYxLWJjNzYtNTg2ZWQzMzViNTll",
+    "state": "CfDJ8GYYABICP9dGpL2y_MN4AcC1ahFxAiWk-puTnJ7MmmGoM6jg_7PJJ4yHs5YuQWYCiuK6PhSaM5sQoKrfPd00DTwiMUta0HrM1PAkmkMmu2-i6nxygN2VEAiwrCenp_WHz8nw4SYg4SAd1ZG7q4125SYFEbpWXasT8WrvrWQsA0T0YBTUiRrCH-I5ywJCC0BfiSn8MjOyHEdZ0AbK87H5lJ8lZKenJpcaAoIyZi4ghKNh4_yZJMVUUmalI-8V5zIlA89osT27Dcl2GIxqqNvZfqGB-jl0ei0stA7pxwSvjXMmxUcbswgNFNJh4FiEmToY8TTRc9oCqG9XpKQT1JhHRJo",
+    "x-client-SKU": "ID_NET",
+    "x-client-ver": "2.1.4.0"
+  }
+}
+2019-03-04 04:46:27.271 +00:00 [INF] Showing login: User is not authenticated
+2019-03-04 04:46:27.271 +00:00 [INF] Showing login: User is not authenticated
+2019-03-04 04:46:33.769 +00:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "alice",
+  "SubjectId": "98f50698-8c84-4224-be48-0052862be631",
+  "DisplayName": "alice",
+  "Endpoint": "UI",
+  "ActivityId": "0HLL0BGC685A4:00000002",
+  "TimeStamp": "2019-03-04T04:46:33Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:33.769 +00:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "alice",
+  "SubjectId": "98f50698-8c84-4224-be48-0052862be631",
+  "DisplayName": "alice",
+  "Endpoint": "UI",
+  "ActivityId": "0HLL0BGC685A4:00000002",
+  "TimeStamp": "2019-03-04T04:46:33Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:33.879 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2019-03-04 04:46:33.879 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2019-03-04 04:46:33.906 +00:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "RedirectUri": "http://localhost:5100/signin-oidc",
+  "AllowedRedirectUris": [
+    "http://localhost:5100/signin-oidc"
+  ],
+  "SubjectId": "98f50698-8c84-4224-be48-0052862be631",
+  "ResponseType": "code id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "hybrid",
+  "RequestedScopes": "openid profile Basket.API Ordering.API offline_access",
+  "State": "CfDJ8GYYABICP9dGpL2y_MN4AcC1ahFxAiWk-puTnJ7MmmGoM6jg_7PJJ4yHs5YuQWYCiuK6PhSaM5sQoKrfPd00DTwiMUta0HrM1PAkmkMmu2-i6nxygN2VEAiwrCenp_WHz8nw4SYg4SAd1ZG7q4125SYFEbpWXasT8WrvrWQsA0T0YBTUiRrCH-I5ywJCC0BfiSn8MjOyHEdZ0AbK87H5lJ8lZKenJpcaAoIyZi4ghKNh4_yZJMVUUmalI-8V5zIlA89osT27Dcl2GIxqqNvZfqGB-jl0ei0stA7pxwSvjXMmxUcbswgNFNJh4FiEmToY8TTRc9oCqG9XpKQT1JhHRJo",
+  "Nonce": "636872715866453406.MzgyZGQwMjEtMTQxOS00OTFjLWFjMjUtNDhhMGE2NTM4NGRmNzcxOGRlOGItNTU3ZS00NTYxLWJjNzYtNTg2ZWQzMzViNTll",
+  "SessionId": "8a8d69ad3a80afed959ece657f161dd5",
+  "Raw": {
+    "client_id": "MVC",
+    "redirect_uri": "http://localhost:5100/signin-oidc",
+    "response_type": "code id_token",
+    "scope": "openid profile Basket.API Ordering.API offline_access",
+    "response_mode": "form_post",
+    "nonce": "636872715866453406.MzgyZGQwMjEtMTQxOS00OTFjLWFjMjUtNDhhMGE2NTM4NGRmNzcxOGRlOGItNTU3ZS00NTYxLWJjNzYtNTg2ZWQzMzViNTll",
+    "state": "CfDJ8GYYABICP9dGpL2y_MN4AcC1ahFxAiWk-puTnJ7MmmGoM6jg_7PJJ4yHs5YuQWYCiuK6PhSaM5sQoKrfPd00DTwiMUta0HrM1PAkmkMmu2-i6nxygN2VEAiwrCenp_WHz8nw4SYg4SAd1ZG7q4125SYFEbpWXasT8WrvrWQsA0T0YBTUiRrCH-I5ywJCC0BfiSn8MjOyHEdZ0AbK87H5lJ8lZKenJpcaAoIyZi4ghKNh4_yZJMVUUmalI-8V5zIlA89osT27Dcl2GIxqqNvZfqGB-jl0ei0stA7pxwSvjXMmxUcbswgNFNJh4FiEmToY8TTRc9oCqG9XpKQT1JhHRJo",
+    "x-client-SKU": "ID_NET",
+    "x-client-ver": "2.1.4.0"
+  }
+}
+2019-03-04 04:46:33.907 +00:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "RedirectUri": "http://localhost:5100/signin-oidc",
+  "AllowedRedirectUris": [
+    "http://localhost:5100/signin-oidc"
+  ],
+  "SubjectId": "98f50698-8c84-4224-be48-0052862be631",
+  "ResponseType": "code id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "hybrid",
+  "RequestedScopes": "openid profile Basket.API Ordering.API offline_access",
+  "State": "CfDJ8GYYABICP9dGpL2y_MN4AcC1ahFxAiWk-puTnJ7MmmGoM6jg_7PJJ4yHs5YuQWYCiuK6PhSaM5sQoKrfPd00DTwiMUta0HrM1PAkmkMmu2-i6nxygN2VEAiwrCenp_WHz8nw4SYg4SAd1ZG7q4125SYFEbpWXasT8WrvrWQsA0T0YBTUiRrCH-I5ywJCC0BfiSn8MjOyHEdZ0AbK87H5lJ8lZKenJpcaAoIyZi4ghKNh4_yZJMVUUmalI-8V5zIlA89osT27Dcl2GIxqqNvZfqGB-jl0ei0stA7pxwSvjXMmxUcbswgNFNJh4FiEmToY8TTRc9oCqG9XpKQT1JhHRJo",
+  "Nonce": "636872715866453406.MzgyZGQwMjEtMTQxOS00OTFjLWFjMjUtNDhhMGE2NTM4NGRmNzcxOGRlOGItNTU3ZS00NTYxLWJjNzYtNTg2ZWQzMzViNTll",
+  "SessionId": "8a8d69ad3a80afed959ece657f161dd5",
+  "Raw": {
+    "client_id": "MVC",
+    "redirect_uri": "http://localhost:5100/signin-oidc",
+    "response_type": "code id_token",
+    "scope": "openid profile Basket.API Ordering.API offline_access",
+    "response_mode": "form_post",
+    "nonce": "636872715866453406.MzgyZGQwMjEtMTQxOS00OTFjLWFjMjUtNDhhMGE2NTM4NGRmNzcxOGRlOGItNTU3ZS00NTYxLWJjNzYtNTg2ZWQzMzViNTll",
+    "state": "CfDJ8GYYABICP9dGpL2y_MN4AcC1ahFxAiWk-puTnJ7MmmGoM6jg_7PJJ4yHs5YuQWYCiuK6PhSaM5sQoKrfPd00DTwiMUta0HrM1PAkmkMmu2-i6nxygN2VEAiwrCenp_WHz8nw4SYg4SAd1ZG7q4125SYFEbpWXasT8WrvrWQsA0T0YBTUiRrCH-I5ywJCC0BfiSn8MjOyHEdZ0AbK87H5lJ8lZKenJpcaAoIyZi4ghKNh4_yZJMVUUmalI-8V5zIlA89osT27Dcl2GIxqqNvZfqGB-jl0ei0stA7pxwSvjXMmxUcbswgNFNJh4FiEmToY8TTRc9oCqG9XpKQT1JhHRJo",
+    "x-client-SKU": "ID_NET",
+    "x-client-ver": "2.1.4.0"
+  }
+}
+2019-03-04 04:46:34.213 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "RedirectUri": "http://localhost:5100/signin-oidc",
+  "Endpoint": "Authorize",
+  "SubjectId": "98f50698-8c84-4224-be48-0052862be631",
+  "Scopes": "openid profile Basket.API Ordering.API offline_access",
+  "GrantType": "hybrid",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****lfMA"
+    },
+    {
+      "TokenType": "code",
+      "TokenValue": "****14db"
+    }
+  ],
+  "ActivityId": "0HLL0BGC685A4:00000003",
+  "TimeStamp": "2019-03-04T04:46:34Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:34.213 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "RedirectUri": "http://localhost:5100/signin-oidc",
+  "Endpoint": "Authorize",
+  "SubjectId": "98f50698-8c84-4224-be48-0052862be631",
+  "Scopes": "openid profile Basket.API Ordering.API offline_access",
+  "GrantType": "hybrid",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****lfMA"
+    },
+    {
+      "TokenType": "code",
+      "TokenValue": "****14db"
+    }
+  ],
+  "ActivityId": "0HLL0BGC685A4:00000003",
+  "TimeStamp": "2019-03-04T04:46:34Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:34.242 +00:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "98f50698-8c84-4224-be48-0052862be631",
+  "ClientId": "MVC",
+  "RedirectUri": "http://localhost:5100/signin-oidc",
+  "State": "CfDJ8GYYABICP9dGpL2y_MN4AcC1ahFxAiWk-puTnJ7MmmGoM6jg_7PJJ4yHs5YuQWYCiuK6PhSaM5sQoKrfPd00DTwiMUta0HrM1PAkmkMmu2-i6nxygN2VEAiwrCenp_WHz8nw4SYg4SAd1ZG7q4125SYFEbpWXasT8WrvrWQsA0T0YBTUiRrCH-I5ywJCC0BfiSn8MjOyHEdZ0AbK87H5lJ8lZKenJpcaAoIyZi4ghKNh4_yZJMVUUmalI-8V5zIlA89osT27Dcl2GIxqqNvZfqGB-jl0ei0stA7pxwSvjXMmxUcbswgNFNJh4FiEmToY8TTRc9oCqG9XpKQT1JhHRJo",
+  "Scope": "openid profile Basket.API Ordering.API offline_access"
+}
+2019-03-04 04:46:34.242 +00:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "98f50698-8c84-4224-be48-0052862be631",
+  "ClientId": "MVC",
+  "RedirectUri": "http://localhost:5100/signin-oidc",
+  "State": "CfDJ8GYYABICP9dGpL2y_MN4AcC1ahFxAiWk-puTnJ7MmmGoM6jg_7PJJ4yHs5YuQWYCiuK6PhSaM5sQoKrfPd00DTwiMUta0HrM1PAkmkMmu2-i6nxygN2VEAiwrCenp_WHz8nw4SYg4SAd1ZG7q4125SYFEbpWXasT8WrvrWQsA0T0YBTUiRrCH-I5ywJCC0BfiSn8MjOyHEdZ0AbK87H5lJ8lZKenJpcaAoIyZi4ghKNh4_yZJMVUUmalI-8V5zIlA89osT27Dcl2GIxqqNvZfqGB-jl0ei0stA7pxwSvjXMmxUcbswgNFNJh4FiEmToY8TTRc9oCqG9XpKQT1JhHRJo",
+  "Scope": "openid profile Basket.API Ordering.API offline_access"
+}
+2019-03-04 04:46:34.853 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 04:46:34.853 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 04:46:34.972 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0BGC685A0:00000003",
+  "TimeStamp": "2019-03-04T04:46:34Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:34.972 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0BGC685A0:00000003",
+  "TimeStamp": "2019-03-04T04:46:34Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:35.074 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "authorization_code",
+  "AuthorizationCode": "38833b752ab757634598f6fc4da44828c4b7aed19382050b9b1e322818eb14db",
+  "Raw": {
+    "client_id": "MVC",
+    "client_secret": "***REDACTED***",
+    "code": "38833b752ab757634598f6fc4da44828c4b7aed19382050b9b1e322818eb14db",
+    "grant_type": "authorization_code",
+    "redirect_uri": "http://localhost:5100/signin-oidc"
+  }
+}
+2019-03-04 04:46:35.075 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "authorization_code",
+  "AuthorizationCode": "38833b752ab757634598f6fc4da44828c4b7aed19382050b9b1e322818eb14db",
+  "Raw": {
+    "client_id": "MVC",
+    "client_secret": "***REDACTED***",
+    "code": "38833b752ab757634598f6fc4da44828c4b7aed19382050b9b1e322818eb14db",
+    "grant_type": "authorization_code",
+    "redirect_uri": "http://localhost:5100/signin-oidc"
+  }
+}
+2019-03-04 04:46:35.333 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "openid profile Basket.API Ordering.API offline_access",
+  "GrantType": "authorization_code",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****Itaw"
+    },
+    {
+      "TokenType": "refresh_token",
+      "TokenValue": "****cdfa"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****TC-Q"
+    }
+  ],
+  "ActivityId": "0HLL0BGC685A0:00000003",
+  "TimeStamp": "2019-03-04T04:46:35Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:35.334 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "openid profile Basket.API Ordering.API offline_access",
+  "GrantType": "authorization_code",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****Itaw"
+    },
+    {
+      "TokenType": "refresh_token",
+      "TokenValue": "****cdfa"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****TC-Q"
+    }
+  ],
+  "ActivityId": "0HLL0BGC685A0:00000003",
+  "TimeStamp": "2019-03-04T04:46:35Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:35.449 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-03-04 04:46:35.451 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-03-04 04:46:35.668 +00:00 [INF] Profile service returned to the following claim types: name email phone address address_details district city state zip_code
+2019-03-04 04:46:35.668 +00:00 [INF] Profile service returned to the following claim types: name email phone address address_details district city state zip_code
+2019-03-04 04:46:36.503 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 04:46:36.503 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 04:46:36.514 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0BGC685A7:00000001",
+  "TimeStamp": "2019-03-04T04:46:36Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:36.514 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0BGC685A7:00000001",
+  "TimeStamp": "2019-03-04T04:46:36Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:36.539 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 04:46:36.540 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 04:46:36.570 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****_WdA"
+    }
+  ],
+  "ActivityId": "0HLL0BGC685A7:00000001",
+  "TimeStamp": "2019-03-04T04:46:36Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:36.572 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****_WdA"
+    }
+  ],
+  "ActivityId": "0HLL0BGC685A7:00000001",
+  "TimeStamp": "2019-03-04T04:46:36Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:37.102 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-04 04:46:37.102 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-04 04:46:37.835 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-04 04:46:37.857 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-04 04:46:52.689 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 04:46:52.690 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 04:46:52.704 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0BGC685A9:00000001",
+  "TimeStamp": "2019-03-04T04:46:52Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:52.704 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0BGC685A9:00000001",
+  "TimeStamp": "2019-03-04T04:46:52Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:52.714 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 04:46:52.715 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 04:46:52.728 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****wgvw"
+    }
+  ],
+  "ActivityId": "0HLL0BGC685A9:00000001",
+  "TimeStamp": "2019-03-04T04:46:52Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:52.728 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****wgvw"
+    }
+  ],
+  "ActivityId": "0HLL0BGC685A9:00000001",
+  "TimeStamp": "2019-03-04T04:46:52Z",
+  "ProcessId": 108,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 04:46:54.126 +00:00 [INF] Message received:
+2019-03-04 04:46:54.127 +00:00 [INF] Message received:
+2019-03-04 04:46:54.148 +00:00 [INF] ----------------------------------
+2019-03-04 04:46:54.148 +00:00 [INF] ----------------------------------
+2019-03-04 04:46:54.197 +00:00 [INF] {"UsuarioId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"2fb91cdd-8dd0-43dc-95a5-660567ebcf1c","CreationDate":"2019-03-04T04:46:54.0869706Z"}
+2019-03-04 04:46:54.197 +00:00 [INF] {"UsuarioId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"2fb91cdd-8dd0-43dc-95a5-660567ebcf1c","CreationDate":"2019-03-04T04:46:54.0869706Z"}
+2019-03-04 04:46:54.214 +00:00 [INF] ----------------------------------
+2019-03-04 04:46:54.214 +00:00 [INF] ----------------------------------
+2019-03-04 05:25:04.915 +00:00 [INF] Message received:
+2019-03-04 05:25:05.096 +00:00 [INF] Message received:
+2019-03-04 05:25:05.160 +00:00 [INF] ----------------------------------
+2019-03-04 05:25:05.161 +00:00 [INF] ----------------------------------
+2019-03-04 05:25:05.231 +00:00 [INF] {"UsuarioId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"8fdb7bf8-11b4-440a-9f43-3e13c6d68458","CreationDate":"2019-03-04T05:25:04.5326665Z"}
+2019-03-04 05:25:05.238 +00:00 [INF] {"UsuarioId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"8fdb7bf8-11b4-440a-9f43-3e13c6d68458","CreationDate":"2019-03-04T05:25:04.5326665Z"}
+2019-03-04 05:25:05.274 +00:00 [INF] ----------------------------------
+2019-03-04 05:25:05.274 +00:00 [INF] ----------------------------------
+2019-03-04 13:11:20.246 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-04 13:11:20.448 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-04 13:12:00.766 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 13:12:00.772 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 13:12:00.855 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0KBMT36B0:00000001",
+  "TimeStamp": "2019-03-04T13:12:00Z",
+  "ProcessId": 2450,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:12:00.856 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0KBMT36B0:00000001",
+  "TimeStamp": "2019-03-04T13:12:00Z",
+  "ProcessId": 2450,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:12:01.022 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 13:12:01.022 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 13:12:01.160 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****wygQ"
+    }
+  ],
+  "ActivityId": "0HLL0KBMT36B0:00000001",
+  "TimeStamp": "2019-03-04T13:12:01Z",
+  "ProcessId": 2450,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:12:01.161 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****wygQ"
+    }
+  ],
+  "ActivityId": "0HLL0KBMT36B0:00000001",
+  "TimeStamp": "2019-03-04T13:12:01Z",
+  "ProcessId": 2450,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:12:01.458 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-04 13:12:01.460 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-04 13:12:01.590 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-04 13:12:01.590 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-04 13:12:08.768 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 13:12:08.772 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 13:12:08.784 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0KBMT36B2:00000001",
+  "TimeStamp": "2019-03-04T13:12:08Z",
+  "ProcessId": 2450,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:12:08.784 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0KBMT36B2:00000001",
+  "TimeStamp": "2019-03-04T13:12:08Z",
+  "ProcessId": 2450,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:12:08.812 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 13:12:08.812 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 13:12:08.825 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****eSlA"
+    }
+  ],
+  "ActivityId": "0HLL0KBMT36B2:00000001",
+  "TimeStamp": "2019-03-04T13:12:08Z",
+  "ProcessId": 2450,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:12:08.826 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****eSlA"
+    }
+  ],
+  "ActivityId": "0HLL0KBMT36B2:00000001",
+  "TimeStamp": "2019-03-04T13:12:08Z",
+  "ProcessId": 2450,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:12:10.578 +00:00 [INF] Message received:
+2019-03-04 13:12:10.578 +00:00 [INF] Message received:
+2019-03-04 13:12:10.597 +00:00 [INF] ----------------------------------
+2019-03-04 13:12:10.597 +00:00 [INF] ----------------------------------
+2019-03-04 13:12:10.608 +00:00 [INF] {"UsuarioId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"dc36bdfd-ca79-489d-9c71-9d71ebaed4b2","CreationDate":"2019-03-04T13:12:10.4778066Z"}
+2019-03-04 13:12:10.608 +00:00 [INF] {"UsuarioId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"dc36bdfd-ca79-489d-9c71-9d71ebaed4b2","CreationDate":"2019-03-04T13:12:10.4778066Z"}
+2019-03-04 13:12:10.618 +00:00 [INF] ----------------------------------
+2019-03-04 13:12:10.618 +00:00 [INF] ----------------------------------
+2019-03-04 13:14:52.769 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-04 13:14:52.887 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-04 13:22:40.726 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 13:22:40.733 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 13:22:40.828 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0KDM3SRUC:00000001",
+  "TimeStamp": "2019-03-04T13:22:40Z",
+  "ProcessId": 2673,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:22:40.830 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0KDM3SRUC:00000001",
+  "TimeStamp": "2019-03-04T13:22:40Z",
+  "ProcessId": 2673,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:22:40.992 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 13:22:40.994 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 13:22:41.157 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****60cA"
+    }
+  ],
+  "ActivityId": "0HLL0KDM3SRUC:00000001",
+  "TimeStamp": "2019-03-04T13:22:41Z",
+  "ProcessId": 2673,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:22:41.162 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****60cA"
+    }
+  ],
+  "ActivityId": "0HLL0KDM3SRUC:00000001",
+  "TimeStamp": "2019-03-04T13:22:41Z",
+  "ProcessId": 2673,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:22:41.475 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-04 13:22:41.477 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-04 13:22:41.622 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-04 13:22:41.622 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-04 13:22:48.570 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 13:22:48.582 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-04 13:22:48.624 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0KDM3SRUE:00000001",
+  "TimeStamp": "2019-03-04T13:22:48Z",
+  "ProcessId": 2673,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:22:48.624 +00:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "MVC",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLL0KDM3SRUE:00000001",
+  "TimeStamp": "2019-03-04T13:22:48Z",
+  "ProcessId": 2673,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:22:48.644 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 13:22:48.644 +00:00 [INF] Token request validation success
+{
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "GrantType": "client_credentials",
+  "Scopes": "Basket.API",
+  "Raw": {
+    "grant_type": "client_credentials",
+    "scope": "Basket.API"
+  }
+}
+2019-03-04 13:22:48.676 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****aqFg"
+    }
+  ],
+  "ActivityId": "0HLL0KDM3SRUE:00000001",
+  "TimeStamp": "2019-03-04T13:22:48Z",
+  "ProcessId": 2673,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:22:48.676 +00:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "MVC",
+  "ClientName": "MVC",
+  "Endpoint": "Token",
+  "Scopes": "Basket.API",
+  "GrantType": "client_credentials",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****aqFg"
+    }
+  ],
+  "ActivityId": "0HLL0KDM3SRUE:00000001",
+  "TimeStamp": "2019-03-04T13:22:48Z",
+  "ProcessId": 2673,
+  "LocalIpAddress": "172.18.0.10:80",
+  "RemoteIpAddress": "172.18.0.1"
+}
+2019-03-04 13:22:50.569 +00:00 [INF] Message received:
+2019-03-04 13:22:50.569 +00:00 [INF] Message received:
+2019-03-04 13:22:50.583 +00:00 [INF] ----------------------------------
+2019-03-04 13:22:50.583 +00:00 [INF] ----------------------------------
+2019-03-04 13:22:50.653 +00:00 [INF] {"UsuarioId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"5e24df9e-b16c-421c-b620-6571f61d957f","CreationDate":"2019-03-04T13:22:50.3691781Z"}
+2019-03-04 13:22:50.653 +00:00 [INF] {"UsuarioId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"5e24df9e-b16c-421c-b620-6571f61d957f","CreationDate":"2019-03-04T13:22:50.3691781Z"}
+2019-03-04 13:22:50.688 +00:00 [INF] ----------------------------------
+2019-03-04 13:22:50.688 +00:00 [INF] ----------------------------------

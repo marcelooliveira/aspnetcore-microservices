@@ -28,15 +28,18 @@ namespace Catalog.API
         {
             Configuration = configuration;
 
-            // Create Serilog Elasticsearch logger
             Log.Logger = new LoggerConfiguration()
-               .Enrich.FromLogContext()
-               .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
-               {
-                   MinimumLogEventLevel = LogEventLevel.Information,
-                   AutoRegisterTemplate = true
-               })
-               .CreateLogger();
+                .MinimumLevel.Information()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                .MinimumLevel.Override("System", LogEventLevel.Warning)
+                .Enrich.FromLogContext()
+                .WriteTo.File(@"Catalog.API_log.txt")
+                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
+                {
+                    MinimumLogEventLevel = LogEventLevel.Information,
+                    AutoRegisterTemplate = true
+                })
+                .CreateLogger();
         }
 
         public IConfiguration Configuration { get; }

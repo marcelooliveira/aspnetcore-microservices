@@ -12,7 +12,7 @@ namespace Messages.IntegrationEvents.Events
 
         public RegistryEvent(string usuarioId, string name, string email, string phone, string address, string additionalAddress, string district, string city, string state, string zipCode)
         {
-            UsuarioId = usuarioId;
+            UserId = usuarioId;
             Name = name;
             Email = email;
             Phone = phone;
@@ -24,7 +24,7 @@ namespace Messages.IntegrationEvents.Events
             ZipCode = zipCode;
         }
 
-        public string UsuarioId { get; set; }
+        public string UserId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
