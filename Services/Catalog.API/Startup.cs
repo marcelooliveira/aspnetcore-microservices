@@ -31,10 +31,9 @@ namespace Catalog.API
             // Create Serilog Elasticsearch logger
             Log.Logger = new LoggerConfiguration()
                .Enrich.FromLogContext()
-               .MinimumLevel.Debug()
                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
                {
-                   MinimumLogEventLevel = LogEventLevel.Verbose,
+                   MinimumLogEventLevel = LogEventLevel.Information,
                    AutoRegisterTemplate = true
                })
                .CreateLogger();
@@ -98,8 +97,7 @@ namespace Catalog.API
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            loggerFactory.AddSerilog();
 
             if (env.IsDevelopment())
             {

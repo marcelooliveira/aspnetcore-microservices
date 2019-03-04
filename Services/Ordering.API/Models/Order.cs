@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -50,5 +51,10 @@ namespace Ordering.Models
         [Required(ErrorMessage = "CEP is required")]
         public string CustomerZipCode { get; set; } = "";
         public DateTime DateCreated { get; set; } = DateTime.Now;
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
     }
 }

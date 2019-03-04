@@ -1,4 +1,5 @@
 ﻿using Messages.Events;
+using Newtonsoft.Json;
 
 namespace Messages.IntegrationEvents.Events
 {
@@ -33,5 +34,10 @@ namespace Messages.IntegrationEvents.Events
         public string City { get; set; }
         public string State { get; set; }
         public string ZipCode { get; set; }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
     }
 }

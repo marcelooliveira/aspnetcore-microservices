@@ -12,12 +12,14 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace Ordering.Commands
 {
     public class CreateOrderCommandHandler
         : IRequestHandler<IdentifiedCommand<CreateOrderCommand, bool>, bool>
     {
+        private EventId EventId_CreateOrder = new EventId(1003, "Checkout");
         private readonly IOrderRepository _orderRepository;
         private readonly ILogger<CreateOrderCommandHandler> _logger;
         private readonly IBus _bus;
@@ -114,6 +116,8 @@ namespace Ordering.Commands
                 Order newOrder = await this._orderRepository.CreateOrUpdate(order);
 
                 string notificationText = $"New order placed successfully: {newOrder.Id}";
+
+                _logger.LogInformation(eventId: EventId_CreateOrder, message: "New order has been placed successfully: {Order}", newOrder);
 
                 HttpClient httpClient = new HttpClient();
                 string userNotificationHubUrl = $"{_configuration["SignalRServerUrl"]}usernotificationhub";

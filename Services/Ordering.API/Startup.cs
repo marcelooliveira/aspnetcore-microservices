@@ -52,10 +52,9 @@ namespace Ordering
 
             Log.Logger = new LoggerConfiguration()
                .Enrich.FromLogContext()
-               .MinimumLevel.Debug()
                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
                {
-                   MinimumLogEventLevel = LogEventLevel.Verbose,
+                   MinimumLogEventLevel = LogEventLevel.Information,
                    AutoRegisterTemplate = true
                })
                .CreateLogger();
@@ -167,8 +166,7 @@ namespace Ordering
 
         public void Configure(IServiceProvider serviceProvider, IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            loggerFactory.AddSerilog();
 
             app.UseRebus(
                 async (bus) =>

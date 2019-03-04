@@ -47,10 +47,9 @@ namespace Identity.API
 
             Log.Logger = new LoggerConfiguration()
                .Enrich.FromLogContext()
-               .MinimumLevel.Debug()
                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(Configuration["ELASTICSEARCH_URL"]))
                {
-                   MinimumLogEventLevel = LogEventLevel.Verbose,
+                   MinimumLogEventLevel = LogEventLevel.Information,
                    AutoRegisterTemplate = true
                })
                .CreateLogger();
@@ -136,8 +135,7 @@ namespace Identity.API
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            loggerFactory.AddSerilog();
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             app.UseRebus(

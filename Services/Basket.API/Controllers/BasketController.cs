@@ -4,8 +4,12 @@ using Messages.Events;
 using Messages.IntegrationEvents.Events;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Rebus.Bus;
+using Serilog;
+using Serilog.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,18 +25,23 @@ namespace Basket.API.Controllers
     [Authorize]
     public class BasketController : Controller
     {
+        private EventId EventId_Checkout = new EventId(1001, "Checkout");
+        private EventId EventId_Registry = new EventId(1002, "Checkout");
         private readonly IBasketRepository _repository;
         private readonly IIdentityService _identityService;
         private readonly IBus _bus;
-        
+        private readonly ILogger<BasketController> _logger;
+
         public BasketController(IBasketRepository repository
             , IIdentityService identityService
             , IBus bus
+            , ILogger<BasketController> logger
             )
         {
             _repository = repository;
             _identityService = identityService;
             _bus = bus;
+            _logger = logger;
         }
 
         //GET /id
@@ -184,6 +193,8 @@ namespace Basket.API.Controllers
                     , Guid.NewGuid()
                     , items);
 
+            _logger.LogInformation(eventId: EventId_Checkout, message: "Check out event has been dispatched: {CheckoutEvent}", args: checkoutEvent);
+
             //Once we complete it, it sends an integration event to API Ordering 
             //to convert the basket to order and continue with the order 
             //creation process
@@ -194,6 +205,8 @@ namespace Basket.API.Controllers
                  (customerId, input.Name, input.Email, input.Phone
                     , input.Address, input.AdditionalAddress, input.District
                     , input.City, input.State, input.ZipCode);
+
+            _logger.LogInformation(eventId: EventId_Registry, message: "Registry event has been dispatched: {RegistryEvent}", args: registryEvent);
 
             await _bus.Publish(registryEvent);
 
