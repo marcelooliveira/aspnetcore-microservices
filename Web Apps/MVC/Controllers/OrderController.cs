@@ -6,6 +6,7 @@ using MVC.Model.Redis;
 using MVC.SignalR;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Models;
 
 namespace Controllers
 {
@@ -29,7 +30,7 @@ namespace Controllers
         [HttpGet("{customerId}")]
         public async Task<ActionResult> History(string customerId)
         {
-            await CheckUserNotificationCount();
+            await CheckUserCounterData();
 
             List<OrderDTO> model = await orderService.GetAsync(customerId);
             return base.View(model);
@@ -39,9 +40,10 @@ namespace Controllers
         public async Task<ActionResult> Notifications()
         {
             string customerId = GetUserId();
-            List<Models.UserNotification> notifications = await userRedisRepository.GetUserNotificationsAsync(customerId);
+            UserCounterData userCounterData = await userRedisRepository.GetUserCounterDataAsync(customerId);
             await userRedisRepository.MarkAllAsReadAsync(customerId);
-            return View(notifications);
+            await CheckUserCounterData();
+            return View(userCounterData);
         }
     }
 }

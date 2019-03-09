@@ -29,51 +29,54 @@ namespace MVC.Model.Redis
             return _redis.GetServer(endpoints.First());
         }
 
-        public async Task<List<UserNotification>> GetUserNotificationsAsync(string customerId)
+        public async Task<UserCounterData> GetUserCounterDataAsync(string customerId)
         {
             if (string.IsNullOrWhiteSpace(customerId))
                 throw new ArgumentException();
 
-            List<UserNotification> userNotifications;
+            UserCounterData userCounterData;
             var data = await _database.StringGetAsync(customerId);
             if (data.IsNullOrEmpty)
             {
-                userNotifications = new List<UserNotification>();
-                await UpdateUserNotificationAsync(customerId, userNotifications);
-                return userNotifications;
+                List<UserNotification> userNotifications = new List<UserNotification>();
+                userCounterData = new UserCounterData(userNotifications, 0);
+                await UpdateUserCounterDataAsync(customerId, userCounterData);
+                return userCounterData;
             }
 
-            userNotifications = JsonConvert.DeserializeObject<List<UserNotification>>(data);
-            userNotifications = userNotifications.OrderByDescending(n => n.DateCreated).ToList();
-            return userNotifications;
-        }
-
-        public async Task<List<UserNotification>> GetUnreadUserNotificationsAsync(string customerId)
-        {
-            var notifications = await GetUserNotificationsAsync(customerId);
-            return notifications.Where(n => !n.DateVisualized.HasValue).ToList();
+            userCounterData = JsonConvert.DeserializeObject<UserCounterData>(data);
+            userCounterData.Notifications = userCounterData.Notifications.OrderByDescending(n => n.DateCreated).ToList();
+            return userCounterData;
         }
 
         public async Task AddUserNotificationAsync(string customerId, UserNotification userNotification)
         {
-            var userNotifications = await GetUserNotificationsAsync(customerId);
-            userNotifications.Add(userNotification);
-            await UpdateUserNotificationAsync(customerId, userNotifications);
+            var userCounterData = await GetUserCounterDataAsync(customerId);
+            userCounterData.Notifications.Add(userNotification);
+            await UpdateUserCounterDataAsync(customerId, userCounterData);
+        }
+
+        public async Task UpdateUserBasketCountAsync(string customerId, int userBasketCount)
+        {
+            var userCounterData = await GetUserCounterDataAsync(customerId);
+            userCounterData.BasketCount = userBasketCount;
+            await UpdateUserCounterDataAsync(customerId, userCounterData);
         }
 
         public async Task MarkAllAsReadAsync(string customerId)
         {
-            var notifications = await GetUserNotificationsAsync(customerId);
-            foreach (var notification in notifications.Where(n => !n.DateVisualized.HasValue))
+            UserCounterData userCounterData = await GetUserCounterDataAsync(customerId);
+            foreach (var notification in
+                userCounterData.Notifications.Where(n => !n.DateVisualized.HasValue))
             {
                 notification.DateVisualized = DateTime.Now;
             }
-            await UpdateUserNotificationAsync(customerId, notifications);
+            await UpdateUserCounterDataAsync(customerId, userCounterData);
         }
 
-        private async Task UpdateUserNotificationAsync(string customerId, List<UserNotification> userNotifications)
+        private async Task UpdateUserCounterDataAsync(string customerId, UserCounterData userCounterData)
         {
-            var json = JsonConvert.SerializeObject(userNotifications);
+            var json = JsonConvert.SerializeObject(userCounterData);
             await _database.StringSetAsync(customerId, json);
         }
     }

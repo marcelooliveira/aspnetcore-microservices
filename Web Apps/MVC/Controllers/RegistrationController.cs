@@ -29,8 +29,6 @@ namespace Controllers
         [Authorize]
         public async Task<IActionResult> Index()
         {
-            await CheckUserNotificationCount();
-
             try
             {
                 var usuario = appUserParser.Parse(HttpContext.User);
@@ -48,6 +46,7 @@ namespace Controllers
                         State = usuario.State
                     };
 
+                await CheckUserCounterData();
                 return View(registration);
             }
             catch (Exception e)

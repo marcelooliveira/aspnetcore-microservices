@@ -2,6 +2,8 @@ using Basket.API.Controllers;
 using Basket.API.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Moq;
 using Rebus.Bus;
 using System.Collections.Generic;
@@ -18,12 +20,16 @@ namespace Basket.API.Tests
         private readonly Mock<IBasketRepository> _basketRepositoryMock;
         private readonly Mock<IBasketIdentityService> _identityServiceMock;
         private readonly Mock<IBus> _serviceBusMock;
+        private readonly Mock<ILogger<BasketController>> _loggerMock;
+        private readonly Mock<IConfiguration> _configurationMock;
 
         public BasketControllerTest()
         {
             _basketRepositoryMock = new Mock<IBasketRepository>();
             _identityServiceMock = new Mock<IBasketIdentityService>();
             _serviceBusMock = new Mock<IBus>();
+            _loggerMock = new Mock<ILogger<BasketController>>();
+            _configurationMock = new Mock<IConfiguration>();
         }
 
         #region Get
@@ -46,7 +52,9 @@ namespace Basket.API.Tests
             var basketController = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
 
             var actionResult = await basketController.Get(fakeCustomerId) as OkObjectResult;
 
@@ -68,7 +76,8 @@ namespace Basket.API.Tests
             //arrange
             var controller =
                 new BasketController(_basketRepositoryMock.Object,
-                _identityServiceMock.Object, _serviceBusMock.Object);
+                _identityServiceMock.Object, _serviceBusMock.Object,
+                _loggerMock.Object, _configurationMock.Object);
 
             //act
             IActionResult actionResult = await controller.Get(null);
@@ -91,7 +100,8 @@ namespace Basket.API.Tests
 
             var controller =
                 new BasketController(_basketRepositoryMock.Object,
-                _identityServiceMock.Object, _serviceBusMock.Object);
+                _identityServiceMock.Object, _serviceBusMock.Object,
+                _loggerMock.Object, _configurationMock.Object);
 
             //act
             IActionResult actionResult = await controller.Get(customerId);
@@ -122,7 +132,9 @@ namespace Basket.API.Tests
             var basketController = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
 
             var actionResult = await basketController.Post(fakeCustomerBasket) as OkObjectResult;
 
@@ -150,7 +162,9 @@ namespace Basket.API.Tests
             var basketController = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
 
             var actionResult = await basketController.Post(fakeCustomerBasket);
 
@@ -168,7 +182,9 @@ namespace Basket.API.Tests
             var controller = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
             controller.ModelState.AddModelError("CustomerId", "Required");
 
             //Act
@@ -177,7 +193,7 @@ namespace Basket.API.Tests
             //Assert
             BadRequestObjectResult badRequestObjectResult = Assert.IsType<BadRequestObjectResult>(actionResult);
         }
-        
+
         #endregion
 
         #region Checkout
@@ -190,7 +206,9 @@ namespace Basket.API.Tests
             var basketController = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
             RegistrationViewModel input = new RegistrationViewModel();
             basketController.ModelState.AddModelError("Email", "Required");
 
@@ -212,7 +230,9 @@ namespace Basket.API.Tests
             var basketController = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
             RegistrationViewModel input = new RegistrationViewModel();
 
             //Act
@@ -238,7 +258,8 @@ namespace Basket.API.Tests
             //    .Verifiable();
 
             var basketController = new BasketController(
-                _basketRepositoryMock.Object, _identityServiceMock.Object, _serviceBusMock.Object);
+                _basketRepositoryMock.Object, _identityServiceMock.Object, _serviceBusMock.Object,
+                _loggerMock.Object, _configurationMock.Object);
 
             basketController.ControllerContext = new ControllerContext()
             {
@@ -283,7 +304,9 @@ namespace Basket.API.Tests
             var controller = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
 
             //act
             ActionResult<CustomerBasket> actionResult = await controller.AddItem(customerId, input);
@@ -309,13 +332,15 @@ namespace Basket.API.Tests
             var controller = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
 
             //act
             ActionResult<CustomerBasket> actionResult = await controller.AddItem(customerId, input);
 
             //assert
-            NotFoundObjectResult notFoundObjectResult =  Assert.IsType<NotFoundObjectResult>(actionResult.Result);
+            NotFoundObjectResult notFoundObjectResult = Assert.IsType<NotFoundObjectResult>(actionResult.Result);
             Assert.Equal(customerId, notFoundObjectResult.Value);
         }
 
@@ -331,7 +356,9 @@ namespace Basket.API.Tests
             var controller = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
             controller.ModelState.AddModelError("ProductId", "Required");
 
             //act
@@ -365,7 +392,9 @@ namespace Basket.API.Tests
             var controller = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
 
             //act
             ActionResult<UpdateQuantityOutput> actionResult = await controller.UpdateItem(customerId, new UpdateQuantityInput(input.ProductId, input.Quantity));
@@ -391,7 +420,9 @@ namespace Basket.API.Tests
             var controller = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
 
             //act
             ActionResult<UpdateQuantityOutput> actionResult = await controller.UpdateItem(customerId, new UpdateQuantityInput(input.ProductId, input.Quantity));
@@ -410,7 +441,9 @@ namespace Basket.API.Tests
             var controller = new BasketController(
                 _basketRepositoryMock.Object,
                 _identityServiceMock.Object,
-                _serviceBusMock.Object);
+                _serviceBusMock.Object,
+                _loggerMock.Object,
+                _configurationMock.Object);
             controller.ModelState.AddModelError("ProductId", "Required");
 
             //act

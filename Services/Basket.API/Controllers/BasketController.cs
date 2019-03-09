@@ -3,13 +3,12 @@ using Basket.API.Services;
 using Messages.Events;
 using Messages.IntegrationEvents.Events;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using Rebus.Bus;
-using Serilog;
-using Serilog.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,22 +25,38 @@ namespace Basket.API.Controllers
     public class BasketController : Controller
     {
         private EventId EventId_Checkout = new EventId(1001, "Checkout");
-        private EventId EventId_Registry = new EventId(1002, "Checkout");
+        private EventId EventId_Registry = new EventId(1002, "Registry");
         private readonly IBasketRepository _repository;
         private readonly IIdentityService _identityService;
         private readonly IBus _bus;
         private readonly ILogger<BasketController> _logger;
+        private readonly IConfiguration _configuration;
+        private readonly HubConnection _connection;
 
         public BasketController(IBasketRepository repository
             , IIdentityService identityService
             , IBus bus
             , ILogger<BasketController> logger
-            )
+            , IConfiguration configuration)
         {
             _repository = repository;
             _identityService = identityService;
             _bus = bus;
             _logger = logger;
+            _configuration = configuration;
+
+            string userCounterDataHubUrl = $"{_configuration["SignalRServerUrl"]}usercounterdatahub";
+
+            this._connection = new HubConnectionBuilder()
+                .WithUrl(userCounterDataHubUrl, HttpTransportType.WebSockets)
+                .Build();
+            this._connection.Closed += async (error) =>
+            {
+                await Task.Delay(new Random().Next(0, 5) * 1000);
+                await this._connection.StartAsync();
+            };
+
+            this._connection.StartAsync().GetAwaiter();
         }
 
         //GET /id
@@ -88,6 +103,10 @@ namespace Basket.API.Controllers
             try
             {
                 var basket = await _repository.UpdateBasketAsync(input);
+
+                await this._connection
+                    .InvokeAsync("UpdateUserBasketCount", $"{input.CustomerId}", basket.Items.Count);
+
                 return Ok(basket);
             }
             catch (KeyNotFoundException)
@@ -115,6 +134,10 @@ namespace Basket.API.Controllers
             try
             {
                 var basket = await _repository.AddBasketAsync(customerId, input);
+
+                await this._connection
+                    .InvokeAsync("UpdateUserBasketCount", $"{customerId}", basket.Items.Count);
+
                 return Ok(basket);
             }
             catch (KeyNotFoundException)
@@ -141,8 +164,12 @@ namespace Basket.API.Controllers
 
             try
             {
-                var basket = await _repository.UpdateBasketAsync(customerId, input);
-                return Ok(basket);
+                var output = await _repository.UpdateBasketAsync(customerId, input);
+
+                await this._connection
+                    .InvokeAsync("UpdateUserBasketCount", $"{customerId}", output.CustomerBasket.Items.Count);
+
+                return Ok(output);
             }
             catch (KeyNotFoundException)
             {
@@ -193,12 +220,13 @@ namespace Basket.API.Controllers
                     , Guid.NewGuid()
                     , items);
 
-            _logger.LogInformation(eventId: EventId_Checkout, message: "Check out event has been dispatched: {CheckoutEvent}", args: checkoutEvent);
 
             //Once we complete it, it sends an integration event to API Ordering 
             //to convert the basket to order and continue with the order 
             //creation process
             await _bus.Publish(checkoutEvent);
+
+            _logger.LogInformation(eventId: EventId_Checkout, message: "Check out event has been dispatched: {CheckoutEvent}", args: checkoutEvent);
 
             var registryEvent
                 = new RegistryEvent
@@ -206,13 +234,24 @@ namespace Basket.API.Controllers
                     , input.Address, input.AdditionalAddress, input.District
                     , input.City, input.State, input.ZipCode);
 
-            _logger.LogInformation(eventId: EventId_Registry, message: "Registry event has been dispatched: {RegistryEvent}", args: registryEvent);
-
             await _bus.Publish(registryEvent);
 
-            await _repository.DeleteBasketAsync(customerId);
+            _logger.LogInformation(eventId: EventId_Registry, message: "Registry event has been dispatched: {RegistryEvent}", args: registryEvent);
 
-            return Accepted(true);
+            try
+            {
+                await _repository.DeleteBasketAsync(customerId);
+
+                await this._connection
+                    .InvokeAsync("UpdateUserBasketCount", $"{customerId}", 0);
+
+                return Accepted(true);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, e.Message);
+                throw;
+            }
         }
     }
 }

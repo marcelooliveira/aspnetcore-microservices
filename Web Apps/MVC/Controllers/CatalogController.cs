@@ -1,12 +1,9 @@
-﻿using Models.ViewModels;
-using Services;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Models.ViewModels;
 using MVC.Model.Redis;
-using MVC.SignalR;
 using Polly.CircuitBreaker;
+using Services;
 using System;
 using System.Threading.Tasks;
 
@@ -27,10 +24,9 @@ namespace Controllers
 
         public async Task<IActionResult> Index()
         {
-            await CheckUserNotificationCount();
-
             try
             {
+                await CheckUserCounterData();
                 var products = await catalogService.GetProducts();
                 var resultado = new SearchProductsViewModel(products, "");
                 return base.View(resultado);
@@ -49,12 +45,11 @@ namespace Controllers
             return View();
         }
 
-        public async Task<IActionResult> BuscaProducts(string pesquisa)
+        public async Task<IActionResult> SearchProducts(string pesquisa)
         {
-            await CheckUserNotificationCount();
-
             try
             {
+                await CheckUserCounterData();
                 var products = await catalogService.SearchProducts(pesquisa);
                 var resultado = new SearchProductsViewModel(products, pesquisa);
                 return View("Index", resultado);

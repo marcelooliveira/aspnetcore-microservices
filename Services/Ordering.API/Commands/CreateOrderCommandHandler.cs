@@ -38,10 +38,10 @@ namespace Ordering.Commands
             this._bus = bus;
             this._configuration = configuration;
 
-            string userNotificationHubUrl = $"{_configuration["SignalRServerUrl"]}usernotificationhub";
-            
+            string userCounterDataHubUrl = $"{_configuration["SignalRServerUrl"]}usercounterdatahub";
+
             this._connection = new HubConnectionBuilder()
-                .WithUrl(userNotificationHubUrl, HttpTransportType.WebSockets)
+                .WithUrl(userCounterDataHubUrl, HttpTransportType.WebSockets)
                 .Build();
             this._connection.Closed += async (error) =>
             {
@@ -118,7 +118,6 @@ namespace Ordering.Commands
                 _logger.LogInformation(eventId: EventId_CreateOrder, message: "New order has been placed successfully: {Order}", newOrder);
 
                 HttpClient httpClient = new HttpClient();
-                string userNotificationHubUrl = $"{_configuration["SignalRServerUrl"]}usernotificationhub";
 
                 await this._connection.InvokeAsync("SendUserNotification",
                     $"{newOrder.CustomerId}", notificationText);

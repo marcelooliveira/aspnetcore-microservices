@@ -42,7 +42,7 @@ namespace Controllers
 
         public async Task<IActionResult> Index(string code = null)
         {
-            await CheckUserNotificationCount();
+            await CheckUserCounterData();
 
             try
             {
@@ -64,6 +64,7 @@ namespace Controllers
                 {
                     basket = await basketService.GetBasket(idUsuario);
                 }
+                await CheckUserCounterData();
                 return View(basket);
             }
             catch (BrokenCircuitException e)
@@ -90,7 +91,7 @@ namespace Controllers
             try
             {
                 var usuario = appUserParser.Parse(HttpContext.User);
-                var basket = basketService.UpdateQuantities(usuario, quantidades);
+                var basket = await basketService.UpdateQuantities(usuario, quantidades);
             }
             catch (BrokenCircuitException e)
             {
@@ -153,13 +154,12 @@ namespace Controllers
 
         public async Task<IActionResult> Checkout()
         {
-            await CheckUserNotificationCount();
-
             try
             {
                 string idUsuario = GetUserId();
 
                 var usuario = appUserParser.Parse(HttpContext.User);
+                await CheckUserCounterData();
                 return View(new OrderConfirmed(usuario.Email));
             }
             catch (Exception e)

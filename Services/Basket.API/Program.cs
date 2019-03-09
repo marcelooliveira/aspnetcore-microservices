@@ -21,7 +21,7 @@ namespace Basket.API
             BuildWebHost(args)
                 .Run();
         }
-
+        
         public static IWebHost BuildWebHost(string[] args)
         {
             return WebHost.CreateDefaultBuilder(args)
