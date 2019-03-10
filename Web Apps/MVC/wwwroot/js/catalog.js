@@ -22,17 +22,7 @@
             headers: headers
         }).done(function (response) {
             let items = response.Items;
-            catalog.showSnackbar();
-            //let itemLine = $('[item-id=' + basketItem.Id + ']');
-            //itemLine.find('input').val(basketItem.Quantity);
-            //itemLine.find('[subtotal]').html((basketItem.Subtotal).twoDigits());
-            //let customerBasket = response.CustomerBasket;
-            //$('[item-qty]').html('Total: ' + customerBasket.Items.length + ' items');
-            //$('[total]').html((customerBasket.Total).twoDigits());
-
-            //if (basketItem.Quantity === 0) {
-            //    itemLine.remove();
-            //}
+            catalogo.showSnackbar();
         });
     }
 
