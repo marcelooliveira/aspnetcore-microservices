@@ -75,10 +75,10 @@
                                         <div class="product-nome">@product.Name</div>
                                         <div><h4><strong>R$ @product.Price.ToString("0.00")</strong></h4></div>
                                         <div class="text-center">
-                                            <a asp-controller="basket"
-                                               asp-action="index"
-                                               asp-route-code="@product.Code"
-                                               class="btn btn-success">Add to basket</a>
+                                            <button class="btn btn-success btn-addtobasket" code="@product.Code"
+                                                    onclick="catalog.clickAddToBasket(this)">
+                                                Add to basket
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -101,4 +101,10 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <div id="snackbar">Product has been added successfully to the basket...</div>
+}
+
+@section Scripts
+    {
+    <script src="~/js/catalog.js"></script>
 }

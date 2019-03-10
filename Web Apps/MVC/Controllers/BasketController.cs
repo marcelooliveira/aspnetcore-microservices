@@ -80,31 +80,38 @@ namespace Controllers
             return View();
         }
 
+        async Task<CustomerBasket> AddProductAsync(string code = null)
+        {
+            string idUsuario = GetUserId();
+            CustomerBasket basket;
+            if (!string.IsNullOrWhiteSpace(code))
+            {
+                var product = await catalogService.GetProduct(code);
+                if (product == null)
+                {
+                    return null;
+                }
+
+                BasketItem itemBasket =
+                    new BasketItem(product.Code
+                    , product.Code
+                    , product.Name
+                    , product.Price
+                    , 1
+                    , product.ImageURL);
+                basket = await basketService.AddItem(idUsuario, itemBasket);
+                await CheckUserCounterData();
+            }
+            else
+            {
+                basket = await basketService.GetBasket(idUsuario);
+            }
+            return basket;
+        }
+
         public IActionResult ProductNotFound(string code)
         {
             return View(code);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Index(Dictionary<string, int> quantidades, string action)
-        {
-            try
-            {
-                var usuario = appUserParser.Parse(HttpContext.User);
-                var basket = await basketService.UpdateQuantities(usuario, quantidades);
-            }
-            catch (BrokenCircuitException e)
-            {
-                logger.LogError(e, e.Message);
-                HandleBrokenCircuitException(basketService);
-            }
-            catch (Exception e)
-            {
-                logger.LogError(e, e.Message);
-                HandleException();
-            }
-
-            return View();
         }
 
         [HttpPost]
@@ -168,6 +175,21 @@ namespace Controllers
                 HandleException();
             }
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public async Task<IActionResult> AddToBasket([FromBody]string code)
+        {
+            if (string.IsNullOrWhiteSpace(code))
+            {
+                return NotFound(code);
+            }
+
+            CustomerBasket basket = await AddProductAsync(code);
+
+            return base.Ok(basket);
         }
     }
 }

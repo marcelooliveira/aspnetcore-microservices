@@ -78,9 +78,9 @@
                             <div class="container-notification">
                                 <a asp-action="notifications" asp-controller="order">
                                     @if (userCounterData != null
-                                        && userCounterData.Notifications.Count > 0)
+                                        && userCounterData.UnreadNotificationCount > 0)
                                     {
-                                        <div class="user-count notification show-count" data-count="@userCounterData.Notifications.Count"></div>
+                                        <div class="user-count notification show-count" data-count="@userCounterData.UnreadNotificationCount"></div>
                                     }
                                     else
                                     {
@@ -97,9 +97,9 @@
                         </li>
                         <li>
                             <div class="container-notification">
-                                <a asp-action="index" asp-controller="carrinho" asp-route-codigo="">
+                                <a asp-action="index" asp-controller="basket" asp-route-code="">
                                     @if (userCounterData != null
-                                        && userCounterData.BasketCount > 0)
+                                       && userCounterData.BasketCount > 0)
                                     {
                                         <div class="user-count userbasket show-count" data-count="@userCounterData.BasketCount"></div>
                                     }

@@ -41,7 +41,7 @@ namespace Services
 
         public async Task<CustomerBasket> GetBasket(string userId)
         {
-            return await GetAsync<CustomerBasket>(BasketUris.GetBasket, userId);
+            return await GetAuthenticatedAsync<CustomerBasket>(BasketUris.GetBasket, userId);
         }
 
         public async Task<CustomerBasket> AddItem(string customerId, BasketItem input)
