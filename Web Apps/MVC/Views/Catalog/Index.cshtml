@@ -73,12 +73,22 @@
                                     </div>
                                     <div class="panel-footer product-footer">
                                         <div class="product-nome">@product.Name</div>
-                                        <div><h4><strong>R$ @product.Price.ToString("0.00")</strong></h4></div>
+                                        <div><h4><strong>$ @product.Price.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US"))</strong></h4></div>
                                         <div class="text-center">
-                                            <button class="btn btn-success btn-addtobasket" code="@product.Code"
-                                                    onclick="catalog.clickAddToBasket(this)">
-                                                Add to basket
-                                            </button>
+                                            @if (ViewBag.UserCounterData != null)
+                                            {
+                                                <button class="btn btn-success btn-addtobasket" code="@product.Code"
+                                                        onclick="catalog.clickAddToBasket(this)">
+                                                    Add to basket
+                                                </button>
+                                            }
+                                            else
+                                            {
+                                                <a asp-controller="basket" asp-action="index" asp-route-code="@product.Code"
+                                                   class="btn btn-success btn-addtobasket">
+                                                    Add to basket
+                                                </a>
+                                            }
                                         </div>
                                     </div>
                                 </div>

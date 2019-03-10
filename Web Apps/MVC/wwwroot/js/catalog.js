@@ -21,8 +21,7 @@
             data: JSON.stringify(code),
             headers: headers
         }).done(function (response) {
-            let items = response.Items;
-            catalogo.showSnackbar();
+            catalog.showSnackbar();
         });
     }
 
