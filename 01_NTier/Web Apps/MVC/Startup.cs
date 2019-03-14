@@ -1,4 +1,9 @@
-﻿using AutoMapper;
+﻿using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
+using Basket.API;
+using Basket.API.Model;
+using Basket.API.Services;
 using HealthChecks.UI.Client;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
@@ -6,11 +11,14 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Connections;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Models.ViewModels;
 using MVC.AutoMapper;
 using MVC.Commands;
@@ -20,6 +28,8 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 using Polly;
 using Polly.Extensions.Http;
+using Rebus.Config;
+using Rebus.ServiceProvider;
 using Serilog;
 using Services;
 using StackExchange.Redis;
@@ -32,7 +42,6 @@ using System.Net.Http;
 using System.Reflection;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using IConfigurationProvider = Microsoft.Extensions.Configuration.IConfigurationProvider;
 
 namespace MVC
 {
@@ -40,6 +49,7 @@ namespace MVC
     {
         private readonly ILoggerFactory _loggerFactory;
         private readonly Catalog.API.Startup catalogStartup;
+        private readonly BasketStartup basketStartup;
 
         public Startup(ILoggerFactory loggerFactory,
             IConfiguration configuration,
@@ -59,6 +69,9 @@ namespace MVC
 
             catalogStartup = 
                 new Catalog.API.Startup(configuration, environment);
+
+            basketStartup =
+                new BasketStartup(configuration, loggerFactory, environment);
         }
 
         public IConfiguration Configuration { get; }
@@ -197,9 +210,9 @@ namespace MVC
             services.AddTransient<IUserRedisRepository, UserRedisRepository>();
             services.AddMediatR(typeof(UserNotificationCommand).GetTypeInfo().Assembly);
 
-            services.AddHttpClient<IBasketService, BasketService>()
-                   .AddPolicyHandler(GetRetryPolicy())
-                   .AddPolicyHandler(GetCircuitBreakerPolicy());
+            //services.AddHttpClient<IBasketService, BasketService>()
+            //       .AddPolicyHandler(GetRetryPolicy())
+            //       .AddPolicyHandler(GetCircuitBreakerPolicy());
 
             //services.AddHttpClient<ICatalogService, CatalogService>()
             //       .AddPolicyHandler(GetRetryPolicy())
@@ -210,6 +223,7 @@ namespace MVC
                    .AddPolicyHandler(GetCircuitBreakerPolicy());
 
             catalogStartup.ConfigureServices(services);
+            basketStartup.ConfigureServices(services);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -257,6 +271,7 @@ namespace MVC
             });
 
             catalogStartup.Configure(app, env, loggerFactory);
+            basketStartup.Configure(app, env, loggerFactory);
         }
 
         static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
@@ -272,6 +287,70 @@ namespace MVC
             return HttpPolicyExtensions
                 .HandleTransientHttpError()
                 .CircuitBreakerAsync(5, TimeSpan.FromSeconds(30));
+        }
+    }
+
+    public class BasketStartup
+    {
+        private readonly ILoggerFactory _loggerFactory;
+
+        public BasketStartup(IConfiguration configuration,
+            ILoggerFactory loggerFactory,
+            IHostingEnvironment environment)
+        {
+            Configuration = configuration;
+            _loggerFactory = loggerFactory;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
+            //By connecting here we are making sure that our service
+            //cannot start until redis is ready. This might slow down startup,
+            //but given that there is a delay on resolving the ip address
+            //and then creating the connection it seems reasonable to move
+            //that cost to startup instead of having the first request pay the
+            //penalty.
+            services.AddSingleton<IConnectionMultiplexer>(sp =>
+            {
+                var settings = sp.GetRequiredService<IOptions<BasketConfig>>().Value;
+                var configuration = ConfigurationOptions.Parse(Configuration["RedisConnectionString"], true);
+
+                configuration.ResolveDns = true;
+
+                return ConnectionMultiplexer.Connect(configuration);
+            });
+
+            services.AddTransient<IBasketRepository, RedisBasketRepository>();
+            services.AddTransient<IIdentityService, IdentityService>();
+            services.AddTransient<IBasketAPIService, BasketAPIService>();
+
+            var containerBuilder = new ContainerBuilder();
+            containerBuilder.Populate(services);
+
+            ConfigureRebus(services);
+        }
+
+        private void ConfigureRebus(IServiceCollection services)
+        {
+            // Configure and register Rebus
+            services.AddRebus(configure => configure
+                .Logging(l => l.Use(new MSLoggerFactoryAdapter(_loggerFactory)))
+                .Transport(t => t.UseRabbitMq(Configuration["RabbitMQConnectionString"], Configuration["RabbitMQInputQueueName"])));
+        }
+
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        {
+            app.UseSession();
+            app.UseAuthentication();
+            app.UseRebus();
         }
     }
 }

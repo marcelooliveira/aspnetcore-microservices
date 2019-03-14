@@ -1,20 +1,14 @@
-﻿using Models;
-using Models.ViewModels;
-using Services;
-using IdentityModel;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Core;
 using Microsoft.Extensions.Logging;
+using Models;
+using Models.ViewModels;
 using MVC.Model.Redis;
 using MVC.Models;
-using MVC.SignalR;
 using Polly.CircuitBreaker;
+using Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Controllers

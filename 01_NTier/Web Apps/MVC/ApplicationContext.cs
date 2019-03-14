@@ -1,5 +1,6 @@
 ﻿using Models;
 using Microsoft.EntityFrameworkCore;
+using Basket.API.Model;
 
 namespace MVC
 {

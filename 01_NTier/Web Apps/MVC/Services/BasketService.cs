@@ -1,7 +1,6 @@
 ﻿using Infrastructure;
 using Models;
 using Models.ViewModels;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MVC.Models;
 using Newtonsoft.Json;
@@ -10,88 +9,49 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using MVC;
+using AutoMapper;
 
 namespace Services
 {
-    public class BasketService : BaseHttpService, IBasketService
+    public class BasketService : IBasketService
     {
-        class BasketUris
-        {
-            public static string GetBasket => "api/basket";
-            public static string AddItem => "api/basket/additem";
-            public static string UpdateItem => "api/basket/updateitem";
-            public static string Checkout => "api/basket/checkout";
-        }
+        private readonly IMapper _mapper;
+        private readonly
+            Basket.API.Services.IBasketAPIService _apiService;
 
-        private readonly HttpClient _apiClient;
-        private readonly string _basketUrl;
-        private readonly ILogger<BasketService> _logger;
+        public string Scope => "Basket.API";
 
-        public BasketService(
-            IConfiguration configuration
-            , HttpClient httpClient
-            , ISessionHelper sessionHelper
-            , ILogger<BasketService> logger)
-            : base(configuration, httpClient, sessionHelper)
+        public BasketService(IMapper mapper,
+            Basket.API.Services.IBasketAPIService apiService)
         {
-            _apiClient = httpClient;
-            _logger = logger;
-            _baseUri = _configuration["BasketUrl"];
+            _mapper = mapper;
+            _apiService = apiService;
         }
 
         public async Task<CustomerBasket> GetBasket(string userId)
         {
-            return await GetAuthenticatedAsync<CustomerBasket>(BasketUris.GetBasket, userId);
+            var basket = await _apiService.Get(userId);
+            return _mapper.Map<CustomerBasket>(basket);
         }
 
         public async Task<CustomerBasket> AddItem(string customerId, BasketItem input)
         {
-            var uri = $"{BasketUris.AddItem}/{customerId}";
-            return await PostAsync<CustomerBasket>(uri, input);
+            var item = _mapper.Map<Basket.API.Model.BasketItem>(input);
+            var result = await _apiService.AddItem(customerId, item);
+            return _mapper.Map<CustomerBasket>(result);
         }
 
         public async Task<UpdateQuantityOutput> UpdateItem(string customerId, UpdateQuantityInput input)
         {
-            var uri = $"{BasketUris.UpdateItem}/{customerId}";
-            return await PutAsync<UpdateQuantityOutput>(uri, input);
-        }
-
-        public async Task<CustomerBasket> UpdateQuantities(ApplicationUser applicationUser, Dictionary<string, int> quantidades)
-        {
-            var uri = UrlAPIs.Basket.UpdateItemBasket(_basketUrl);
-
-            var atualizarBasket = new
-            {
-                CustomerId = applicationUser.Id,
-                Atualizacao = quantidades.Select(kvp => new
-                {
-                    ItemBasketId = kvp.Key,
-                    NovaQuantidade = kvp.Value
-                }).ToArray()
-            };
-
-            var conteudoBasket = new StringContent(JsonConvert.SerializeObject(atualizarBasket), System.Text.Encoding.UTF8, "application/json");
-
-            var response = await _apiClient.PutAsync(uri, conteudoBasket);
-
-            response.EnsureSuccessStatusCode();
-
-            var jsonResponse = await response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<CustomerBasket>(jsonResponse);
-        }
-
-        public Task UpdateBasket(CustomerBasket customerBasket)
-        {
-            throw new System.NotImplementedException();
+            var updateQuantityInput = _mapper.Map<Basket.API.Model.UpdateQuantityInput>(input);
+            var result = await _apiService.UpdateItem(customerId, updateQuantityInput);
+            return _mapper.Map<UpdateQuantityOutput>(result);
         }
 
         public async Task<bool> Checkout(string customerId, RegistrationViewModel viewModel)
         {
-            var uri = $"{BasketUris.Checkout}/{customerId}";
-            return await PostAsync<bool>(uri, viewModel);
+            var input = _mapper.Map<Basket.API.Model.RegistrationViewModel>(viewModel);
+            return await _apiService.Checkout(customerId, input);
         }
-
-        public override string Scope => "Basket.API";
     }
 }
