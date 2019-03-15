@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ordering
+namespace Ordering.API
 {
     public class ApplicationContext : DbContext
     {
@@ -11,7 +11,7 @@ namespace Ordering
 
         }
 
-        public ApplicationContext(DbContextOptions options) : base(options)
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
         }
 

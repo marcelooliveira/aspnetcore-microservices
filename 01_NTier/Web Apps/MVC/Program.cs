@@ -15,6 +15,7 @@ namespace MVC
         {
             IWebHost host = BuildWebHost(args);
             await Catalog.API.SeedData.EnsureSeedData(host.Services);
+            await Ordering.API.SeedData.EnsureSeedData(host.Services);
             host.Run();
         }
 

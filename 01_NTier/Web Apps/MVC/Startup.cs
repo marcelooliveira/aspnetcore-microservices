@@ -4,8 +4,13 @@ using AutoMapper;
 using Basket.API;
 using Basket.API.Model;
 using Basket.API.Services;
+using Catalog.API.Data;
+using Catalog.API.Queries;
+using Catalog.API.Services;
 using HealthChecks.UI.Client;
 using MediatR;
+using Messages.EventHandling;
+using Messages.Events;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -13,6 +18,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -26,6 +32,9 @@ using MVC.Model.Redis;
 using MVC.SignalR;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
+using Ordering.API.SignalR;
+using Ordering.Commands;
+using Ordering.Repositories;
 using Polly;
 using Polly.Extensions.Http;
 using Rebus.Config;
@@ -48,8 +57,9 @@ namespace MVC
     public class Startup
     {
         private readonly ILoggerFactory _loggerFactory;
-        private readonly Catalog.API.Startup catalogStartup;
+        private readonly CatalogStartup catalogStartup;
         private readonly BasketStartup basketStartup;
+        private readonly OrderingStartup orderingStartup;
 
         public Startup(ILoggerFactory loggerFactory,
             IConfiguration configuration,
@@ -68,10 +78,13 @@ namespace MVC
                 .CreateLogger();
 
             catalogStartup = 
-                new Catalog.API.Startup(configuration, environment);
+                new CatalogStartup(configuration);
 
             basketStartup =
-                new BasketStartup(configuration, loggerFactory, environment);
+                new BasketStartup(configuration, loggerFactory);
+
+            orderingStartup =
+                new OrderingStartup(configuration);
         }
 
         public IConfiguration Configuration { get; }
@@ -224,6 +237,21 @@ namespace MVC
 
             catalogStartup.ConfigureServices(services);
             basketStartup.ConfigureServices(services);
+            orderingStartup.ConfigureServices(services);
+
+            RegisterRebus(services);
+        }
+
+        private void RegisterRebus(IServiceCollection services)
+        {
+            services.AutoRegisterHandlersFromAssemblyOf<CheckoutEventHandler>();
+
+            // Configure and register Rebus
+            services.AddRebus(configure => configure
+                .Logging(l => l.Use(new MSLoggerFactoryAdapter(_loggerFactory)))
+                .Transport(t => t.UseRabbitMq(Configuration["RabbitMQConnectionString"], Configuration["RabbitMQInputQueueName"])))
+                .AddTransient<DbContext, Ordering.API.ApplicationContext>()
+                .AutoRegisterHandlersFromAssemblyOf<CheckoutEvent>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -272,6 +300,14 @@ namespace MVC
 
             catalogStartup.Configure(app, env, loggerFactory);
             basketStartup.Configure(app, env, loggerFactory);
+            orderingStartup.Configure(app, env, loggerFactory);
+
+
+            app.UseRebus(
+                async (bus) =>
+                {
+                    await bus.Subscribe<CheckoutEvent>();
+                });
         }
 
         static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
@@ -290,13 +326,39 @@ namespace MVC
         }
     }
 
+    public class CatalogStartup
+    {
+        public CatalogStartup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddTransient<IProductQueries, ProductQueries>();
+            services.AddTransient<ICatalogAPIService, CatalogAPIService>();
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
+            });
+        }
+
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        {
+            SQLitePCL.Batteries_V2.Init();
+
+        }
+    }
+
     public class BasketStartup
     {
         private readonly ILoggerFactory _loggerFactory;
 
         public BasketStartup(IConfiguration configuration,
-            ILoggerFactory loggerFactory,
-            IHostingEnvironment environment)
+            ILoggerFactory loggerFactory)
         {
             Configuration = configuration;
             _loggerFactory = loggerFactory;
@@ -334,23 +396,54 @@ namespace MVC
 
             var containerBuilder = new ContainerBuilder();
             containerBuilder.Populate(services);
-
-            ConfigureRebus(services);
-        }
-
-        private void ConfigureRebus(IServiceCollection services)
-        {
-            // Configure and register Rebus
-            services.AddRebus(configure => configure
-                .Logging(l => l.Use(new MSLoggerFactoryAdapter(_loggerFactory)))
-                .Transport(t => t.UseRabbitMq(Configuration["RabbitMQConnectionString"], Configuration["RabbitMQInputQueueName"])));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             app.UseSession();
             app.UseAuthentication();
-            app.UseRebus();
         }
     }
+
+    public class OrderingStartup
+    {
+        private readonly ILoggerFactory _loggerFactory;
+
+        public OrderingStartup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSingleton<IUserIdProvider, CustomUserIdProvider>();
+
+            string connectionString = Configuration["OrderingConnectionString"];
+
+            services.AddDbContext<Ordering.API.ApplicationContext>(options =>
+                options.UseSqlServer(connectionString)
+            );
+
+            services.AddScoped<DbContext, Ordering.API.ApplicationContext>();
+            var serviceProvider = services.BuildServiceProvider();
+            var contexto = serviceProvider.GetService<Ordering.API.ApplicationContext>();
+            services.AddSingleton<Ordering.API.ApplicationContext>(contexto);
+
+            services.AddScoped<IOrderRepository, OrderRepository>();
+
+            services.AddScoped<IMediator, NoMediator>();
+            services.AddScoped<IRequest<bool>, CreateOrderCommand>();
+            services.AddMediatR(typeof(CreateOrderCommand).GetTypeInfo().Assembly);
+            //RegisterRebus(services);
+        }
+
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        {
+
+        }
+    }
+
 }

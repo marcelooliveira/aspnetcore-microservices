@@ -2764,3 +2764,579 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2019-03-14 09:20:01.684 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"bf5de8dd-89dc-4118-8352-a7edb31d2fe9","Items":[{"Id":"003","ProductId":"003","ProductName":"Bananas","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"004","ProductId":"004","ProductName":"Strawberries","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"e273b0c5-21da-4c69-8c2b-766dded8476c","CreationDate":"2019-03-14T12:20:01.4362369Z"}
 2019-03-14 09:20:01.955 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"9a1967a7-0b99-4806-8d9f-c39a42ed9879","CreationDate":"2019-03-14T12:20:01.6847897Z"}
 2019-03-14 09:20:01.964 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"9a1967a7-0b99-4806-8d9f-c39a42ed9879","CreationDate":"2019-03-14T12:20:01.6847897Z"}
+2019-03-14 22:32:26.883 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"f98a0204-9494-40e1-aa17-2764251f54fb","Items":[{"Id":"002","ProductId":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"8b7fb0ed-ef8c-4430-abf8-aa9ef6b8198c","CreationDate":"2019-03-15T01:32:26.5306154Z"}
+2019-03-14 22:32:26.924 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"f98a0204-9494-40e1-aa17-2764251f54fb","Items":[{"Id":"002","ProductId":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"8b7fb0ed-ef8c-4430-abf8-aa9ef6b8198c","CreationDate":"2019-03-15T01:32:26.5306154Z"}
+2019-03-14 22:32:27.006 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"c249c1cc-eaa5-4c1d-8a34-12584384dc12","CreationDate":"2019-03-15T01:32:26.9256971Z"}
+2019-03-14 22:32:27.006 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"c249c1cc-eaa5-4c1d-8a34-12584384dc12","CreationDate":"2019-03-15T01:32:26.9256971Z"}
+2019-03-14 22:33:06.606 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"6d50f959-af5b-416e-a96b-8afc35552f8a","Items":[{"Id":"005","ProductId":"005","ProductName":"Grapes","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"006","ProductId":"006","ProductName":"Carrots","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"007","ProductId":"007","ProductName":"Yellow peppers","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"d03a69cc-c17d-449b-832a-1b488c1b4881","CreationDate":"2019-03-15T01:33:06.5707567Z"}
+2019-03-14 22:33:06.607 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"6d50f959-af5b-416e-a96b-8afc35552f8a","Items":[{"Id":"005","ProductId":"005","ProductName":"Grapes","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"006","ProductId":"006","ProductName":"Carrots","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"007","ProductId":"007","ProductName":"Yellow peppers","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"d03a69cc-c17d-449b-832a-1b488c1b4881","CreationDate":"2019-03-15T01:33:06.5707567Z"}
+2019-03-14 22:33:06.687 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"812516a2-5ecb-4f40-92a6-81b51a8dceb8","CreationDate":"2019-03-15T01:33:06.6071711Z"}
+2019-03-14 22:33:06.688 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"812516a2-5ecb-4f40-92a6-81b51a8dceb8","CreationDate":"2019-03-15T01:33:06.6071711Z"}
+2019-03-14 23:24:58.917 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeAssembly.get_DefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+2019-03-14 23:24:58.948 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeAssembly.get_DefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+2019-03-14 23:26:46.287 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeAssembly.get_DefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+2019-03-14 23:26:46.289 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeAssembly.get_DefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+2019-03-14 23:26:47.238 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeAssembly.get_DefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+2019-03-14 23:26:47.239 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeAssembly.get_DefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+2019-03-14 23:26:48.185 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeAssembly.get_DefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+2019-03-14 23:26:48.186 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeAssembly.get_DefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+2019-03-14 23:26:50.782 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeAssembly.get_DefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+2019-03-14 23:26:50.784 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeAssembly.get_DefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+
+
+2019-03-14 23:33:15.779 -03:00 [FTL] Application startup exception
+System.IO.FileLoadException: Could not load file or assembly 'Microsoft.Extensions.Configuration.UserSecrets, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'Microsoft.Extensions.Configuration.UserSecrets, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+   at System.ModuleHandle.ResolveType(RuntimeModule module, Int32 typeToken, IntPtr* typeInstArgs, Int32 typeInstCount, IntPtr* methodInstArgs, Int32 methodInstCount, ObjectHandleOnStack type)
+   at System.ModuleHandle.ResolveTypeHandleInternal(RuntimeModule module, Int32 typeToken, RuntimeTypeHandle[] typeInstantiationContext, RuntimeTypeHandle[] methodInstantiationContext)
+   at System.Reflection.RuntimeModule.ResolveType(Int32 metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+   at System.Reflection.CustomAttribute.FilterCustomAttributeRecord(CustomAttributeRecord caRecord, MetadataImport scope, Assembly& lastAptcaOkAssembly, RuntimeModule decoratedModule, MetadataToken decoratedToken, RuntimeType attributeFilterType, Boolean mustBeInheritable, Object[] attributes, IList derivedAttributes, RuntimeType& attributeType, IRuntimeMethodInfo& ctor, Boolean& ctorHasParameters, Boolean& isVarArg)
+   at System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes)
+   at System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeAssembly assembly, RuntimeType caType)
+   at System.Attribute.GetCustomAttributes(Assembly element, Type attributeType, Boolean inherit)
+   at System.Reflection.CustomAttributeExtensions.GetCustomAttributes[T](Assembly element)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.RelatedAssemblyAttribute.GetRelatedAssemblies(Assembly assembly, Boolean throwOnError, Func`2 fileExists, Func`2 loadFile)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationAssembliesProvider.GetAssemblyItem(Assembly assembly)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationAssembliesProvider.ResolveFromDependencyContext(DependencyContext dependencyContext)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationAssembliesProvider.ResolveAssemblies(Assembly entryAssembly)+MoveNext()
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateDefaultParts(String entryAssemblyName)
+   at Microsoft.Extensions.DependencyInjection.MvcCoreServiceCollectionExtensions.GetApplicationPartManager(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcCoreServiceCollectionExtensions.AddMvcCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddMvc(IServiceCollection services)
+   at MVC.Startup.ConfigureServices(IServiceCollection services) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Startup.cs:line 127
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.ConfigureServices(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.EnsureApplicationServices()
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+
+
+2019-03-14 23:34:50.100 -03:00 [FTL] Application startup exception
+System.InvalidOperationException: Rebus has already been configured.
+   at Rebus.ServiceProvider.ServiceCollectionExtensions.AddRebus(IServiceCollection services, Func`3 configureRebus)
+   at MVC.OrderingStartup.RegisterRebus(IServiceCollection services) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Startup.cs:line 437
+   at MVC.OrderingStartup.ConfigureServices(IServiceCollection services) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Startup.cs:line 429
+   at MVC.Startup.ConfigureServices(IServiceCollection services) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Startup.cs:line 240
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.ConfigureServices(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.EnsureApplicationServices()
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2019-03-14 23:46:22.991 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.TypeLoadException: Could not load type 'Microsoft.AspNetCore.Mvc.Internal.IHttpResponseStreamWriterFactory' from assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+   at System.Signature.GetSignature(Void* pCorSig, Int32 cCorSig, RuntimeFieldHandleInternal fieldHandle, IRuntimeMethodInfo methodHandle, RuntimeType declaringType)
+   at System.Reflection.RuntimeConstructorInfo.get_Signature()
+   at System.Reflection.RuntimeConstructorInfo.GetParametersNoCopy()
+   at System.Reflection.RuntimeConstructorInfo.GetParameters()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-14 23:46:23.040 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.TypeLoadException: Could not load type 'Microsoft.AspNetCore.Mvc.Internal.IHttpResponseStreamWriterFactory' from assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+   at System.Signature.GetSignature(Void* pCorSig, Int32 cCorSig, RuntimeFieldHandleInternal fieldHandle, IRuntimeMethodInfo methodHandle, RuntimeType declaringType)
+   at System.Reflection.RuntimeConstructorInfo.get_Signature()
+   at System.Reflection.RuntimeConstructorInfo.GetParametersNoCopy()
+   at System.Reflection.RuntimeConstructorInfo.GetParameters()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-14 23:56:44.604 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.TypeLoadException: Could not load type 'Microsoft.AspNetCore.Mvc.Internal.IHttpResponseStreamWriterFactory' from assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+   at System.Signature.GetSignature(Void* pCorSig, Int32 cCorSig, RuntimeFieldHandleInternal fieldHandle, IRuntimeMethodInfo methodHandle, RuntimeType declaringType)
+   at System.Reflection.RuntimeConstructorInfo.get_Signature()
+   at System.Reflection.RuntimeConstructorInfo.GetParametersNoCopy()
+   at System.Reflection.RuntimeConstructorInfo.GetParameters()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-14 23:56:44.682 -03:00 [ERR] An unhandled exception has occurred while executing the request
+System.TypeLoadException: Could not load type 'Microsoft.AspNetCore.Mvc.Internal.IHttpResponseStreamWriterFactory' from assembly 'Microsoft.AspNetCore.Mvc.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+   at System.Signature.GetSignature(Void* pCorSig, Int32 cCorSig, RuntimeFieldHandleInternal fieldHandle, IRuntimeMethodInfo methodHandle, RuntimeType declaringType)
+   at System.Reflection.RuntimeConstructorInfo.get_Signature()
+   at System.Reflection.RuntimeConstructorInfo.GetParametersNoCopy()
+   at System.Reflection.RuntimeConstructorInfo.GetParameters()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-15 00:03:10.490 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"98a31549-a2a9-4187-9e7e-e6b3d0637207","Items":[{"Id":"001","ProductId":"001","ProductName":"Oranges","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"aa8d18d9-835f-46ad-a98f-b90d8ffdd14f","CreationDate":"2019-03-15T03:03:10.3004672Z"}
+2019-03-15 00:03:10.549 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"98a31549-a2a9-4187-9e7e-e6b3d0637207","Items":[{"Id":"001","ProductId":"001","ProductName":"Oranges","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"aa8d18d9-835f-46ad-a98f-b90d8ffdd14f","CreationDate":"2019-03-15T03:03:10.3004672Z"}
+2019-03-15 00:03:10.738 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"3feb6b8d-69f6-4f91-ad3c-69bfabad7f4d","CreationDate":"2019-03-15T03:03:10.5501588Z"}
+2019-03-15 00:03:10.738 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"3feb6b8d-69f6-4f91-ad3c-69bfabad7f4d","CreationDate":"2019-03-15T03:03:10.5501588Z"}
+2019-03-15 00:03:12.956 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"001","ProductName":"Oranges","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16008}],"CustomerId":"98f50698-8c84-4224-be48-0052862be631","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-15T00:03:10.974786-03:00","Id":16003}
+2019-03-15 00:03:12.958 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"001","ProductName":"Oranges","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16008}],"CustomerId":"98f50698-8c84-4224-be48-0052862be631","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-15T00:03:10.974786-03:00","Id":16003}
+2019-03-15 00:04:20.066 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"eb94b92b-3355-4148-af79-23b6ae71ffe6","Items":[{"Id":"003","ProductId":"003","ProductName":"Bananas","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"002","ProductId":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"001","ProductId":"001","ProductName":"Oranges","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"004","ProductId":"004","ProductName":"Strawberries","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"007","ProductId":"007","ProductName":"Yellow peppers","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"008","ProductId":"008","ProductName":"Potatoes","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"009","ProductId":"009","ProductName":"Tomatoes","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"1ad8ebaf-e5ca-4f08-ad91-65543d161320","CreationDate":"2019-03-15T03:04:19.9333821Z"}
+2019-03-15 00:04:20.072 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"eb94b92b-3355-4148-af79-23b6ae71ffe6","Items":[{"Id":"003","ProductId":"003","ProductName":"Bananas","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"002","ProductId":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"001","ProductId":"001","ProductName":"Oranges","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"004","ProductId":"004","ProductName":"Strawberries","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"007","ProductId":"007","ProductName":"Yellow peppers","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"008","ProductId":"008","ProductName":"Potatoes","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null},{"Id":"009","ProductId":"009","ProductName":"Tomatoes","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"1ad8ebaf-e5ca-4f08-ad91-65543d161320","CreationDate":"2019-03-15T03:04:19.9333821Z"}
+2019-03-15 00:04:20.127 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"c461dbb3-e4ae-4ab7-be78-33baa7d3a56b","CreationDate":"2019-03-15T03:04:20.0729945Z"}
+2019-03-15 00:04:20.128 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"c461dbb3-e4ae-4ab7-be78-33baa7d3a56b","CreationDate":"2019-03-15T03:04:20.0729945Z"}
+2019-03-15 00:04:21.280 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"003","ProductName":"Bananas","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16009},{"ProductCode":"002","ProductName":"Lemons","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16010},{"ProductCode":"001","ProductName":"Oranges","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16011},{"ProductCode":"004","ProductName":"Strawberries","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16012},{"ProductCode":"007","ProductName":"Yellow peppers","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16013},{"ProductCode":"008","ProductName":"Potatoes","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16014},{"ProductCode":"009","ProductName":"Tomatoes","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16015}],"CustomerId":"98f50698-8c84-4224-be48-0052862be631","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-15T00:04:20.0582957-03:00","Id":16004}
+2019-03-15 00:04:21.280 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"003","ProductName":"Bananas","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16009},{"ProductCode":"002","ProductName":"Lemons","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16010},{"ProductCode":"001","ProductName":"Oranges","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16011},{"ProductCode":"004","ProductName":"Strawberries","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16012},{"ProductCode":"007","ProductName":"Yellow peppers","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16013},{"ProductCode":"008","ProductName":"Potatoes","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16014},{"ProductCode":"009","ProductName":"Tomatoes","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16015}],"CustomerId":"98f50698-8c84-4224-be48-0052862be631","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-15T00:04:20.0582957-03:00","Id":16004}
+2019-03-15 00:04:43.150 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"30118e54-07b5-4c80-b2bb-2a67c1ae5b08","Items":[{"Id":"003","ProductId":"003","ProductName":"Bananas","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"a6ed758e-64d0-487c-8d18-b2d13f075e90","CreationDate":"2019-03-15T03:04:43.0535154Z"}
+2019-03-15 00:04:43.151 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"30118e54-07b5-4c80-b2bb-2a67c1ae5b08","Items":[{"Id":"003","ProductId":"003","ProductName":"Bananas","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"a6ed758e-64d0-487c-8d18-b2d13f075e90","CreationDate":"2019-03-15T03:04:43.0535154Z"}
+2019-03-15 00:04:43.253 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"5e144b3a-1b79-4029-9356-5b7a4538f92c","CreationDate":"2019-03-15T03:04:43.1511124Z"}
+2019-03-15 00:04:43.253 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"5e144b3a-1b79-4029-9356-5b7a4538f92c","CreationDate":"2019-03-15T03:04:43.1511124Z"}
+2019-03-15 00:04:43.283 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"003","ProductName":"Bananas","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16016}],"CustomerId":"98f50698-8c84-4224-be48-0052862be631","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-15T00:04:43.1309401-03:00","Id":16005}
+2019-03-15 00:04:43.284 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"003","ProductName":"Bananas","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16016}],"CustomerId":"98f50698-8c84-4224-be48-0052862be631","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-15T00:04:43.1309401-03:00","Id":16005}
+2019-03-15 00:05:58.474 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"8c7e5ed7-20ca-46f5-b464-a0c758fe487b","Items":[{"Id":"002","ProductId":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"039265aa-d80d-4ad1-b34a-9b72a33c65ba","CreationDate":"2019-03-15T03:05:58.4166644Z"}
+2019-03-15 00:05:58.476 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"8c7e5ed7-20ca-46f5-b464-a0c758fe487b","Items":[{"Id":"002","ProductId":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"039265aa-d80d-4ad1-b34a-9b72a33c65ba","CreationDate":"2019-03-15T03:05:58.4166644Z"}
+2019-03-15 00:05:58.555 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"252a9c41-f71c-4592-9474-94943005a110","CreationDate":"2019-03-15T03:05:58.4769187Z"}
+2019-03-15 00:05:58.555 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"252a9c41-f71c-4592-9474-94943005a110","CreationDate":"2019-03-15T03:05:58.4769187Z"}
+2019-03-15 00:05:58.647 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"002","ProductName":"Lemons","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16017}],"CustomerId":"98f50698-8c84-4224-be48-0052862be631","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-15T00:05:58.4569271-03:00","Id":16006}
+2019-03-15 00:05:58.650 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"002","ProductName":"Lemons","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16017}],"CustomerId":"98f50698-8c84-4224-be48-0052862be631","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-15T00:05:58.4569271-03:00","Id":16006}
+2019-03-15 00:06:19.770 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"83aeb3ff-84c8-4419-91bf-bc99262ad903","Items":[{"Id":"003","ProductId":"003","ProductName":"Bananas","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"d41f4ea1-ee61-4a14-8889-c3dcd849def8","CreationDate":"2019-03-15T03:06:19.7375932Z"}
+2019-03-15 00:06:19.771 -03:00 [INF] Check out event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","UserName":"Alice Smith","OrderId":0,"City":"São Paulo","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","State":"SP","ZipCode":"69118","RequestId":"83aeb3ff-84c8-4419-91bf-bc99262ad903","Items":[{"Id":"003","ProductId":"003","ProductName":"Bananas","Quantity":1,"UnitPrice":52.9,"Subtotal":0.0,"ImageURL":null}],"Id":"d41f4ea1-ee61-4a14-8889-c3dcd849def8","CreationDate":"2019-03-15T03:06:19.7375932Z"}
+2019-03-15 00:06:19.836 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"5cdfb941-d109-4991-8360-8036212489b4","CreationDate":"2019-03-15T03:06:19.7711739Z"}
+2019-03-15 00:06:19.836 -03:00 [INF] Registry event has been dispatched: {"UserId":"98f50698-8c84-4224-be48-0052862be631","Name":"Alice Smith","Email":"alice@asp.net","Phone":"1234-5678","Address":"Rua Vergueiro, 456","AdditionalAddress":"8 andar sala 801","District":"Vila Mariana","City":"São Paulo","State":"SP","ZipCode":"69118","Id":"5cdfb941-d109-4991-8360-8036212489b4","CreationDate":"2019-03-15T03:06:19.7711739Z"}
+2019-03-15 00:06:19.996 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"003","ProductName":"Bananas","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16018}],"CustomerId":"98f50698-8c84-4224-be48-0052862be631","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-15T00:06:19.7957304-03:00","Id":16007}
+2019-03-15 00:06:19.996 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"003","ProductName":"Bananas","ProductQuantity":1,"ProductUnitPrice":52.9,"Id":16018}],"CustomerId":"98f50698-8c84-4224-be48-0052862be631","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-15T00:06:19.7957304-03:00","Id":16007}
