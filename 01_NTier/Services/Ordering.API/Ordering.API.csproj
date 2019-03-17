@@ -66,6 +66,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Messages\Messages.csproj" />
+    <ProjectReference Include="..\Services.Models\Services.Models.csproj" />
   </ItemGroup>
 
 </Project>

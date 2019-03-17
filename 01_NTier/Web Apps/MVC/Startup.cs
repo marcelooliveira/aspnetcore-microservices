@@ -7,13 +7,11 @@ using Basket.API.Services;
 using Catalog.API.Data;
 using Catalog.API.Queries;
 using Catalog.API.Services;
-using HealthChecks.UI.Client;
 using MediatR;
 using Messages.EventHandling;
 using Messages.Events;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -22,7 +20,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Models.ViewModels;
@@ -113,14 +110,6 @@ namespace MVC
             services.AddTransient<IBasketService, BasketService>();
             services.AddTransient<ISessionHelper, SessionHelper>();
             services.AddTransient<IIdentityParser<ApplicationUser>, IdentityParser>();
-
-            services.AddHealthChecks()
-                .AddCheck("self", () => HealthCheckResult.Healthy())
-                .AddRedis(
-                    Configuration["RedisConnectionString"],
-                    name: "redis-check",
-                    tags: new string[] { "redis" });
-
             services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 
 
@@ -223,18 +212,6 @@ namespace MVC
             services.AddTransient<IUserRedisRepository, UserRedisRepository>();
             services.AddMediatR(typeof(UserNotificationCommand).GetTypeInfo().Assembly);
 
-            //services.AddHttpClient<IBasketService, BasketService>()
-            //       .AddPolicyHandler(GetRetryPolicy())
-            //       .AddPolicyHandler(GetCircuitBreakerPolicy());
-
-            //services.AddHttpClient<ICatalogService, CatalogService>()
-            //       .AddPolicyHandler(GetRetryPolicy())
-            //       .AddPolicyHandler(GetCircuitBreakerPolicy());
-
-            services.AddHttpClient<IOrderService, OrderService>()
-                   .AddPolicyHandler(GetRetryPolicy())
-                   .AddPolicyHandler(GetCircuitBreakerPolicy());
-
             catalogStartup.ConfigureServices(services);
             basketStartup.ConfigureServices(services);
             orderingStartup.ConfigureServices(services);
@@ -268,17 +245,6 @@ namespace MVC
             }
 
             app.UseAuthentication();
-
-            app.UseHealthChecks("/hc", new HealthCheckOptions()
-            {
-                Predicate = _ => true,
-                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-            });
-
-            app.UseHealthChecks("/liveness", new HealthCheckOptions
-            {
-                Predicate = r => r.Name.Contains("self")
-            });
 
             app.UseStaticFiles();
             app.UseSession();

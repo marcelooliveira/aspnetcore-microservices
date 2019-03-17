@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="ApplicationContext.cs" />
     <Compile Remove="DataService.cs" />
     <Compile Remove="IDataService.cs" />
     <Compile Remove="Services\ApiService.cs" />
@@ -38,15 +39,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspNetCore.HealthChecks" Version="1.0.0" />
-    <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="2.2.2" />
-    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="2.2.2" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="IdentityModel" Version="3.10.6" />
     <PackageReference Include="IdentityServer4" Version="2.3.2" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="5.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.HealthChecks" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.HealthChecks" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.2.0" />
@@ -61,10 +58,6 @@
     <PackageReference Include="Microsoft.Extensions.HealthChecks.SqlServer" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="2.2.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
-    <PackageReference Include="Moq" Version="4.10.0" />
-    <PackageReference Include="Polly" Version="6.1.0" />
-    <PackageReference Include="Polly.Extensions.Http" Version="2.0.1" />
     <PackageReference Include="Rebus" Version="5.2.0" />
     <PackageReference Include="Rebus.RabbitMQ" Version="4.4.2" />
     <PackageReference Include="Rebus.ServiceProvider" Version="4.0.2" />
@@ -90,6 +83,7 @@
     <ProjectReference Include="..\..\Services\Catalog.API\Catalog.API.csproj" />
     <ProjectReference Include="..\..\Services\Messages\Messages.csproj" />
     <ProjectReference Include="..\..\Services\Ordering.API\Ordering.API.csproj" />
+    <ProjectReference Include="..\..\Services\Services.Models\Services.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

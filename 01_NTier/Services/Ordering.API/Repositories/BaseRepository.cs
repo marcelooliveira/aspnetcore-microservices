@@ -1,7 +1,6 @@
-﻿using Ordering;
-using Ordering.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Ordering.API;
+using Services.Models;
 
 namespace Ordering.Repositories
 {
