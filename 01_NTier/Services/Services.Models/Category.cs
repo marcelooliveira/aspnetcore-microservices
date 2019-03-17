@@ -1,12 +1,10 @@
-﻿using Services.Models;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Models
+namespace Services.Models
 {
     public class Category : BaseModel
-    { 
+    {
         public Category() { }
 
         public Category(string name)

@@ -3,6 +3,7 @@ using Catalog.API.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
+using Services.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -88,7 +89,7 @@ namespace Catalog.API
                 string code = product.number.ToString("000");
                 if (!productDbSet.Where(p => p.Code == code).Any())
                 {
-                    await productDbSet.AddAsync(new Product(code, product.name, 52.90m, categoryDB));
+                    await productDbSet.AddAsync(new Product(code, product.name, 52.90m, categoryDB.Id, categoryDB.Name));
                 }
             }
             await context.SaveChangesAsync();
