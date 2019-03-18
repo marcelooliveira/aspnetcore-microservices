@@ -8,7 +8,6 @@ using Catalog.API.Data;
 using Catalog.API.Queries;
 using Catalog.API.Services;
 using MediatR;
-using Messages.EventHandling;
 using Messages.Events;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
@@ -223,8 +222,6 @@ namespace MVC
 
         private void RegisterRebus(IServiceCollection services)
         {
-            services.AutoRegisterHandlersFromAssemblyOf<CheckoutEventHandler>();
-
             // Configure and register Rebus
             services.AddRebus(configure => configure
                 .Logging(l => l.Use(new MSLoggerFactoryAdapter(_loggerFactory)))
@@ -402,9 +399,6 @@ namespace MVC
 
             services.AddScoped<IOrderRepository, OrderRepository>();
 
-            services.AddScoped<IMediator, NoMediator>();
-            services.AddScoped<IRequest<bool>, CreateOrderCommand>();
-            services.AddMediatR(typeof(CreateOrderCommand).GetTypeInfo().Assembly);
             services.AddTransient<IOrderingService, OrderingService>();
 
         }

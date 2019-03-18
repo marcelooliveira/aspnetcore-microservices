@@ -1,6 +1,5 @@
 ﻿using Identity.API.Commands;
 using Identity.API.Data;
-using Identity.API.IntegrationEvents.EventHandling;
 using Identity.API.Managers;
 using Identity.API.Models;
 using IdentityServer4.Services;
@@ -108,9 +107,6 @@ namespace Identity.API
 
         private void RegisterRebus(IServiceCollection services)
         {
-            // Register handlers 
-            services.AutoRegisterHandlersFromAssemblyOf<RegistrationEventHandler>();
-
             // Configure and register Rebus
             services.AddRebus(configure => configure
                 .Logging(l => l.Use(new MSLoggerFactoryAdapter(_loggerFactory)))
