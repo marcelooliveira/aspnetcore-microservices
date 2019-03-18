@@ -11,6 +11,7 @@ using Ordering.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Ordering.API.Models;
+using Services.Models;
 
 namespace Ordering.Controllers
 {

@@ -79,9 +79,9 @@ namespace Ordering.API.Migrations
                     b.Property<string>("ProductName")
                         .IsRequired();
 
-                    b.Property<int>("ProductQuantity");
+                    b.Property<int>("Quantity");
 
-                    b.Property<decimal>("ProductUnitPrice");
+                    b.Property<decimal>("UnitPrice");
 
                     b.HasKey("Id");
 

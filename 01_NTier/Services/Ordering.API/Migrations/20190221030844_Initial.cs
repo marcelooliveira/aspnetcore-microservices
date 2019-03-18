@@ -40,8 +40,8 @@ namespace Ordering.API.Migrations
                     OrderId = table.Column<int>(nullable: false),
                     ProductCode = table.Column<string>(nullable: false),
                     ProductName = table.Column<string>(nullable: false),
-                    ProductQuantity = table.Column<int>(nullable: false),
-                    ProductUnitPrice = table.Column<decimal>(nullable: false)
+                    Quantity = table.Column<int>(nullable: false),
+                    UnitPrice = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -1,11 +1,12 @@
+using Models;
 using Newtonsoft.Json;
-using Services.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
-namespace Ordering.Models
+namespace Services.Models
 {
     public class Order : BaseModel
     {
@@ -29,8 +30,24 @@ namespace Ordering.Models
             CustomerZipCode = customerZipCode;
         }
 
+        public Order(Registration registration)
+        { 
+            CustomerName = registration.Name;
+            CustomerEmail = registration.Email;
+            CustomerPhone = registration.Phone;
+            CustomerAddress = registration.Address;
+            CustomerAdditionalAddress = registration.AdditionalAddress;
+            CustomerDistrict = registration.District;
+            CustomerCity = registration.City;
+            CustomerState = registration.State;
+            CustomerZipCode = registration.ZipCode;
+        }
+
         [DataMember]
         public List<OrderItem> Items { get; private set; } = new List<OrderItem>();
+        [DataMember]
+        [NotMapped]
+        public virtual Registration Registration { get; private set; } = new Registration();
         [DataMember]
         [MinLength(5, ErrorMessage = "Nome deve ter no mínimo 5 caracteres")]
         [MaxLength(50, ErrorMessage = "Nome deve ter no máximo 50 caracteres")]

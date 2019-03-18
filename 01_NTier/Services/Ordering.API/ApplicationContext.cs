@@ -1,6 +1,7 @@
 ﻿using Ordering.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Services.Models;
 
 namespace Ordering.API
 {

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Ordering.API;
+using Services.Models;
 
 namespace Ordering.Repositories
 {
@@ -29,8 +30,8 @@ namespace Ordering.Repositories
                 if (
                     string.IsNullOrWhiteSpace(item.ProductCode)
                     || string.IsNullOrWhiteSpace(item.ProductName)
-                    || item.ProductQuantity <= 0
-                    || item.ProductUnitPrice <= 0
+                    || item.Quantity <= 0
+                    || item.UnitPrice <= 0
                     )
                 {
                     throw new InvalidItemException();

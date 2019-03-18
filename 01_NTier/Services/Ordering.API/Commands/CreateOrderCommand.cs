@@ -48,26 +48,26 @@ namespace Ordering.Commands
         public CreateOrderCommand Order { get; set; }
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
-        public int ProductQuantity { get; set; }
-        public decimal ProductUnitPrice { get; set; }
-        public decimal Subtotal => ProductQuantity * ProductUnitPrice;
+        public int Quantity { get; set; }
+        public decimal UnitPrice { get; set; }
+        public decimal Subtotal => Quantity * UnitPrice;
 
         public CreateOrderCommandItem()
         {
 
         }
 
-        public CreateOrderCommandItem(string productCodigo, string productNome, int productQuantity, decimal productUnitPrice)
+        public CreateOrderCommandItem(string productCodigo, string productNome, int quantity, decimal unitPrice)
         {
             ProductCode = productCodigo;
             ProductName = productNome;
-            ProductQuantity = productQuantity;
-            ProductUnitPrice = productUnitPrice;
+            Quantity = quantity;
+            UnitPrice = unitPrice;
         }
 
-        public void AtualizaQuantidade(int productQuantity)
+        public void AtualizaQuantidade(int quantity)
         {
-            ProductQuantity = productQuantity;
+            Quantity = quantity;
         }
     }
 }

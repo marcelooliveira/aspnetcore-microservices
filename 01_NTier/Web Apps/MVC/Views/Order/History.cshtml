@@ -59,10 +59,10 @@
                         </div>
                         <input type="hidden" name="productId" value="@(item.ProductCode)" />
                         <div class="col-md-3">@(item.ProductName)</div>
-                        <div class="col-md-2 text-center">R$ @(item.ProductUnitPrice.ToString("0.00"))</div>
+                        <div class="col-md-2 text-center">R$ @(item.UnitPrice.ToString("0.00"))</div>
                         <div class="col-md-2 text-center">
                             <div class="input-group">
-                                <input type="text" value="@(item.ProductQuantity)"
+                                <input type="text" value="@(item.Quantity)"
                                         class="form-control text-center quantidade" disabled />
                             </div>
                         </div>

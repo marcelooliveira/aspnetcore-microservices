@@ -13,6 +13,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Serilog;
+using Services.Models;
 
 namespace Ordering.Commands
 {
@@ -67,7 +68,7 @@ namespace Ordering.Commands
                 throw new ArgumentException("Guid cannot be empty");
 
             var items = cmd.Items.Select(
-                    i => new OrderItem(i.ProductCode, i.ProductName, i.ProductQuantity, i.ProductUnitPrice)
+                    i => new OrderItem(i.ProductCode, i.ProductName, i.Quantity, i.UnitPrice)
                 ).ToList();
 
             if (items.Count == 0)
@@ -81,8 +82,8 @@ namespace Ordering.Commands
                 if (
                     string.IsNullOrWhiteSpace(item.ProductCode)
                     || string.IsNullOrWhiteSpace(item.ProductName)
-                    || item.ProductQuantity <= 0
-                    || item.ProductUnitPrice <= 0
+                    || item.Quantity <= 0
+                    || item.UnitPrice <= 0
                     )
                 {
                     throw new InvalidItemException();

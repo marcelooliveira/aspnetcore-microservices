@@ -7,18 +7,18 @@
 
         }
 
-        public OrderItemDTO(string productCode, string productName, int productQuantity, decimal productUnitPrice)
+        public OrderItemDTO(string productCode, string productName, int quantity, decimal unitPrice)
         {
             ProductCode = productCode;
             ProductName = productName;
-            ProductQuantity = productQuantity;
-            ProductUnitPrice = productUnitPrice;
+            Quantity = quantity;
+            UnitPrice = unitPrice;
         }
 
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
-        public int ProductQuantity { get; set; }
-        public decimal ProductUnitPrice { get; set; }
-        public decimal Subtotal => ProductQuantity * ProductUnitPrice;
+        public int Quantity { get; set; }
+        public decimal UnitPrice { get; set; }
+        public decimal Subtotal => Quantity * UnitPrice;
     }
 }
