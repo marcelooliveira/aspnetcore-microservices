@@ -7,7 +7,7 @@ namespace Services.Models
 {
     [DataContract]
     public class OrderItem : BaseModel
-    {   
+    {
         [Required]
         [DataMember]
         [JsonIgnore]
@@ -47,6 +47,14 @@ namespace Services.Models
             ProductName = productName;
             Quantity = quantity;
             UnitPrice = unitPrice;
+        }
+
+        public OrderItem(BasketItem basketItem)
+        {
+            ProductCode = basketItem.ProductId;
+            ProductName = basketItem.ProductName;
+            Quantity = basketItem.Quantity;
+            UnitPrice = basketItem.UnitPrice;
         }
 
         internal void UpdateQuantity(int quantity)

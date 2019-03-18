@@ -118,8 +118,6 @@ namespace Ordering.Commands
 
                 _logger.LogInformation(eventId: EventId_CreateOrder, message: "New order has been placed successfully: {Order}", newOrder);
 
-                HttpClient httpClient = new HttpClient();
-
                 await this._connection.InvokeAsync("SendUserNotification",
                     $"{newOrder.CustomerId}", notificationText);
 

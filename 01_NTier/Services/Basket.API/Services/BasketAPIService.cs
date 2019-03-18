@@ -1,10 +1,9 @@
-﻿using Basket.API.Model;
-using Messages.Events;
-using Messages.IntegrationEvents.Events;
+﻿using Messages.IntegrationEvents.Events;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Ordering.Services;
 using Rebus.Bus;
 using Services.Models;
 using System;
@@ -22,16 +21,19 @@ namespace Basket.API.Services
         private readonly ILogger<BasketAPIService> _logger;
         private readonly IConfiguration _configuration;
         private readonly HubConnection _connection;
+        private readonly IOrderingService _orderingServices;
 
         public BasketAPIService(IBasketRepository repository
             , IBus bus
             , ILogger<BasketAPIService> logger
-            , IConfiguration configuration)
+            , IConfiguration configuration
+            , IOrderingService orderingServices)
         {
             _repository = repository;
             _bus = bus;
             _logger = logger;
             _configuration = configuration;
+            _orderingServices = orderingServices;
 
             string userCounterDataHubUrl = $"{_configuration["SignalRServerUrl"]}usercounterdatahub";
 
@@ -137,23 +139,31 @@ namespace Basket.API.Services
 
             CustomerBasket basket = await _repository.GetBasketAsync(customerId);
 
-            var items = basket.Items.Select(i =>
-                    new CheckoutEventItem(i.Id, i.ProductId, i.ProductName, i.UnitPrice, i.Quantity)).ToList();
+            //var items = basket.Items.Select(i =>
+            //        new CheckoutEventItem(i.Id, i.ProductId, i.ProductName, i.UnitPrice, i.Quantity)).ToList();
 
-            var checkoutEvent
-                = new CheckoutEvent
-                 (customerId, input.Name, input.Email, input.Phone
+            //var checkoutEvent
+            //    = new CheckoutEvent
+            //     (customerId, input.Name, input.Email, input.Phone
+            //        , input.Address, input.AdditionalAddress, input.District
+            //        , input.City, input.State, input.ZipCode
+            //        , Guid.NewGuid()
+            //        , items);
+
+            ////Once we complete it, it sends an integration event to API Ordering 
+            ////to convert the basket to order and continue with the order 
+            ////creation process
+            //await _bus.Publish(checkoutEvent);
+
+            var order
+                = new Order(basket.Items.Select(i => new OrderItem(i)).ToList() 
+                    , customerId, input.Name, input.Email, input.Phone
                     , input.Address, input.AdditionalAddress, input.District
-                    , input.City, input.State, input.ZipCode
-                    , Guid.NewGuid()
-                    , items);
+                    , input.City, input.State, input.ZipCode);
 
-            //Once we complete it, it sends an integration event to API Ordering 
-            //to convert the basket to order and continue with the order 
-            //creation process
-            await _bus.Publish(checkoutEvent);
+            await _orderingServices.CreateOrUpdateAsync(order);
 
-            _logger.LogInformation(eventId: EventId_Checkout, message: "Check out event has been dispatched: {CheckoutEvent}", args: checkoutEvent);
+            //_logger.LogInformation(eventId: EventId_Checkout, message: "Check out event has been dispatched: {CheckoutEvent}", args: checkoutEvent);
 
             var registryEvent
                 = new RegistryEvent

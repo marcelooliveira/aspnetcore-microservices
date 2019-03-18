@@ -32,6 +32,7 @@ using Newtonsoft.Json.Serialization;
 using Ordering.API.SignalR;
 using Ordering.Commands;
 using Ordering.Repositories;
+using Ordering.Services;
 using Polly;
 using Polly.Extensions.Http;
 using Rebus.Config;
@@ -404,7 +405,8 @@ namespace MVC
             services.AddScoped<IMediator, NoMediator>();
             services.AddScoped<IRequest<bool>, CreateOrderCommand>();
             services.AddMediatR(typeof(CreateOrderCommand).GetTypeInfo().Assembly);
-            //RegisterRebus(services);
+            services.AddTransient<IOrderingService, OrderingService>();
+
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
