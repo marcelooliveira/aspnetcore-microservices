@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Rebus.Bus;
+using Services.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

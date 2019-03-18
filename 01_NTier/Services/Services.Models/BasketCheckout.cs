@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Basket.API.Model
+namespace Services.Models
 {
     public class BasketCheckout
     {

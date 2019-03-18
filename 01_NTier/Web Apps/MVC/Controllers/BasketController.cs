@@ -5,9 +5,9 @@ using Microsoft.Extensions.Logging;
 using Models;
 using Models.ViewModels;
 using MVC.Model.Redis;
-using MVC.Models;
 using Polly.CircuitBreaker;
 using Services;
+using Services.Models;
 using System;
 using System.Threading.Tasks;
 
@@ -56,7 +56,7 @@ namespace Controllers
                         return RedirectToAction("ProductNotFound", "Basket", code);
                     }
 
-                    BasketItem itemBasket = new BasketItem(product.Code, product.Code, product.Name, product.Price, 1, product.ImageURL);
+                    BasketItem itemBasket = new BasketItem(product.Code, product.Code, product.Name, product.Price, 1);
                     basket = await basketService.AddItem(idUsuario, itemBasket);
                 }
                 else
@@ -96,8 +96,7 @@ namespace Controllers
                     , product.Code
                     , product.Name
                     , product.Price
-                    , 1
-                    , product.ImageURL);
+                    , 1);
                 basket = await basketService.AddItem(idUsuario, itemBasket);
                 await CheckUserCounterData();
             }

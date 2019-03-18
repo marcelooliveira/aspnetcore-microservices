@@ -5,6 +5,7 @@ using MVC.Model.Redis;
 using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
+using Services.Models;
 
 namespace MVC.SignalR
 {

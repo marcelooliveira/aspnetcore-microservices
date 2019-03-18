@@ -1,6 +1,5 @@
 ﻿using Models;
-using Models.ViewModels;
-using MVC.Models;
+using Services.Models;
 using System.Threading.Tasks;
 
 namespace Services

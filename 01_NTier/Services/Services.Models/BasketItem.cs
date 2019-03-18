@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Basket.API.Model
+namespace Services.Models
 {
     public class BasketItem : IValidatableObject
     {

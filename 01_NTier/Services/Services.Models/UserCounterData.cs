@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Models
+namespace Services.Models
 {
     public class UserCounterData
     {

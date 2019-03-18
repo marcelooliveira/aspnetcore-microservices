@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Models
+namespace Services.Models
 {
     public class UserNotification
     {

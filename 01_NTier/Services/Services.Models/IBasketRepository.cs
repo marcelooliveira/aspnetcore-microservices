@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Basket.API.Model
+namespace Services.Models
 {
     public interface IBasketRepository
     {

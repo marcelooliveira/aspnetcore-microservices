@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Basket.API.Model;
+using Services.Models;
 
 namespace Basket.API.Services
 {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Basket.API.Model
+namespace Services.Models
 {
     public class CustomerBasket
     {
@@ -15,6 +15,12 @@ namespace Basket.API.Model
             Items = new List<BasketItem>();
         }
 
+        public CustomerBasket(string customerId, List<BasketItem> items)
+        {
+            CustomerId = customerId;
+            Items = items;
+        }
+
         public CustomerBasket(CustomerBasket customerBasket)
         {
             this.CustomerId = customerBasket.CustomerId;
@@ -22,7 +28,7 @@ namespace Basket.API.Model
         }
 
         public string CustomerId { get; set; }
-        public List<BasketItem> Items { get; set; }
+        public List<BasketItem> Items { get; set; } = new List<BasketItem>();
         public decimal Total => Items.Sum(i => i.Quantity * i.UnitPrice);
     }
 }

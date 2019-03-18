@@ -10,6 +10,7 @@ using MVC.SignalR;
 using Polly.CircuitBreaker;
 using System;
 using System.Threading.Tasks;
+using Services.Models;
 
 namespace Controllers
 {

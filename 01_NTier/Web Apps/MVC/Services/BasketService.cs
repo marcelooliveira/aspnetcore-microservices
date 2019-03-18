@@ -1,15 +1,8 @@
-﻿using Infrastructure;
+﻿using AutoMapper;
 using Models;
 using Models.ViewModels;
-using Microsoft.Extensions.Logging;
-using MVC.Models;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+using Services.Models;
 using System.Threading.Tasks;
-using MVC;
-using AutoMapper;
 
 namespace Services
 {
@@ -36,21 +29,21 @@ namespace Services
 
         public async Task<CustomerBasket> AddItem(string customerId, BasketItem input)
         {
-            var item = _mapper.Map<Basket.API.Model.BasketItem>(input);
+            var item = _mapper.Map<BasketItem>(input);
             var result = await _apiService.AddItem(customerId, item);
             return _mapper.Map<CustomerBasket>(result);
         }
 
         public async Task<UpdateQuantityOutput> UpdateItem(string customerId, UpdateQuantityInput input)
         {
-            var updateQuantityInput = _mapper.Map<Basket.API.Model.UpdateQuantityInput>(input);
+            var updateQuantityInput = _mapper.Map<UpdateQuantityInput>(input);
             var result = await _apiService.UpdateItem(customerId, updateQuantityInput);
             return _mapper.Map<UpdateQuantityOutput>(result);
         }
 
         public async Task<bool> Checkout(string customerId, RegistrationViewModel viewModel)
         {
-            var input = _mapper.Map<Basket.API.Model.RegistrationViewModel>(viewModel);
+            var input = _mapper.Map<RegistrationViewModel>(viewModel);
             return await _apiService.Checkout(customerId, input);
         }
     }

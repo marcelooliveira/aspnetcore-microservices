@@ -7,6 +7,7 @@ using MVC.SignalR;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Models;
+using Services.Models;
 
 namespace Controllers
 {

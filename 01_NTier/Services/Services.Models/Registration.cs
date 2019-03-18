@@ -1,7 +1,6 @@
-﻿using Services.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Models
+namespace Services.Models
 {
     public class Registration : BaseModel
     {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Services.Models;
 using StackExchange.Redis;
 using System;
 using System.Collections.Generic;

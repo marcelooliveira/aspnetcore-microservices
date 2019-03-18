@@ -38,6 +38,7 @@ using Rebus.Config;
 using Rebus.ServiceProvider;
 using Serilog;
 using Services;
+using Services.Models;
 using StackExchange.Redis;
 using System;
 using System.Collections.Generic;

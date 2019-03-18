@@ -1,6 +1,4 @@
-﻿using Basket.API.Model;
-
-namespace Models
+﻿namespace Services.Models
 {
     public class UpdateQuantityOutput
     {
