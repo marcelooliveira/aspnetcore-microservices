@@ -7,7 +7,6 @@ using Basket.API.Services;
 using Catalog.API.Data;
 using Catalog.API.Queries;
 using Catalog.API.Services;
-using MediatR;
 using Messages.Events;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
@@ -23,19 +22,15 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Models.ViewModels;
 using MVC.AutoMapper;
-using MVC.Commands;
 using MVC.Model.Redis;
 using MVC.SignalR;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 using Ordering.API.SignalR;
-using Ordering.Commands;
 using Ordering.Repositories;
 using Ordering.Services;
 using Polly;
 using Polly.Extensions.Http;
-using Rebus.Config;
-using Rebus.ServiceProvider;
 using Serilog;
 using Services;
 using Services.Models;
@@ -211,23 +206,10 @@ namespace MVC
             services.AddSignalR();
             services.AddSingleton<IUserIdProvider, NameUserIdProvider>();
             services.AddTransient<IUserRedisRepository, UserRedisRepository>();
-            services.AddMediatR(typeof(UserNotificationCommand).GetTypeInfo().Assembly);
 
             catalogStartup.ConfigureServices(services);
             basketStartup.ConfigureServices(services);
             orderingStartup.ConfigureServices(services);
-
-            RegisterRebus(services);
-        }
-
-        private void RegisterRebus(IServiceCollection services)
-        {
-            // Configure and register Rebus
-            services.AddRebus(configure => configure
-                .Logging(l => l.Use(new MSLoggerFactoryAdapter(_loggerFactory)))
-                .Transport(t => t.UseRabbitMq(Configuration["RabbitMQConnectionString"], Configuration["RabbitMQInputQueueName"])))
-                .AddTransient<DbContext, Ordering.API.ApplicationContext>()
-                .AutoRegisterHandlersFromAssemblyOf<CheckoutEvent>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -266,13 +248,6 @@ namespace MVC
             catalogStartup.Configure(app, env, loggerFactory);
             basketStartup.Configure(app, env, loggerFactory);
             orderingStartup.Configure(app, env, loggerFactory);
-
-
-            app.UseRebus(
-                async (bus) =>
-                {
-                    await bus.Subscribe<CheckoutEvent>();
-                });
         }
 
         static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()

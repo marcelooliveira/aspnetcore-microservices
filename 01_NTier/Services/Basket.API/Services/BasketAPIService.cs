@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Ordering.Services;
-using Rebus.Bus;
 using Services.Models;
 using System;
 using System.Linq;
@@ -17,20 +16,17 @@ namespace Basket.API.Services
         private EventId EventId_Checkout = new EventId(1001, "Checkout");
         private EventId EventId_Registry = new EventId(1002, "Registry");
         private readonly IBasketRepository _repository;
-        private readonly IBus _bus;
         private readonly ILogger<BasketAPIService> _logger;
         private readonly IConfiguration _configuration;
         private readonly HubConnection _connection;
         private readonly IOrderingService _orderingServices;
 
         public BasketAPIService(IBasketRepository repository
-            , IBus bus
             , ILogger<BasketAPIService> logger
             , IConfiguration configuration
             , IOrderingService orderingServices)
         {
             _repository = repository;
-            _bus = bus;
             _logger = logger;
             _configuration = configuration;
             _orderingServices = orderingServices;
@@ -139,22 +135,6 @@ namespace Basket.API.Services
 
             CustomerBasket basket = await _repository.GetBasketAsync(customerId);
 
-            //var items = basket.Items.Select(i =>
-            //        new CheckoutEventItem(i.Id, i.ProductId, i.ProductName, i.UnitPrice, i.Quantity)).ToList();
-
-            //var checkoutEvent
-            //    = new CheckoutEvent
-            //     (customerId, input.Name, input.Email, input.Phone
-            //        , input.Address, input.AdditionalAddress, input.District
-            //        , input.City, input.State, input.ZipCode
-            //        , Guid.NewGuid()
-            //        , items);
-
-            ////Once we complete it, it sends an integration event to API Ordering 
-            ////to convert the basket to order and continue with the order 
-            ////creation process
-            //await _bus.Publish(checkoutEvent);
-
             var order
                 = new Order(basket.Items.Select(i => new OrderItem(i)).ToList() 
                     , customerId, input.Name, input.Email, input.Phone
@@ -162,18 +142,6 @@ namespace Basket.API.Services
                     , input.City, input.State, input.ZipCode);
 
             await _orderingServices.CreateOrUpdateAsync(order);
-
-            //_logger.LogInformation(eventId: EventId_Checkout, message: "Check out event has been dispatched: {CheckoutEvent}", args: checkoutEvent);
-
-            var registryEvent
-                = new RegistryEvent
-                 (customerId, input.Name, input.Email, input.Phone
-                    , input.Address, input.AdditionalAddress, input.District
-                    , input.City, input.State, input.ZipCode);
-
-            await _bus.Publish(registryEvent);
-
-            _logger.LogInformation(eventId: EventId_Registry, message: "Registry event has been dispatched: {RegistryEvent}", args: registryEvent);
 
             await _repository.DeleteBasketAsync(customerId);
 

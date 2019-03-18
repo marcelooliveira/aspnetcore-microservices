@@ -1,10 +1,7 @@
-﻿using Identity.API.Commands;
-using Identity.API.Data;
+﻿using Identity.API.Data;
 using Identity.API.Managers;
 using Identity.API.Models;
 using IdentityServer4.Services;
-using MediatR;
-using Messages.IntegrationEvents.Events;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -12,12 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Rebus.Config;
-using Rebus.ServiceProvider;
 using Serilog;
 using System;
 using System.IdentityModel.Tokens.Jwt;
-using System.Reflection;
 
 namespace Identity.API
 {
@@ -97,22 +91,6 @@ namespace Identity.API
             {
                 throw new Exception("need to configure key material");
             }
-
-            services.AddScoped<IMediator, NoMediator>();
-            services.AddScoped<IRequest<bool>, RegistrationCommand>();
-            services.AddMediatR(typeof(RegistrationCommand).GetTypeInfo().Assembly);
-
-            RegisterRebus(services);
-        }
-
-        private void RegisterRebus(IServiceCollection services)
-        {
-            // Configure and register Rebus
-            services.AddRebus(configure => configure
-                .Logging(l => l.Use(new MSLoggerFactoryAdapter(_loggerFactory)))
-                .Transport(t => t.UseRabbitMq(Configuration["RabbitMQConnectionString"], Configuration["RabbitMQInputQueueName"])))
-                .AddTransient<DbContext, ApplicationDbContext>()
-                .AutoRegisterHandlersFromAssemblyOf<RegistryEvent>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -120,11 +98,6 @@ namespace Identity.API
             loggerFactory.AddSerilog();
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-            app.UseRebus(
-                async (bus) =>
-                {
-                    await bus.Subscribe<RegistryEvent>();
-                });
 
             if (env.IsDevelopment())
             {
