@@ -28,15 +28,6 @@ namespace Identity.API
             Configuration = configuration;
             Environment = environment;
             _loggerFactory = loggerFactory;
-
-            var configurationByFile = new ConfigurationBuilder()
-                .SetBasePath(environment.ContentRootPath)
-                .AddJsonFile("appsettings.json")
-                .Build();
-
-            Log.Logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(configurationByFile)
-                .CreateLogger();
         }
 
         public void ConfigureServices(IServiceCollection services)

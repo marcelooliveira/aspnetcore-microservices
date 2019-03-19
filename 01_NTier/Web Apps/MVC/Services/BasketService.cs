@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Models;
 using Models.ViewModels;
+using MVC.Model.Redis;
 using Services.Models;
+using System;
 using System.Threading.Tasks;
 
 namespace Services
@@ -11,14 +13,18 @@ namespace Services
         private readonly IMapper _mapper;
         private readonly
             Basket.API.Services.IBasketAPIService _apiService;
+        private readonly IUserRedisRepository _userRedisRepository;
+
 
         public string Scope => "Basket.API";
 
         public BasketService(IMapper mapper,
-            Basket.API.Services.IBasketAPIService apiService)
+            Basket.API.Services.IBasketAPIService apiService,
+            IUserRedisRepository userRedisRepository)
         {
             _mapper = mapper;
             _apiService = apiService;
+            _userRedisRepository = userRedisRepository;
         }
 
         public async Task<CustomerBasket> GetBasket(string userId)
@@ -44,7 +50,11 @@ namespace Services
         public async Task<bool> Checkout(string customerId, RegistrationViewModel viewModel)
         {
             var input = _mapper.Map<RegistrationViewModel>(viewModel);
-            return await _apiService.Checkout(customerId, input);
+            var orderId = await _apiService.Checkout(customerId, input);
+            string message = string.Format("New order placed successfully: {0}", orderId);
+            var userNotification = new UserNotification(customerId, message, DateTime.Now, null);
+            await _userRedisRepository.AddUserNotificationAsync(customerId, userNotification);
+            return true;
         }
     }
 }

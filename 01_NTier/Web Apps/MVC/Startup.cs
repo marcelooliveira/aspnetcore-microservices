@@ -7,13 +7,10 @@ using Basket.API.Services;
 using Catalog.API.Data;
 using Catalog.API.Queries;
 using Catalog.API.Services;
-using Messages.Events;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,10 +20,8 @@ using Microsoft.Extensions.Options;
 using Models.ViewModels;
 using MVC.AutoMapper;
 using MVC.Model.Redis;
-using MVC.SignalR;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
-using Ordering.API.SignalR;
 using Ordering.Repositories;
 using Ordering.Services;
 using Polly;
@@ -41,7 +36,6 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Reflection;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -84,23 +78,19 @@ namespace MVC
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var uri = new Uri(Configuration["ApiUrl"]);
-            HttpClient httpClient = new HttpClient()
-            {
-                BaseAddress = uri
-            };
 
             services.AddAutoMapper();
             var mappingConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new CatalogProfile());
+                mc.AddProfile(new OrderingProfile());
             });
 
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(typeof(IMapper), mapper);
 
-            services.AddSingleton(typeof(HttpClient), httpClient);
             services.AddHttpContextAccessor();
+            services.AddTransient<IUserRedisRepository, UserRedisRepository>();
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<ICatalogService, CatalogService>();
             services.AddTransient<IBasketService, BasketService>();
@@ -203,9 +193,6 @@ namespace MVC
                     options.Scope.Add("Ordering.API");
                     options.Scope.Add("offline_access");
                 });
-            services.AddSignalR();
-            services.AddSingleton<IUserIdProvider, NameUserIdProvider>();
-            services.AddTransient<IUserRedisRepository, UserRedisRepository>();
 
             catalogStartup.ConfigureServices(services);
             basketStartup.ConfigureServices(services);
@@ -234,15 +221,6 @@ namespace MVC
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Catalog}/{action=Index}/{code?}");
-            });
-
-            app.UseSignalR(routes =>
-            {
-                routes.MapHub<UserCounterDataHub>("/usercounterdatahub",
-                    options =>
-                    {
-                        options.Transports = HttpTransportType.WebSockets;
-                    });
             });
 
             catalogStartup.Configure(app, env, loggerFactory);
@@ -359,8 +337,6 @@ namespace MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IUserIdProvider, CustomUserIdProvider>();
-
             string connectionString = Configuration["OrderingConnectionString"];
 
             services.AddDbContext<Ordering.API.ApplicationContext>(options =>

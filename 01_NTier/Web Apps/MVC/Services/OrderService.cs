@@ -1,39 +1,36 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using AutoMapper;
+using Microsoft.Extensions.Configuration;
 using Models.ViewModels;
 using MVC;
+using Ordering.Services;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Services
 {
-    public class OrderService : BaseHttpService, IOrderService
+    public class OrderService : IOrderService
     {
+        private readonly IMapper mapper;
         private readonly IConfiguration configuration;
-        private readonly HttpClient httpClient;
         private readonly ISessionHelper sessionHelper;
+        private readonly IOrderingService orderingService;
 
-        public OrderService(IConfiguration configuration
-            , HttpClient httpClient
-            , ISessionHelper sessionHelper) 
-            : base(configuration, httpClient, sessionHelper)
+        public OrderService(IMapper mapper,
+            IConfiguration configuration
+            , ISessionHelper sessionHelper
+            , IOrderingService orderingService) 
         {
+            this.mapper = mapper;
             this.configuration = configuration;
-            this.httpClient = httpClient;
             this.sessionHelper = sessionHelper;
-            _baseUri = _configuration["OrderingUrl"];
-        }
-
-        class Uris
-        {
-            public static string GetOrders => "api/ordering";
+            this.orderingService = orderingService;
         }
 
         public async Task<List<OrderDTO>> GetAsync(string customerId)
         {
-            return await GetAuthenticatedAsync<List<OrderDTO>>(Uris.GetOrders, customerId);
+            var list = await orderingService.GetListAsync(customerId);
+            return mapper.Map<List<OrderDTO>>(list);
         }
-
-        public override string Scope => "Ordering.API";
     }
 }

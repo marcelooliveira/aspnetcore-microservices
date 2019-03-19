@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public interface IOrderService : IService
+    public interface IOrderService
     {
         Task<List<OrderDTO>> GetAsync(string customerId);
     }

@@ -3,7 +3,6 @@ using Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MVC.Model.Redis;
-using MVC.SignalR;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Models;

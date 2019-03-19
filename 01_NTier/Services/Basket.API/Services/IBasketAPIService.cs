@@ -7,7 +7,7 @@ namespace Basket.API.Services
     public interface IBasketAPIService
     {
         Task<CustomerBasket> AddItem(string customerId, BasketItem input);
-        Task<bool> Checkout(string customerId, RegistrationViewModel input);
+        Task<int> Checkout(string customerId, RegistrationViewModel input);
         void Delete(string id);
         Task<CustomerBasket> Get(string id);
         Task<CustomerBasket> Post(CustomerBasket input);
