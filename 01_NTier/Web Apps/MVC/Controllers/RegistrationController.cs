@@ -10,6 +10,7 @@ using Polly.CircuitBreaker;
 using System;
 using System.Threading.Tasks;
 using Services.Models;
+using MVC;
 
 namespace Controllers
 {
@@ -26,12 +27,12 @@ namespace Controllers
             this.appUserParser = appUserParser;
         }
 
-        [Authorize]
         public async Task<IActionResult> Index()
         {
             try
             {
-                var usuario = appUserParser.Parse(HttpContext.User);
+                var usuario = UserManager.GetUser();
+
                 RegistrationViewModel registration
                     = new RegistrationViewModel()
                     {

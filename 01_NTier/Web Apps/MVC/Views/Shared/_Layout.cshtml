@@ -1,24 +1,21 @@
-﻿@using IdentityServer4.Extensions
-@using System.Linq;
+﻿@using System.Linq;
 @using System.Security.Claims;
 @{
     string name = null;
     string customerId = null;
     UserCounterData userCounterData = null;
-    if (!true.Equals(ViewData["signed-out"]))
+    ApplicationUser currentUser = MVC.UserManager.GetUser();
+    name = currentUser.Name;
+    if (string.IsNullOrWhiteSpace(name))
     {
-        name = @User.FindFirst("name")?.Value;
-        if (string.IsNullOrWhiteSpace(name))
-        {
-            name = @User.FindFirst("email")?.Value;
-        }
+        name = currentUser.Email;
+    }
 
-        customerId = @User.FindFirst("sub")?.Value;
+    customerId = currentUser.Id;
 
-        if (ViewBag.UserCounterData != null)
-        {
-            userCounterData = ViewBag?.UserCounterData;
-        }
+    if (ViewBag.UserCounterData != null)
+    {
+        userCounterData = ViewBag?.UserCounterData;
     }
 }
 
@@ -72,50 +69,46 @@
                         </ul>
                     </li>
                     <li>
-                        @if (!true.Equals(ViewData["signed-out"]))
-                        {
-                        <li>
-                            <div class="container-notification">
-                                <a asp-action="notifications" asp-controller="order"
-                                    title="Notifications">
-                                    @if (userCounterData != null
-                                        && userCounterData.UnreadNotificationCount > 0)
-                                    {
-                                        <div class="user-count notification show-count" data-count="@userCounterData.UnreadNotificationCount"></div>
-                                    }
-                                    else
-                                    {
-                                        <div class="user-count notification"></div>
-                                    }
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <span>
-                                &nbsp;
-                                &nbsp;
-                            </span>
-                        </li>
-                        <li>
-                            <div class="container-notification">
-                                <a asp-action="index" asp-controller="basket" asp-route-code=""
-                                    title="Basket">
-                                    @if (userCounterData != null
-                                       && userCounterData.BasketCount > 0)
-                                    {
-                                        <div class="user-count userbasket show-count" data-count="@userCounterData.BasketCount"></div>
-                                    }
-                                    else
-                                    {
-                                        <div class="user-count userbasket"></div>
-                                    }
-                                </a>
-                            </div>
-                        </li>
-                    }
-
-                        </li>
-                    </ul>
+                            <li>
+                                <div class="container-notification">
+                                    <a asp-action="notifications" asp-controller="order"
+                                       title="Notifications">
+                                        @if (userCounterData != null
+                                           && userCounterData.UnreadNotificationCount > 0)
+                                        {
+                                            <div class="user-count notification show-count" data-count="@userCounterData.UnreadNotificationCount"></div>
+                                        }
+                                        else
+                                        {
+                                            <div class="user-count notification"></div>
+                                        }
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <span>
+                                    &nbsp;
+                                    &nbsp;
+                                </span>
+                            </li>
+                            <li>
+                                <div class="container-notification">
+                                    <a asp-action="index" asp-controller="basket" asp-route-code=""
+                                       title="Basket">
+                                        @if (userCounterData != null
+                                          && userCounterData.BasketCount > 0)
+                                        {
+                                            <div class="user-count userbasket show-count" data-count="@userCounterData.BasketCount"></div>
+                                        }
+                                        else
+                                        {
+                                            <div class="user-count userbasket"></div>
+                                        }
+                                    </a>
+                                </div>
+                            </li>
+                    </li>
+                </ul>
             }
             </div>
 

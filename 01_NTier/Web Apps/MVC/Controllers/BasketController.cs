@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Models;
 using Models.ViewModels;
+using MVC;
 using MVC.Model.Redis;
 using Polly.CircuitBreaker;
 using Services;
@@ -13,12 +14,6 @@ using System.Threading.Tasks;
 
 namespace Controllers
 {
-    public interface ILixo
-    {
-
-    }
-
-    [Authorize]
     public class BasketController : BaseController
     {
         private readonly IIdentityParser<ApplicationUser> appUserParser;
@@ -114,7 +109,6 @@ namespace Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public async Task<IActionResult> UpdateQuantity([FromBody]UpdateQuantityInput input)
         {
             if (!ModelState.IsValid)
@@ -163,7 +157,8 @@ namespace Controllers
             {
                 string idUsuario = GetUserId();
 
-                var usuario = appUserParser.Parse(HttpContext.User);
+                var usuario = UserManager.GetUser();
+
                 await CheckUserCounterData();
                 return View(new OrderConfirmed(usuario.Email));
             }
@@ -177,7 +172,6 @@ namespace Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public async Task<IActionResult> AddToBasket([FromBody]string code)
         {
             if (string.IsNullOrWhiteSpace(code))

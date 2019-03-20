@@ -1,14 +1,11 @@
-﻿using Services;
-using IdentityModel;
-using Microsoft.AspNetCore.Authentication;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
+using Models.ViewModels;
+using MVC;
 using MVC.Model.Redis;
-using System;
-using System.Linq;
-using System.Security.Claims;
+using Services;
 using System.Threading.Tasks;
 
 namespace Controllers
@@ -42,29 +39,14 @@ namespace Controllers
 
         protected string GetUserId()
         {
-            var userIdClaim = User.Claims.FirstOrDefault(x
-                => new[] {
-                    JwtClaimTypes.Subject, ClaimTypes.NameIdentifier
-                }.Contains(x.Type)
-                && !string.IsNullOrWhiteSpace(x.Value));
-
-            if (userIdClaim != null)
-                return userIdClaim.Value;
-
-            return null;
+            return UserManager.GetUser().Id;
         }
 
         protected async Task CheckUserCounterData()
         {
-            if (!true.Equals(ViewData["signed-out"]))
-            {
-                var userId = GetUserId();
-                if (userId != null)
-                {
-                    ViewBag.UserCounterData
-                        = await userRedisRepository.GetUserCounterDataAsync(userId);
-                }
-            }
+            var user = UserManager.GetUser();
+            ViewBag.UserCounterData
+                = await userRedisRepository.GetUserCounterDataAsync(user.Id);
         }
     }
 }

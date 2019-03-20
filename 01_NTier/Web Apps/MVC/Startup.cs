@@ -7,6 +7,7 @@ using Basket.API.Services;
 using Catalog.API.Data;
 using Catalog.API.Queries;
 using Catalog.API.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -78,7 +79,6 @@ namespace MVC
 
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddAutoMapper();
             var mappingConfig = new MapperConfiguration(mc =>
             {
@@ -117,82 +117,6 @@ namespace MVC
 
                 return ConnectionMultiplexer.Connect(configuration);
             });
-            services.AddAuthorization();
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-
-            services
-                .AddAuthentication(options =>
-                {
-                    options.DefaultScheme = "Cookies";
-                    options.DefaultChallengeScheme = "oidc";
-                })
-                .AddCookie("Cookies")
-                .AddOpenIdConnect("oidc", options =>
-                {
-                    options.SignInScheme = "Cookies";
-
-                    options.Authority = Configuration["IdentityUrl"];
-                    options.BackchannelHttpHandler = new HttpClientHandler() { Proxy = new WebProxy() };
-                    options.RequireHttpsMetadata = false;
-
-                    options.ClientId = "MVC";
-                    options.ClientSecret = "secret";
-                    options.ResponseType = "code id_token";
-
-                    options.SaveTokens = true;
-                    options.GetClaimsFromUserInfoEndpoint = true;
-                    options.Events = new OpenIdConnectEvents()
-                    {
-                        OnUserInformationReceived = (context) =>
-                        {
-                            if (!(context.Principal.Identity is ClaimsIdentity claimsId))
-                            {
-                                throw new Exception();
-                            }
-
-                            // Get a list of all claims attached to the UserInformationRecieved context
-                            var ctxClaims = context.User.Children().ToList();
-
-                            foreach (var ctxClaim in ctxClaims)
-                            {
-                                var claimType = ctxClaim.Path;
-                                var token = ctxClaim.FirstOrDefault();
-                                if (token == null)
-                                {
-                                    continue;
-                                }
-
-                                var claims = new List<Claim>();
-                                if (token.Children().Any())
-                                {
-                                    claims.AddRange(
-                                        token.Children()
-                                            .Select(c => new Claim(claimType, c.Value<string>())));
-                                }
-                                else
-                                {
-                                    claims.Add(new Claim(claimType, token.Value<string>()));
-                                }
-
-                                foreach (var claim in claims)
-                                {
-                                    if (!claimsId.Claims.Any(
-                                        c => c.Type == claim.Type &&
-                                             c.Value == claim.Value))
-                                    {
-                                        claimsId.AddClaim(claim);
-                                    }
-                                }
-                            }
-
-                            return Task.CompletedTask;
-                        }
-                    };
-
-                    options.Scope.Add("Basket.API");
-                    options.Scope.Add("Ordering.API");
-                    options.Scope.Add("offline_access");
-                });
 
             catalogStartup.ConfigureServices(services);
             basketStartup.ConfigureServices(services);
@@ -211,8 +135,6 @@ namespace MVC
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-            app.UseAuthentication();
 
             app.UseStaticFiles();
             app.UseSession();
@@ -309,7 +231,6 @@ namespace MVC
             });
 
             services.AddTransient<IBasketRepository, RedisBasketRepository>();
-            services.AddTransient<IIdentityService, IdentityService>();
             services.AddTransient<IBasketAPIService, BasketAPIService>();
 
             var containerBuilder = new ContainerBuilder();
