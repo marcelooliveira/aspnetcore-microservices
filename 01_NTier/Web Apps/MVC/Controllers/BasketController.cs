@@ -52,11 +52,11 @@ namespace Controllers
                     }
 
                     BasketItem itemBasket = new BasketItem(product.Code, product.Code, product.Name, product.Price, 1);
-                    basket = await basketService.AddItem(idUsuario, itemBasket);
+                    basket = basketService.AddItem(idUsuario, itemBasket);
                 }
                 else
                 {
-                    basket = await basketService.GetBasket(idUsuario);
+                    basket = basketService.GetBasket(idUsuario);
                 }
                 await CheckUserCounterData();
                 return View(basket);
@@ -92,12 +92,12 @@ namespace Controllers
                     , product.Name
                     , product.Price
                     , 1);
-                basket = await basketService.AddItem(idUsuario, itemBasket);
+                basket = basketService.AddItem(idUsuario, itemBasket);
                 await CheckUserCounterData();
             }
             else
             {
-                basket = await basketService.GetBasket(idUsuario);
+                basket = basketService.GetBasket(idUsuario);
             }
             return basket;
         }
@@ -115,7 +115,7 @@ namespace Controllers
             {
                 return BadRequest(ModelState);
             }
-            UpdateQuantityOutput value = await basketService.UpdateItem(GetUserId(), input);
+            UpdateQuantityOutput value = basketService.UpdateItem(GetUserId(), input);
             if (value == null)
             {
                 return NotFound(input);
@@ -133,7 +133,7 @@ namespace Controllers
                 if (ModelState.IsValid)
                 {
                     var viewModel = new RegistrationViewModel(registration);
-                    await basketService.Checkout(GetUserId(), viewModel);
+                    basketService.CheckoutAsync(GetUserId(), viewModel);
                     return RedirectToAction("Checkout");
                 }
                 return RedirectToAction("Index", "Registration");

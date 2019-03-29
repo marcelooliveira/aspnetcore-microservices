@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Basket.API.Repositories;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Ordering.Services;
 using Services.Models;
@@ -26,14 +27,14 @@ namespace Basket.API.Services
             _orderingServices = orderingServices;
         }
 
-        public async Task<CustomerBasket> Get(string id)
+        public CustomerBasket Get(string id)
         {
             if (string.IsNullOrWhiteSpace(id))
             {
                 throw new ArgumentException(nameof(id));
             }
 
-            var basket = await _repository.GetBasketAsync(id);
+            var basket = _repository.GetBasket(id);
             if (basket == null)
             {
                 return new CustomerBasket(id);
@@ -41,17 +42,17 @@ namespace Basket.API.Services
             return basket;
         }
 
-        public async Task<CustomerBasket> Post(CustomerBasket input)
+        public CustomerBasket Post(CustomerBasket input)
         {
             if (input == null)
             {
                 throw new ArgumentNullException(nameof(input));
             }
 
-            return await _repository.UpdateBasketAsync(input);
+            return _repository.UpdateBasket(input);
         }
 
-        public async Task<CustomerBasket> AddItem(string customerId, BasketItem input)
+        public CustomerBasket AddItem(string customerId, BasketItem input)
         {
             if (string.IsNullOrWhiteSpace(customerId))
             {
@@ -63,10 +64,10 @@ namespace Basket.API.Services
                 throw new ArgumentNullException(nameof(input));
             }
 
-            return await _repository.AddBasketAsync(customerId, input);
+            return _repository.AddBasket(customerId, input);
         }
 
-        public async Task<UpdateQuantityOutput> UpdateItem(string customerId, UpdateQuantityInput input)
+        public UpdateQuantityOutput UpdateItem(string customerId, UpdateQuantityInput input)
         {
             if (string.IsNullOrWhiteSpace(customerId))
             {
@@ -78,12 +79,12 @@ namespace Basket.API.Services
                 throw new ArgumentNullException(nameof(input));
             }
 
-            return await _repository.UpdateBasketAsync(customerId, input);
+            return _repository.UpdateBasket(customerId, input);
         }
 
         public void Delete(string id)
         {
-            _repository.DeleteBasketAsync(id);
+            _repository.DeleteBasket(id);
         }
 
         public async Task<int> Checkout(string customerId, RegistrationViewModel input)
@@ -98,7 +99,7 @@ namespace Basket.API.Services
                 throw new ArgumentNullException(nameof(input));
             }
 
-            CustomerBasket basket = await _repository.GetBasketAsync(customerId);
+            CustomerBasket basket = _repository.GetBasket(customerId);
 
             var order
                 = new Order(basket.Items.Select(i => new OrderItem(i)).ToList() 
@@ -108,7 +109,7 @@ namespace Basket.API.Services
 
             var newOrder = await _orderingServices.CreateOrUpdateAsync(order);
 
-            await _repository.DeleteBasketAsync(customerId);
+            _repository.DeleteBasket(customerId);
 
             return newOrder.Id;
         }

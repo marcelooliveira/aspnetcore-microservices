@@ -1710,3 +1710,1611 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2019-03-28 22:58:33.703 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"002","ProductName":"Lemons","Quantity":2,"UnitPrice":52.9,"Id":3},{"ProductCode":"020","ProductName":"Peas","Quantity":3,"UnitPrice":52.9,"Id":4}],"Registration":{"Id":0},"CustomerId":"123","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-28T22:58:33.6476218-03:00","Id":2}
 2019-03-28 23:39:34.752 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"003","ProductName":"Bananas","Quantity":2,"UnitPrice":52.9,"Id":5},{"ProductCode":"001","ProductName":"Oranges","Quantity":3,"UnitPrice":52.9,"Id":6},{"ProductCode":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Id":7},{"ProductCode":"004","ProductName":"Strawberries","Quantity":1,"UnitPrice":52.9,"Id":8},{"ProductCode":"010","ProductName":"Eggplants","Quantity":1,"UnitPrice":52.9,"Id":9}],"Registration":{"Id":0},"CustomerId":"123","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-28T23:39:34.4016633-03:00","Id":3}
 2019-03-28 23:39:34.788 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"003","ProductName":"Bananas","Quantity":2,"UnitPrice":52.9,"Id":5},{"ProductCode":"001","ProductName":"Oranges","Quantity":3,"UnitPrice":52.9,"Id":6},{"ProductCode":"002","ProductName":"Lemons","Quantity":1,"UnitPrice":52.9,"Id":7},{"ProductCode":"004","ProductName":"Strawberries","Quantity":1,"UnitPrice":52.9,"Id":8},{"ProductCode":"010","ProductName":"Eggplants","Quantity":1,"UnitPrice":52.9,"Id":9}],"Registration":{"Id":0},"CustomerId":"123","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-28T23:39:34.4016633-03:00","Id":3}
+2019-03-29 00:37:30.452 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Basket.API.Repositories.BasketRepository.GetBasket(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 29
+   at Basket.API.Repositories.BasketRepository.AddBasket(String customerId, BasketItem item) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 54
+   at Basket.API.Services.BasketAPIService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Services\BasketAPIService.cs:line 67
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 39
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:37:30.482 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Basket.API.Repositories.BasketRepository.GetBasket(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 29
+   at Basket.API.Repositories.BasketRepository.AddBasket(String customerId, BasketItem item) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 54
+   at Basket.API.Services.BasketAPIService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Services\BasketAPIService.cs:line 67
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 39
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:37:34.135 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Basket.API.Repositories.BasketRepository.GetBasket(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 29
+   at Basket.API.Repositories.BasketRepository.AddBasket(String customerId, BasketItem item) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 54
+   at Basket.API.Services.BasketAPIService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Services\BasketAPIService.cs:line 67
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 39
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:37:34.137 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Basket.API.Repositories.BasketRepository.GetBasket(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 29
+   at Basket.API.Repositories.BasketRepository.AddBasket(String customerId, BasketItem item) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 54
+   at Basket.API.Services.BasketAPIService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Services\BasketAPIService.cs:line 67
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 39
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:37:48.563 -03:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Basket.API.Repositories.BasketRepository.GetBasket(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 29
+   at Basket.API.Services.BasketAPIService.Get(String id) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Services\BasketAPIService.cs:line 37
+   at Services.BasketService.GetBasket(String userId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 32
+   at Controllers.BasketController.Index(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 59
+2019-03-29 00:37:48.564 -03:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Basket.API.Repositories.BasketRepository.GetBasket(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 29
+   at Basket.API.Services.BasketAPIService.Get(String id) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Services\BasketAPIService.cs:line 37
+   at Services.BasketService.GetBasket(String userId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 32
+   at Controllers.BasketController.Index(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 59
+2019-03-29 00:37:48.778 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore.Views_Basket_Index.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Views\Basket\Index.cshtml:line 47
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:37:48.782 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore.Views_Basket_Index.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Views\Basket\Index.cshtml:line 47
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:38:13.082 -03:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Basket.API.Repositories.BasketRepository.GetBasket(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 29
+   at Basket.API.Services.BasketAPIService.Get(String id) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Services\BasketAPIService.cs:line 37
+   at Services.BasketService.GetBasket(String userId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 32
+   at Controllers.BasketController.Index(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 59
+2019-03-29 00:38:13.082 -03:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Basket.API.Repositories.BasketRepository.GetBasket(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 29
+   at Basket.API.Services.BasketAPIService.Get(String id) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Services\BasketAPIService.cs:line 37
+   at Services.BasketService.GetBasket(String userId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 32
+   at Controllers.BasketController.Index(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 59
+2019-03-29 00:38:13.195 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore.Views_Basket_Index.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Views\Basket\Index.cshtml:line 47
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:38:13.198 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore.Views_Basket_Index.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Views\Basket\Index.cshtml:line 47
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:38:17.490 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Basket.API.Repositories.BasketRepository.GetBasket(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 29
+   at Basket.API.Repositories.BasketRepository.AddBasket(String customerId, BasketItem item) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 54
+   at Basket.API.Services.BasketAPIService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Services\BasketAPIService.cs:line 67
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 39
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:38:17.493 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Basket.API.Repositories.BasketRepository.GetBasket(String customerId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 29
+   at Basket.API.Repositories.BasketRepository.AddBasket(String customerId, BasketItem item) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Repositories\BasketRepository.cs:line 54
+   at Basket.API.Services.BasketAPIService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Services\Basket.API\Services\BasketAPIService.cs:line 67
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 39
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:42:38.324 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:42:38.378 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:42:39.375 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:42:39.378 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:42:54.658 -03:00 [ERR] 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.GetBasket(String userId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 30
+   at Controllers.BasketController.Index(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 59
+2019-03-29 00:42:54.658 -03:00 [ERR] 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.GetBasket(String userId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 30
+   at Controllers.BasketController.Index(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 59
+2019-03-29 00:42:54.879 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore.Views_Basket_Index.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Views\Basket\Index.cshtml:line 47
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:42:54.883 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore.Views_Basket_Index.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Views\Basket\Index.cshtml:line 47
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:42:58.804 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:42:58.806 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:43:02.655 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:43:02.657 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:45:13.815 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:45:13.848 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:45:15.636 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:45:15.646 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:28.922 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:28.948 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:30.630 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:30.633 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:31.901 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:31.903 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:42.443 -03:00 [ERR] 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.GetBasket(String userId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 30
+   at Controllers.BasketController.Index(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 59
+2019-03-29 00:56:42.444 -03:00 [ERR] 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.GetBasket(String userId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 30
+   at Controllers.BasketController.Index(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 59
+2019-03-29 00:56:42.623 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore.Views_Basket_Index.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Views\Basket\Index.cshtml:line 47
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:42.626 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore.Views_Basket_Index.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Views\Basket\Index.cshtml:line 47
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:46.967 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:46.970 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:48.905 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:48.909 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:56:59.987 -03:00 [ERR] 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.GetBasket(String userId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 30
+   at Controllers.BasketController.Index(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 59
+2019-03-29 00:56:59.990 -03:00 [ERR] 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.GetBasket(String userId) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 30
+   at Controllers.BasketController.Index(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 59
+2019-03-29 00:57:00.123 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore.Views_Basket_Index.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Views\Basket\Index.cshtml:line 47
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:57:00.129 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore.Views_Basket_Index.ExecuteAsync() in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Views\Basket\Index.cshtml:line 47
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:57:04.335 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:57:04.338 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , Task`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:58:28.255 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , AsyncStateMachineBox`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 00:58:28.259 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+==========================================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Task`1 -> CustomerBasket (Destination member list)
+System.Threading.Tasks.Task`1[[Services.Models.CustomerBasket, Services.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Services.Models.CustomerBasket (Destination member list)
+
+Unmapped properties:
+CustomerId
+Items
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , AsyncStateMachineBox`1 , CustomerBasket , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at Services.BasketService.AddItem(String customerId, BasketItem input) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Services\BasketService.cs:line 37
+   at Controllers.BasketController.AddProductAsync(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 95
+   at Controllers.BasketController.AddToBasket(String code) in C:\Users\marce\Documents\GitHub\aspnetcore-microservices\01_NTier\Web Apps\MVC\Controllers\BasketController.cs:line 182
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-29 01:06:09.190 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"001","ProductName":"Oranges","Quantity":1,"UnitPrice":52.9,"Id":1005},{"ProductCode":"010","ProductName":"Eggplants","Quantity":2,"UnitPrice":52.9,"Id":1006},{"ProductCode":"002","ProductName":"Lemons","Quantity":3,"UnitPrice":52.9,"Id":1007}],"Registration":{"Id":0},"CustomerId":"123","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-29T01:06:08.651153-03:00","Id":1003}
+2019-03-29 01:06:09.233 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"001","ProductName":"Oranges","Quantity":1,"UnitPrice":52.9,"Id":1005},{"ProductCode":"010","ProductName":"Eggplants","Quantity":2,"UnitPrice":52.9,"Id":1006},{"ProductCode":"002","ProductName":"Lemons","Quantity":3,"UnitPrice":52.9,"Id":1007}],"Registration":{"Id":0},"CustomerId":"123","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-29T01:06:08.651153-03:00","Id":1003}
+2019-03-29 01:08:54.242 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"001","ProductName":"Oranges","Quantity":1,"UnitPrice":52.9,"Id":2005},{"ProductCode":"002","ProductName":"Lemons","Quantity":2,"UnitPrice":52.9,"Id":2006},{"ProductCode":"003","ProductName":"Bananas","Quantity":3,"UnitPrice":52.9,"Id":2007}],"Registration":{"Id":0},"CustomerId":"123","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-29T01:08:53.7305003-03:00","Id":2003}
+2019-03-29 01:08:54.287 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"001","ProductName":"Oranges","Quantity":1,"UnitPrice":52.9,"Id":2005},{"ProductCode":"002","ProductName":"Lemons","Quantity":2,"UnitPrice":52.9,"Id":2006},{"ProductCode":"003","ProductName":"Bananas","Quantity":3,"UnitPrice":52.9,"Id":2007}],"Registration":{"Id":0},"CustomerId":"123","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"Rua Vergueiro, 456","CustomerAdditionalAddress":"8 andar sala 801","CustomerDistrict":"Vila Mariana","CustomerCity":"São Paulo","CustomerState":"SP","CustomerZipCode":"69118","DateCreated":"2019-03-29T01:08:53.7305003-03:00","Id":2003}

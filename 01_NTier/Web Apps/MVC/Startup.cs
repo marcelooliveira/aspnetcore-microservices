@@ -2,13 +2,11 @@
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
 using Basket.API;
-using Basket.API.Model;
+using Basket.API.Repositories;
 using Basket.API.Services;
 using Catalog.API.Data;
 using Catalog.API.Queries;
 using Catalog.API.Services;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -21,7 +19,6 @@ using Microsoft.Extensions.Options;
 using Models.ViewModels;
 using MVC.AutoMapper;
 using MVC.Model.Redis;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 using Ordering.Repositories;
 using Ordering.Services;
@@ -29,16 +26,9 @@ using Polly;
 using Polly.Extensions.Http;
 using Serilog;
 using Services;
-using Services.Models;
 using StackExchange.Redis;
 using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
-using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace MVC
 {
@@ -230,7 +220,7 @@ namespace MVC
                 return ConnectionMultiplexer.Connect(configuration);
             });
 
-            services.AddTransient<IBasketRepository, RedisBasketRepository>();
+            services.AddTransient<IBasketRepository, BasketRepository>();
             services.AddTransient<IBasketAPIService, BasketAPIService>();
 
             var containerBuilder = new ContainerBuilder();

@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using Models;
-using Models.ViewModels;
 using MVC.Model.Redis;
 using Services.Models;
 using System;
@@ -27,27 +25,27 @@ namespace Services
             _userRedisRepository = userRedisRepository;
         }
 
-        public async Task<CustomerBasket> GetBasket(string userId)
+        public CustomerBasket GetBasket(string userId)
         {
-            var basket = await _apiService.Get(userId);
+            var basket = _apiService.Get(userId);
             return _mapper.Map<CustomerBasket>(basket);
         }
 
-        public async Task<CustomerBasket> AddItem(string customerId, BasketItem input)
+        public CustomerBasket AddItem(string customerId, BasketItem input)
         {
             var item = _mapper.Map<BasketItem>(input);
-            var result = await _apiService.AddItem(customerId, item);
+            var result = _apiService.AddItem(customerId, item);
             return _mapper.Map<CustomerBasket>(result);
         }
 
-        public async Task<UpdateQuantityOutput> UpdateItem(string customerId, UpdateQuantityInput input)
+        public UpdateQuantityOutput UpdateItem(string customerId, UpdateQuantityInput input)
         {
             var updateQuantityInput = _mapper.Map<UpdateQuantityInput>(input);
-            var result = await _apiService.UpdateItem(customerId, updateQuantityInput);
+            var result = _apiService.UpdateItem(customerId, updateQuantityInput);
             return _mapper.Map<UpdateQuantityOutput>(result);
         }
 
-        public async Task<bool> Checkout(string customerId, RegistrationViewModel viewModel)
+        public async Task<bool> CheckoutAsync(string customerId, RegistrationViewModel viewModel)
         {
             var input = _mapper.Map<RegistrationViewModel>(viewModel);
             var orderId = await _apiService.Checkout(customerId, input);
