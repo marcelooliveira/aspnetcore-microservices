@@ -18,7 +18,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Models.ViewModels;
 using MVC.AutoMapper;
-using MVC.Model.Redis;
+using MVC.Model.UserData;
 using Newtonsoft.Json.Serialization;
 using Ordering.Repositories;
 using Ordering.Services;
@@ -26,7 +26,6 @@ using Polly;
 using Polly.Extensions.Http;
 using Serilog;
 using Services;
-using StackExchange.Redis;
 using System;
 using System.Net.Http;
 
@@ -93,21 +92,6 @@ namespace MVC
                 .AddJsonOptions(a => a.SerializerSettings.ContractResolver = new DefaultContractResolver());
             services.AddDistributedMemoryCache();
             services.AddSession();
-            //By connecting here we are making sure that our service
-            //cannot start until redis is ready. This might slow down startup,
-            //but given that there is a delay on resolving the ip address
-            //and then creating the connection it seems reasonable to move
-            //that cost to startup instead of having the first request pay the
-            //penalty.
-            services.AddSingleton<IConnectionMultiplexer>(sp =>
-            {
-                var configuration = ConfigurationOptions.Parse(Configuration["RedisConnectionString"], true);
-
-                configuration.ResolveDns = true;
-
-                return ConnectionMultiplexer.Connect(configuration);
-            });
-
             catalogStartup.ConfigureServices(services);
             basketStartup.ConfigureServices(services);
             orderingStartup.ConfigureServices(services);
@@ -203,22 +187,6 @@ namespace MVC
 
             services.AddDistributedMemoryCache();
             services.AddSession();
-
-            //By connecting here we are making sure that our service
-            //cannot start until redis is ready. This might slow down startup,
-            //but given that there is a delay on resolving the ip address
-            //and then creating the connection it seems reasonable to move
-            //that cost to startup instead of having the first request pay the
-            //penalty.
-            services.AddSingleton<IConnectionMultiplexer>(sp =>
-            {
-                var settings = sp.GetRequiredService<IOptions<BasketConfig>>().Value;
-                var configuration = ConfigurationOptions.Parse(Configuration["RedisConnectionString"], true);
-
-                configuration.ResolveDns = true;
-
-                return ConnectionMultiplexer.Connect(configuration);
-            });
 
             services.AddTransient<IBasketRepository, BasketRepository>();
             services.AddTransient<IBasketAPIService, BasketAPIService>();

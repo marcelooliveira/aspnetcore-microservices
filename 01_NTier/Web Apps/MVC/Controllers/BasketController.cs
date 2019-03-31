@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Models;
 using Models.ViewModels;
 using MVC;
-using MVC.Model.Redis;
+using MVC.Model.UserData;
 using Polly.CircuitBreaker;
 using Services;
 using Services.Models;

@@ -2,9 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Models.ViewModels;
 using MVC;
-using MVC.Model.Redis;
+using MVC.Model.UserData;
 using Services;
 using System.Threading.Tasks;
 
@@ -46,7 +45,7 @@ namespace Controllers
         {
             var user = UserManager.GetUser();
             ViewBag.UserCounterData
-                = await userRedisRepository.GetUserCounterDataAsync(user.Id);
+                = userRedisRepository.GetUserCounterData(user.Id);
         }
     }
 }

@@ -2,11 +2,12 @@
 using Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MVC.Model.Redis;
+using MVC.Model.UserData;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Models;
 using Services.Models;
+using MVC.Model.UserData;
 
 namespace Controllers
 {
@@ -40,8 +41,8 @@ namespace Controllers
         public async Task<ActionResult> Notifications()
         {
             string customerId = GetUserId();
-            UserCounterData userCounterData = await userRedisRepository.GetUserCounterDataAsync(customerId);
-            await userRedisRepository.MarkAllAsReadAsync(customerId);
+            UserCounterData userCounterData = userRedisRepository.GetUserCounterData(customerId);
+            userRedisRepository.MarkAllAsRead(customerId);
             await CheckUserCounterData();
             return View(userCounterData);
         }

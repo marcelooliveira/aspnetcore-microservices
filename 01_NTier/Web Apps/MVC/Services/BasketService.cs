@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MVC.Model.Redis;
+using MVC.Model.UserData;
 using Services.Models;
 using System;
 using System.Threading.Tasks;
@@ -51,7 +51,7 @@ namespace Services
             var orderId = await _apiService.Checkout(customerId, input);
             string message = string.Format("New order placed successfully: {0}", orderId);
             var userNotification = new UserNotification(customerId, message, DateTime.Now, null);
-            await _userRedisRepository.AddUserNotificationAsync(customerId, userNotification);
+            _userRedisRepository.AddUserNotification(customerId, userNotification);
             return true;
         }
     }

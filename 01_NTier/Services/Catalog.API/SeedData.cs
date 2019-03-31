@@ -1,5 +1,4 @@
 ﻿using Catalog.API.Data;
-using Catalog.API.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;

@@ -1,5 +1,4 @@
-﻿using Catalog.API.Model;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Services.Models;
 
 namespace Catalog.API.Data
