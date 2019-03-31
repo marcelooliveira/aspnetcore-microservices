@@ -27,7 +27,6 @@ namespace MVC
 {
     public class Startup
     {
-        private readonly ILoggerFactory _loggerFactory;
         private readonly CatalogStartup catalogStartup;
         private readonly BasketStartup basketStartup;
         private readonly OrderingStartup orderingStartup;
@@ -37,7 +36,6 @@ namespace MVC
             IHostingEnvironment environment)
         {
             Configuration = configuration;
-            _loggerFactory = loggerFactory;
 
             var configurationByFile = new ConfigurationBuilder()
                 .SetBasePath(environment.ContentRootPath)
@@ -148,13 +146,10 @@ namespace MVC
 
     public class BasketStartup
     {
-        private readonly ILoggerFactory _loggerFactory;
-
         public BasketStartup(IConfiguration configuration,
             ILoggerFactory loggerFactory)
         {
             Configuration = configuration;
-            _loggerFactory = loggerFactory;
         }
 
         public IConfiguration Configuration { get; }
@@ -183,8 +178,6 @@ namespace MVC
 
     public class OrderingStartup
     {
-        private readonly ILoggerFactory _loggerFactory;
-
         public OrderingStartup(IConfiguration configuration)
         {
             Configuration = configuration;
