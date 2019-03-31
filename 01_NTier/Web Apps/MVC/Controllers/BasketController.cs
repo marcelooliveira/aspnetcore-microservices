@@ -4,7 +4,6 @@ using Microsoft.Extensions.Logging;
 using Models.ViewModels;
 using MVC;
 using MVC.Model.UserData;
-using Polly.CircuitBreaker;
 using Services;
 using Services.Models;
 using System;
@@ -58,11 +57,6 @@ namespace Controllers
                 }
                 await CheckUserCounterData();
                 return View(basket);
-            }
-            catch (BrokenCircuitException e)
-            {
-                logger.LogError(e, e.Message);
-                HandleBrokenCircuitException(catalogService);
             }
             catch (Exception e)
             {
@@ -135,11 +129,6 @@ namespace Controllers
                     return RedirectToAction("Checkout");
                 }
                 return RedirectToAction("Index", "Registration");
-            }
-            catch (BrokenCircuitException e)
-            {
-                logger.LogError(e, e.Message);
-                HandleBrokenCircuitException(basketService);
             }
             catch (Exception e)
             {

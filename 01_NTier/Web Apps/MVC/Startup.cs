@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
-using Basket.API;
 using Basket.API.Repositories;
 using Basket.API.Services;
 using Catalog.API.Data;
@@ -15,19 +14,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Models.ViewModels;
 using MVC.AutoMapper;
 using MVC.Model.UserData;
 using Newtonsoft.Json.Serialization;
 using Ordering.Repositories;
 using Ordering.Services;
-using Polly;
-using Polly.Extensions.Http;
 using Serilog;
 using Services;
-using System;
-using System.Net.Http;
 
 namespace MVC
 {
@@ -122,21 +116,6 @@ namespace MVC
             catalogStartup.Configure(app, env, loggerFactory);
             basketStartup.Configure(app, env, loggerFactory);
             orderingStartup.Configure(app, env, loggerFactory);
-        }
-
-        static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
-        {
-            return HttpPolicyExtensions
-              .HandleTransientHttpError()
-              .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound)
-              .WaitAndRetryAsync(6, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
-
-        }
-        static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
-        {
-            return HttpPolicyExtensions
-                .HandleTransientHttpError()
-                .CircuitBreakerAsync(5, TimeSpan.FromSeconds(30));
         }
     }
 
