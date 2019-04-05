@@ -18,7 +18,7 @@ namespace Catalog.API.Queries
 
         public async Task<IEnumerable<Product>> GetProductsAsync(string search = null)
         {
-            string connectionString = configuration.GetConnectionString("DefaultConnection");
+            string connectionString = configuration["CatalogConnectionString"];
             using (var connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
@@ -40,7 +40,7 @@ namespace Catalog.API.Queries
 
         public async Task<Product> GetProductAsync(string code)
         {
-            string connectionString = configuration.GetConnectionString("DefaultConnection");
+            string connectionString = configuration["CatalogConnectionString"];
             using (var connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
