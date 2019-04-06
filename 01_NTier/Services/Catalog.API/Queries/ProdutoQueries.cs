@@ -1,7 +1,8 @@
-﻿using Dapper;
+﻿using Catalog.API.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using model = Services.Models;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,44 +11,59 @@ namespace Catalog.API.Queries
     public class ProductQueries : IProductQueries
     {
         private readonly IConfiguration configuration;
+        private readonly ApplicationDbContext context;
 
-        public ProductQueries(IConfiguration configuration)
+        public ProductQueries(IConfiguration configuration,
+            ApplicationDbContext context)
         {
             this.configuration = configuration;
+            this.context = context;
         }
 
         public async Task<IEnumerable<Product>> GetProductsAsync(string search = null)
         {
-            string connectionString = configuration["CatalogConnectionString"];
-            using (var connection = new SQLiteConnection(connectionString))
-            {
-                connection.Open();
-
-                var sql =
-                    "select p.Id, p.Code, p.Name, p.Price," +
-                    "   c.Id as CategoryId, c.Name as CategoryName" +
-                    " from product as p " +
-                    " inner join category as c " +
-                    "   on c.Id = p.CategoryId";
-                if (string.IsNullOrWhiteSpace(search))
+            var query =
+                from p in context.Set<model.Product>()
+                    .Include(p => p.Category)
+                select new Product
                 {
-                    return await connection.QueryAsync<Product>(sql);
-                }
-                sql += " where p.name like @search or c.name like @search";
-                return await connection.QueryAsync<Product>(sql, new { search = "%" + search + "%" });
+                    Id = p.Id,
+                    Code = p.Code,
+                    Name = p.Name,
+                    Price = p.Price,
+                    CategoryId = p.Category.Id,
+                    CategoryName = p.Category.Name
+                };
+
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                return query;
             }
+
+            return
+                query = query
+                    .Where(p =>
+                        p.Name.StartsWith(search)
+                        || p.CategoryName.StartsWith(search));
         }
 
         public async Task<Product> GetProductAsync(string code)
         {
-            string connectionString = configuration["CatalogConnectionString"];
-            using (var connection = new SQLiteConnection(connectionString))
-            {
-                connection.Open();
-
-                var sql = "select Id, Code, Name, Price from product where Code = @code";
-                return (await connection.QueryAsync<Product>(sql, new { code })).SingleOrDefault();
-            }
+            return await 
+                context.Set<model.Product>()
+                    .Include(p => p.Category)
+                .Where(p => p.Code == code)
+                .Select(p =>
+                    new Product
+                    {
+                        Id = p.Id,
+                        Code = p.Code,
+                        Name = p.Name,
+                        Price = p.Price,
+                        CategoryId = p.Category.Id,
+                        CategoryName = p.Category.Name
+                    })
+                .SingleOrDefaultAsync();
         }
     }
 }

@@ -79,7 +79,6 @@ namespace MVC
             services.AddTransient<IIdentityParser<ApplicationUser>, IdentityParser>();
             services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 
-
             services.AddMvc()
                 .AddJsonOptions(a => a.SerializerSettings.ContractResolver = new DefaultContractResolver());
             services.AddDistributedMemoryCache();
@@ -132,14 +131,17 @@ namespace MVC
             services.AddTransient<ICatalogAPIService, CatalogAPIService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-            {
-                options.UseSqlite(Configuration["CatalogConnectionString"]);
-            });
+                options.UseSqlServer(Configuration["CatalogConnectionString"])
+            );
+
+            services.AddScoped<DbContext, ApplicationDbContext>();
+            var serviceProvider = services.BuildServiceProvider();
+            var context = serviceProvider.GetService<ApplicationDbContext>();
+            services.AddSingleton(context);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            SQLitePCL.Batteries_V2.Init();
 
         }
     }
@@ -196,8 +198,8 @@ namespace MVC
 
             services.AddScoped<DbContext, Ordering.API.ApplicationContext>();
             var serviceProvider = services.BuildServiceProvider();
-            var contexto = serviceProvider.GetService<Ordering.API.ApplicationContext>();
-            services.AddSingleton<Ordering.API.ApplicationContext>(contexto);
+            var context = serviceProvider.GetService<Ordering.API.ApplicationContext>();
+            services.AddSingleton<Ordering.API.ApplicationContext>(context);
 
             services.AddScoped<IOrderRepository, OrderRepository>();
 

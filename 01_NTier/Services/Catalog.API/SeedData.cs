@@ -15,53 +15,12 @@ namespace Catalog.API
     {
         public static async Task EnsureSeedData(IServiceProvider services)
         {
-            using (var scope = services.GetService<IServiceScopeFactory>().CreateScope())
+            using (var scope = services.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-
-                await CreateTables(context);
-
+                var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
+                await context.Database.MigrateAsync();
                 await SaveProducts(context);
             }
-        }
-
-        private static async Task CreateTables(ApplicationDbContext context)
-        {
-            await CreateTableCategory(context);
-            await CreateTableProduct(context);
-        }
-
-        private static async Task CreateTableCategory(ApplicationDbContext context)
-        {
-            var sql
-                = @"CREATE TABLE IF NOT EXISTS 
-                        'Category' (
-                            'Id'        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            'Name'      TEXT NOT NULL
-                        );";
-
-            await ExecuteSqlCommandAsync(context, sql);
-        }
-
-        private static async Task CreateTableProduct(ApplicationDbContext context)
-        {
-            var sql
-                = @"CREATE TABLE IF NOT EXISTS 
-                        'Product' (
-                            'Id'        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	                        'Code' 	    TEXT NOT NULL,
-                            'Name'      TEXT NOT NULL,
-	                        'Price'     NUMERIC NOT NULL,
-                            'CategoryId' INTEGER NOT NULL,
-                                FOREIGN KEY(CategoryId) REFERENCES Category(Id)
-                        );";
-
-            await ExecuteSqlCommandAsync(context, sql);
-        }
-
-        private static async Task ExecuteSqlCommandAsync(ApplicationDbContext context, string createTableSql)
-        {
-            await context.Database.ExecuteSqlCommandAsync(createTableSql);
         }
 
         private static async Task SaveProducts(ApplicationDbContext context)
@@ -88,7 +47,8 @@ namespace Catalog.API
                 string code = product.number.ToString("000");
                 if (!productDbSet.Where(p => p.Code == code).Any())
                 {
-                    await productDbSet.AddAsync(new Product(code, product.name, 52.90m, categoryDB.Id, categoryDB.Name));
+                    await productDbSet.AddAsync(
+                        new Product(code, product.name, 52.90m, categoryDB));
                 }
             }
             await context.SaveChangesAsync();

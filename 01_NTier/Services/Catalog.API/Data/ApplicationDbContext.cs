@@ -5,6 +5,11 @@ namespace Catalog.API.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext()
+        {
+                
+        }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
@@ -13,15 +18,10 @@ namespace Catalog.API.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            var category = modelBuilder.Entity<Category>();
-            category.HasKey(t => t.Id);
-            category.Property("Name").HasColumnType("nvarchar(255)");
+            modelBuilder.Entity<Category>().HasKey(t => t.Id);
 
-            var product = modelBuilder.Entity<Product>();
-            product.HasKey(t => t.Id);
-            product.Property("Code").HasColumnType("nvarchar(3)");
-            product.Property("Name").HasColumnType("nvarchar(255)");
-            product.Property("Price").HasColumnType("decimal(5,2)");
+            modelBuilder.Entity<Product>().HasKey(t => t.Id);
+            modelBuilder.Entity<Product>().HasOne(t => t.Category);
         }
     }
 }

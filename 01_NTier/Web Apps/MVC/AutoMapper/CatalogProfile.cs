@@ -7,7 +7,11 @@ namespace MVC.AutoMapper
     {
         public CatalogProfile()
         {
-            CreateMap<Catalog.API.Queries.Product, Product>();
+            CreateMap<Catalog.API.Queries.Product, Product>()
+                .ForMember(dest => dest.Category,
+                    opt => opt.MapFrom(src => 
+                    new Category(src.CategoryName) { Id = src.CategoryId })
+                );
         }
     }
 }
