@@ -1,6 +1,4 @@
-﻿using Autofac;
-using Autofac.Extensions.DependencyInjection;
-using AutoMapper;
+﻿using AutoMapper;
 using Basket.API.Repositories;
 using Basket.API.Services;
 using Catalog.API.Data;
@@ -166,9 +164,6 @@ namespace MVC
 
             services.AddTransient<IBasketRepository, BasketRepository>();
             services.AddTransient<IBasketAPIService, BasketAPIService>();
-
-            var containerBuilder = new ContainerBuilder();
-            containerBuilder.Populate(services);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
