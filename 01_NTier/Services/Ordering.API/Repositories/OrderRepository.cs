@@ -13,7 +13,7 @@ namespace Ordering.Repositories
 {
     public class OrderRepository : BaseRepository<Order>, IOrderRepository
     {
-        public OrderRepository(ApplicationContext contexto) : base(contexto)
+        public OrderRepository(ApplicationDbContext contexto) : base(contexto)
         {
         }
 

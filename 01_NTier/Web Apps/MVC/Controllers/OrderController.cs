@@ -11,16 +11,13 @@ namespace Controllers
     [Route("[controller]")]
     public class OrderController : BaseController
     {
-        private readonly IIdentityParser<ApplicationUser> appUserParser;
         private readonly IOrderService orderService;
 
         public OrderController(
-            IIdentityParser<ApplicationUser> appUserParser,
             IOrderService orderService,
             IUserRedisRepository repository) 
             : base(repository)
         {
-            this.appUserParser = appUserParser;
             this.orderService = orderService;
         }
 

@@ -14,7 +14,7 @@ namespace Ordering.API
         {
             using (var scope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                var context = scope.ServiceProvider.GetService<ApplicationContext>();
+                var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
                 await context.Database.MigrateAsync();
             }
         }

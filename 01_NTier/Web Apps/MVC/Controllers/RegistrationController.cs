@@ -10,14 +10,10 @@ namespace Controllers
 {
     public class RegistrationController : BaseController
     {
-        private readonly IIdentityParser<ApplicationUser> appUserParser;
-
         public RegistrationController(
-            IIdentityParser<ApplicationUser> appUserParser,
             IUserRedisRepository repository)
             : base(repository)
         {
-            this.appUserParser = appUserParser;
         }
 
         public async Task<IActionResult> Index()

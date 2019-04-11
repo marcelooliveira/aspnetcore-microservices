@@ -11,7 +11,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Models.ViewModels;
 using MVC.AutoMapper;
 using MVC.Model.UserData;
 using Newtonsoft.Json.Serialization;
@@ -61,7 +60,6 @@ namespace MVC
             services.AddTransient<ICatalogService, CatalogService>();
             services.AddTransient<IBasketService, BasketService>();
             services.AddTransient<ISessionHelper, SessionHelper>();
-            services.AddTransient<IIdentityParser<ApplicationUser>, IdentityParser>();
 
             services.AddMvc()
                 .AddJsonOptions(a => a.SerializerSettings.ContractResolver = new DefaultContractResolver());
@@ -169,14 +167,14 @@ namespace MVC
         {
             string connectionString = Configuration["OrderingConnectionString"];
 
-            services.AddDbContext<Ordering.API.ApplicationContext>(options =>
+            services.AddDbContext<Ordering.API.ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString)
             );
 
-            services.AddScoped<DbContext, Ordering.API.ApplicationContext>();
+            services.AddScoped<DbContext, Ordering.API.ApplicationDbContext>();
             var serviceProvider = services.BuildServiceProvider();
-            var context = serviceProvider.GetService<Ordering.API.ApplicationContext>();
-            services.AddSingleton<Ordering.API.ApplicationContext>(context);
+            var context = serviceProvider.GetService<Ordering.API.ApplicationDbContext>();
+            services.AddSingleton(context);
 
             services.AddScoped<IOrderRepository, OrderRepository>();
 

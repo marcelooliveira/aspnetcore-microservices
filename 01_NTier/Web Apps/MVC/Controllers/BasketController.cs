@@ -12,19 +12,16 @@ namespace Controllers
 {
     public class BasketController : BaseController
     {
-        private readonly IIdentityParser<ApplicationUser> appUserParser;
         private readonly ICatalogService catalogService;
         private readonly IBasketService basketService;
 
         public BasketController(
             IHttpContextAccessor contextAccessor,
-            IIdentityParser<ApplicationUser> appUserParser,
             ICatalogService catalogService,
             IBasketService basketService,
             IUserRedisRepository repository)
             : base(repository)
         {
-            this.appUserParser = appUserParser;
             this.catalogService = catalogService;
             this.basketService = basketService;
         }
