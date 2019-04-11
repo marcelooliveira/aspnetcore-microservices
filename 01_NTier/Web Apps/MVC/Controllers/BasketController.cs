@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Models.ViewModels;
 using MVC;
 using MVC.Model.UserData;
@@ -20,11 +19,10 @@ namespace Controllers
         public BasketController(
             IHttpContextAccessor contextAccessor,
             IIdentityParser<ApplicationUser> appUserParser,
-            ILogger<BasketController> logger,
             ICatalogService catalogService,
             IBasketService basketService,
             IUserRedisRepository repository)
-            : base(logger, repository)
+            : base(repository)
         {
             this.appUserParser = appUserParser;
             this.catalogService = catalogService;
@@ -35,34 +33,27 @@ namespace Controllers
         {
             await CheckUserCounterData();
 
-            try
-            {
-                string idUsuario = GetUserId();
+            string idUsuario = GetUserId();
 
-                CustomerBasket basket;
-                if (!string.IsNullOrWhiteSpace(code))
-                {
-                    var product = await catalogService.GetProduct(code);
-                    if (product == null)
-                    {
-                        return RedirectToAction("ProductNotFound", "Basket", code);
-                    }
-
-                    BasketItem itemBasket = new BasketItem(product.Code, product.Code, product.Name, product.Price, 1);
-                    basket = basketService.AddItem(idUsuario, itemBasket);
-                }
-                else
-                {
-                    basket = basketService.GetBasket(idUsuario);
-                }
-                await CheckUserCounterData();
-                return View(basket);
-            }
-            catch (Exception e)
+            CustomerBasket basket;
+            if (!string.IsNullOrWhiteSpace(code))
             {
-                logger.LogError(e, e.Message);
+                var product = await catalogService.GetProduct(code);
+                if (product == null)
+                {
+                    return RedirectToAction("ProductNotFound", "Basket", code);
+                }
+
+                BasketItem itemBasket = new BasketItem(product.Code, product.Code, product.Name, product.Price, 1);
+                basket = basketService.AddItem(idUsuario, itemBasket);
             }
-            return View();
+            else
+            {
+                basket = basketService.GetBasket(idUsuario);
+            }
+            await CheckUserCounterData();
+            return View(basket);
+
         }
 
         async Task<CustomerBasket> AddProductAsync(string code = null)
@@ -119,39 +110,23 @@ namespace Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Checkout(Registration registration)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    var viewModel = new RegistrationViewModel(registration);
-                    basketService.CheckoutAsync(GetUserId(), viewModel);
-                    return RedirectToAction("Checkout");
-                }
-                return RedirectToAction("Index", "Registration");
+                var viewModel = new RegistrationViewModel(registration);
+                await basketService.CheckoutAsync(GetUserId(), viewModel);
+                return RedirectToAction("Checkout");
             }
-            catch (Exception e)
-            {
-                logger.LogError(e, e.Message);
-            }
-            return View();
+            return RedirectToAction("Index", "Registration");
         }
 
         public async Task<IActionResult> Checkout()
         {
-            try
-            {
-                string idUsuario = GetUserId();
+            string idUsuario = GetUserId();
 
-                var usuario = UserManager.GetUser();
+            var usuario = UserManager.GetUser();
 
-                await CheckUserCounterData();
-                return View(new OrderConfirmed(usuario.Email));
-            }
-            catch (Exception e)
-            {
-                logger.LogError(e, e.Message);
-            }
-            return View();
+            await CheckUserCounterData();
+            return View(new OrderConfirmed(usuario.Email));
         }
 
         [HttpPost]

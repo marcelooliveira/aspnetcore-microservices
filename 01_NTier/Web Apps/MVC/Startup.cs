@@ -11,14 +11,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Logging;
 using Models.ViewModels;
 using MVC.AutoMapper;
 using MVC.Model.UserData;
 using Newtonsoft.Json.Serialization;
 using Ordering.Repositories;
 using Ordering.Services;
-using Serilog;
 using Services;
 
 namespace MVC
@@ -29,26 +27,15 @@ namespace MVC
         private readonly BasketStartup basketStartup;
         private readonly OrderingStartup orderingStartup;
 
-        public Startup(ILoggerFactory loggerFactory,
-            IConfiguration configuration,
-            IHostingEnvironment environment)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
-            var configurationByFile = new ConfigurationBuilder()
-                .SetBasePath(environment.ContentRootPath)
-                .AddJsonFile("appsettings.json")
-                .Build();
-
-            Log.Logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(configurationByFile)
-                .CreateLogger();
 
             catalogStartup = 
                 new CatalogStartup(configuration);
 
             basketStartup =
-                new BasketStartup(configuration, loggerFactory);
+                new BasketStartup(configuration);
 
             orderingStartup =
                 new OrderingStartup(configuration);
@@ -75,7 +62,6 @@ namespace MVC
             services.AddTransient<IBasketService, BasketService>();
             services.AddTransient<ISessionHelper, SessionHelper>();
             services.AddTransient<IIdentityParser<ApplicationUser>, IdentityParser>();
-            services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 
             services.AddMvc()
                 .AddJsonOptions(a => a.SerializerSettings.ContractResolver = new DefaultContractResolver());
@@ -86,10 +72,8 @@ namespace MVC
             orderingStartup.ConfigureServices(services);
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            loggerFactory.AddSerilog();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -108,9 +92,9 @@ namespace MVC
                     template: "{controller=Catalog}/{action=Index}/{code?}");
             });
 
-            catalogStartup.Configure(app, env, loggerFactory);
-            basketStartup.Configure(app, env, loggerFactory);
-            orderingStartup.Configure(app, env, loggerFactory);
+            catalogStartup.Configure(app);
+            basketStartup.Configure(app);
+            orderingStartup.Configure(app);
         }
     }
 
@@ -138,7 +122,7 @@ namespace MVC
             services.AddSingleton(context);
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app)
         {
 
         }
@@ -146,8 +130,7 @@ namespace MVC
 
     public class BasketStartup
     {
-        public BasketStartup(IConfiguration configuration,
-            ILoggerFactory loggerFactory)
+        public BasketStartup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -166,10 +149,9 @@ namespace MVC
             services.AddTransient<IBasketAPIService, BasketAPIService>();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app)
         {
             app.UseSession();
-            app.UseAuthentication();
         }
     }
 
@@ -202,7 +184,7 @@ namespace MVC
 
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app)
         {
 
         }

@@ -1,6 +1,5 @@
 ﻿using Basket.API.Repositories;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using Ordering.Services;
 using Services.Models;
 using System;
@@ -12,17 +11,14 @@ namespace Basket.API.Services
     public class BasketAPIService : IBasketAPIService
     {
         private readonly IBasketRepository _repository;
-        private readonly ILogger<BasketAPIService> _logger;
         private readonly IConfiguration _configuration;
         private readonly IOrderingService _orderingServices;
 
         public BasketAPIService(IBasketRepository repository
-            , ILogger<BasketAPIService> logger
             , IConfiguration configuration
             , IOrderingService orderingServices)
         {
             _repository = repository;
-            _logger = logger;
             _configuration = configuration;
             _orderingServices = orderingServices;
         }

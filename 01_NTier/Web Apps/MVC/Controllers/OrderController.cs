@@ -1,13 +1,10 @@
-﻿using Models.ViewModels;
-using Services;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
+using Models.ViewModels;
 using MVC.Model.UserData;
+using Services;
+using Services.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Models;
-using Services.Models;
-using MVC.Model.UserData;
 
 namespace Controllers
 {
@@ -20,9 +17,8 @@ namespace Controllers
         public OrderController(
             IIdentityParser<ApplicationUser> appUserParser,
             IOrderService orderService,
-            ILogger<OrderController> logger,
             IUserRedisRepository repository) 
-            : base(logger, repository)
+            : base(repository)
         {
             this.appUserParser = appUserParser;
             this.orderService = orderService;

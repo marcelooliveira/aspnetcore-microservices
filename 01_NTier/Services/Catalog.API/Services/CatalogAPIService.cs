@@ -1,5 +1,4 @@
 ﻿using Catalog.API.Queries;
-using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,13 +6,10 @@ namespace Catalog.API.Services
 {
     public class CatalogAPIService : ICatalogAPIService
     {
-        private readonly ILogger logger;
         private readonly IProductQueries productQueries;
 
-        public CatalogAPIService(ILogger<CatalogAPIService> logger,
-            IProductQueries productQueries)
+        public CatalogAPIService(IProductQueries productQueries)
         {
-            this.logger = logger;
             this.productQueries = productQueries;
         }
 

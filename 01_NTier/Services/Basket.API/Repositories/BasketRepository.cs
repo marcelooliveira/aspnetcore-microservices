@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using Services.Models;
+﻿using Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +7,8 @@ namespace Basket.API.Repositories
 {
     public class BasketRepository : IBasketRepository
     {
-        private readonly ILogger<BasketRepository> _logger;
         private static Dictionary<string, CustomerBasket> _database
             = new Dictionary<string, CustomerBasket>();
-
-        public BasketRepository(ILogger<BasketRepository> logger)
-        {
-            _logger = logger;
-        }
 
         public bool DeleteBasket(string id)
         {

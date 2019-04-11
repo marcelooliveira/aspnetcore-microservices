@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Models.ViewModels;
 using MVC.Model.UserData;
 using Services;
@@ -14,47 +13,27 @@ namespace Controllers
 
         public CatalogController
             (ICatalogService catalogService,
-            ILogger<CatalogController> logger,
             IUserRedisRepository repository)
-            : base(logger, repository)
+            : base(repository)
         {
             this.catalogService = catalogService;
         }
 
         public async Task<IActionResult> Index()
         {
-            try
-            {
-                await CheckUserCounterData();
-                var products = await catalogService.GetProducts();
-                var resultado = new SearchProductsViewModel(products, "");
-                return base.View(resultado);
-            }
-            catch (Exception e)
-            {
-                logger.LogError(e, e.Message);
-            }
-
-            return View();
+            await CheckUserCounterData();
+            var products = await catalogService.GetProducts();
+            var resultado = new SearchProductsViewModel(products, "");
+            return base.View(resultado);
         }
 
         public async Task<IActionResult> SearchProducts(string search)
         {
-            try
-            {
-                await CheckUserCounterData();
-                var products = await catalogService.SearchProducts(search);
-                var resultado = new SearchProductsViewModel(products, search);
-                return View("Index", resultado);
-            }
-            catch (Exception e)
-            {
-                logger.LogError(e, e.Message);
-            }
-
-            return View("Index");
+            await CheckUserCounterData();
+            var products = await catalogService.SearchProducts(search);
+            var resultado = new SearchProductsViewModel(products, search);
+            return View("Index", resultado);
         }
-
     }
 }
 

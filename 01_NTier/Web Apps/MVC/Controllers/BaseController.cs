@@ -1,22 +1,16 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 using MVC;
 using MVC.Model.UserData;
-using Services;
 using System.Threading.Tasks;
 
 namespace Controllers
 {
     public abstract class BaseController : Controller
     {
-        protected readonly ILogger logger;
         protected readonly IUserRedisRepository userRedisRepository;
 
-        protected BaseController(ILogger logger, IUserRedisRepository repository)
+        protected BaseController(IUserRedisRepository repository)
         {
-            this.logger = logger;
             this.userRedisRepository = repository;
         }
 

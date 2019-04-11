@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Services.Models;
 using System;
 using System.Collections.Generic;
@@ -9,14 +8,8 @@ namespace MVC.Model.UserData
 {
     public class UserRedisRepository : IUserRedisRepository
     {
-        private readonly ILogger<UserRedisRepository> _logger;
         private static Dictionary<string, UserCounterData>  _database 
             = new Dictionary<string, UserCounterData>();
-
-        public UserRedisRepository(ILogger<UserRedisRepository> logger)
-        {
-            _logger = logger;
-        }
 
         public UserCounterData GetUserCounterData(string customerId)
         {
