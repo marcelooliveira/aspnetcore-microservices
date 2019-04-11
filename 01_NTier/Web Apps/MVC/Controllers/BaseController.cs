@@ -20,22 +20,6 @@ namespace Controllers
             this.userRedisRepository = repository;
         }
 
-        protected void HandleBrokenCircuitException(IService service)
-        {
-            ViewBag.MsgServiceUnavailable = $"O serviço '{service.Scope}' não está ativo, por favor tente novamente mais tarde.";
-        }
-
-        protected void HandleException()
-        {
-            ViewBag.MsgServiceUnavailable = $"O serviço está indisponível no momento, por favor tente novamente mais tarde.";
-        }
-
-        public async Task Logout()
-        {
-            await HttpContext.SignOutAsync("Cookies");
-            await HttpContext.SignOutAsync("oidc");
-        }
-
         protected string GetUserId()
         {
             return UserManager.GetUser().Id;

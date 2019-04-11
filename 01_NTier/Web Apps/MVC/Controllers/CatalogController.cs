@@ -33,7 +33,6 @@ namespace Controllers
             catch (Exception e)
             {
                 logger.LogError(e, e.Message);
-                HandleException();
             }
 
             return View();
@@ -51,7 +50,6 @@ namespace Controllers
             catch (Exception e)
             {
                 logger.LogError(e, e.Message);
-                HandleException();
             }
 
             return View("Index");
