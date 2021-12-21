@@ -1,3 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Moq;
+using Ordering.Models;
+using Ordering.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+
 namespace Ordering.UnitTests
 {
     public class OrderRepositoryTest

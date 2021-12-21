@@ -1,4 +1,19 @@
-﻿namespace Ordering.UnitTests
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Moq;
+using Ordering.API.Models;
+using Ordering.Controllers;
+using Ordering.Models;
+using Ordering.Models.DTOs;
+using Ordering.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Xunit;
+
+namespace Ordering.UnitTests
 {
     public class OrderingControllerTest
     {

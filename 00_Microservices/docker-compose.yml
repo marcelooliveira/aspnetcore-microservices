@@ -12,7 +12,7 @@ services:
     image: nshou/elasticsearch-kibana
 
   sql.data:
-    image: microsoft/mssql-server-linux:2017-latest
+    image: mcr.microsoft.com/mssql/server:2017-latest
 
   ecommerce.data:
     image: redis:alpine

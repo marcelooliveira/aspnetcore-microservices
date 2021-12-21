@@ -5,10 +5,12 @@
     <AssemblyName>Basket.API</AssemblyName>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
     <UserSecretsId>d67282bb-70ad-4eb7-bafe-aa6d07417ef6</UserSecretsId>
+    <ErrorLogFilePath>docker-errors</ErrorLogFilePath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\marce\Documents\GitHub\CasaDoCodigo.CQRS\CasaDoCodigo.Basket\Basket.API.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
+    <OutputPath>bin\Debug\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

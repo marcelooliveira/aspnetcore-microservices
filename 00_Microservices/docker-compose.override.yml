@@ -65,7 +65,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
-      - ConnectionString=${CASADOCODIGO_ORDERING_DB:-Server=sql.data;Database=Ordering;User Id=sa;Password=Pass@word;}
+      - ConnectionString=${ORDERING_DB:-Server=sql.data;Database=Ordering;User Id=sa;Password=Pass@word;}
       - SignalRServerUrl=http://mvc/
       - RabbitMQConnectionString=amqp://rabbitmq
       - ELASTICSEARCH_URL=http://10.0.75.1:9200
