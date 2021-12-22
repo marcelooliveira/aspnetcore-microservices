@@ -3,7 +3,7 @@ version: '3.4'
 services:
   rabbitmq:
     hostname: rabbit
-    image: rabbitmq:3-management-alpine
+    image: rabbitmq:3.8-management-alpine
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
