@@ -10,6 +10,7 @@ using Messages.IntegrationEvents.Events;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -92,6 +93,16 @@ namespace Identity.API
                 .AddInMemoryApiResources(Config.GetApiResources())
                 .AddAspNetIdentity<ApplicationUser>()
                 .AddProfileService<ProfileService>();
+
+            builder.Services.ConfigureExternalCookie(options => {
+                options.Cookie.IsEssential = true;
+                options.Cookie.SameSite = (SameSiteMode)(-1); //SameSiteMode.Unspecified in .NET Core 3.1
+            });
+
+            builder.Services.ConfigureApplicationCookie(options => {
+                options.Cookie.IsEssential = true;
+                options.Cookie.SameSite = (SameSiteMode)(-1); //SameSiteMode.Unspecified in .NET Core 3.1
+            });
 
             if (Environment.IsDevelopment())
             {

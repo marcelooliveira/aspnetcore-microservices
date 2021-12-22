@@ -6,42 +6,42 @@
     <members>
         <member name="T:Basket.API.Controllers.BasketController">
             <summary>
-            Fornece funcionalidades do basket de compras da The Grocery Store
+            Provide basket functionalities for The Grocery Store
             </summary>
         </member>
         <member name="M:Basket.API.Controllers.BasketController.Get(System.String)">
             <summary>
-            Obtém o basket de compras
+            Get the current user basket
             </summary>
-            <param name="id">Id do cliente do basket</param>
-            <returns>O basket de compras</returns>
+            <param name="id">Current customer Id</param>
+            <returns>Shopping basket</returns>
         </member>
         <member name="M:Basket.API.Controllers.BasketController.Post(Basket.API.Model.CustomerBasket)">
             <summary>
-            Salva o basket de compras do cliente
+            Saves the customer's shopping basket
             </summary>
-            <param name="input">Dados do basket de compras</param>
+            <param name="input">shopping basket data</param>
             <returns></returns>
         </member>
-        <member name="M:Basket.API.Controllers.BasketController.AddItem(System.String,Basket.API.Model.ItemBasket)">
+        <member name="M:Basket.API.Controllers.BasketController.AddItem(System.String,Basket.API.Model.BasketItem)">
             <summary>
-            Adiciona um item no basket de compras do cliente
+            Add an item to the customer's shopping basket
             </summary>
-            <param name="customerId">Id do cliente</param>
-            <param name="input">Novo item a inserir no basket de compras</param>
+            <param name="customerId">Customer Id</param>
+            <param name="input">New item to be added to customer's shopping basket</param>
             <returns></returns>
         </member>
-        <member name="M:Basket.API.Controllers.BasketController.UpdateItem(System.String,Basket.API.Model.UpdateQuantidadeInput)">
+        <member name="M:Basket.API.Controllers.BasketController.UpdateItem(System.String,Basket.API.Model.UpdateQuantityInput)">
             <summary>
-            Atualiza a quantidade do item do basket de compras
+            Updates shopping basket item quantity
             </summary>
-            <param name="customerId">Id do cliente</param>
-            <param name="input">Item do basket de compras cuja quantidade será atualizada</param>
+            <param name="customerId">CustomerId</param>
+            <param name="input">Shopping basket item to be updated</param>
             <returns></returns>
         </member>
         <member name="M:Basket.API.Controllers.BasketController.Delete(System.String)">
             <summary>
-            Remove um item do basket de compras
+            Removes the shopping basket item
             </summary>
             <param name="id"></param>
         </member>
