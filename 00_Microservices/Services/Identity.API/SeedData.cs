@@ -33,12 +33,12 @@ namespace Identity.API
                         Email = "alice@asp.net",
                         Nome = "Alice Smith",
                         Telephone = "1234-5678",
-                        Endereco = "Rua Vergueiro, 456",
-                        Complemento = "8 andar sala 801",
-                        Bairro = "Vila Mariana",
-                        Municipio = "São Paulo",
-                        UF = "SP",
-                        CEP = "69118"
+                        Endereco = "",
+                        Complemento = "",
+                        Bairro = "",
+                        Municipio = "",
+                        UF = "",
+                        CEP = ""
                     };
                     var result = userMgr.CreateAsync(alice, "Pass123$").Result;
                     if (!result.Succeeded)
@@ -53,13 +53,13 @@ namespace Identity.API
                         new Claim("email", "AliceSmith@email.com"),
                         new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
                         new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
-                        new Claim("address", "Rua Vergueiro, 456"),
-                        new Claim("address_details", "8 andar sala 801"),
+                        new Claim("address", ""),
+                        new Claim("address_details", ""),
                         new Claim("phone", "1234-5678"),
-                        new Claim("district", "Vila Mariana"),
-                        new Claim("city", "São Paulo"),
-                        new Claim("state", "SP"),
-                        new Claim("zip_code", "69118")
+                        new Claim("district", ""),
+                        new Claim("city", ""),
+                        new Claim("state", ""),
+                        new Claim("zip_code", "")
                     }).Result;
                     if (!result.Succeeded)
                     {
@@ -81,12 +81,12 @@ namespace Identity.API
                         Nome = "Bob Smith",
                         Email = "bob@asp.net",
                         Telephone = "1234-5678",
-                        Endereco = "Rua Vergueiro, 456",
-                        Complemento = "8 andar sala 801",
-                        Bairro = "Vila Mariana",
-                        Municipio = "São Paulo",
-                        UF = "SP",
-                        CEP = "69118"
+                        Endereco = "",
+                        Complemento = "",
+                        Bairro = "",
+                        Municipio = "",
+                        UF = "",
+                        CEP = ""
                     };
                     var result = userMgr.CreateAsync(bob, "Pass123$").Result;
                     if (!result.Succeeded)
@@ -103,13 +103,13 @@ namespace Identity.API
                         new Claim(JwtClaimTypes.WebSite, "http://bob.com"),
                         new Claim(JwtClaimTypes.Address, @"{ 'street_address': 'One Hacker Way', 'locality': 'Heidelberg', 'postal_code': 69118, 'country': 'Germany' }", IdentityServer4.IdentityServerConstants.ClaimValueTypes.Json),
                         new Claim("location", "somewhere"),
-                        new Claim("address", "Rua Vergueiro, 456"),
-                        new Claim("address_details", "8 andar sala 801"),
+                        new Claim("address", ""),
+                        new Claim("address_details", ""),
                         new Claim("phone", "1234-5678"),
-                        new Claim("district", "Vila Mariana"),
-                        new Claim("city", "São Paulo"),
-                        new Claim("state", "SP"),
-                        new Claim("zip_code", "69118")
+                        new Claim("district", ""),
+                        new Claim("city", ""),
+                        new Claim("state", ""),
+                        new Claim("zip_code", "")
                     }).Result;
                     if (!result.Succeeded)
                     {
