@@ -6,6 +6,8 @@
     <DockerTargetOS>Windows</DockerTargetOS>
     <UserSecretsId>cf342ea5-6137-4330-82a8-5fc5769b76a4</UserSecretsId>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

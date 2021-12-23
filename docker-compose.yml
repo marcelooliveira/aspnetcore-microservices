@@ -18,7 +18,7 @@ services:
     image: redis:alpine
 
   basket.api:
-    image: ${DOCKER_REGISTRY-}basketapi
+    image: basketapi
     build:
       context: .
       dockerfile: Services/Basket.API/Dockerfile
@@ -27,7 +27,7 @@ services:
       - elasticsearch
 
   catalog.api:
-    image: ${DOCKER_REGISTRY-}catalogapi
+    image: catalogapi
     build:
       context: .
       dockerfile: Services/Catalog.API/Dockerfile
@@ -36,7 +36,7 @@ services:
       - elasticsearch
 
   identity.api:
-    image: ${DOCKER_REGISTRY-}identityapi
+    image: identityapi
     build:
       context: .
       dockerfile: Services/Identity.API/Dockerfile
@@ -45,7 +45,7 @@ services:
       - elasticsearch
 
   ordering.api:
-    image: ${DOCKER_REGISTRY-}orderingapi
+    image: orderingapi
     build:
       context: .
       dockerfile: Services/Ordering.API/Dockerfile
@@ -55,7 +55,7 @@ services:
       - elasticsearch
 
   mvc:
-    image: ${DOCKER_REGISTRY-}mvc
+    image: mvc
     build:
       context: .
       dockerfile: Web Apps/MVC/Dockerfile
@@ -65,8 +65,7 @@ services:
       - elasticsearch
 
   webstatus:
-    image: ${DOCKER_REGISTRY-}webstatus
+    image: webstatus
     build:
       context: .
       dockerfile: Web Apps/WebStatus/Dockerfile
-

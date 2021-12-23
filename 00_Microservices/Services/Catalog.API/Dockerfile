@@ -1,20 +1,21 @@
-FROM mcr.microsoft.com/dotnet/core/runtime:2.2 AS base
-WORKDIR /app
-EXPOSE 50518
-EXPOSE 44375
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM microsoft/dotnet:2.2-sdk AS build
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY Catalog/Catalog.API.csproj Catalog/
-RUN dotnet restore Catalog/Catalog.API.csproj
+COPY ["Services/Catalog.API/Catalog.API.csproj", "Services/Catalog.API/"]
+RUN dotnet restore "Services/Catalog.API/Catalog.API.csproj"
 COPY . .
-WORKDIR /src/Catalog
-RUN dotnet build Catalog.API.csproj -c Release -o /app
+WORKDIR "/src/Services/Catalog.API"
+RUN dotnet build "Catalog.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish Catalog.API.csproj -c Release -o /app
+RUN dotnet publish "Catalog.API.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app .
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Catalog.API.dll"]

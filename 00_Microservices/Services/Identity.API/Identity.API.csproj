@@ -6,6 +6,8 @@
     <AssemblyName>Identity.API</AssemblyName>
     <DockerTargetOS>Windows</DockerTargetOS>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
 
