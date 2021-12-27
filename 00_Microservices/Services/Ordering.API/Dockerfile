@@ -1,22 +1,21 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim AS base
+FROM mcr.microsoft.com/dotnet/core/runtime:2.2 AS base
 WORKDIR /app
-EXPOSE 80
+EXPOSE 5106
+EXPOSE 44398
 
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
+FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
-COPY ["Services/Ordering.API/Ordering.API.csproj", "Services/Ordering.API/"]
-COPY ["Services/Messages/Messages.csproj", "Services/Messages/"]
-RUN dotnet restore "Services/Ordering.API/Ordering.API.csproj"
+COPY Ordering.API/Ordering.API.csproj Ordering.API/
+COPY Messages/Messages.csproj Messages/
+RUN dotnet restore Ordering.API/Ordering.API.csproj
 COPY . .
-WORKDIR "/src/Services/Ordering.API"
-RUN dotnet build "Ordering.API.csproj" -c Release -o /app/build
+WORKDIR /src/Ordering.API
+RUN dotnet build Ordering.API.csproj -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "Ordering.API.csproj" -c Release -o /app/publish
+RUN dotnet publish Ordering.API.csproj -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "Ordering.API.dll"]

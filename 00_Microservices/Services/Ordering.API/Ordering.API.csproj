@@ -4,8 +4,6 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
     <UserSecretsId>fbd7e007-1551-49a9-9f6c-03a47444903d</UserSecretsId>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -49,7 +47,6 @@
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="1.1.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Rebus" Version="4.2.2" />
     <PackageReference Include="Rebus.RabbitMQ" Version="4.4.2" />
     <PackageReference Include="Rebus.ServiceProvider" Version="4.0.1" />
