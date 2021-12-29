@@ -11,23 +11,23 @@ services:
   elasticsearch:
     image: nshou/elasticsearch-kibana
 
-  sql.data:
-    image: mcr.microsoft.com/mssql/server:2017-latest
-
-  ecommerce.data:
-    image: redis:alpine
-
-  basket.api:
-    image: basketapi
-    build:
-      context: .
-      dockerfile: Services/Basket.API/Dockerfile
-    depends_on:
-      - rabbitmq
-      - elasticsearch
+#  sql.data:
+#    image: mcr.microsoft.com/mssql/server:2017-latest
+#
+#  ecommerce.data:
+#    image: redis:alpine
+#
+#  basket.api:
+#    image: basketapi
+#    build:
+#      context: .
+#      dockerfile: Services/Basket.API/Dockerfile
+#    depends_on:
+#      - rabbitmq
+#      - elasticsearch
 
   catalog.api:
-    image: catalogapi
+    image: ${DOCKER_REGISTRY-}catalogapi
     build:
       context: .
       dockerfile: Services/Catalog.API/Dockerfile
@@ -35,37 +35,40 @@ services:
       - rabbitmq
       - elasticsearch
 
-  identity.api:
-    image: identityapi
-    build:
-      context: .
-      dockerfile: Services/Identity.API/Dockerfile
-    depends_on:
-      - rabbitmq
-      - elasticsearch
+#  identity.api:
+#    image: identityapi
+#    build:
+#      context: .
+#      dockerfile: Services/Identity.API/Dockerfile
+#    depends_on:
+#      - rabbitmq
+#      - elasticsearch
+#
+#  ordering.api:
+#    image: orderingapi
+#    build:
+#      context: .
+#      dockerfile: Services/Ordering.API/Dockerfile
+#    depends_on:
+#      - rabbitmq
+#      - sql.data
+#      - elasticsearch
+#
+#  mvc:
+#    image: mvc
+#    build:
+#      context: .
+#      dockerfile: Web Apps/MVC/Dockerfile
+#    depends_on:
+#      - rabbitmq
+#      - ecommerce.data
+#      - elasticsearch
+#
+#  webstatus:
+#    image: webstatus
+#    build:
+#      context: .
+#      dockerfile: Web Apps/WebStatus/Dockerfile
+#
 
-  ordering.api:
-    image: orderingapi
-    build:
-      context: .
-      dockerfile: Services/Ordering.API/Dockerfile
-    depends_on:
-      - rabbitmq
-      - sql.data
-      - elasticsearch
 
-  mvc:
-    image: mvc
-    build:
-      context: .
-      dockerfile: Web Apps/MVC/Dockerfile
-    depends_on:
-      - rabbitmq
-      - ecommerce.data
-      - elasticsearch
-
-  webstatus:
-    image: webstatus
-    build:
-      context: .
-      dockerfile: Web Apps/WebStatus/Dockerfile

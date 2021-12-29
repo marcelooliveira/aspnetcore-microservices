@@ -4,8 +4,8 @@ using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -16,13 +16,16 @@ using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.IO;
 using System.Reflection;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.Swagger;
 
 namespace Catalog.API
 {
     public class Startup
     {
         public Startup(IConfiguration configuration
-            , IHostingEnvironment environment)
+            , IWebHostEnvironment environment)
         {
             Configuration = configuration;
 
@@ -47,30 +50,31 @@ namespace Catalog.API
 
             services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 
-            services
-                .AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-                .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+            //services
+            //    .AddMvc()
+            //    .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
+            services.AddControllers()
+                .AddNewtonsoftJson();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info
+                c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "The Grocery Store - Catalog",
                     Description = "Product Catalog API",
-                    TermsOfService = "None",
-                    Contact = new Contact
+                    Contact = new OpenApiContact
                     {
                         Name = "Marcelo Oliveira",
                         Email = "mclricardo@gmail.com",
-                        Url = "https://twitter.com/twmoliveira"
+                        Url = new Uri("https://github.com/marcelooliveira")
                     },
-                    License = new License
+                    License = new OpenApiLicense
                     {
                         Name = "Licença XPTO 4567",
-                        Url = "https://example.com/license"
+                        Url = new Uri("https://example.com/license")
                     }
                 });
 
@@ -92,7 +96,7 @@ namespace Catalog.API
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddSerilog();
 
@@ -130,7 +134,9 @@ namespace Catalog.API
             });
 
             app.UseStaticFiles();
-            app.UseMvc();
+            //app.UseMvc();
+            app.UseRouting();
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }
