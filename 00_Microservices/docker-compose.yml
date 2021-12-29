@@ -25,25 +25,25 @@ services:
 #    depends_on:
 #      - rabbitmq
 #      - elasticsearch
+#
+#  catalog.api:
+#    image: ${DOCKER_REGISTRY-}catalogapi
+#    build:
+#      context: .
+#      dockerfile: Services/Catalog.API/Dockerfile
+#    depends_on:
+#      - rabbitmq
+#      - elasticsearch
 
-  catalog.api:
-    image: ${DOCKER_REGISTRY-}catalogapi
+  identity.api:
+    image: identityapi
     build:
       context: .
-      dockerfile: Services/Catalog.API/Dockerfile
+      dockerfile: Services/Identity.API/Dockerfile
     depends_on:
       - rabbitmq
       - elasticsearch
 
-#  identity.api:
-#    image: identityapi
-#    build:
-#      context: .
-#      dockerfile: Services/Identity.API/Dockerfile
-#    depends_on:
-#      - rabbitmq
-#      - elasticsearch
-#
 #  ordering.api:
 #    image: orderingapi
 #    build:

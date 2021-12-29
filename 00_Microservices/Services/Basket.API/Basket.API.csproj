@@ -1,10 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>Basket.API</AssemblyName>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
     <UserSecretsId>d67282bb-70ad-4eb7-bafe-aa6d07417ef6</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -24,31 +26,35 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" Version="2.2.0" />
-    <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="2.2.2" />
+    <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" Version="3.1.4" />
+    <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="3.1.2" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="2.2.2" />
     <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.0" />
-    <PackageReference Include="IdentityServer4" Version="2.2.0" />
-    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.6.0" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="IdentityServer4" Version="4.1.2" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.HealthChecks" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.22" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="1.1.0" />
     <PackageReference Include="Microsoft.Extensions.HealthChecks.SqlServer" Version="1.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.22" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.22" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Rebus" Version="5.2.1" />
     <PackageReference Include="Rebus.RabbitMq" Version="4.4.2" />
     <PackageReference Include="Rebus.ServiceProvider" Version="4.0.2" />
-    <PackageReference Include="Serilog" Version="2.8.0" />
-    <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
-    <PackageReference Include="Serilog.Settings.Configuration" Version="3.0.1" />
-    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
-    <PackageReference Include="Serilog.Sinks.ElasticSearch" Version="7.1.0" />
-    <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="3.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="3.0.0" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
+    <PackageReference Include="Serilog.Sinks.ElasticSearch" Version="8.4.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>

@@ -36,32 +36,33 @@ services:
 #      - ELASTICSEARCH_URL=http://10.0.75.1:9200
 #    ports:
 #      - "5103:80"
+#
+#  catalog.api:
+#    environment:
+#      - ASPNETCORE_ENVIRONMENT=Development
+#      - ASPNETCORE_URLS=http://0.0.0.0:80;https://0.0.0.0:443
+#      - ELASTICSEARCH_URL=http://10.0.75.1:9200
+#    ports:
+#      - "50518:80"
+#      - "51518:443"
+#    volumes:
+#      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+#      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
-  catalog.api:
+  identity.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80;https://0.0.0.0:443
+      - CallBackUrl=http://localhost:5100/
+      - RabbitMQConnectionString=amqp://rabbitmq
       - ELASTICSEARCH_URL=http://10.0.75.1:9200
     ports:
-      - "50518:80"
-      - "51518:443"
+      - "5105:80"
+      - "5205:443"
     volumes:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
-#  identity.api:
-#    environment:
-#      - ASPNETCORE_ENVIRONMENT=Development
-#      - ASPNETCORE_URLS=http://0.0.0.0:80
-#      - CallBackUrl=http://localhost:5100/
-#      - RabbitMQConnectionString=amqp://rabbitmq
-#      - ELASTICSEARCH_URL=http://10.0.75.1:9200
-#    ports:
-#      - "5105:80"
-#    volumes:
-#      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-#      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-#
 #  ordering.api:
 #    environment:
 #      - ASPNETCORE_ENVIRONMENT=Development

@@ -12,8 +12,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using Rebus.Config;
 using Rebus.ServiceProvider;
@@ -28,14 +30,10 @@ namespace Basket.API
 {
     public class Startup
     {
-        private readonly ILoggerFactory _loggerFactory;
-
-        public Startup(ILoggerFactory loggerFactory, 
-            IConfiguration configuration,
-            IHostingEnvironment env)
+        public Startup(IConfiguration configuration,
+            IWebHostEnvironment env)
         {
             Configuration = configuration;
-            _loggerFactory = loggerFactory;
 
             var configurationByFile = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
@@ -52,12 +50,8 @@ namespace Basket.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
-
-            services
-                .AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-                .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+            services.AddControllers()
+                .AddNewtonsoftJson();
 
             services
                 .AddAuthentication("Bearer")
@@ -72,22 +66,21 @@ namespace Basket.API
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info
+                c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "The Grocery Store - Basket",
                     Description = "An API providing e-commerce basket functionalities.",
-                    TermsOfService = "None",
-                    Contact = new Contact
+                    Contact = new OpenApiContact
                     {
                         Name = "Marcelo Oliveira",
                         Email = "mclricardo@gmail.com",
-                        Url = "https://twitter.com/twmoliveira"
+                        Url = new Uri("https://github.com/marcelooliveira")
                     },
-                    License = new License
+                    License = new OpenApiLicense
                     {
                         Name = "Licence XPTO 4567",
-                        Url = "https://example.com/license"
+                        Url = new Uri("https://example.com/license")
                     }
                 });
 
@@ -133,7 +126,7 @@ namespace Basket.API
                     Configuration["RedisConnectionString"],
                     name: "redis-check",
                     tags: new string[] { "redis" })
-                .AddRabbitMQ(Configuration["RabbitMQConnectionString"]);
+                .AddRabbitMQ(Configuration["RabbitMQConnectionString"], HealthStatus.Healthy);
 
             var containerBuilder = new ContainerBuilder();
             containerBuilder.Populate(services);
@@ -145,14 +138,12 @@ namespace Basket.API
         {
             // Configure and register Rebus
             services.AddRebus(configure => configure
-                .Logging(l => l.Use(new MSLoggerFactoryAdapter(_loggerFactory)))
+                //.Logging(l => l.Use(new MSLoggerFactoryAdapter(_loggerFactory)))
                 .Transport(t => t.UseRabbitMq(Configuration["RabbitMQConnectionString"], Configuration["RabbitMQInputQueueName"])));
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            loggerFactory.AddSerilog();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -189,7 +180,10 @@ namespace Basket.API
             });
 
             app.UseStaticFiles();
-            app.UseMvc();
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
+
             app.UseRebus();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace Basket.API.Controllers
 {
-    public class HomeController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class HomeController : ControllerBase
     {
-        //GET: /<controller>/
         public IActionResult Index()
         {
             return new RedirectResult("~/swagger");
         }
+
     }
 }

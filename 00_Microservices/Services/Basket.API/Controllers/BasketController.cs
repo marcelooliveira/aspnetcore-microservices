@@ -20,9 +20,10 @@ namespace Basket.API.Controllers
     /// <summary>
     /// Provide basket functionalities for The Grocery Store
     /// </summary>
+    [ApiController]
     [Route("api/[controller]")]
     [Authorize]
-    public class BasketController : Controller
+    public class BasketController : ControllerBase
     {
         private EventId EventId_Checkout = new EventId(1001, "Checkout");
         private EventId EventId_Registry = new EventId(1002, "Registry");
