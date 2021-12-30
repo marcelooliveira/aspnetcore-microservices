@@ -17,6 +17,7 @@ using Microsoft.Extensions.Logging;
 using Ordering.API.SignalR;
 using Ordering.Commands;
 using Ordering.Repositories;
+using RabbitMQ.Client;
 using Rebus.Config;
 using Rebus.ServiceProvider;
 using Serilog;
@@ -61,12 +62,30 @@ namespace Ordering
             services.AddSignalR();
 
             services.AddSingleton<IUserIdProvider, CustomUserIdProvider>();
-            services.AddHealthChecks()
+            //services.AddHealthChecks()
+            //    .AddCheck("self", () => HealthCheckResult.Healthy())
+            //    .AddSqlServer(Configuration["ConnectionString"],
+            //        name: "Ordering DB Check",
+            //        tags: new string[] { "OrderingDB" })
+            //    .AddRabbitMQ(Configuration["RabbitMQConnectionString"], HealthStatus.Healthy);
+
+            services
+                .AddSingleton<IConnection>(sp =>
+                {
+                    var factory = new ConnectionFactory()
+                    {
+                        Uri = new Uri(Configuration["RabbitMQConnectionString"]),
+                        AutomaticRecoveryEnabled = true
+                    };
+
+                    return factory.CreateConnection();
+                })
+                .AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy())
                 .AddSqlServer(Configuration["ConnectionString"],
                     name: "Ordering DB Check",
                     tags: new string[] { "OrderingDB" })
-                .AddRabbitMQ(Configuration["RabbitMQConnectionString"]);
+                .AddRabbitMQ();
 
             services.AddAutoMapper();
 
@@ -153,7 +172,7 @@ namespace Ordering
                 .AutoRegisterHandlersFromAssemblyOf<CheckoutEvent>();
         }
 
-        public void Configure(IServiceProvider serviceProvider, IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IServiceProvider serviceProvider, IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddSerilog();
 
@@ -193,7 +212,10 @@ namespace Ordering
                 Predicate = r => r.Name.Contains("self")
             });
 
-            app.UseMvc();
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
+
         }
     }
 }

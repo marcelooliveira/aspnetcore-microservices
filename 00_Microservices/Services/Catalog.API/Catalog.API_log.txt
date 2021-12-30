@@ -24,3 +24,17 @@
 2021-12-30 01:34:34.024 -03:00 [Warning] Failed to determine the https port for redirect.
 2021-12-30 01:38:34.023 -03:00 [Warning] Failed to determine the https port for redirect.
 2021-12-30 01:38:34.062 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 09:59:48.941 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 09:59:48.959 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 12:10:59.317 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 12:10:59.335 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 12:40:06.526 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 12:40:06.544 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 12:50:02.470 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 12:50:02.483 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 12:55:37.835 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 12:55:37.847 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 12:58:37.910 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 12:58:37.927 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 13:01:29.340 -03:00 [Warning] Failed to determine the https port for redirect.
+2021-12-30 13:01:29.361 -03:00 [Warning] Failed to determine the https port for redirect.

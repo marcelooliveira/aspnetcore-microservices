@@ -17,6 +17,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
+using RabbitMQ.Client;
 using Rebus.Config;
 using Rebus.ServiceProvider;
 using Serilog;
@@ -131,13 +132,32 @@ namespace Basket.API
 
             services.AddTransient<IBasketRepository, RedisBasketRepository>();
             services.AddTransient<IIdentityService, IdentityService>();
-            services.AddHealthChecks()
+            //services.AddHealthChecks()
+            //    .AddCheck("self", () => HealthCheckResult.Healthy())
+            //    .AddRedis(
+            //        Configuration["RedisConnectionString"],
+            //        name: "redis-check",
+            //        tags: new string[] { "redis" })
+            //    .AddRabbitMQ(Configuration["RabbitMQConnectionString"], HealthStatus.Healthy);
+
+            services
+                .AddSingleton<IConnection>(sp =>
+                {
+                    var factory = new ConnectionFactory()
+                    {
+                        Uri = new Uri(Configuration["RabbitMQConnectionString"]),
+                        AutomaticRecoveryEnabled = true
+                    };
+
+                    return factory.CreateConnection();
+                })
+                .AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy())
                 .AddRedis(
                     Configuration["RedisConnectionString"],
                     name: "redis-check",
                     tags: new string[] { "redis" })
-                .AddRabbitMQ(Configuration["RabbitMQConnectionString"], HealthStatus.Healthy);
+                .AddRabbitMQ();
 
             var containerBuilder = new ContainerBuilder();
             containerBuilder.Populate(services);
@@ -195,7 +215,7 @@ namespace Basket.API
             app.UseAuthorization();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
 
-            app.UseRebus();
+            app.ApplicationServices.UseRebus();
         }
     }
 }

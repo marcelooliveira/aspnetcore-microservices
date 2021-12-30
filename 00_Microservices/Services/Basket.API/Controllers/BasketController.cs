@@ -138,8 +138,8 @@ namespace Basket.API.Controllers
             {
                 var basket = await _repository.AddBasketAsync(customerId, input);
 
-                //await this._connection
-                //    .InvokeAsync("UpdateUserBasketCount", $"{customerId}", basket.Items.Count);
+                await this._connection
+                    .InvokeAsync("UpdateUserBasketCount", $"{customerId}", basket.Items.Count);
 
                 return Ok(basket);
             }
