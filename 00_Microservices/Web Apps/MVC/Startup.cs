@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
 using Models.ViewModels;
 using MVC.Commands;
 using MVC.Model.Redis;
@@ -40,7 +41,7 @@ namespace MVC
 
         public Startup(ILoggerFactory loggerFactory,
             IConfiguration configuration,
-            IHostingEnvironment environment)
+            IWebHostEnvironment environment)
         {
             Configuration = configuration;
             _loggerFactory = loggerFactory;
@@ -82,8 +83,12 @@ namespace MVC
 
             services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 
-            services.AddMvc()
-                .AddJsonOptions(a => a.SerializerSettings.ContractResolver = new DefaultContractResolver());
+            //services.AddMvc()
+            //    .AddJsonOptions(a => a.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson();
+
             services.AddDistributedMemoryCache();
             services.AddSession();
             //By connecting here we are making sure that our service
@@ -133,40 +138,40 @@ namespace MVC
                                 throw new Exception();
                             }
 
-                            // Get a list of all claims attached to the UserInformationRecieved context
-                            var ctxClaims = context.User.Children().ToList();
+                            //// Get a list of all claims attached to the UserInformationRecieved context
+                            //var ctxClaims = context.User.Children().ToList();
 
-                            foreach (var ctxClaim in ctxClaims)
-                            {
-                                var claimType = ctxClaim.Path;
-                                var token = ctxClaim.FirstOrDefault();
-                                if (token == null)
-                                {
-                                    continue;
-                                }
+                            //foreach (var ctxClaim in ctxClaims)
+                            //{
+                            //    var claimType = ctxClaim.Path;
+                            //    var token = ctxClaim.FirstOrDefault();
+                            //    if (token == null)
+                            //    {
+                            //        continue;
+                            //    }
 
-                                var claims = new List<Claim>();
-                                if (token.Children().Any())
-                                {
-                                    claims.AddRange(
-                                        token.Children()
-                                            .Select(c => new Claim(claimType, c.Value<string>())));
-                                }
-                                else
-                                {
-                                    claims.Add(new Claim(claimType, token.Value<string>()));
-                                }
+                            //    var claims = new List<Claim>();
+                            //    if (token.Children().Any())
+                            //    {
+                            //        claims.AddRange(
+                            //            token.Children()
+                            //                .Select(c => new Claim(claimType, c.Value<string>())));
+                            //    }
+                            //    else
+                            //    {
+                            //        claims.Add(new Claim(claimType, token.Value<string>()));
+                            //    }
 
-                                foreach (var claim in claims)
-                                {
-                                    if (!claimsId.Claims.Any(
-                                        c => c.Type == claim.Type &&
-                                             c.Value == claim.Value))
-                                    {
-                                        claimsId.AddClaim(claim);
-                                    }
-                                }
-                            }
+                            //    foreach (var claim in claims)
+                            //    {
+                            //        if (!claimsId.Claims.Any(
+                            //            c => c.Type == claim.Type &&
+                            //                 c.Value == claim.Value))
+                            //        {
+                            //            claimsId.AddClaim(claim);
+                            //        }
+                            //    }
+                            //}
 
                             return Task.CompletedTask;
                         }
@@ -194,7 +199,7 @@ namespace MVC
                    .AddPolicyHandler(GetCircuitBreakerPolicy());
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddSerilog();
 
@@ -221,17 +226,26 @@ namespace MVC
             });
 
             app.UseStaticFiles();
-            app.UseSession();
-            app.UseMvc(routes =>
+            app.UseCookiePolicy(new CookiePolicyOptions
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Catalog}/{action=Index}/{code?}");
+                MinimumSameSitePolicy = SameSiteMode.Strict
             });
 
-            app.UseSignalR(routes =>
+            app.UseSession();
+
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapHub<UserCounterDataHub>("/usercounterdatahub",
+                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Catalog}/{action=Index}/{code?}");
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapHub<UserCounterDataHub>("/usercounterdatahub",
                     options =>
                     {
                         options.Transports = HttpTransportType.WebSockets;

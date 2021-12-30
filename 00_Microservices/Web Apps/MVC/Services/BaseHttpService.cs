@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using MVC;
+using IdentityModel.Client;
 
 namespace Services
 {

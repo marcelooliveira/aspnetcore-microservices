@@ -53,6 +53,17 @@ namespace Basket.API
             services.AddControllers()
                 .AddNewtonsoftJson();
 
+            services.AddCors(options => options.AddPolicy("CorsPolicy",
+                builder =>
+                {
+                    builder
+                        .WithOrigins(Configuration["SignalRServerUrl"])
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials()
+                        .SetIsOriginAllowed((host) => true);
+                }));
+
             services
                 .AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>

@@ -1,6 +1,8 @@
 ﻿using IdentityModel.Client;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
+using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace MVC
@@ -28,9 +30,9 @@ namespace MVC
 
         public async Task<string> GetAccessToken(string scope)
         {
-            var tokenClient = new TokenClient(Configuration["IdentityUrl"] + "connect/token", "MVC", "secret");
+            var tokenClient = new TokenClient(new HttpClient() { BaseAddress = new Uri(Configuration["IdentityUrl"] + "connect/token") }, new TokenClientOptions { ClientId = "MVC", ClientSecret = "secret" });
 
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync(scope);
+            var tokenResponse = await tokenClient.RequestClientCredentialsTokenAsync(scope);
             return tokenResponse.AccessToken;
         }
 
