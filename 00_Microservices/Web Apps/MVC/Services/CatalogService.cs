@@ -38,6 +38,11 @@ namespace Services
         {
             var uri = _baseUri + ApiUris.GetProduct;
             var json = await _httpClient.GetStringAsync(uri);
+            if (json == null)
+            {
+                return new List<Product>();
+            }
+
             IList<Product> result = JsonConvert.DeserializeObject<IList<Models.Product>>(json);
             return result;
         }

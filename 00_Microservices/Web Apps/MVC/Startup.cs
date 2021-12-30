@@ -181,7 +181,8 @@ namespace MVC
                     options.Scope.Add("Ordering.API");
                     options.Scope.Add("offline_access");
                 });
-            services.AddSignalR();
+            services.AddSignalR()
+                .AddNewtonsoftJsonProtocol();
             services.AddSingleton<IUserIdProvider, NameUserIdProvider>();
             services.AddTransient<IUserRedisRepository, UserRedisRepository>();
             services.AddMediatR(typeof(UserNotificationCommand).GetTypeInfo().Assembly);

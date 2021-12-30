@@ -41,15 +41,15 @@
             data: JSON.stringify(data),
             headers: headers
         }).done(function (response) {
-            let basketItem = response.BasketItem;
-            let itemLine = $('[item-id=' + basketItem.Id + ']');
-            itemLine.find('input').val(basketItem.Quantity);
-            itemLine.find('[subtotal]').html((basketItem.Subtotal).twoDigits());
-            let customerBasket = response.CustomerBasket;
-            $('[item-qty]').html('Total: ' + customerBasket.Items.length + ' items');
-            $('[total]').html((customerBasket.Total).twoDigits());
+            let basketItem = response.basketItem;
+            let itemLine = $('[item-id=' + basketItem.id + ']');
+            itemLine.find('input').val(basketItem.quantity);
+            itemLine.find('[subtotal]').html((basketItem.subtotal).twoDigits());
+            let customerBasket = response.customerBasket;
+            $('[item-qty]').html('Total: ' + customerBasket.items.length + ' items');
+            $('[total]').html((customerBasket.total).twoDigits());
 
-            if (basketItem.Quantity === 0) {
+            if (basketItem.quantity === 0) {
                 itemLine.remove();
             }
         });

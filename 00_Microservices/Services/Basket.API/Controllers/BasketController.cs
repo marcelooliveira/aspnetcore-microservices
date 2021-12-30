@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
 using Rebus.Bus;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,8 @@ namespace Basket.API.Controllers
             string userCounterDataHubUrl = $"{_configuration["SignalRServerUrl"]}usercounterdatahub";
 
             this._connection = new HubConnectionBuilder()
-                .WithUrl(userCounterDataHubUrl, HttpTransportType.WebSockets)
+                .WithUrl(userCounterDataHubUrl)
+                .AddJsonProtocol()
                 .Build();
             this._connection.Closed += async (error) =>
             {
@@ -57,7 +59,7 @@ namespace Basket.API.Controllers
                 await this._connection.StartAsync();
             };
 
-            this._connection.StartAsync().GetAwaiter();
+            this._connection.StartAsync().Wait();
         }
 
         //GET /id
@@ -136,8 +138,8 @@ namespace Basket.API.Controllers
             {
                 var basket = await _repository.AddBasketAsync(customerId, input);
 
-                await this._connection
-                    .InvokeAsync("UpdateUserBasketCount", $"{customerId}", basket.Items.Count);
+                //await this._connection
+                //    .InvokeAsync("UpdateUserBasketCount", $"{customerId}", basket.Items.Count);
 
                 return Ok(basket);
             }
