@@ -14,11 +14,14 @@ services:
   ecommerce.data:
     image: redis:alpine
 
-  webstatus:
-    image: ${DOCKER_REGISTRY-}webstatus
+  basket.api:
+    image: ${DOCKER_REGISTRY-}basketapi
     build:
       context: .
-      dockerfile: Web Apps/WebStatus/Dockerfile
+      dockerfile: Services/Basket.API/Dockerfile
+    depends_on:
+      - rabbitmq
+      - elasticsearch
 
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
@@ -29,6 +32,15 @@ services:
       - rabbitmq
       - elasticsearch
 
+  identity.api:
+    image: ${DOCKER_REGISTRY-}identityapi
+    build:
+      context: .
+      dockerfile: Services/Identity.API/Dockerfile
+    depends_on:
+      - ecommerce.data
+      - rabbitmq
+      - elasticsearch
 
   mvc:
     image: ${DOCKER_REGISTRY-}mvc
@@ -40,3 +52,8 @@ services:
       - ecommerce.data
       - elasticsearch
 
+  webstatus:
+    image: ${DOCKER_REGISTRY-}webstatus
+    build:
+      context: .
+      dockerfile: Web Apps/WebStatus/Dockerfile

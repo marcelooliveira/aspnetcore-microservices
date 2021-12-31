@@ -336,3 +336,8 @@ healthchecksdb
 00_Microservices/Services/Catalog.API/Catalog.API_log.txt
 00_Microservices/Services/Catalog.API/Catalog.API_log.txt
 00_Microservices/Web Apps/WebStatus/healthchecksdb
+00_Microservices/Services/Identity.API/Identity.API_log.txt
+00_Microservices/Services/Catalog.API/Catalog.API_log.txt
+00_Microservices/Services/Identity.API/AspIdUsers.db
+00_Microservices/Web Apps/MVC/MVC_log.txt
+00_Microservices/Web Apps/WebStatus/healthchecksdb
