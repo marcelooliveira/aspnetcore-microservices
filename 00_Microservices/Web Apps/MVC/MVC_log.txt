@@ -3972,3 +3972,11 @@ System.Exception: An error was encountered while handling the remote login.
    at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-12-31 18:08:58.624 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2021-12-31 18:08:58.672 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2021-12-31 18:08:59.001 +00:00 [WRN] No XML encryptor configured. Key {74639006-6547-4229-9776-8c5f3bf55135} may be persisted to storage in unencrypted form.
+2021-12-31 18:08:59.004 +00:00 [WRN] No XML encryptor configured. Key {74639006-6547-4229-9776-8c5f3bf55135} may be persisted to storage in unencrypted form.
+2021-12-31 18:10:51.878 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2021-12-31 18:10:51.893 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2021-12-31 18:10:52.031 +00:00 [WRN] No XML encryptor configured. Key {e42cd6ca-3d40-48fc-bbf0-a51737f23e3c} may be persisted to storage in unencrypted form.
+2021-12-31 18:10:52.032 +00:00 [WRN] No XML encryptor configured. Key {e42cd6ca-3d40-48fc-bbf0-a51737f23e3c} may be persisted to storage in unencrypted form.

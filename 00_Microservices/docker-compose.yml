@@ -11,6 +11,9 @@ services:
   elasticsearch:
     image: nshou/elasticsearch-kibana
 
+  ecommerce.data:
+    image: redis:alpine
+
   webstatus:
     image: ${DOCKER_REGISTRY-}webstatus
     build:
@@ -24,5 +27,16 @@ services:
       dockerfile: Services/Catalog.API/Dockerfile
     depends_on:
       - rabbitmq
+      - elasticsearch
+
+
+  mvc:
+    image: ${DOCKER_REGISTRY-}mvc
+    build:
+      context: .
+      dockerfile: Web Apps/MVC/Dockerfile
+    depends_on:
+      - rabbitmq
+      - ecommerce.data
       - elasticsearch
 
