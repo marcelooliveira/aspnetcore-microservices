@@ -328,6 +328,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
-CasaDoCodigo.Identity/identityserver4_log.txt
-OrdemDeCompra.API/OrdemDeCompra_log.txt
-CasaDoCodigo.Status/healthchecksdb
+identityserver4_log.txt
+OrdemDeCompra_log.txt
+healthchecksdb
+*.db
