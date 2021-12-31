@@ -1,21 +1,22 @@
-FROM mcr.microsoft.com/dotnet/core/runtime:2.2 AS base
-WORKDIR /app
-EXPOSE 50519
-EXPOSE 44338
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM microsoft/dotnet:2.2-sdk AS build
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY Identity/Identity.API.csproj Identity/
-COPY Messages/Messages.csproj Messages/
-RUN dotnet restore Identity/Identity.API.csproj
+COPY ["Services/Identity.API/Identity.API.csproj", "Services/Identity.API/"]
+COPY ["Services/Messages/Messages.csproj", "Services/Messages/"]
+RUN dotnet restore "Services/Identity.API/Identity.API.csproj"
 COPY . .
-WORKDIR /src/Identity
-RUN dotnet build Identity.API.csproj -c Release -o /app
+WORKDIR "/src/Services/Identity.API"
+RUN dotnet build "Identity.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish Identity.API.csproj -c Release -o /app
+RUN dotnet publish "Identity.API.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app .
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Identity.API.dll"]

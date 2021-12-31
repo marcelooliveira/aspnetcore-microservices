@@ -15,50 +15,86 @@ services:
     environment:
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
 
-#  sql.data:
-#    environment:
-#      - SA_PASSWORD=Pass@word
-#      - ACCEPT_EULA=Y
-#    ports:
-#      - "5433:1433"    # Important: In a production environment your should remove the external port
-#
-#  ecommerce.data:
-#    ports:
-#      - "6379:6379"    # Important: In a production environment your should remove the external port
-# 
-#  basket.api:
-#    environment:
-#      - ASPNETCORE_ENVIRONMENT=Development
-#      - IdentityUrl=http://10.0.75.1:5105
-#      - RedisConnectionString=ecommerce.data:6379
-#      - RabbitMQConnectionString=amqp://rabbitmq
-#      - SignalRServerUrl=http://mvc/
-#      - ELASTICSEARCH_URL=http://10.0.75.1:9200
-#    ports:
-#      - "5103:80"
-#
-#  catalog.api:
-#    environment:
-#      - ASPNETCORE_ENVIRONMENT=Development
-#      - ASPNETCORE_URLS=http://0.0.0.0:80;https://0.0.0.0:443
-#      - ELASTICSEARCH_URL=http://10.0.75.1:9200
-#    ports:
-#      - "50518:80"
-#      - "51518:443"
-#    volumes:
-#      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-#      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+  sql.data:
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "5433:1433"    # Important: In a production environment your should remove the external port
+    volumes:
+      - grocery-sqldata:/var/opt/mssql
+
+  ecommerce.data:
+    ports:
+      - "6379:6379"    # Important: In a production environment your should remove the external port
+    volumes:
+      - grocery-ecommerce.data:/data
+
+  webstatus:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - HealthChecks-UI__HealthChecks__1__Name=Basket HTTP Check
+      - HealthChecks-UI__HealthChecks__1__Uri=http://basket.api/hc
+      - HealthChecks-UI__HealthChecks__2__Name=Catalog HTTP Check
+      - HealthChecks-UI__HealthChecks__2__Uri=http://catalog.api/hc
+      - HealthChecks-UI__HealthChecks__3__Name=MVC HTTP Check
+      - HealthChecks-UI__HealthChecks__3__Uri=http://mvc/hc
+      - HealthChecks-UI__HealthChecks__4__Name=Identity HTTP Check
+      - HealthChecks-UI__HealthChecks__4__Uri=http://10.0.75.1:5105/hc
+      - HealthChecks-UI__HealthChecks__5__Name=Ordering HTTP Check
+      - HealthChecks-UI__HealthChecks__5__Uri=http://ordering.api/hc
+    ports:
+      - "5107:80"
+
+  catalog.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ELASTICSEARCH_URL=http://10.0.75.1:9200
+    ports:
+      - "5108:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+  mvc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - CatalogUrl=http://catalog.api/
+      - IdentityUrl=http://10.0.75.1:5105/
+      - BasketUrl=http://basket.api/
+      - OrderingUrl=http://ordering.api/
+      - CallBackUrl=http://localhost:5100/
+      - SignalRServerUrl=http://mvc/
+      - RedisConnectionString=ecommerce.data:6379
+      - ELASTICSEARCH_URL=http://10.0.75.1:9200
+    ports:
+      - "5100:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+  basket.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - IdentityUrl=http://10.0.75.1:5105
+      - RedisConnectionString=ecommerce.data:6379
+      - RabbitMQConnectionString=amqp://rabbitmq
+      - SignalRServerUrl=http://mvc/
+      - ELASTICSEARCH_URL=http://10.0.75.1:9200
+    ports:
+      - "5103:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
   identity.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://0.0.0.0:80;https://0.0.0.0:443
+      - ASPNETCORE_URLS=http://0.0.0.0:80
       - CallBackUrl=http://localhost:5100/
       - RabbitMQConnectionString=amqp://rabbitmq
       - ELASTICSEARCH_URL=http://10.0.75.1:9200
     ports:
       - "5105:80"
-      - "5205:443"
     volumes:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
@@ -67,45 +103,20 @@ services:
 #    environment:
 #      - ASPNETCORE_ENVIRONMENT=Development
 #      - ASPNETCORE_URLS=http://0.0.0.0:80
-#      - ConnectionString=${ORDERING_DB:-Server=sql.data;Database=Ordering;User Id=sa;Password=Pass@word;}
+#      - ConnectionString=Server=(10.0.75.1)\\mssqllocaldb;Database=Ordering;Trusted_Connection=True;MultipleActiveResultSets=true;
 #      - SignalRServerUrl=http://mvc/
 #      - RabbitMQConnectionString=amqp://rabbitmq
 #      - ELASTICSEARCH_URL=http://10.0.75.1:9200
 #    ports:
 #      - "5106:80"
 #    volumes:
-#      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
 #      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-#
-#  mvc:
-#    environment:
-#      - ASPNETCORE_ENVIRONMENT=Development
-#      - CatalogUrl=http://catalog.api/
-#      - IdentityUrl=http://10.0.75.1:5105/
-#      - BasketUrl=http://basket.api/
-#      - OrderingUrl=http://ordering.api/
-#      - CallBackUrl=http://localhost:5100/
-#      - SignalRServerUrl=http://mvc/
-#      - RedisConnectionString=ecommerce.data:6379
-#      - ELASTICSEARCH_URL=http://10.0.75.1:9200
-#    ports:
-#      - "5100:80"
-#
-#  webstatus:
-#    environment:
-#      - ASPNETCORE_ENVIRONMENT=Development
-#      - ASPNETCORE_URLS=http://0.0.0.0:80
-#      - HealthChecks-UI__HealthChecks__1__Name=Basket HTTP Check
-#      - HealthChecks-UI__HealthChecks__1__Uri=http://basket.api/hc
-#      - HealthChecks-UI__HealthChecks__2__Name=Catalog HTTP Check
-#      - HealthChecks-UI__HealthChecks__2__Uri=http://catalog.api/hc
-#      - HealthChecks-UI__HealthChecks__3__Name=MVC HTTP Check
-#      - HealthChecks-UI__HealthChecks__3__Uri=http://mvc/hc
-#      - HealthChecks-UI__HealthChecks__4__Name=Identity HTTP Check
-#      - HealthChecks-UI__HealthChecks__4__Uri=http://10.0.75.1:5105/hc
-#      - HealthChecks-UI__HealthChecks__5__Name=Ordering HTTP Check
-#      - HealthChecks-UI__HealthChecks__5__Uri=http://ordering.api/hc
-#    ports:
-#      - "5107:80"
+
+volumes:
+  grocery-sqldata:
+    external: false
+  grocery-ecommerce.data:
+    external: false
+
 
 
