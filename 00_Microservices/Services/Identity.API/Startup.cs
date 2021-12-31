@@ -17,6 +17,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
 using Rebus.Config;
 using Rebus.ServiceProvider;
 using Serilog;
@@ -31,9 +32,9 @@ namespace Identity.API
         private readonly ILoggerFactory _loggerFactory;
 
         public IConfiguration Configuration { get; }
-        public IHostingEnvironment Environment { get; }
+        public IWebHostEnvironment Environment { get; }
 
-        public Startup(ILoggerFactory loggerFactory, IConfiguration configuration, IHostingEnvironment environment)
+        public Startup(ILoggerFactory loggerFactory, IConfiguration configuration, IWebHostEnvironment environment)
         {
 
             Configuration = configuration;
@@ -71,7 +72,12 @@ namespace Identity.API
 
             services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 
-            services.AddMvc();
+            //services.AddMvc();
+
+            services.AddControllers();
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+
             services.AddSingleton<IProfileService, ProfileService>();
 
             services.Configure<IISOptions>(iis =>
@@ -138,7 +144,7 @@ namespace Identity.API
                 .AutoRegisterHandlersFromAssemblyOf<RegistryEvent>();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddSerilog();
 
@@ -152,7 +158,6 @@ namespace Identity.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -172,7 +177,24 @@ namespace Identity.API
 
             app.UseStaticFiles();
             app.UseIdentityServer();
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvcWithDefaultRoute();
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
+                endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
+                endpoints.MapHealthChecks("/liveness", new HealthCheckOptions
+                {
+                    Predicate = r => r.Name.Contains("self")
+                });
+            });
         }
     }
 }
