@@ -1870,3 +1870,5 @@ System.ArgumentException: Either an IConnection or IConnectionFactory must be re
 2021-12-31 00:05:40.599 -03:00 [INF] New order has been placed successfully: {"Items":[{"ProductCode":"003","ProductName":"Bananas","ProductQuantity":3,"ProductUnitPrice":52.9,"Id":7022},{"ProductCode":"002","ProductName":"Lemons","ProductQuantity":4,"ProductUnitPrice":52.9,"Id":7023}],"CustomerId":"69d28b54-c30d-4392-b50c-01f6d49754e0","CustomerName":"Alice Smith","CustomerEmail":"alice@asp.net","CustomerPhone":"1234-5678","CustomerAddress":"r n sra mae dos homens 987","CustomerAdditionalAddress":"bl 10 ap 202","CustomerDistrict":"vl progresso","CustomerCity":"guarulhos","CustomerState":"SP","CustomerZipCode":"07091000","DateCreated":"2021-12-31T00:05:39.449125-03:00","Id":7012}
 2021-12-31 00:08:31.778 -03:00 [WRN] Failed to determine the https port for redirect.
 2021-12-31 00:08:31.798 -03:00 [WRN] Failed to determine the https port for redirect.
+2021-12-31 14:43:36.213 -03:00 [WRN] Failed to determine the https port for redirect.
+2021-12-31 14:43:36.221 -03:00 [WRN] Failed to determine the https port for redirect.
