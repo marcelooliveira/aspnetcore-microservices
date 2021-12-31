@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>877f8347-a198-40c7-b01d-450ed4108f36</ProjectGuid>
+    <ProjectGuid>ea4c02f3-821d-4e7a-80dd-88b1d981b2b4</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/hc-ui</DockerServiceUrl>
     <DockerServiceName>webstatus</DockerServiceName>

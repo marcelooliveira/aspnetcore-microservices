@@ -332,3 +332,5 @@ identityserver4_log.txt
 OrdemDeCompra_log.txt
 healthchecksdb
 *.db
+00_Microservices/Web Apps/WebStatus/healthchecksdb
+00_Microservices/Services/Catalog.API/Catalog.API_log.txt

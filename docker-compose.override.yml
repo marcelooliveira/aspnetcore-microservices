@@ -42,7 +42,7 @@ services:
   catalog.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://0.0.0.0:80;https://0.0.0.0:443
+      - ASPNETCORE_URLS=http://0.0.0.0:80
       - ELASTICSEARCH_URL=http://10.0.75.1:9200
     ports:
       - "5108:80"
@@ -53,7 +53,7 @@ services:
   identity.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://0.0.0.0:80;https://0.0.0.0:443
+      - ASPNETCORE_URLS=http://0.0.0.0:80
       - CallBackUrl=http://localhost:5100/
       - RabbitMQConnectionString=amqp://rabbitmq
       - ELASTICSEARCH_URL=http://10.0.75.1:9200

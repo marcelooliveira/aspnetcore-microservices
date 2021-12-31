@@ -11,12 +11,6 @@ services:
   elasticsearch:
     image: nshou/elasticsearch-kibana
 
-  sql.data:
-    image: mcr.microsoft.com/mssql/server:2017-latest
-
-  ecommerce.data:
-    image: redis:alpine
-
   webstatus:
     image: ${DOCKER_REGISTRY-}webstatus
     build:
@@ -31,46 +25,4 @@ services:
     depends_on:
       - rabbitmq
       - elasticsearch
-
-  basket.api:
-    image: ${DOCKER_REGISTRY-}basketapi
-    build:
-      context: .
-      dockerfile: Services/Basket.API/Dockerfile
-    depends_on:
-      - rabbitmq
-      - elasticsearch
-
-
-  identity.api:
-    image: ${DOCKER_REGISTRY-}identityapi
-    build:
-      context: .
-      dockerfile: Services/Identity.API/Dockerfile
-    depends_on:
-      - rabbitmq
-      - elasticsearch
-
-  mvc:
-    image: ${DOCKER_REGISTRY-}mvc
-    build:
-      context: .
-      dockerfile: Web Apps/MVC/Dockerfile
-    depends_on:
-      - rabbitmq
-      - ecommerce.data
-      - elasticsearch
-      - catalog.api
-      - basket.api
-      - identity.api
-
-#  ordering.api:
-#    image: ${DOCKER_REGISTRY-}orderingapi
-#    build:
-#      context: .
-#      dockerfile: Services/Ordering.API/Dockerfile
-#    depends_on:
-#      - rabbitmq
-#      - sql.data
-#      - elasticsearch
 
